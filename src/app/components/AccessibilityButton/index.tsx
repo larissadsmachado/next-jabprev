@@ -96,9 +96,6 @@ const AccessibilityButton: React.FC = () => {
         a {
           text-decoration: ${isUnderlineLinks ? "underline" : "none"};
         }
-        p, a, span, h1, h2, h3 {
-          font-family: ${!isLegibleFont ? "Arial, sans-serif" : "initial"};
-        }
         svg {
           fill: ${isWhiteBackground ? "black" : ""};
         }

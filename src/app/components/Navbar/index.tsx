@@ -6,7 +6,7 @@ import { Bars3Icon } from "@heroicons/react/24/outline";
 import { FaSearch } from "react-icons/fa";
 import Image from "next/image";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/20/solid";
-import { MdKeyboardArrowDown, MdKeyboardArrowRight } from 'react-icons/md';
+import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 interface NavItem {
   name: string;
   href: string;
@@ -93,13 +93,65 @@ const navigation: NavItem[] = [
       { name: "dia de acolhimento e boas vindas", href: "#" },
       { name: "provisões matemáticas", href: "#" },
       { name: "relatório gestão atuaial", href: "#" },
-      { name: "relatórios atuariais ", href: "#",
-         submenu: [
-        { name: "Atas do Conselho Deliberativo", href: "#" },
-        { name: "Atas do Conselho Fiscal", href: "#" },
-      ], },
-      { name: "rcontribuições previdenciária", href: "#" },
+      {
+        name: "relatórios atuariais ",
+        href: "#",
+        submenu: [
+          { name: "Avaliação Atuarial 2025", href: "#" },
+          { name: "Avaliação Atuarial 2024", href: "#" },
+          { name: "Avaliação Atuarial 2023", href: "#" },
+          { name: "Avaliação Atuarial 2022", href: "#" },
+          {
+            name: "Avaliação Atuarial 2021",
+            href: "#",
+            submenu: [
+              { name: "Captalizado", href: "#" },
+              { name: "Financeiro", href: "#" },
+              
+            ],
+          },
+          {
+            name: "Avaliação Atuarial 2020",
+            href: "#",
+            submenu: [
+              { name: "Captalizado", href: "#" },
+              { name: "Financeiro", href: "#" },
+              
+            ],
+          },
+          { name: "Avaliação Atuarial 2019", href: "#" },
+          { name: "Avaliação Atuarial 2018", href: "#" },
+          { name: "Avaliação Atuarial 2017", href: "#" },
+        ],
+      },
+      { name: "contribuições previdenciária", href: "#" },
       { name: "mapeamento", href: "#" },
+    ],
+  },
+  {
+    name: "Cad prev",
+    href: "#",
+    submenu: [
+      { name: "DIPR - Demonstrativo De Informações Previdenciárias E Repasses", href: "#" },
+      { name: "DAIR - Demonstrativo das aplicações e investimentos dos recursos", href: "#" },
+      { name: "DPIN - demonstrativo de políticas de investimento", href: "#" },
+      { name: "AP - Acordo de parcelamento", href: "#" },
+      { name: "CRP - Certidão de regularidade previdenciária", href: "#" }
+    ],
+  },
+  {
+    name: "Carta de Serviço",
+    href: "#"
+  },
+  {
+    name: "Sites Relacionados",
+    href: "#",
+    submenu: [
+      { name: "site Oficial", href: "#" },
+      { name: "diário oficial", href: "#" },
+      { name: "portal da transparência", href: "#" },
+      { name: "ouvidoria", href: "#" },
+      { name: "portal do contribuinte", href: "#" }
     ],
   },
 ];
@@ -121,6 +173,7 @@ const Logo = () => (
 const NavLinks = () => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [activeSubMenu, setActiveSubMenu] = useState<string | null>(null);
+  const [activeSubSubMenu, setActiveSubSubMenu] = useState<string | null>(null);
 
   return (
     <div className="hidden lg:flex items-center space-x-6 relative uppercase">
@@ -132,20 +185,19 @@ const NavLinks = () => {
           onMouseLeave={() => {
             setActiveMenu(null);
             setActiveSubMenu(null);
+            setActiveSubSubMenu(null);
           }}
         >
           <Link
             href={item.href}
-            className="text-[#0037C1] text-base hover:underline font-semibold flex items-center"
+            className="text-[#0037C1] text-[15px] hover:underline font-semibold flex"
           >
             {item.name}
-            {item.submenu && (
-              <MdKeyboardArrowDown className="ml-2 text-[#0037C1]" /> // Seta para baixo no menu principal
-            )}
+            {item.submenu && <MdKeyboardArrowDown className="ml-2 text-[#0037C1]" />}
           </Link>
 
           {activeMenu === item.name && item.submenu && (
-            <div className="absolute left-0 bg-[#0037C1] shadow-lg py-2 w-56 border border-white z-50">
+            <div className="absolute left-0 bg-[#0037C1] shadow-lg w-60 border border-white z-50 flex flex-col py-2">
               {item.submenu.map((subItem) => (
                 <div
                   key={subItem.name}
@@ -155,25 +207,43 @@ const NavLinks = () => {
                 >
                   <Link
                     href={subItem.href}
-                    className="px-4 py-2 text-[#ffffff] hover:bg-[#0055C1] text-base flex items-center"
+                    className="px-4 py-2 text-white hover:bg-[#0055C1] text-[15px] flex items-center"
                   >
                     {subItem.name}
-                    {subItem.submenu && (
-                      <MdKeyboardArrowRight className="ml-2 text-[#ffffff]" /> // Seta para a direita no subitem
-                    )}
+                    {subItem.submenu && <MdKeyboardArrowRight className="ml-2 text-white" />}
                   </Link>
 
-                  {/* Submenu do submenu (lateral) */}
                   {activeSubMenu === subItem.name && subItem.submenu && (
-                    <div className="absolute left-full top-0 bg-[#0037C1] shadow-lg py-2 w-56 border border-white z-50">
+                    <div className="absolute left-full top-0 bg-[#0037C1] shadow-lg py-2 w-56 border border-white z-50 flex flex-col">
                       {subItem.submenu.map((subSubItem) => (
-                        <Link
+                        <div
                           key={subSubItem.name}
-                          href={subSubItem.href}
-                          className="block px-4 py-2 text-[#ffffff] hover:bg-[#0055C1] text-base"
+                          className="relative group"
+                          onMouseEnter={() => setActiveSubSubMenu(subSubItem.name)}
+                          onMouseLeave={() => setActiveSubSubMenu(null)}
                         >
-                          {subSubItem.name}
-                        </Link>
+                          <Link
+                            href={subSubItem.href}
+                            className="px-4 py-2 text-white hover:bg-[#0055C1] text-base flex items-center"
+                          >
+                            {subSubItem.name}
+                            {subSubItem.submenu && <MdKeyboardArrowRight className="ml-2 text-white" />}
+                          </Link>
+
+                          {activeSubSubMenu === subSubItem.name && subSubItem.submenu && (
+                            <div className="absolute left-full top-0 bg-[#0037C1] shadow-lg py-2 w-56 border border-white z-50 flex flex-col">
+                              {subSubItem.submenu.map((subSubSubItem) => (
+                                <Link
+                                  key={subSubSubItem.name}
+                                  href={subSubSubItem.href}
+                                  className="block px-4 py-2 text-white hover:bg-[#0055C1] text-base"
+                                >
+                                  {subSubSubItem.name}
+                                </Link>
+                              ))}
+                            </div>
+                          )}
+                        </div>
                       ))}
                     </div>
                   )}
@@ -186,6 +256,7 @@ const NavLinks = () => {
     </div>
   );
 };
+
 const MobileMenu = () => {
   const [openMenus, setOpenMenus] = useState<{ [key: string]: boolean }>({});
 
@@ -270,7 +341,7 @@ const Navbar = () => {
         scrolled ? "bg-[#fdc200d1] shadow-md" : "bg-[#FDC300]"
       }`}
     >
-      <div className="relative mx-auto max-w-7xl p-2 md:p-3 lg:px-8">
+      <div className="relative mx-auto max-w-8xl p-2 md:p-3 lg:px-8">
         <div className="relative flex h-8 sm:h-12 items-center justify-between">
           <Logo />
           <NavLinks />
