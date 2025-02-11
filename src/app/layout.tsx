@@ -1,9 +1,9 @@
 import './globals.css';
-import '@/node_modules/react-modal-video/scss/modal-video.scss';
 import Navbar from './components/Navbar/index';
 import ScrollToTop from './components/ScrollToTop/index';
 import Footer from './components/Footer/index';
 import Vlibras from './components/Vlibras/index'; 
+import AccessibilityButton from "./components/AccessibilityButton/index";
 
 export const metadata = {
   title: 'JABPREV',
@@ -23,9 +23,8 @@ export default function RootLayout({
     suppressHydrationWarning>
       <body>
         <Navbar />
-        
         {children}
-
+        <AccessibilityButton />
         <Vlibras />
         <ScrollToTop />
         <Footer />

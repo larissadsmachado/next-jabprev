@@ -1,10 +1,10 @@
-
+import Simple from "./components/Simple/index";
 
 
 export default function Home() {
   return (
     <main>
-      <h1>Ae</h1>
+      <Simple/>
     </main>
   );
 }

@@ -20,7 +20,7 @@ const Footer = () => {
       {/* TOPO RODAPE AMALERO */}
       <div className="flex justify-center items-center">
         <Image
-          src={"/images/Logo/topo-rodape.png"}
+          src={"/images/Rodape/topo-rodape.png"}
           alt="logo-image"
           layout="intrinsic"
           width={1500}
@@ -440,10 +440,10 @@ const Footer = () => {
             {/* COLUNA 1 */}
             <div className="flex justify-center items-center">
               <Image
-                src={"/images/Logo/logo-longa.png"}
+                src="/images/Logo/logo-longa.png"
                 alt="logo-image"
                 width={200}
-                height={100}
+                height={100} 
                 className="md:block"
               />
             </div>

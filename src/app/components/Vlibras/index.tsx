@@ -3,6 +3,14 @@
 import { useEffect } from "react";
 import VLibras from "vlibras-nextjs";
 
+declare global {
+  interface Window {
+    VLibras?: {
+      init: () => void;
+    };
+  }
+}
+
 function Vlibras() {
   useEffect(() => {
     const script = document.createElement("script");
