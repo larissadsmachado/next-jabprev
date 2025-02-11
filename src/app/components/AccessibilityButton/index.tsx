@@ -1,103 +1,119 @@
-'use client';
-import { useState } from "react";
-import { FaPlus, FaMinus, FaUndo, FaWheelchair, FaEye, FaAdjust, FaFont, FaUnderline } from "react-icons/fa";
-import { motion } from "framer-motion";
+"use client";
+import { useState, useEffect } from "react";
+import { FaUniversalAccess } from "react-icons/fa";
 
-const AccessibilityButton: React.FC = () => {
-  const [isExpanded, setIsExpanded] = useState<boolean>(false);
-  const [fontSize, setFontSize] = useState<number>(1);
-  const [isHighContrast, setIsHighContrast] = useState<boolean>(false);
-  const [isNegativeContrast, setIsNegativeContrast] = useState<boolean>(false);
-  const [isWhiteBackground, setIsWhiteBackground] = useState<boolean>(false);
-  const [isUnderlineLinks, setIsUnderlineLinks] = useState<boolean>(false);
-  const [isLegibleFont, setIsLegibleFont] = useState<boolean>(false);
+type CustomButtonProps = {
+  children: React.ReactNode;
+  onClick: () => void;
+};
 
-  // Funções de acessibilidade
-  const increaseFontSize = () => setFontSize((prev) => prev + 0.1);
-  const decreaseFontSize = () => setFontSize((prev) => (prev > 1 ? prev - 0.1 : prev));
-  const toggleHighContrast = () => setIsHighContrast((prev) => !prev);
-  const toggleNegativeContrast = () => setIsNegativeContrast((prev) => !prev);
-  const toggleWhiteBackground = () => setIsWhiteBackground((prev) => !prev);
-  const toggleUnderlineLinks = () => setIsUnderlineLinks((prev) => !prev);
-  const toggleLegibleFont = () => setIsLegibleFont((prev) => !prev);
+const CustomButton: React.FC<CustomButtonProps> = ({ children, onClick }) => (
+  <button onClick={onClick} className="px-4 py-2 text-white bg-transparent hover:bg-gray-100 rounded-lg">
+    {children}
+  </button>
+);
+
+const AccessibilityButton = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [fontSize, setFontSize] = useState(100);
+  const [highContrast, setHighContrast] = useState(false);
+  const [negativeContrast, setNegativeContrast] = useState(false);
+  const [whiteBg, setWhiteBg] = useState(false);
+  const [underlineLinks, setUnderlineLinks] = useState(false);
+  const [readableFont, setReadableFont] = useState(false);
+
+  useEffect(() => {
+    const style = document.createElement("style");
+    style.innerHTML = `
+      .high-contrast { filter: contrast(2); }
+      .negative-contrast { filter: invert(1); }
+      .white-bg { background-color: white !important; color: black !important; }
+      .underline-links a { text-decoration: underline !important; }
+      .readable-font { font-family: Arial, sans-serif !important; }
+    `;
+    document.head.appendChild(style);
+
+    document.documentElement.style.fontSize = `${fontSize}%`;
+    document.body.classList.toggle("high-contrast", highContrast);
+    document.body.classList.toggle("negative-contrast", negativeContrast);
+    document.body.classList.toggle("white-bg", whiteBg);
+    document.body.classList.toggle("underline-links", underlineLinks);
+    document.body.classList.toggle("readable-font", readableFont);
+
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, [fontSize, highContrast, negativeContrast, whiteBg, underlineLinks, readableFont]);
+
   const resetAccessibility = () => {
-    setFontSize(1);
-    setIsHighContrast(false);
-    setIsNegativeContrast(false);
-    setIsWhiteBackground(false);
-    setIsUnderlineLinks(false);
-    setIsLegibleFont(false);
+    setFontSize(100);
+    setHighContrast(false);
+    setNegativeContrast(false);
+    setWhiteBg(false);
+    setUnderlineLinks(false);
+    setReadableFont(false);
   };
 
   return (
-    <div
-      className="fixed left-0 top-1/2 transform -translate-y-1/2 z-50"
-      style={{ position: "fixed", filter: "none" }}
-    >
-       <button
-        className="bg-[#052C64] text-white p-2 rounded-md flex items-center justify-center"
-        onClick={() => setIsExpanded(!isExpanded)}
-      >
-        <FaWheelchair className="text-2xl" />
-      </button>
+    <div className="accessibility-container">
+      <div className={`accessibility-panel ${isOpen ? "open" : ""}`}>
+        <button onClick={() => setIsOpen(!isOpen)} className="accessibility-toggle">
+          <FaUniversalAccess size={28} className="text-white" />
+        </button>
 
-      {isExpanded && (
-        <motion.div
-          className="bg-[#052C64] p-2 rounded-md mt-2"
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          <div className="flex flex-col space-y-2 text-white text-sm">
-            <button onClick={increaseFontSize} className="hover:bg-blue-600 p-2 rounded flex items-center">
-              <FaPlus className="mr-2" /> Aumentar Texto
-            </button>
-            <button onClick={decreaseFontSize} className="hover:bg-blue-600 p-2 rounded flex items-center">
-              <FaMinus className="mr-2" /> Diminuir Texto
-            </button>
-            <button onClick={toggleHighContrast} className="hover:bg-blue-600 p-2 rounded flex items-center">
-              <FaEye className="mr-2" />
-              {isHighContrast ? "Desativar" : "Ativar"} Alto Contraste
-            </button>
-            <button onClick={toggleNegativeContrast} className="hover:bg-blue-600 p-2 rounded flex items-center">
-              <FaAdjust className="mr-2" />
-              {isNegativeContrast ? "Desativar" : "Ativar"} Contraste Negativo
-            </button>
-            <button onClick={toggleWhiteBackground} className="hover:bg-blue-600 p-2 rounded flex items-center">
-              <FaEye className="mr-2" />
-              {isWhiteBackground ? "Desativar" : "Ativar"} Fundo Branco
-            </button>
-            <button onClick={toggleUnderlineLinks} className="hover:bg-blue-600 p-2 rounded flex items-center">
-              <FaUnderline className="mr-2" />
-              {isUnderlineLinks ? "Remover" : "Sublinhar"} Links
-            </button>
-            <button onClick={toggleLegibleFont} className="hover:bg-blue-600 p-2 rounded flex items-center">
-              <FaFont className="mr-2" />
-              {isLegibleFont ? "Remover" : "Ativar"} Fonte Legível
-            </button>
-            <button onClick={resetAccessibility} className="hover:bg-blue-600 p-2 rounded flex items-center">
-              <FaUndo className="mr-2" /> Resetar
-            </button>
-          </div>
-        </motion.div>
-      )}
+        <div className="accessibility-buttons">
+          <CustomButton onClick={() => setFontSize((size) => Math.min(size + 10, 150))}>
+            Aumentar Texto
+          </CustomButton>
+          <CustomButton onClick={() => setFontSize((size) => Math.max(size - 10, 50))}>
+            Diminuir Texto
+          </CustomButton>
+          <CustomButton onClick={() => setHighContrast(!highContrast)}>Auto Contraste</CustomButton>
+          <CustomButton onClick={() => setNegativeContrast(!negativeContrast)}>Contraste Negativo</CustomButton>
+          <CustomButton onClick={() => setWhiteBg(!whiteBg)}>Fundo Branco</CustomButton>
+          <CustomButton onClick={() => setUnderlineLinks(!underlineLinks)}>Links Sublinhados</CustomButton>
+          <CustomButton onClick={() => setReadableFont(!readableFont)}>Fonte Legível</CustomButton>
+          <CustomButton onClick={resetAccessibility}>Resetar</CustomButton>
+        </div>
+      </div>
 
-      {/* Aplicação das classes de acessibilidade */}
-      <style jsx global>{`
-        body {
-          ${isHighContrast ? "filter: contrast(2);" : ""}
-          ${isNegativeContrast ? "filter: invert(1);" : ""}
-          ${isWhiteBackground ? "background-color: white; color: black;" : ""}
+      <style jsx>{`
+        .accessibility-container {
+          position: fixed;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          z-index: 50;
         }
-        p, a, span, h1, h2, h3, .open-sans-custom, p.text-xs {
-          font-size: ${fontSize}em;
+
+        .accessibility-panel {
+          display: flex;
+          align-items: center;
+          position: relative;
+          width: auto;
+          transition: transform 0.3s ease-in-out;
+          transform: translateX(${isOpen ? "0" : "-100%"}); /* Fecha e abre deslizando sem sair da esquerda */
         }
-        a {
-          text-decoration: ${isUnderlineLinks ? "underline" : "none"};
+
+        .accessibility-toggle {
+          background-color: #007bff;
+          border: 1px solid #ddd;
+          padding: 12px;
+          cursor: pointer;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          position: absolute;
+          left: 100%; /* Mantém o botão fixo ao lado do painel */
+          transition: left 0.3s ease-in-out;
         }
-        svg {
-          fill: ${isWhiteBackground ? "black" : ""};
+
+        .accessibility-buttons {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          background-color: #003476;
+          border: 1px solid #007bff;
+          padding: 8px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
       `}</style>
     </div>
