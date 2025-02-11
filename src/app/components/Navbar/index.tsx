@@ -6,7 +6,7 @@ import { Bars3Icon } from "@heroicons/react/24/outline";
 import { FaSearch } from "react-icons/fa";
 import Image from "next/image";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/20/solid";
-
+import { MdKeyboardArrowDown, MdKeyboardArrowRight } from 'react-icons/md';
 interface NavItem {
   name: string;
   href: string;
@@ -21,6 +21,11 @@ const navigation: NavItem[] = [
       { name: "O que é o JaboatãoPrev", href: "#" },
       { name: "Missão, visão e valores", href: "#" },
       { name: "A equipe JaboatãoPREV", href: "#" },
+      { name: "Perguntas Frequentes", href: "#" },
+      { name: "Legislação", href: "#" },
+      { name: "Cartilha Previdenciária", href: "#" },
+      { name: "Boletins Informativos", href: "#" },
+      { name: "Controle Interno", href: "#" },
     ],
   },
   {
@@ -35,10 +40,68 @@ const navigation: NavItem[] = [
           { name: "Atas do Conselho Fiscal", href: "#" },
         ],
       },
-      { name: "Notícias", href: "#" },
+      {
+        name: "Calendários",
+        href: "#",
+        submenu: [
+          { name: "Calendário de Pagamento", href: "#" },
+          { name: "Calendários de Reuniões", href: "#" },
+        ],
+      },
+      { name: "Contratos", href: "#" },
+      { name: "Educação previdenciária e financeira", href: "#" },
+      { name: "folha de pagamento", href: "#" },
+      { name: "cronograma de capacitação", href: "#" },
+      { name: "plano de ação", href: "#" },
+      { name: "programa 55", href: "#" },
+      { name: "relatório anual de gestão", href: "#" },
+      { name: "obrigações fiscais", href: "#" },
     ],
   },
-  { name: "Financeiro", href: "#", submenu: [{ name: "Fotos", href: "#" }] },
+  {
+    name: "Financeiro",
+    href: "#",
+    submenu: [
+      { name: "receitas", href: "#" },
+      { name: "despesas", href: "#" },
+      { name: "despesas adminstrativas", href: "#" },
+      { name: "demonstrativos contábeis", href: "#" },
+      { name: "prestações de contas", href: "#" },
+      { name: "mapeamento", href: "#" },
+    ],
+  },
+  {
+    name: "Investimentos",
+    href: "#",
+    submenu: [
+      { name: "Apr-autorização de aplicação e resgate", href: "#" },
+      { name: "certificação profissional", href: "#" },
+      { name: "credenciamentos", href: "#" },
+      { name: "política de investimentos", href: "#" },
+      { name: "regime interno", href: "#" },
+      { name: "relatório mensais", href: "#" },
+      { name: "relatório de inteligência de dados(bi)", href: "#" },
+      { name: "estudo de alm", href: "#" },
+      { name: "mapeamento", href: "#" },
+    ],
+  },
+  {
+    name: "previdência",
+    href: "#",
+    submenu: [
+      { name: "previdência complementar", href: "#" },
+      { name: "dia de acolhimento e boas vindas", href: "#" },
+      { name: "provisões matemáticas", href: "#" },
+      { name: "relatório gestão atuaial", href: "#" },
+      { name: "relatórios atuariais ", href: "#",
+         submenu: [
+        { name: "Atas do Conselho Deliberativo", href: "#" },
+        { name: "Atas do Conselho Fiscal", href: "#" },
+      ], },
+      { name: "rcontribuições previdenciária", href: "#" },
+      { name: "mapeamento", href: "#" },
+    ],
+  },
 ];
 
 const Logo = () => (
@@ -73,9 +136,12 @@ const NavLinks = () => {
         >
           <Link
             href={item.href}
-            className="text-[#0037C1] text-base hover:underline font-semibold"
+            className="text-[#0037C1] text-base hover:underline font-semibold flex items-center"
           >
             {item.name}
+            {item.submenu && (
+              <MdKeyboardArrowDown className="ml-2 text-[#0037C1]" /> // Seta para baixo no menu principal
+            )}
           </Link>
 
           {activeMenu === item.name && item.submenu && (
@@ -89,9 +155,12 @@ const NavLinks = () => {
                 >
                   <Link
                     href={subItem.href}
-                    className="block px-4 py-2 text-[#ffffff] hover:bg-[#0055C1] text-base"
+                    className="px-4 py-2 text-[#ffffff] hover:bg-[#0055C1] text-base flex items-center"
                   >
                     {subItem.name}
+                    {subItem.submenu && (
+                      <MdKeyboardArrowRight className="ml-2 text-[#ffffff]" /> // Seta para a direita no subitem
+                    )}
                   </Link>
 
                   {/* Submenu do submenu (lateral) */}
@@ -117,7 +186,6 @@ const NavLinks = () => {
     </div>
   );
 };
-
 const MobileMenu = () => {
   const [openMenus, setOpenMenus] = useState<{ [key: string]: boolean }>({});
 

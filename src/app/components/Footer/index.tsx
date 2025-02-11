@@ -24,7 +24,7 @@ const Footer = () => {
           alt="logo-image"
           layout="intrinsic"
           width={1500}
-          height={200}
+          height={5}
           className="w-full"
         />
       </div>
