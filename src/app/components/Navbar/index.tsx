@@ -164,8 +164,8 @@ const Logo = () => (
         alt="Logo"
         height={20}
         width={220}
-        className="hidden lg:block pt-2"
-      />
+        className="w-[180px] h-auto sm:w-[200px] sm:h-auto md:w-[200px] md:h-auto lg:w-[210px] lg:h-auto xl:w-[230px] xl:h-auto"
+        />
     </Link>
   </div>
 );
@@ -259,13 +259,23 @@ const NavLinks = () => {
 
 const MobileMenu = () => {
   const [openMenus, setOpenMenus] = useState<{ [key: string]: boolean }>({});
+  const [openSubMenus, setOpenSubMenus] = useState<{ [key: string]: boolean }>({});
+  const [openSubSubMenus, setOpenSubSubMenus] = useState<{ [key: string]: boolean }>({});
 
   const toggleMenu = (menu: string) => {
     setOpenMenus((prev) => ({ ...prev, [menu]: !prev[menu] }));
   };
 
+  const toggleSubMenu = (menu: string) => {
+    setOpenSubMenus((prev) => ({ ...prev, [menu]: !prev[menu] }));
+  };
+
+  const toggleSubSubMenu = (menu: string) => {
+    setOpenSubSubMenus((prev) => ({ ...prev, [menu]: !prev[menu] }));
+  };
+
   return (
-    <div className="lg:hidden p-4">
+    <div className="lg:hidden p-4 pt-10">
       {navigation.map((item) => (
         <div key={item.name} className="mb-2">
           <button
@@ -273,22 +283,69 @@ const MobileMenu = () => {
             className="w-full flex justify-between text-[#0037C1] text-lg font-normal hover:underline"
           >
             {item.name}
-            {openMenus[item.name] ? (
-              <ChevronUpIcon className="h-5 w-5" />
-            ) : (
-              <ChevronDownIcon className="h-5 w-5" />
+            {item.submenu && (
+              openMenus[item.name] ? (
+                <ChevronUpIcon className="h-5 w-5" />
+              ) : (
+                <ChevronDownIcon className="h-5 w-5" />
+              )
             )}
           </button>
+
           {openMenus[item.name] && item.submenu && (
             <div className="pl-4 mt-2">
               {item.submenu.map((subItem) => (
-                <Link
-                  key={subItem.name}
-                  href={subItem.href}
-                  className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                >
-                  {subItem.name}
-                </Link>
+                <div key={subItem.name} className="mb-2">
+                  <button
+                    onClick={() => toggleSubMenu(subItem.name)}
+                    className="w-full flex justify-between text-[#0037C1] text-lg font-normal hover:underline"
+                  >
+                    {subItem.name}
+                    {subItem.submenu && (
+                      openSubMenus[subItem.name] ? (
+                        <ChevronUpIcon className="h-5 w-5" />
+                      ) : (
+                        <ChevronDownIcon className="h-5 w-5" />
+                      )
+                    )}
+                  </button>
+
+                  {openSubMenus[subItem.name] && subItem.submenu && (
+                    <div className="pl-4 mt-2">
+                      {subItem.submenu.map((subSubItem) => (
+                        <div key={subSubItem.name} className="mb-2">
+                          <button
+                            onClick={() => toggleSubSubMenu(subSubItem.name)}
+                            className="w-full flex justify-between text-[#0037C1] text-lg font-normal hover:underline"
+                          >
+                            {subSubItem.name}
+                            {subSubItem.submenu && (
+                              openSubSubMenus[subSubItem.name] ? (
+                                <ChevronUpIcon className="h-5 w-5" />
+                              ) : (
+                                <ChevronDownIcon className="h-5 w-5" />
+                              )
+                            )}
+                          </button>
+
+                          {openSubSubMenus[subSubItem.name] && subSubItem.submenu && (
+                            <div className="pl-4 mt-2">
+                              {subSubItem.submenu.map((subSubSubItem) => (
+                                <Link
+                                  key={subSubSubItem.name}
+                                  href={subSubSubItem.href}
+                                  className="block px-4 py-2 text-[#0037C1] hover:bg-gray-100"
+                                >
+                                  {subSubSubItem.name}
+                                </Link>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
             </div>
           )}
@@ -297,6 +354,7 @@ const MobileMenu = () => {
     </div>
   );
 };
+
 
 const SearchBar = () => {
   const [showSearch, setShowSearch] = useState(false);
