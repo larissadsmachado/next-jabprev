@@ -62,9 +62,9 @@ const FaleConosco = () => {
         <DivisorDeForma />
 
         {/* Conteúdo sobreposto */}
-        <div className="relative z-10 min-h-screen  text-white p-8 flex items-center justify-center bg-opacity-30">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 max-w-[1000px] w-full">
-            <div className="w-full md:w-1/2 h-[640px]">
+        <div className="relative z-10 min-h-screen text-white p-8 flex items-center justify-center bg-opacity-30">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 max-w-7xl w-full">
+            <div className="w-full md:w-1/2 h-[580px] rounded-xl">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.5114253262363!2d-34.925620124244986!3d-8.151115381647537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7aae1dc7561cffd%3A0xe6fbfb0ef7cd1451!2sCentro%20Administrativo%20de%20Jaboat%C3%A3o%20dos%20Guararapes!5e0!3m2!1spt-BR!2sbr!4v1726165314278!5m2!1spt-BR!2sbr"
                 width="100%"
@@ -74,19 +74,19 @@ const FaleConosco = () => {
                 loading="lazy"
               />
             </div>
-            <div className="Lexend-Deca w-full md:w-1/2 bg-[#00000088] p-6 rounded-lg shadow-md flex flex-col justify-between overflow-hidden">
+            <div className="w-full md:w-1/2 bg-[#00000088] p-6 rounded-lg shadow-md flex flex-col justify-between overflow-hidden">
               <h2 className="text-[40px] font-semibold">Fale Conosco</h2>
+              <br /><br />
+              <p>
+              Instituto de Previdência dos Servidores do Município Jaboatão dos Guararapes.
+              </p> <br />
+              <p>Telefones Fixos: (81) 3462-4855 / 3462-4619</p>
               <br />
               <p>
-                Complexo Administrativo – Estrada da Batalha nº 1200, Jardim
-                Jordão – Jaboatão dos Guararapes – PE
-              </p>
-              <p>CEP: 54.315-570</p>
-              <br />
+              Celular: (81) 9 9756-0292
+              </p><br />
               <p>
-                Qualquer dúvida, reclamação ou sugestão entre em contato com a
-                nossa área de relacionamento com o cidadão. Queremos nos
-                aproximar cada vez mais de você cidadão
+              Rua Coronel Waldemar Basgal, 576 – Piedade Jaboatão dos Guararapes – PE.
               </p>
               <form
                 onSubmit={handleSubmit}
