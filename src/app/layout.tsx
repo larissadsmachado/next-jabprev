@@ -7,10 +7,7 @@ import AccessibilityButton from "./components/AccessibilityButton/index";
 
 export const metadata = {
   title: 'JABPREV',
-  description: 'Desenvolvido por: Secretaria Executiva de Governo Digital | SEGD',
-  icons: {
-    icon: '/favicon.ico',
-  },
+  description: 'Desenvolvido por: Secretaria Executiva de Governo Digital | SEGD'
 };
 
 export default function RootLayout({

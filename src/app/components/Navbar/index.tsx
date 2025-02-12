@@ -157,14 +157,14 @@ const navigation: NavItem[] = [
 ];
 
 const Logo = () => (
-  <div className="relative flex items-center justify-center px-[30px] h-[100px] bg-white rounded-b-2xl shadow-md z-0">
+  <div className="relative flex items-center justify-center">
     <Link href="/">
       <Image
-        src="/images/Logo/logo-longa.png"
+        src="/images/Logo/logo.png"
         alt="Logo"
         height={20}
         width={220}
-        className="w-[180px] h-auto sm:w-[200px] sm:h-auto md:w-[200px] md:h-auto lg:w-[210px] lg:h-auto xl:w-[230px] xl:h-auto"
+        className="w-[180px] h-auto sm:w-[200px] sm:h-auto md:w-[200px] md:h-auto lg:w-[310px] lg:h-auto xl:w-[230px] xl:h-auto"
         />
     </Link>
   </div>
@@ -399,8 +399,8 @@ const Navbar = () => {
         scrolled ? "bg-[#fdc200d1] shadow-md" : "bg-[#FDC300]"
       }`}
     >
-      <div className="relative mx-auto max-w-8xl p-2 md:p-3 lg:px-8">
-        <div className="relative flex h-8 sm:h-12 items-center justify-between">
+      <div className="relative max-w-8xl mx-auto p-2 md:p-3 lg:px-32">
+        <div className="relative flex h-20 sm:h-12 items-center justify-between">
           <Logo />
           <NavLinks />
           <SearchBar />

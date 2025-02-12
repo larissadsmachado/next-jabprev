@@ -1,10 +1,11 @@
-import Simple from "./components/Simple/index";
-
+import Banner from "./components/Banner/index";
+import Servicos from "./components/Servicos/index";
 
 export default function Home() {
   return (
     <main>
-      <Simple/>
+      <Banner/>
+      <Servicos/>
     </main>
   );
 }
