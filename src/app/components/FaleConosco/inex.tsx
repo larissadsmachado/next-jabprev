@@ -1,7 +1,6 @@
 "use client";
-import "../../app/style/globals.css";
+import DivisorDeForma from "../DivisorDeForma/divisor";
 
-// Tipando o evento do formulário
 const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
 
@@ -45,26 +44,27 @@ const FaleConosco = () => {
     <div>
       {/* FALE CONOSCO */}
       <div className="min-h-screen relative">
-        
-        {/* Vídeo de fundo */}
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          autoPlay
-          loop
-          muted
-        >
-          <source
-            src="https://estacaobemestar.jaboatao.pe.gov.br/wp-content/uploads/2018/05/Blue_Sky_and_Clouds_Timelapse_0892__Videvo.mov"
-            type="video/mp4"
-          />
-          Seu navegador não suporta a tag de vídeo.
-        </video>
+        {/* Divisor de Forma no topo */}
 
-        <div className="relative z-10 min-h-screen bg-black text-white p-8 flex items-center justify-center bg-opacity-30">
+        {/* Vídeo de fundo */}
+        <div className="absolute inset-0 w-full h-full">
+          <video className="w-full h-full object-cover" autoPlay loop muted>
+            <source
+              src="https://estacaobemestar.jaboatao.pe.gov.br/wp-content/uploads/2018/05/Blue_Sky_and_Clouds_Timelapse_0892__Videvo.mov"
+              type="video/mp4"
+            />
+            Seu navegador não suporta a tag de vídeo.
+          </video>
+          {/* Camada escura */}
+          <div className="absolute inset-0 bg-black opacity-30"></div>{" "}
+          {/* Camada escura com opacidade */}
+        </div>
+        <DivisorDeForma />
+
+        {/* Conteúdo sobreposto */}
+        <div className="relative z-10 min-h-screen  text-white p-8 flex items-center justify-center bg-opacity-30">
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 max-w-[1000px] w-full">
             <div className="w-full md:w-1/2 h-[640px]">
-              {" "}
-              {/* Aumentei a altura para 96 */}
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.5114253262363!2d-34.925620124244986!3d-8.151115381647537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7aae1dc7561cffd%3A0xe6fbfb0ef7cd1451!2sCentro%20Administrativo%20de%20Jaboat%C3%A3o%20dos%20Guararapes!5e0!3m2!1spt-BR!2sbr!4v1726165314278!5m2!1spt-BR!2sbr"
                 width="100%"
@@ -72,7 +72,7 @@ const FaleConosco = () => {
                 style={{ border: 0 }}
                 allowFullScreen={true}
                 loading="lazy"
-              ></iframe>
+              />
             </div>
             <div className="Lexend-Deca w-full md:w-1/2 bg-[#00000088] p-6 rounded-lg shadow-md flex flex-col justify-between overflow-hidden">
               <h2 className="text-[40px] font-semibold">Fale Conosco</h2>
@@ -82,7 +82,6 @@ const FaleConosco = () => {
                 Jordão – Jaboatão dos Guararapes – PE
               </p>
               <p>CEP: 54.315-570</p>
-
               <br />
               <p>
                 Qualquer dúvida, reclamação ou sugestão entre em contato com a

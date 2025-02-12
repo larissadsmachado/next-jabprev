@@ -2,7 +2,6 @@ import React from "react";
 import { FaInfoCircle } from "react-icons/fa";
 import { MdOutlineAttachMoney } from "react-icons/md";
 import { FaPiggyBank, FaBookOpen, FaPhoneAlt } from "react-icons/fa";
-// import DivisorDeForma from "../DivisorDeForma/divisor";
 
 const Card = ({
   title,
@@ -55,7 +54,7 @@ const CardContent = ({
       {title}
     </h5>
 
-    <div className="absolute inset-0 bg-[#02051bac] bg-opacity-75 opacity-0 group-hover:opacity-100 text-white flex items-center justify-center transition-opacity duration-300 px-20">
+    <div className="absolute inset-0 bg-[#02051b] bg-opacity-100 opacity-0 group-hover:opacity-100 text-white flex items-center justify-center transition-opacity duration-300 px-20">
       <p className="text-lg whitespace-pre-line">{subtext}</p>
     </div>
   </>
@@ -68,7 +67,7 @@ export default function CardGrid() {
         Serviços
       </h2>
 
-      <div className="mx-auto grid grid-cols-3 gap-10 px-36">
+      <div className="mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-10 px-20">
         <Card
           title="Contra-Cheque"
           icon={<MdOutlineAttachMoney />}
@@ -110,3 +109,4 @@ export default function CardGrid() {
     </div>
   );
 }
+
