@@ -54,7 +54,7 @@ const CardContent = ({
       {title}
     </h5>
 
-    <div className="absolute inset-0 bg-[#02051b] bg-opacity-100 opacity-0 group-hover:opacity-100 text-white flex items-center justify-center transition-opacity duration-300 px-20">
+    <div className="absolute inset-0 bg-[#0d1a4a] bg-opacity-100 opacity-0 group-hover:opacity-100 text-white flex items-center justify-center transition-opacity duration-300 px-20">
       <p className="text-lg whitespace-pre-line">{subtext}</p>
     </div>
   </>
