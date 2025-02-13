@@ -400,7 +400,7 @@ const Navbar = () => {
       }`}
     >
       <div className="relative max-w-8xl mx-auto p-2 md:p-3 lg:px-32">
-        <div className="relative flex h-20 sm:h-12 items-center justify-between">
+        <div className="relative flex h-14 items-center justify-between">
           <Logo />
           <NavLinks />
           <SearchBar />
