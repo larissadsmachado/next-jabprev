@@ -19,9 +19,9 @@ const navigation: NavItem[] = [
     href: "#", 
     submenu: [
       { name: "O que é o JaboatãoPrev", href: "./pages/Institucional" },
-      { name: "Missão, visão e valores", href: "#" },
-      { name: "A equipe JaboatãoPREV", href: "#" },
-      { name: "Perguntas Frequentes", href: "#" },
+      { name: "Missão, visão e valores", href: "./pages/Institucional/#missao" },
+      { name: "A equipe JaboatãoPREV", href: "./pages/Institucional" },
+      { name: "Perguntas Frequentes", href: "./pages/Institucional" },
       { name: "Legislação", href: "#" },
       { name: "Cartilha Previdenciária", href: "#" },
       { name: "Boletins Informativos", href: "#" },
