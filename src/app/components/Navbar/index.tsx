@@ -16,9 +16,9 @@ interface NavItem {
 const navigation: NavItem[] = [
   {
     name: "Institucional",
-    href: "#",
+    href: "#", 
     submenu: [
-      { name: "O que é o JaboatãoPrev", href: "#" },
+      { name: "O que é o JaboatãoPrev", href: "./pages/Institucional" },
       { name: "Missão, visão e valores", href: "#" },
       { name: "A equipe JaboatãoPREV", href: "#" },
       { name: "Perguntas Frequentes", href: "#" },

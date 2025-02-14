@@ -1,9 +1,9 @@
-import Requerimento from "./requerimento";
+import Institucional from "./institucional";
 import Model from "../../components/model-page/index";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Requerimento CTC - JaboatãoPrev",
+  title: "Institucional - JaboatãoPrev",
 };
 
 export default function config() {
@@ -11,7 +11,7 @@ export default function config() {
     <div>
       <Model
         caminhoImagem={"/images/"}
-        titulo={"Requerimento CTC"}
+        titulo={"Institucional"}
         subtitulo={
           <span>
             <Link
@@ -22,12 +22,12 @@ export default function config() {
             </Link>
             &nbsp;»{" "}
             <span className="brightness-125">
-            Requerimento CTC
+            Institucional
             </span>
           </span>
         }
       >
-        <Requerimento />
+        <Institucional />
       </Model>
     </div>
   );

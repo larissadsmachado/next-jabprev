@@ -86,7 +86,7 @@ export default function CardGrid() {
         <Card
           title="Certidão de Tempo de Contribuição"
           icon={<FaBookOpen />}
-          link="./pages/requerimento-ctc"
+          link="./pages/Requerimento-ctc"
           target="_blank"
           subtext="Solicite sua Certidão por Tempo de Contribuição, clicando aqui!"
         />
