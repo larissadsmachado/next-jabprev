@@ -1,9 +1,9 @@
 import Acessibilidade from "./requerimento";
-import Model from "../../components/model-page/";
+import Model from "../../components/model-page/index";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Informações de Acessibilidade - Prefeitura do Jaboatão dos Guararapes",
+  title: "Requerimento CTC- JaboatãoPrev",
 };
 
 export default function config() {
@@ -11,7 +11,7 @@ export default function config() {
     <div>
       <Model
         caminhoImagem={"/images/"}
-        titulo={"INFORMAÇÕES DE ACESSIBILIDADE"}
+        titulo={"Requerimento CTC"}
         subtitulo={
           <span>
             <Link
@@ -22,7 +22,7 @@ export default function config() {
             </Link>
             &nbsp;»{" "}
             <span className="brightness-125">
-              INFORMAÇÕES DE ACESSIBILIDADE
+            Requerimento CTC
             </span>
           </span>
         }
