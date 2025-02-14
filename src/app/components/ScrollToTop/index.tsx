@@ -36,7 +36,7 @@ const ScrollToTop: React.FC = () => {
         ...styles.scrollToTop,
         opacity: isVisible ? 1 : 0,
         visibility: isVisible ? 'visible' : 'hidden',
-        backgroundColor: isHovered ? '#9e7306' : '#c68e00', // Transparente no hover
+        backgroundColor: isHovered ? '#0037C1' : '#e2ad00', // Transparente no hover
       }}
     >
       <svg

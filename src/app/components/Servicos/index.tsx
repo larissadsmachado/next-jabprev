@@ -62,7 +62,7 @@ const CardContent = ({
 
 export default function CardGrid() {
   return (
-    <div className="bg-gradient-to-b from-[#ffffff] to-[#123070] py-20 text-center">
+    <div className="bg-gradient-to-b from-[#ffffff] to-[#003470] py-20 text-center">
       <h2 className="text-5xl font-semibold text-[#173b7c] mb-14 uppercase">
         Serviços
       </h2>

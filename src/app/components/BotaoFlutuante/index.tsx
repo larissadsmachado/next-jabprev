@@ -1,7 +1,7 @@
 'use client';
 // components/FloatingButtons.tsx
 import React from 'react';
-import { FaWhatsapp, FaRegClipboard } from 'react-icons/fa'; // Pacote de ícones
+import { FaWhatsapp } from 'react-icons/fa'; // Pacote de ícones
 
 const FloatingButtons: React.FC = () => {
   const handleWhatsAppClick = () => {
@@ -25,14 +25,7 @@ const FloatingButtons: React.FC = () => {
         <FaWhatsapp size={30} color="#fff" />
       </div>
 
-      {/* Botão para o Formulário */}
-      <div
-        onClick={handleFormClick}
-        style={styles.button}
-        className="hover:bg-blue-500"
-      >
-        <FaRegClipboard size={30} color="#fff" />
-      </div>
+    
     </div>
   );
 };

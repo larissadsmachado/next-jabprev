@@ -355,7 +355,6 @@ const MobileMenu = () => {
   );
 };
 
-
 const SearchBar = () => {
   const [showSearch, setShowSearch] = useState(false);
   return (
