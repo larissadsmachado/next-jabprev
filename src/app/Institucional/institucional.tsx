@@ -177,6 +177,7 @@ const Equipe = () => (
   </div>
 );
 
+
 const Organograma = () => (
   <div id="organograma"
   className="flex flex-col items-center h-auto py-32 bg-gradient-to-b from-[#ffffff] to-[#003470]">

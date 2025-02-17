@@ -16,7 +16,7 @@
     "framer-motion": "^12.4.2",
     "gapi-script": "^1.2.0",
     "next": "15.1.6",
-    "pdfjs-dist": "^3.11.174",
+    "pdfjs-dist": "^3.0.279",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.4.0",

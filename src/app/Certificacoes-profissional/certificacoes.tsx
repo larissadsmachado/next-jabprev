@@ -3,6 +3,10 @@ import { Viewer } from "@react-pdf-viewer/core";
 import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
 import "@react-pdf-viewer/core/lib/styles/index.css";
 import "@react-pdf-viewer/default-layout/lib/styles/index.css";
+import { GlobalWorkerOptions } from 'pdfjs-dist';
+
+// Set the workerSrc globally
+GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js`;
 
 const Certificacoes = () => {
   const pdfUrl = "/Pdf/CERTIFICACOES-GERAIS-Atualizado.pdf"; // Caminho local
