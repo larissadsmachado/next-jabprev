@@ -1,5 +1,5 @@
 import Requerimento from "./requerimento";
-import Model from "../../components/model-page/index";
+import Model from "../components/model-page/index";
 import Link from "next/link";
 
 export const metadata = {

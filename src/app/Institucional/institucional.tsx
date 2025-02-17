@@ -1,5 +1,5 @@
 "use client";
-import DivisorDeForma from "../../components/DivisorDeForma/divisor";
+import DivisorDeForma from "../components/DivisorDeForma/divisor";
 
 const Sobre = () => (
   <div id="sobre" 
@@ -176,17 +176,22 @@ const Equipe = () => (
   </div>
 );
 
-const outro = () => (
-  <div className="flex flex-col items-center h-auto py-32">
+const Organograma = () => (
+  <div id="organograma"
+  className="flex flex-col items-center h-auto py-32">
     <div className="mx-auto max-w-6xl bg-white p-20 rounded-lg">
-      <h1 className="text-5xl font-bold text-blue-900 text-center mb-8">
-        A EQUIPE DO JABOATÃOPREV
-      </h1>
-      <p className="text-gray-700 text-xl text-center">
-        Conheça os profissionais que fazem parte da nossa equipe e trabalham
-        para garantir um serviço de qualidade.
-      </p>
+      <h2 className="text-2xl text-slate-500 text-center mb-8">
+      O organograma publicado está em formato PDF. Caso não consiga abrir o arquivo, clique aqui para fazer o download do arquivo em PDF.
+      </h2>
     </div>
+    <div className="flex items-center justify-center w-full max-w-4xl mx-auto">
+      <div className="flex justify-center">
+        <img
+          src="/images/Instituicao/ornograma.png"
+          alt="Jaboatãoprev"
+        />
+      </div>
+      </div>
   </div>
 );
 
@@ -196,6 +201,7 @@ const Instituicao = () => {
       <Sobre />
       <MissaoVisaoValores />
       <Equipe />
+      <Organograma/>  
     </div>
   );
 };
