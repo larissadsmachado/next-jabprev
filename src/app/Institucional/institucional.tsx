@@ -1,5 +1,6 @@
 "use client";
 import DivisorDeForma from "../components/DivisorDeForma/divisor";
+import FaleConosco from "../components/FaleConosco/inex";
 
 const Sobre = () => (
   <div id="sobre" 
@@ -178,9 +179,9 @@ const Equipe = () => (
 
 const Organograma = () => (
   <div id="organograma"
-  className="flex flex-col items-center h-auto py-32">
-    <div className="mx-auto max-w-6xl bg-white p-20 rounded-lg">
-      <h2 className="text-2xl text-slate-500 text-center mb-8">
+  className="flex flex-col items-center h-auto py-32 bg-gradient-to-b from-[#ffffff] to-[#003470]">
+    <div className="mx-auto max-w-6xl p-20 rounded-lg">
+      <h2 className="text-2xl text-slate-900 text-center mb-8">
       O organograma publicado está em formato PDF. Caso não consiga abrir o arquivo, clique aqui para fazer o download do arquivo em PDF.
       </h2>
     </div>
@@ -201,7 +202,8 @@ const Instituicao = () => {
       <Sobre />
       <MissaoVisaoValores />
       <Equipe />
-      <Organograma/>  
+      <Organograma/> 
+      <FaleConosco/> 
     </div>
   );
 };
