@@ -1,31 +1,37 @@
 "use client";
-import { useState } from "react";
+import { Viewer } from "@react-pdf-viewer/core";
+import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
+import "@react-pdf-viewer/core/lib/styles/index.css";
+import "@react-pdf-viewer/default-layout/lib/styles/index.css";
 
-const Certificacoes = () => (
-  <div className="flex flex-col items-center h-auto">
-    <div className="mx-auto max-w-6xl bg-white rounded-lg">
-      <h2 className="text-2xl text-slate-500 text-center pb-10">
-        O documento publicado está em formato PDF. Caso não consiga abrir o
-        arquivo,{" "}
-        <a
-          href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/04/CERTIFICACOES-GERAIS-Atualizado.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-500 underline"
-        >
-          clique aqui para fazer o download do arquivo em PDF.
-        </a>
-      </h2>
-    </div>
+const Certificacoes = () => {
+  const pdfUrl = "/Pdf/CERTIFICACOES-GERAIS-Atualizado.pdf"; // Caminho local
 
-    <div className="flex items-center justify-center w-full max-w-4xl mx-auto">
-      <iframe
-        src="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/04/CERTIFICACOES-GERAIS-Atualizado.pdf"
-        className="w-full h-[600px] border rounded-lg shadow-lg"
-      ></iframe>
+  const defaultLayoutPluginInstance = defaultLayoutPlugin();
+
+  return (
+    <div className="flex flex-col items-center h-auto">
+      <div className="mx-auto max-w-6xl bg-white rounded-lg">
+        <h2 className="text-2xl text-slate-500 text-center pb-10">
+          O documento publicado está em formato PDF. Caso não consiga abrir o
+          arquivo,{" "}
+          <a
+            href={pdfUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 underline"
+          >
+            clique aqui para fazer o download do arquivo em PDF.
+          </a>
+        </h2>
+      </div>
+
+      <div className="flex items-center justify-center w-full max-w-6xl mx-auto h-[600px] border rounded-lg shadow-lg bg-gray-100">
+        <Viewer fileUrl={pdfUrl} plugins={[defaultLayoutPluginInstance]} />
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const Certificacao = () => {
   return (

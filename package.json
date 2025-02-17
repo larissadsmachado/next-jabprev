@@ -11,6 +11,8 @@
   "dependencies": {
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.2.0",
+    "@react-pdf-viewer/core": "^3.12.0",
+    "@react-pdf-viewer/default-layout": "^3.12.0",
     "framer-motion": "^12.4.2",
     "gapi-script": "^1.2.0",
     "next": "15.1.6",
