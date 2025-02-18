@@ -1,5 +1,6 @@
 "use client";
 
+
 const Servicos = () => (
   <div className="mx-auto max-w-6xl p-6 h-auto py-20">
     <div>
@@ -23,6 +24,7 @@ const Servicos = () => (
     </div>
   </div>
 );
+
 
 const Aposentadorias = () => (
   <div className="bg-gradient-to-b from-[#fffffe] via-[#f5e9c3] to-[#aadcee]">
@@ -174,6 +176,7 @@ const Aposentadorias = () => (
   </div>
 );
 
+
 const AposentadoriasEspeciais = () => (
   <div className="bg-gradient-to-b from-[#aadcee] to-[#ffffff]">
     <div className="max-w-6xl mx-auto h-auto p-6">
@@ -186,9 +189,7 @@ const AposentadoriasEspeciais = () => (
           Aposentadoria por incapacidade (Art. 8º da Lei Complementar nº
           40/2021)
         </h2>
-      </div>
 
-      <div>
         <span className="text-xl font-bold text-blue-900">
           Requisitos a preencher:
         </span>
@@ -243,11 +244,11 @@ const AposentadoriasEspeciais = () => (
         </table>
       </div>
 
-      <div>
+      <div className="py-12">
         <h2 className="text-xl font-bold text-blue-900 pt-10">
-            Aposentadoria por insalubridade (Art. 12 da Lei Complementar nº
-            40/2021)
-          </h2>
+          Aposentadoria por insalubridade (Art. 12 da Lei Complementar nº
+          40/2021)
+        </h2>
         <p className="text-justify leading-normal pt-3">
           O servidor cujas atividades sejam exercidas com efetiva exposição a
           agentes nocivos químicos, físicos e biológicos prejudiciais à saúde,
@@ -290,7 +291,6 @@ const AposentadoriasEspeciais = () => (
           </tbody>
         </table>
 
-
         <p className="text-[#122162] text-lg mt-4">
           Proventos: 60% +2% para cada ano que exceder o tempo de contribuição
           de 20 – da média aritmética das 90% maiores contribuições, definida na
@@ -301,9 +301,194 @@ const AposentadoriasEspeciais = () => (
         </p>
       </div>
 
+      <div>
+        <h2 className="text-xl font-bold mb-4 text-blue-900">
+          Aposentadoria Especial de Professor (Art. nº 13 da Lei Complementar nº
+          40/2021)
+        </h2>
+        <table className="w-full border-collapse border border-gray-400">
+          <thead>
+            <tr>
+              <th className="border border-gray-400 bg-blue-300 p-2 text-center">
+                HOMEM
+              </th>
+              <th className="border border-gray-400 bg-red-300 p-2 text-center">
+                MULHER
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="border border-gray-400 bg-blue-300 p-2 text-center">
+                59 anos de idade
+              </td>
+              <td className="border border-gray-400 bg-red-300 p-2 text-center">
+                56 anos de idade
+              </td>
+            </tr>
+            <tr>
+              <td
+                colSpan={2}
+                className="border border-gray-400 bg-orange-200 p-2 text-center"
+              >
+                25 anos de contribuição exclusivamente em efetivo exercício das
+                funções de magistério, na educação infantil, no ensino
+                fundamental ou médio
+              </td>
+            </tr>
+            <tr>
+              <td
+                colSpan={2}
+                className="border border-gray-400 bg-orange-200 p-2 text-center"
+              >
+                10 anos de efetivo exercício de serviço público
+              </td>
+            </tr>
+            <tr>
+              <td
+                colSpan={2}
+                className="border border-gray-400 bg-orange-200 p-2 text-center"
+              >
+                05 anos no cargo efetivo em que for concedida a aposentadoria
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p className="mt-4 text-lg font-semibold text-blue-900">
+          Proventos:{" "}
+          <span className="font-normal">
+            60% + 2% para cada ano que exceder o tempo de contribuição de 20 -
+            da média aritmética das 90% maiores contribuições.
+          </span>
+        </p>
+        <p className="text-[#122162] italic text-center mt-6 font-semibold text-xl py-10">
+          SEM PARIDADE
+        </p>
+      </div>
     </div>
   </div>
 );
+
+
+const Regras = () => (
+  <div className="bg-gradient-to-b from-white to-gray-300">
+    <div className="max-w-6xl mx-auto h-auto p-6">
+      <h1 className="text-3xl font-bold mb-4 uppercase text-blue-900 leading-tight border-b-4 border-blue-900 inline-block">
+        Regras de transição
+      </h1>
+
+      <h2 className="text-xl font-bold mb-4 uppercase text-blue-900 leading-tight pt-5">
+        I - Por pontos (Art. 17 da Lei Complementar nº 40/2021)
+      </h2>
+
+      <h3 className="text-lg text-blue-900 font-semibold">Requisitos:</h3>
+
+      <ul className="mt-2 text-justify space-y-2 text-lg text-blue-900">
+        <li>➤ Ter ingressado no Serviço Público antes de 17/08/2021 e antes de 31/12/2003 para ter direito à paridade;</li>
+        <li>➤ 35 anos de Tempo de Contribuição para homem e 30 anos para mulher (redução de 5 anos para professor);</li>
+        <li>➤ Idade mínima de 61 anos para homem e 56 anos para mulher (a partir de 01/01/2022 – 62 anos para homem e 57 anos para mulher - redução de 5 anos para professor);</li>
+        <li>➤ 20 anos de serviço público;</li>
+        <li>➤ 5 anos no cargo;</li>
+        <li>➤ Pontuação mínima conforme tabela.</li>
+      </ul>
+
+      {/* Tabela de pontuação Homem */}
+      <div className="overflow-x-auto mt-6">
+
+
+
+
+        
+  
+    <table className="w-full border border-collapse border-gray-500">
+      <tbody>
+        {/* Linha 1 */}
+        <tr className="bg-blue-200 text-blue-900">
+          <td colSpan={7} className="border border-gray-500 px-4 py-2 text-center font-bold">
+            PONTUAÇÃO HOMEM
+          </td>
+        </tr>
+
+        {/* Linha 2 */}
+        <tr className="bg-blue-200 text-blue-900">
+          <td className="border border-gray-500 px-4 py-2"></td>
+          <td colSpan={3} className="border border-gray-500 px-4 py-2 text-center">HOMEM</td>
+          <td colSpan={3} className="border border-gray-500 px-4 py-2 text-center">PROFESSOR</td>
+        </tr>
+
+        {/* Linha 3 */}
+        <tr className="bg-blue-200 text-blue-900">
+          <td className="border border-gray-500 px-4 py-2">ANO</td>
+          <td className="border border-gray-500 px-4 py-2">TEMPO DE CONTRIBUIÇÃO MÍNIMO</td>
+          <td className="border border-gray-500 px-4 py-2">IDADE MÍNIMA</td>
+          <td className="border border-gray-500 px-4 py-2">SOMATÓRIO DE PONTOS</td>
+          <td className="border border-gray-500 px-4 py-2">TEMPO DE CONTRIBUIÇÃO MÍNIMO</td>
+          <td className="border border-gray-500 px-4 py-2">IDADE MÍNIMA</td>
+          <td className="border border-gray-500 px-4 py-2">SOMATÓRIO DE PONTOS</td>
+        </tr>
+
+        {/* Dados da tabela */}
+        <tr className="text-center bg-blue-100">
+          <td className="border border-gray-500 px-4 py-2">2021</td>
+          <td rowSpan={10} className="border border-gray-500 px-4 py-2">35</td>
+          <td className="border border-gray-500 px-4 py-2">61</td>
+          <td className="border border-gray-500 px-4 py-2">96</td>
+          <td rowSpan={10} className="border border-gray-500 px-4 py-2">30</td>
+          <td className="border border-gray-500 px-4 py-2">56</td>
+          <td className="border border-gray-500 px-4 py-2">91</td>
+        </tr>
+        {[
+          { ano: 2022, idadeHomem: 62, pontosHomem: 97, idadeProf: 57, pontosProf: 92 },
+          { ano: 2023, pontosHomem: 98, pontosProf: 93 },
+          { ano: 2024, pontosHomem: 99, pontosProf: 94 },
+          { ano: 2025, pontosHomem: 100, pontosProf: 95 },
+          { ano: 2026, pontosHomem: 101, pontosProf: 96 },
+          { ano: 2027, pontosHomem: 102, pontosProf: 97 },
+          { ano: 2028, pontosHomem: 103, pontosProf: 98 },
+          { ano: 2029, pontosHomem: 104, pontosProf: 99 },
+          { ano: 2030, pontosHomem: 105, pontosProf: 100 },
+        ].map(({ ano, idadeHomem, pontosHomem, idadeProf, pontosProf }) => (
+          <tr key={ano} className="text-center bg-blue-100">
+            <td className="border border-gray-500 px-4 py-2">{ano}</td>
+            <td className="border border-gray-500 px-4 py-2">{idadeHomem ?? ''}</td>
+            <td className="border border-gray-500 px-4 py-2">{pontosHomem}</td>
+            <td className="border border-gray-500 px-4 py-2">{idadeProf ?? ''}</td>
+            <td className="border border-gray-500 px-4 py-2">{pontosProf}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+ 
+
+
+
+
+
+
+
+      </div>
+
+      {/* Tabela de pontuação Mulher */}
+      <div>
+
+      </div>
+        
+        {/* II – Com pedágio */}
+      <div>
+      </div>
+
+      {/* III – Por insalubridade */}
+      <div>
+        
+      </div>
+
+
+    </div>
+  </div>
+);
+
+
+
 
 const Perguntas = () => {
   return (
@@ -311,8 +496,10 @@ const Perguntas = () => {
       <Servicos />
       <Aposentadorias />
       <AposentadoriasEspeciais />
+      <Regras />
     </div>
   );
 };
 
 export default Perguntas;
+

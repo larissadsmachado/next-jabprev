@@ -24,15 +24,15 @@ export default async function handler(req, res) {
 
   try {
     await transporter.sendMail({
-      from: `"Estação Bem Estar - Fale Conosco" <${process.env.SMTP_USER}>`,
+      from: `"Jaboatão PREV - Fale Conosco" <${process.env.SMTP_USER}>`,
       to: process.env.DESTINATION_EMAIL, // Destinatário configurado no .env
-      subject: "Estação Bem Estar - Nova mensagem",
+      subject: "Jaboatão PREV - Nova mensagem",
       html: `
         <div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6;">
           <table style="width: 100%; max-width: 600px; margin: auto; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
             <tr>
               <td style="background-color: #003476; color: white; text-align: center; padding: 10px;">
-                <h1 style="margin: 0;">ESTAÇÃO BEM ESTAR</h1>
+                <h1 style="margin: 0;">Jaboatão PREV</h1>
               </td>
             </tr>
             <tr>

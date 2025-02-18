@@ -1,51 +1,54 @@
 const Banner = () => {
-    return (
-        <div className="relative h-screen w-full flex justify-center items-center text-white">
-            {/* Vídeo de fundo */}
-            <video
-                autoPlay
-                loop
-                muted
-                className="absolute top-0 left-0 w-full h-full object-cover"
-            >
-                <source src="/video.mp4" type="video/mp4" />
-            </video>
+  return (
+    <div className="relative h-screen w-full flex justify-center items-center text-white">
+      {/* Vídeo de fundo */}
+      <video
+        autoPlay
+        loop
+        muted
+        className="absolute top-0 left-0 w-full h-full object-cover"
+      >
+        <source src="videos/hero.mp4" type="video/mp4" />
+      </video>
 
-            {/* Overlay escuro para melhorar a legibilidade */}
-            <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+      {/* Overlay escuro para melhorar a legibilidade */}
+      <div className="absolute inset-0 bg-black bg-opacity-75"></div>
 
-            {/* Conteúdo do banner */}
-            <div className="relative text-center">
-                <h1 className="text-3xl md:text-5xl font-bold">JABOATÃO PREV</h1>
-                <p className="text-lg md:text-xl mt-2">COMPROMISSO COM O FUTURO</p>
+      {/* Conteúdo do banner */}
+      <div className="relative text-center px-4 w-full">
+        <img
+          src="/images/Logo/logo-jabprev.png"
+          alt="Logo Jaboatão Prev"
+          className="mx-auto h-20 sm:h-24 md:h-32 lg:h-52 w-auto"
+        />
 
-                {/* Botões */}
-                <div className="flex justify-center gap-4 mt-6 flex-wrap">
-                    <button className="border-2 border-white py-2 px-6 rounded-full hover:bg-white hover:text-black transition">
-                        SERVIÇOS
-                    </button>
-                    <button className="border-2 border-white py-2 px-6 rounded-full hover:bg-white hover:text-black transition">
-                        ENQUETE
-                    </button>
-                    <button className="border-2 border-white py-2 px-6 rounded-full hover:bg-white hover:text-black transition">
-                        FALE CONOSCO
-                    </button>
-                    <button className="border-2 border-white py-2 px-6 rounded-full hover:bg-white hover:text-black transition">
-                        NOTÍCIAS
-                    </button>
-                </div>
-
-                {/* Ícones de premiação */}
-                <div className="flex justify-center gap-6 mt-8 flex-wrap">
-                    <img src="/images/Medalha/premio1.png" alt="Prêmio 1" className="h-20" />
-                    <img src="/images/Medalha/premio2.png" alt="Prêmio 2" className="h-20" />
-                    <img src="/images/Medalha/premio3.png" alt="Prêmio 3" className="h-20" />
-                    <img src="/images/Medalha/premio4.png" alt="Prêmio 4" className="h-20" />
-                    <img src="/images/Medalha/premio5.png" alt="Prêmio 5" className="h-20" />
-                </div>
-            </div>
+        {/* Botões */}
+        <div className="flex justify-center gap-10 my-10 flex-wrap px-2">
+          <button className="border-2 border-white py-2 px-6 sm:py-3 sm:px-10  lg:py-4 lg:px-14 rounded-full hover:text-yellow-400 hover:border-yellow-400 transition text-sm sm:text-base">
+            SERVIÇOS
+          </button>
+          <button className="border-2 border-white py-2 px-6 sm:py-3 sm:px-10  lg:py-4 lg:px-14 rounded-full hover:text-yellow-400 hover:border-yellow-400 transition text-sm sm:text-base">
+            ENQUETE
+          </button>
+          <button className="border-2 border-white py-2 px-6 sm:py-3 sm:px-10  lg:py-4 lg:px-14 rounded-full hover:text-yellow-400 hover:border-yellow-400 transition text-sm sm:text-base">
+            FALE CONOSCO
+          </button>
+          <button className="border-2 border-white py-2 px-6 sm:py-3 sm:px-10  lg:py-4 lg:px-14 rounded-full hover:text-yellow-400 hover:border-yellow-400 transition text-sm sm:text-base">
+            NOTÍCIAS
+          </button>
         </div>
-    );
+
+        {/* Ícones de premiação */}
+        <div className="flex justify-center gap-4 sm:gap-6 mt-6 flex-wrap">
+          <img src="/images/Medalha/premio1.png" alt="Prêmio 1" className="h-16 sm:h-20 md:h-24 lg:h-52" />
+          <img src="/images/Medalha/premio2.png" alt="Prêmio 2" className="h-16 sm:h-20 md:h-24 lg:h-52" />
+          <img src="/images/Medalha/premio3.png" alt="Prêmio 3" className="h-16 sm:h-20 md:h-24 lg:h-52" />
+          <img src="/images/Medalha/premio4.png" alt="Prêmio 4" className="h-16 sm:h-20 md:h-24 lg:h-52" />
+          <img src="/images/Medalha/premio5.png" alt="Prêmio 5" className="h-16 sm:h-20 md:h-24 lg:h-52" />
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Banner;
