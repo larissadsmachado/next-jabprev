@@ -1,6 +1,10 @@
 "use client";
 import DivisorDeForma from "../components/DivisorDeForma/divisor";
 import FaleConosco from "../components/FaleConosco/inex";
+import { GlobalWorkerOptions } from 'pdfjs-dist';
+
+
+
 
 const Sobre = () => (
   <div id="sobre" 
@@ -177,14 +181,29 @@ const Equipe = () => (
   </div>
 );
 
+const pdfUrl = "/Pdf/Organograma-2025-Site.pdf";
 
 const Organograma = () => (
+
   <div id="organograma"
   className="flex flex-col items-center h-auto py-32 bg-gradient-to-b from-[#ffffff] to-[#003470]">
+
+    
     <div className="mx-auto max-w-6xl p-20 rounded-lg">
-      <h2 className="text-2xl text-slate-900 text-center mb-8">
-      O organograma publicado está em formato PDF. Caso não consiga abrir o arquivo, clique aqui para fazer o download do arquivo em PDF.
-      </h2>
+
+    <h2 className="text-2xl text-slate-500 text-center pb-10">
+          O documento publicado. Caso não consiga abrir o
+          arquivo,{" "}
+          <a
+            href={pdfUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-700 underline"
+          >
+            clique aqui para fazer o download do arquivo em PDF.
+          </a>
+        </h2>
+
     </div>
     <div className="flex items-center justify-center w-full max-w-4xl mx-auto">
       <div className="flex justify-center">
