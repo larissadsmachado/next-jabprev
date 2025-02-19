@@ -1,190 +1,108 @@
 "use client";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { PieChart, Pie, Cell, Tooltip } from "recharts";
-import { useInView } from "react-intersection-observer";
 import DivisorDeForma from "../DivisorDeForma/divisor";
+import { motion } from "framer-motion";
+import { FaStar, FaRegSmile, FaRegMeh, FaRegFrown, FaRegSadTear, FaRegGrinStars } from "react-icons/fa";
 
-// Novo URL do Web App no Google Apps Script
-const SHEET_URL =
-  "https://script.google.com/macros/s/AKfycbzyWtPhUlaGqges0C2nLVBGifYNEMcRRQzFbbebPC2rKwiyv_qsViPJ7EXyCBFEccdO/exec";
+const SHEET_URL = "https://script.google.com/macros/s/AKfycbzyWtPhUlaGqges0C2nLVBGifYNEMcRRQzFbbebPC2rKwiyv_qsViPJ7EXyCBFEccdO/exec";
 
 const Poll = () => {
-  const [selectedOption, setSelectedOption] = useState<string | null>(null);
-  const [results, setResults] = useState<{ [key: string]: number }>({
-    Excelente: 0,
-    Bom: 0,
-    Regular: 0,
-    Ruim: 0,
-  });
-  const [submitted, setSubmitted] = useState(false);
+  const [selectedOption, setSelectedOption] = useState<number | null>(
+    () => Number(localStorage.getItem("selectedOption")) || null
+  );
+  const [submitted, setSubmitted] = useState<boolean>(() => Boolean(localStorage.getItem("submitted")));
+  const [results, setResults] = useState<{ [key: string]: number }>({ "1": 0, "2": 0, "3": 0, "4": 0, "5": 0 });
 
-  const options: Array<"Excelente" | "Bom" | "Regular" | "Ruim"> = [
-    "Excelente",
-    "Bom",
-    "Regular",
-    "Ruim",
-  ];
-
-  const colors: { [key in "Excelente" | "Bom" | "Regular" | "Ruim"]: string } =
-    {
-      Excelente: "#FFD700",
-      Bom: "#20B2AA",
-      Regular: "#FF6347",
-      Ruim: "#D3D3D3",
-    };
-
-  // Carregar os resultados quando a página for carregada
   useEffect(() => {
     fetch(SHEET_URL + "?action=getResults")
       .then((response) => response.json())
-      .then((data) => {
-        setResults(data);
-      })
-      .catch((error) =>
-        console.error("Erro ao buscar dados da planilha:", error)
-      );
+      .then((data) => setResults(data))
+      .catch((error) => console.error("Erro ao buscar dados da planilha:", error));
   }, []);
 
   const handleSubmit = () => {
-    if (!selectedOption) return;
+    if (selectedOption === null || submitted) return;
+    const newResults = { ...results, [selectedOption]: (results[selectedOption] || 0) + 1 };
 
-    const newResults = {
-      ...results,
-      [selectedOption]: (results[selectedOption] || 0) + 1,
-    };
-
-    // Log para verificar se o evento está sendo disparado
-    console.log("Enviando dados para o Google Sheets:", newResults);
-
-    // Envia os dados para o Google Sheets
     fetch(SHEET_URL, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        excelente: newResults["Excelente"] || 0,
-        bom: newResults["Bom"] || 0,
-        regular: newResults["Regular"] || 0,
-        ruim: newResults["Ruim"] || 0,
-      }),
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newResults),
     })
       .then((response) => response.json())
       .then(() => {
-        setResults(newResults); // Atualiza os resultados localmente após enviar
-        setSubmitted(true); // Marca a pesquisa como enviada
+        setResults(newResults);
+        setSubmitted(true);
+        localStorage.setItem("submitted", "true");
       })
       .catch((error) => console.error("Erro ao enviar dados:", error));
   };
 
-  // Transformar os resultados em formato adequado para o gráfico
-  const chartData = options.map((option) => ({
-    name: option,
-    value: results[option] || 0,
-  }));
+  const handleSelection = (value: number) => {
+    if (!submitted) {
+      setSelectedOption(value);
+      localStorage.setItem("selectedOption", value.toString());
+    }
+  };
 
-  const { ref, inView } = useInView({
-    triggerOnce: true, // Vai ativar a animação uma vez que o componente aparecer
-    threshold: 0.1, // 10% do componente precisa estar visível para disparar
-  });
+  const faces = [
+    { value: 1, icon: <FaRegSadTear className="text-red-600" size={40} />, color: "text-red-500" },
+    { value: 2, icon: <FaRegFrown className="text-orange-600" size={40} />, color: "text-orange-500" },
+    { value: 3, icon: <FaRegMeh className="text-yellow-600" size={40} />, color: "text-yellow-500" },
+    { value: 4, icon: <FaRegSmile className="text-green-600" size={40} />, color: "text-green-500" },
+    { value: 5, icon: <FaRegGrinStars className="text-green-800" size={40} />, color: "text-green-700" },
+  ];
 
   return (
-    <div className="bg-gradient-to-b from-[#f0e3b7] via-[#9ccef0] to-[#003470]">
-      <DivisorDeForma />
+    <div id="enquete" 
+    className="bg-gradient-to-b from-[#f0e3b7] via-[#9ccef0] to-[#003470]">
 
-      <div className="flex justify-center items-center py-44 ">
-        <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 1.2, ease: "easeInOut" }}
-          ref={ref} // Aplica o ref aqui
-          className="w-4/12 p-6 pb-10 bg-[#e4f8fd] text-cyan-900 border-4 border-emerald-900 shadow-lg rounded-3xl h-auto min-h-[360px] flex flex-col"
-        >
-          {submitted ? (
-            <>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1, ease: "easeInOut" }}
-                className="bg-green-600 text-white p-2 rounded mb-4 text-center"
-              >
-                <strong>✅ Obrigado pelo seu VOTO!</strong>
-              </motion.div>
+    <DivisorDeForma />
 
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 1.2, ease: "easeInOut" }}
-                className="flex justify-center"
-              >
-                <PieChart width={220} height={220}>
-                  <Pie
-                    data={chartData}
-                    dataKey="value"
-                    nameKey="name"
-                    cx="50%"
-                    cy="50%"
-                    outerRadius={80}
-                    fill="#8884d8"
-                    label
-                  >
-                    {chartData.map((entry) => (
-                      <Cell key={entry.name} fill={colors[entry.name]} />
+    <div 
+    className="flex justify-center items-center p-6 py-32">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="bg-white p-6 rounded-xl shadow-lg w-full max-w-xl border-4 border-green-700"
+      >
+        {submitted ? (
+          <div className="text-center text-green-600 font-bold text-lg mb-4">✅ Obrigado pelo seu voto!</div>
+        ) : (
+          <>
+            <h2 className="text-2xl font-semibold text-center mb-9 text-green-900">Como Você Avalia Este Serviço?</h2>
+            <div className="flex flex-col space-y-3 items-center">
+              {faces.map(({ value, icon, color }) => (
+                <div
+                  key={value}
+                  className={`flex items-center space-x-4 cursor-pointer ${selectedOption === value ? "scale-125" : ""}`}
+                  onClick={() => handleSelection(value)}
+                >
+                  {icon}
+                  <div className="flex">
+                    {[...Array(5)].map((_, i) => (
+                      <FaStar
+                        key={i}
+                        size={24}
+                        className={i < value ? color : "text-gray-300"}
+                      />
                     ))}
-                  </Pie>
-                  <Tooltip />
-                </PieChart>
-              </motion.div>
-            </>
-          ) : (
-            <>
-              <motion.h2
-                initial={{ opacity: 0, y: -20 }}
-                animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
-                transition={{ duration: 1, ease: "easeInOut" }}
-                className="text-xl font-semibold text-center mb-10 pt-2 uppercase"
-              >
-                Como Você Avalia Este Serviço?
-              </motion.h2>
-              <div className="space-y-2 flex-grow">
-                {options.map((option) => (
-                  <motion.label
-                    key={option}
-                    className="flex items-center space-x-2 cursor-pointer text-lg ml-11"
-                    initial={{ opacity: 0, x: -30 }}
-                    animate={
-                      inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }
-                    }
-                    transition={{ duration: 1, ease: "easeInOut", delay: 0.2 }}
-                  >
-                    <input
-                      type="radio"
-                      name="poll"
-                      value={option}
-                      className="w-4 h-4"
-                      onChange={() => setSelectedOption(option)}
-                    />
-                    <span>{option}</span>
-                  </motion.label>
-                ))}
-              </div>
-            </>
-          )}
-
-          {!submitted && (
-            <motion.button
+                  </div>
+                </div>
+              ))}
+            </div>
+            <button
               onClick={handleSubmit}
-              className="w-3/4 bg-white text-cyan-900 py-2 rounded-xl font-bold text-center mx-auto mt-4 border-2 border-cyan-900"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
+              className={`mt-4 w-full py-2 rounded-lg font-bold ${submitted ? "cursor-not-allowed" : "bg-green-700 text-white hover:bg-green-900"} mt-11`}
+              disabled={submitted}
             >
               Enviar
-            </motion.button>
-          )}
-        </motion.div>
-      </div>
+            </button>
+          </>
+        )}
+      </motion.div>
+    </div>
 
     </div>
   );
