@@ -26,7 +26,7 @@ const navigation: NavItem[] = [
       { name: "Legislação", href: "Legislacao" },
       { name: "Cartilha Previdenciária", href: "Cartilha-Previdenciaria" },
       { name: "Boletins Informativos", href: "Boletins-Informativos" },
-      { name: "Controle Interno", href: "#" },
+      { name: "Controle Interno", href: "Controle-Interno" },
     ],
   },
   {
