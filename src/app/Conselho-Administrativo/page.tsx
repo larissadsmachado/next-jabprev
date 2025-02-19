@@ -1,9 +1,9 @@
-import Controle from "./controle";
+import Controle from "./conteudo";
 import Model from "../components/model-page/index";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Controle Intrerno - JaboatãoPrev",
+  title: "Atas do Conselho Deliberativo - JaboatãoPrev",
 };
 
 export default function config() {
@@ -11,7 +11,7 @@ export default function config() {
     <div>
       <Model
         caminhoImagem={"/images/"}
-        titulo={"Controle Intrerno"}
+        titulo={"Atas do Conselho Deliberativo"}
         subtitulo={
           <span>
             <Link
@@ -22,7 +22,7 @@ export default function config() {
             </Link>
             &nbsp;»{" "}
             <span className="brightness-125">
-            Controle Intrerno
+            Atas do Conselho Deliberativo
             </span>
           </span>
         }
