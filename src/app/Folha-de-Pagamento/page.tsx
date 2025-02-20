@@ -3,7 +3,7 @@ import Model from "../components/model-page/index";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Atas do Conselho Fiscal - JaboatãoPrev",
+  title: "Folha de pagamento - JaboatãoPrev",
 };
 
 export default function config() {
@@ -11,7 +11,7 @@ export default function config() {
     <div>
       <Model
         caminhoImagem={"/images/"}
-        titulo={"Atas do Conselho Fiscal"}
+        titulo={"Folha de pagamento"}
         subtitulo={
           <span>
             <Link
@@ -22,7 +22,7 @@ export default function config() {
             </Link>
             &nbsp;»{" "}
             <span className="brightness-125">
-            Atas do Conselho Fiscal
+            Folha de pagamento
             </span>
           </span>
         }
