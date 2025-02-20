@@ -1,19 +1,28 @@
 "use client";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import DivisorDeForma from "../DivisorDeForma/divisor";
 
 const FaleConosco = () => {
   const [loading, setLoading] = useState(false);
 
+  const initialFormState = useMemo(
+    () => ({ name: "", email: "", message: "" }),
+    []
+  );
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
 
-    const form = e.target as HTMLFormElement;
+    const form = e.currentTarget;
+
     const formData = {
-      name: (form[0] as HTMLInputElement).value,
-      email: (form[1] as HTMLInputElement).value,
-      message: (form[2] as HTMLTextAreaElement).value,
+      name: (form.elements.namedItem("name") as HTMLInputElement)?.value || "",
+      email:
+        (form.elements.namedItem("email") as HTMLInputElement)?.value || "",
+      message:
+        (form.elements.namedItem("message") as HTMLTextAreaElement)?.value ||
+        "",
     };
 
     try {
@@ -35,7 +44,7 @@ const FaleConosco = () => {
     } catch (error) {
       alert("Ocorreu um erro ao enviar a mensagem.");
     }
-    
+
     setLoading(false);
   };
 
@@ -68,47 +77,51 @@ const FaleConosco = () => {
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
-                allowFullScreen={true}
+                allowFullScreen
                 loading="lazy"
               />
             </div>
             <div className="w-full md:w-1/2 bg-[#00000088] p-6 rounded-lg shadow-md flex flex-col justify-between overflow-hidden">
               <h2 className="text-[40px] font-semibold">Fale Conosco</h2>
-              <br />
               <p>
-                Instituto de Previdência dos Servidores do Município Jaboatão dos Guararapes.
-                <br/><br />
+                Instituto de Previdência dos Servidores do Município Jaboatão
+                dos Guararapes.
+                <br />
+                <br />
                 Celular: (81) 9 9756-0292
-                <br/><br />
+                <br />
+                <br />
                 E-mails Institucionais:
-                <br/><br />
+                <br />
+                <br />
                 <ul className="list-disc">
-                  <li>presidencia@jaboataoprev.jaboatao.pe.gov.br
-                  </li>
-                  <li>investimentos@jaboataoprev.jaboatao.pe.gov.br
-                  </li>
-                  <li>jurídico@jaboataoprev.jaboatao.pe.gov.br
-                  </li>
-                  <li>admfinanceiro@jaboataoprev.jaboatao.pe.gov.br
-                  </li>
-                  <li>beneficios@jaboataoprev.jaboatao.pe.gov.br
-                  </li>
+                  <li>presidencia@jaboataoprev.jaboatao.pe.gov.br</li>
+                  <li>investimentos@jaboataoprev.jaboatao.pe.gov.br</li>
+                  <li>juridico@jaboataoprev.jaboatao.pe.gov.br</li>
+                  <li>admfinanceiro@jaboataoprev.jaboatao.pe.gov.br</li>
+                  <li>beneficios@jaboataoprev.jaboatao.pe.gov.br</li>
                 </ul>
               </p>
-              <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full pt-8 pb-2">
+              <form
+                onSubmit={handleSubmit}
+                className="flex flex-col gap-4 w-full pt-8 pb-2"
+              >
                 <input
                   type="text"
+                  name="name"
                   placeholder="Seu nome"
                   className="p-2 rounded-[10px] bg-[#ffffff00] border-white border-[1px] text-white outline-none focus:ring-2 focus:ring-[#5872a3] w-full"
                   required
                 />
                 <input
                   type="email"
+                  name="email"
                   placeholder="Seu E-mail"
                   className="p-2 rounded-[10px] bg-[#ffffff00] border-white border-[1px] text-white outline-none focus:ring-2 focus:ring-[#5872a3] w-full"
                   required
                 />
                 <textarea
+                  name="message"
                   placeholder="Mensagem"
                   className="p-2 rounded-[10px] bg-[#ffffff00] border-white border-[1px] text-white outline-none focus:ring-2 focus:ring-[#5872a3] w-full"
                   required

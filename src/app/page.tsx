@@ -9,7 +9,7 @@ export default function Home() {
       <Banner/>
       <Noticia/>
       <Servicos/>
-      <Enquete/>
+      {/* <Enquete/> */}
       <FaleConosco/>
     </main>
   );
