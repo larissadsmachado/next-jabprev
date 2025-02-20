@@ -1,155 +1,85 @@
 "use client";
-import { useEffect, useState } from "react";
-import DivisorDeForma from "../DivisorDeForma/divisor";
-import { motion } from "framer-motion";
-import {
-  FaStar,
-  FaRegSmile,
-  FaRegMeh,
-  FaRegFrown,
-  FaRegSadTear,
-  FaRegGrinStars,
-} from "react-icons/fa";
 
-const SHEET_URL = 
-"https://script.google.com/macros/s/AKfycbzEUNsrZmYNRUTv_Igncvl-WPmYEU1pnS7niyPrqdMdfIQNZLaDYc7CsFCzhoykwaBR/exec";
+import { useState } from "react";
+import { CheckCircle, Loader2, XCircle, ThumbsDown, Meh, ThumbsUp, Star } from "lucide-react";
 
+const FeedbackForm = () => {
+  const [nota, setNota] = useState("");
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
-const Poll = () => {
-  const [selectedOption, setSelectedOption] = useState<number | null>(
-    () => Number(localStorage.getItem("selectedOption")) || null
-  );
-  const [submitted, setSubmitted] = useState<boolean>(() =>
-    Boolean(localStorage.getItem("submitted"))
-  );
-  const [results, setResults] = useState<{ [key: string]: number }>({
-    "1": 0,
-    "2": 0,
-    "3": 0,
-    "4": 0,
-    "5": 0,
-  });
-
-  // 🔍 Verifica se a planilha está sendo carregada corretamente
-  useEffect(() => {
-    fetch(SHEET_URL + "?action=getResults")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("📊 Resultados obtidos:", data);
-        setResults(data);
-      })
-      .catch((error) =>
-        console.error("❌ Erro ao buscar dados da planilha:", error)
-      );
-  }, []);
-
-  // 📤 Função para enviar dados ao Google Sheets
-  const handleSubmit = async () => {
-    if (selectedOption === null || submitted) {
-      console.warn("⚠️ Nenhuma opção selecionada ou já enviado!");
-      return;
-    }
-  
-    console.log("📨 Enviando resposta...");
-  
-    const dataToSend = {
-      excelente: selectedOption === 5 ? "marcado" : "",
-      bom: selectedOption === 4 ? "marcado" : "",
-      regular: selectedOption === 3 ? "marcado" : "",
-      ruim: selectedOption === 2 ? "marcado" : "",
-      pessimo: selectedOption === 1 ? "marcado" : "",
-    };
-  
-    try {
-      const response = await fetch(SHEET_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(dataToSend),
-      });
-  
-      const text = await response.text();
-      console.log("✅ Resposta do servidor:", text);
-  
-      if (response.ok) {
-        setSubmitted(true);
-        localStorage.setItem("submitted", "true");
-      } else {
-        console.error("❌ Falha ao enviar:", text);
-      }
-    } catch (error) {
-      console.error("🚨 Erro ao enviar dados:", error);
-    }
-  };
-  
-
-  const handleSelection = (value: number) => {
-    if (!submitted) {
-      setSelectedOption(value);
-      localStorage.setItem("selectedOption", value.toString());
-    }
-  };
-
-  const faces = [
-    { value: 1, icon: <FaRegSadTear className="text-red-600" size={40} />, color: "text-red-500" },
-    { value: 2, icon: <FaRegFrown className="text-orange-600" size={40} />, color: "text-orange-500" },
-    { value: 3, icon: <FaRegMeh className="text-yellow-600" size={40} />, color: "text-yellow-500" },
-    { value: 4, icon: <FaRegSmile className="text-green-600" size={40} />, color: "text-green-500" },
-    { value: 5, icon: <FaRegGrinStars className="text-green-800" size={40} />, color: "text-green-700" },
+  const notas = [
+    { label: "Péssimo", icon: <XCircle className="w-5 h-5 text-red-500" /> },
+    { label: "Ruim", icon: <ThumbsDown className="w-5 h-5 text-orange-500" /> },
+    { label: "Regular", icon: <Meh className="w-5 h-5 text-yellow-500" /> },
+    { label: "Bom", icon: <ThumbsUp className="w-5 h-5 text-green-500" /> },
+    { label: "Excelente", icon: <Star className="w-5 h-5 text-blue-500" /> },
   ];
 
-  return (
-    <div id="enquete" className="bg-gradient-to-b from-[#f0e3b7] via-[#9ccef0] to-[#003470]">
-      <DivisorDeForma />
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!nota) {
+      setMessage("Selecione uma opção.");
+      return;
+    }
 
-      <div className="flex justify-center items-center p-6 py-32">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="bg-white p-6 rounded-xl shadow-lg w-full max-w-xl border-4 border-green-700"
+    setLoading(true);
+    setMessage("");
+
+    try {
+      const response = await fetch("/api/sendFeedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ nota }),
+      });
+
+      const data = await response.json();
+      if (data.status === "success") {
+        setMessage("Avaliação enviada com sucesso!");
+        setNota("");
+      } else {
+        setMessage("Erro ao enviar avaliação.");
+      }
+    } catch {
+      setMessage("Erro ao conectar com o servidor.");
+    }
+
+    setLoading(false);
+  };
+
+  return (
+    <div className="max-w-md mx-auto bg-white shadow-lg rounded-2xl p-6 border">
+      <h2 className="text-2xl font-bold text-center mb-4 text-gray-800">Avalie nosso serviço</h2>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="grid grid-cols-2 gap-2">
+          {notas.map(({ label, icon }) => (
+            <button
+              key={label}
+              type="button"
+              onClick={() => setNota(label)}
+              className={`flex items-center justify-center gap-2 p-3 rounded-lg border w-full text-center transition-all ${
+                nota === label ? "bg-blue-500 text-white border-blue-500" : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+              }`}
+            >
+              {icon} {label}
+            </button>
+          ))}
+        </div>
+        <button
+          type="submit"
+          className="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition-all flex items-center justify-center"
+          disabled={loading}
         >
-          {submitted ? (
-            <div className="text-center text-green-600 font-bold text-lg mb-4">
-              ✅ Obrigado pelo seu voto!
-            </div>
-          ) : (
-            <>
-              <h2 className="text-2xl font-semibold text-center mb-9 text-green-900">
-                Como Você Avalia Este Serviço?
-              </h2>
-              <div className="flex flex-col space-y-3 items-center">
-                {faces.map(({ value, icon, color }) => (
-                  <div
-                    key={value}
-                    className={`flex items-center space-x-4 cursor-pointer ${
-                      selectedOption === value ? "scale-125" : ""
-                    }`}
-                    onClick={() => handleSelection(value)}
-                  >
-                    {icon}
-                    <div className="flex">
-                      {[...Array(5)].map((_, i) => (
-                        <FaStar key={i} size={24} className={i < value ? color : "text-gray-300"} />
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <button
-                onClick={handleSubmit}
-                className={`mt-4 w-full py-2 rounded-lg font-bold ${
-                  submitted ? "cursor-not-allowed bg-gray-400" : "bg-green-700 text-white hover:bg-green-900"
-                } mt-11`}
-                disabled={submitted}
-              >
-                Enviar
-              </button>
-            </>
-          )}
-        </motion.div>
-      </div>
+          {loading ? <Loader2 className="animate-spin mr-2" size={20} /> : "Enviar Avaliação"}
+        </button>
+      </form>
+      {message && (
+        <p className="mt-4 text-center text-lg font-semibold flex items-center justify-center gap-2">
+          {message.includes("sucesso") ? <CheckCircle className="text-green-500" size={20} /> : "❌"} {message}
+        </p>
+      )}
     </div>
   );
 };
 
-export default Poll;
+export default FeedbackForm;
