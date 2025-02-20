@@ -1,7 +1,7 @@
 "use client";
 
 const Links = () => (
-  <div className="h-auto bg-gradient-to-b  from-[#fffae1] to-[#cee5ff]">
+  <div className="h-auto bg-gradient-to-b from-[#cee5ff] to-[#fff4be]">
     <div className="relative w-full">
       <svg
         width="100%"
