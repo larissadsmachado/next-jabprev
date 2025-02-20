@@ -2,8 +2,17 @@
 import { useState, useMemo } from "react";
 import DivisorDeForma from "../DivisorDeForma/divisor";
 
+const emailDestinations: Record<string, string> = {
+  financeiro: "admfinanceiro@jaboataoprev.jaboatao.pe.gov.br",
+  juridico: "jurídico@jaboataoprev.jaboatao.pe.gov.br",
+  beneficios: "beneficios@jaboataoprev.jaboatao.pe.gov.br",
+  investimento: "investimentos@jaboataoprev.jaboatao.pe.gov.br",
+  presidencia: "presidencia@jaboataoprev.jaboatao.pe.gov.br",
+};
+
 const FaleConosco = () => {
   const [loading, setLoading] = useState(false);
+  const [selectedSubject, setSelectedSubject] = useState<string>("financeiro");
 
   const initialFormState = useMemo(
     () => ({ name: "", email: "", message: "" }),
@@ -15,6 +24,7 @@ const FaleConosco = () => {
     setLoading(true);
 
     const form = e.currentTarget;
+    const recipientEmail = emailDestinations[selectedSubject];
 
     const formData = {
       name: (form.elements.namedItem("name") as HTMLInputElement)?.value || "",
@@ -23,6 +33,8 @@ const FaleConosco = () => {
       message:
         (form.elements.namedItem("message") as HTMLTextAreaElement)?.value ||
         "",
+      subject: selectedSubject,
+      recipientEmail,
     };
 
     try {
@@ -37,6 +49,7 @@ const FaleConosco = () => {
       if (response.ok) {
         alert("Mensagem enviada com sucesso!");
         form.reset();
+        setSelectedSubject("financeiro");
       } else {
         const data = await response.json();
         alert(`Erro: ${data.message}`);
@@ -70,7 +83,9 @@ const FaleConosco = () => {
         </div>
         <DivisorDeForma />
         <div className="relative z-10 min-h-screen text-white p-8 flex items-center justify-center bg-opacity-30">
+
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 max-w-7xl w-full">
+
             <div className="w-full md:w-1/2 h-[670px] rounded-xl">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.5114253262363!2d-34.925620124244986!3d-8.151115381647537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7aae1dc7561cffd%3A0xe6fbfb0ef7cd1451!2sCentro%20Administrativo%20de%20Jaboat%C3%A3o%20dos%20Guararapes!5e0!3m2!1spt-BR!2sbr!4v1726165314278!5m2!1spt-BR!2sbr"
@@ -81,25 +96,30 @@ const FaleConosco = () => {
                 loading="lazy"
               />
             </div>
-            <div className="w-full md:w-1/2 bg-[#00000088] p-6 rounded-lg shadow-md flex flex-col justify-between overflow-hidden">
+
+            <div className="w-full md:w-1/2 bg-[#00000088] p-4 rounded-lg shadow-md flex flex-col justify-between overflow-hidden">
+
               <h2 className="text-[40px] font-semibold">Fale Conosco</h2>
+
               <p>
-                Instituto de Previdência dos Servidores do Município Jaboatão
-                dos Guararapes.
-                <br />
-                <br />
+
+                Instituto de Previdência dos Servidores do Município Jaboatão dos Guararapes.
+                <br/><br/>
                 Celular: (81) 9 9756-0292
-                <br />
-                <br />
+                <br/><br/>
                 E-mails Institucionais:
-                <br />
-                <br />
-                <ul className="list-disc">
-                  <li>presidencia@jaboataoprev.jaboatao.pe.gov.br</li>
-                  <li>investimentos@jaboataoprev.jaboatao.pe.gov.br</li>
-                  <li>juridico@jaboataoprev.jaboatao.pe.gov.br</li>
-                  <li>admfinanceiro@jaboataoprev.jaboatao.pe.gov.br</li>
-                  <li>beneficios@jaboataoprev.jaboatao.pe.gov.br</li>
+                <br/>
+                <ul className="list-disc pl-4">
+                  <li>presidencia@jaboataoprev.jaboatao.pe.gov.br
+                  </li>
+                  <li>investimentos@jaboataoprev.jaboatao.pe.gov.br
+                  </li>
+                  <li>jurídico@jaboataoprev.jaboatao.pe.gov.br
+                  </li>
+                  <li>admfinanceiro@jaboataoprev.jaboatao.pe.gov.br
+                  </li>
+                  <li>beneficios@jaboataoprev.jaboatao.pe.gov.br
+                  </li>
                 </ul>
               </p>
               <form
@@ -120,6 +140,27 @@ const FaleConosco = () => {
                   className="p-2 rounded-[10px] bg-[#ffffff00] border-white border-[1px] text-white outline-none focus:ring-2 focus:ring-[#5872a3] w-full"
                   required
                 />
+
+                {/* Seleção do Assunto */}
+                <div className="text-white">
+                  <p className="text-lg font-semibold">Assunto:</p>
+                  <div className="flex flex-wrap gap-4 mt-2">
+                    {Object.keys(emailDestinations).map((subject) => (
+                      <label key={subject} className="flex items-center gap-2">
+                        <input
+                          type="radio"
+                          name="subject"
+                          value={subject}
+                          checked={selectedSubject === subject}
+                          onChange={() => setSelectedSubject(subject)}
+                          className="accent-[#5872a3]"
+                        />
+                        {subject.charAt(0).toUpperCase() + subject.slice(1)}
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
                 <textarea
                   name="message"
                   placeholder="Mensagem"
@@ -128,7 +169,7 @@ const FaleConosco = () => {
                 ></textarea>
                 <button
                   type="submit"
-                  className="py-2 px-4 bg-[#003476] hover:bg-[#2864b2] rounded text-white font-semibold transition w-full"
+                  className="py-2 px-4 bg-[#1e59a7] hover:bg-[#3279d6] rounded text-white font-semibold transition w-full"
                 >
                   ENVIAR
                 </button>

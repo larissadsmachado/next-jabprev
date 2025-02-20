@@ -5,13 +5,28 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: "Method not allowed" });
   }
 
-  const { name, email, message } = req.body;
+  const { name, email, message, subject } = req.body;
 
-  if (!name || !email || !message) {
+  if (!name || !email || !message || !subject) {
     return res.status(400).json({ message: "All fields are required." });
   }
 
-  // Configure o transporte SMTP
+  // Mapeamento dos e-mails de destino conforme o assunto selecionado
+  const recipientEmails = {
+    financeiro: "admfinanceiro@jaboataoprev.jaboatao.pe.gov.br",
+    juridico: "juridico@jaboataoprev.jaboatao.pe.gov.br",
+    beneficios: "beneficios@jaboataoprev.jaboatao.pe.gov.br",
+    investimento: "investimentos@jaboataoprev.jaboatao.pe.gov.br",
+    presidencia: "presidencia@jaboataoprev.jaboatao.pe.gov.br",
+  };
+
+  const recipientEmail = recipientEmails[subject];
+
+  if (!recipientEmail) {
+    return res.status(400).json({ message: "Invalid subject selected." });
+  }
+
+  // Configuração do transporte SMTP
   const transporter = nodemailer.createTransport({
     host: "server18.mailgrid.com.br",
     port: 587,
@@ -25,8 +40,8 @@ export default async function handler(req, res) {
   try {
     await transporter.sendMail({
       from: `"Jaboatão PREV - Fale Conosco" <${process.env.SMTP_USER}>`,
-      to: process.env.DESTINATION_EMAIL, // Destinatário configurado no .env
-      subject: "Jaboatão PREV - Nova mensagem",
+      to: recipientEmail, // Agora pega o destinatário correto do objeto
+      subject: `Nova mensagem sobre ${subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6;">
           <table style="width: 100%; max-width: 600px; margin: auto; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
@@ -39,6 +54,7 @@ export default async function handler(req, res) {
               <td style="padding: 20px;">
                 <p><strong>Nome:</strong> ${name}</p>
                 <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Assunto:</strong> ${subject}</p>
                 <p><strong>Mensagem:</strong></p>
                 <p>${message}</p>
               </td>
