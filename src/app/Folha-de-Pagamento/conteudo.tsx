@@ -1,87 +1,49 @@
-"use client";
+const data = {
+  2014: {
+    "Janeiro": "https://example.com/janeiro",
+    "Janeiro - Geral": "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/GERAL.pdf",
+    "Janeiro - Servidores": "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/COMISSIONADOS.pdf",
+    "Janeiro - Câmara": "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/APOSENTADOS-E-PENSIONISTAS-F-FINANCEIRO-CAMARA.pdf",
+    "Fevereiro": "https://example.com/fevereiro",
+    "Fevereiro - Geral": "#",
+    "Fevereiro - Servidores": "#",
+    "Fevereiro - Câmara": "#",
+  },
+  2024: {
+    "Janeiro": "#",
+    "Janeiro - Geral": "#",
+    "Janeiro - Servidores": "#",
+    "Janeiro - Câmara": "#",
+  },
+};
 
-const Links = () => (
-  <div className="h-auto bg-gradient-to-b from-[#cee5ff] to-[#fff4be]">
-    <div className="relative w-full">
-      <svg
-        width="100%"
-        viewBox="0 0 2000 96"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          opacity="0.33"
-          d="M946 62.22C538.2 152.254 419.8 27.5523 305.4 62.22C132 115.037 0 54.4708 0 54.4708V-6.40161H2000V54.4708C2000 54.4708 1875.8 81.0833 1810.2 84.3462C1744.6 87.711 1684.6 71.8046 1658.6 61.8122C1612 44.1724 1490.6 2.46924 1389.8 -1.60931C1289 -5.68786 984.8 53.757 946 62.22Z"
-          fill="#051f60"
-        />
-        <path
-          opacity="0.66"
-          d="M1468 62.22C1377 62.22 1313.6 38.5644 1209.8 22.3522C1152.6 13.4813 909.2 12.0538 701.8 62.22C494.4 112.386 518.4 27.1445 403.4 62.22C231.4 114.222 0 34.18 0 34.18V-6.40161H2000V30.8152C2000 30.8152 1943.6 11.9519 1815.8 11.9519C1620.4 12.0538 1551.4 62.22 1468 62.22Z"
-          fill="#051f60"
-        />
-        <path
-          d="M1532.2 23.0659C1132.2 -35.5633 1000.2 89.8522 742 42.9489C484 -4.56626 484 -0.895566 369.6 14.6029C256 30.1014 264.6 39.3801 179.8 47.1294C57.2 58.5493 0 -6.40161 0 -6.40161H2000C2000 -6.40161 1980.2 35.3016 1832.8 42.643C1685.4 49.9844 1659.2 41.5214 1532.2 23.0659Z"
-          fill="#051f60"
-        />
-      </svg>
-    </div>
-
-    <div className="mx-auto max-w-7xl p-6 py-20">
-      
-      <h1 className="text-5xl font-bold mb-4 uppercase text-blue-900 leading-tight">
-        2025
-      </h1>
-
-      <div className=" pl-5 text-[#051f60] text-xl pb-20 grid grid-cols-5"> 
-
-      <ul className="list-disc">
-        <li className="py-2">
-          <a
-            href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/GERAL.pdf"
-            target="_blank"
-            className="text-blue-800 hover:underline"
-          >
-          Janeiro 
-          </a>
-        </li>
-
-        <li className="py-2">
-          <a
-            href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/COMISSIONADOS.pdf"
-            target="_blank"
-            className="text-blue-800 hover:underline"
-          >
-            Janeiro - Servidores
-          </a>
-        </li>
-
-        <li className="py-2">
-          <a
-            href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/APOSENTADOS-E-PENSIONISTAS-F-FINANCEIRO-CAMARA.pdf"
-            target="_blank"
-            className="text-blue-800 hover:underline"
-          >
-            Janeiro - Câmara
-          </a>
-        </li>
-
-
-      </ul>
-
-     
-      </div>
-
-
-    </div>
-  </div>
-);
-
-const Legislacao = () => {
+const Links = () => {
   return (
-    <div className="flex flex-col">
-      <Links />
+    <div className="h-auto bg-gradient-to-b from-[#cee5ff] to-[#fff4be] p-10">
+      {Object.entries(data).map(([year, links]) => (
+        <div key={year} className="mb-10">
+          {/* 🔹 Título do ano */}
+          <h1 className="text-4xl font-bold text-blue-900 mb-4">{year}</h1>
+          
+          {/* 🔹 Lista contínua de links */}
+          <div className="grid grid-cols-4 gap-4">
+            {Object.entries(links).map(([title, link]) => (
+              <a
+                key={title}
+                href={link}
+                target="_blank"
+                className={`text-xl text-[#051f60] hover:underline ${
+                  link === "#" ? "text-gray-500 cursor-default pointer-events-none" : ""
+                }`}
+              >
+                {title}
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
 
-export default Legislacao;
+export default Links;
