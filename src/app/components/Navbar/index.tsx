@@ -126,7 +126,7 @@ const navigation: NavItem[] = [
     href: "#",
     submenu: [
       { name: "receitas", href: "https://portaldatransparencia.jaboatao.pe.gov.br/receitas/" },
-      { name: "despesas", href: "Despesas" },
+      { name: "despesas", href: "https://portaldatransparencia.jaboatao.pe.gov.br/despesas/" },
       { name: "despesas adminstrativas", href: "Despesas-Administrativas" },
       { name: "demonstrativos contábeis", href: "Demonstrativos-contabeis" },
       { name: "prestações de contas", href: "Prestacoes-de-Contas" },
