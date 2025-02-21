@@ -22,7 +22,7 @@ const DivisorDeForma = () => {
           fill="#003470"
         />
       </svg>
-    </div>
+    </div> 
   );
 };
 

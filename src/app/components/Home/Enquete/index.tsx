@@ -76,7 +76,7 @@ const FeedbackForm = () => {
                   onClick={() => setNota(label)}
                   className={`flex items-center justify-center gap-2 p-3 rounded-lg border w-full text-center transition-all ${
                     nota === label
-                      ? "bg-blue-800 text-white border-2 border-blue-300"
+                      ? "bg-blue-900 text-white border-2 border-blue-500"
                       : "bg-gray-100 text-gray-800 hover:bg-gray-200 border-2 border-gray-400"
                   }`}
                 >
@@ -86,7 +86,7 @@ const FeedbackForm = () => {
             </div>
             <button
               type="submit"
-              className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-800 transition-all flex items-center justify-center"
+              className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-800 transition-all flex items-center justify-center"
               disabled={loading}
             >
               {loading ? (

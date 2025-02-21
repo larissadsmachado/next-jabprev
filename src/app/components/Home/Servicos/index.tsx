@@ -2,6 +2,7 @@ import React from "react";
 import { FaInfoCircle } from "react-icons/fa";
 import { MdOutlineAttachMoney } from "react-icons/md";
 import { FaPiggyBank, FaBookOpen, FaPhoneAlt } from "react-icons/fa";
+import DivisorDeForma from "../../DivisorDeForma/divisor";
 
 const Card = ({
   title,
@@ -62,7 +63,11 @@ const CardContent = ({
 
 export default function CardGrid() {
   return (
-    <div id="servicos" className="bg-gradient-to-b from-[#ffffff] to-[#003470] py-20 text-center">
+    <div id="servicos" 
+    className="bg-gradient-to-b from-[#ffffff] to-[#003470] text-center">
+
+      <DivisorDeForma/>
+
       <h2 className="text-5xl font-semibold text-[#173b7c] mb-14 uppercase">
         Serviços
       </h2>

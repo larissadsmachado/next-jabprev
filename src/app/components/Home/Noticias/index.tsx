@@ -101,7 +101,7 @@ export const HoverImageLinks: React.FC = () => {
     }
 
     return (
-      <div className="flex justify-center items-center space-x-2 mt-6">
+      <div className="flex justify-center items-center space-x-2 bg-[#003470] pb-20">
         <button
           onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
           disabled={page === 1}
@@ -139,7 +139,7 @@ export const HoverImageLinks: React.FC = () => {
 
   return (
     <section id="noticias">
-      <div className="bg-[#003470] p-4 md:p-10">
+      <div className="bg-[#003470] p-4 md:p-10 ">
         <h1 className="text-3xl md:text-5xl font-bold text-white flex text-center items-center justify-center uppercase">
           Notícias
         </h1>
@@ -150,7 +150,7 @@ export const HoverImageLinks: React.FC = () => {
         <p className="text-center text-gray-600 my-4">Carregando...</p>
       ) : (
         <>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4 px-36 py-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4 px-36 py-20 bg-gradient-to-b from-[#ffffff] to-[#003470]">
             {posts.map((post) => (
               <div key={post.id} className="bg-white shadow-md rounded-lg">
                 <img
