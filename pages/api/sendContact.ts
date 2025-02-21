@@ -1,6 +1,14 @@
+import { NextApiRequest, NextApiResponse } from "next";
 import nodemailer from "nodemailer";
 
-export default async function handler(req, res) {
+type RecipientEmails = {
+  [key: string]: string;
+};
+
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method not allowed" });
   }
@@ -11,8 +19,7 @@ export default async function handler(req, res) {
     return res.status(400).json({ message: "All fields are required." });
   }
 
-  // Mapeamento dos e-mails de destino conforme o assunto selecionado
-  const recipientEmails = {
+  const recipientEmails: RecipientEmails = {
     financeiro: "admfinanceiro@jaboataoprev.jaboatao.pe.gov.br",
     juridico: "juridico@jaboataoprev.jaboatao.pe.gov.br",
     beneficios: "beneficios@jaboataoprev.jaboatao.pe.gov.br",
@@ -26,21 +33,20 @@ export default async function handler(req, res) {
     return res.status(400).json({ message: "Invalid subject selected." });
   }
 
-  // Configuração do transporte SMTP
   const transporter = nodemailer.createTransport({
     host: "server18.mailgrid.com.br",
     port: 587,
-    secure: false, // true para 465, false para outras portas
+    secure: false,
     auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS,
+      user: process.env.SMTP_USER as string,
+      pass: process.env.SMTP_PASS as string,
     },
   });
 
   try {
     await transporter.sendMail({
       from: `"Jaboatão PREV - Fale Conosco" <${process.env.SMTP_USER}>`,
-      to: recipientEmail, // Agora pega o destinatário correto do objeto
+      to: recipientEmail,
       subject: `Nova mensagem sobre ${subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6;">

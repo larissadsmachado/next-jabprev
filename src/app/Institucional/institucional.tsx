@@ -1,6 +1,6 @@
 "use client";
 import DivisorDeForma from "../components/DivisorDeForma/divisor";
-import FaleConosco from "../components/FaleConosco/inex";
+import FaleConosco from "../components/Home/FaleConosco/inex";
 import { GlobalWorkerOptions } from 'pdfjs-dist';
 
 

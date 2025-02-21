@@ -1,6 +1,6 @@
 "use client";
 import { useState, useMemo } from "react";
-import DivisorDeForma from "../DivisorDeForma/divisor";
+import DivisorDeForma from "../../DivisorDeForma/divisor";
 
 const emailDestinations: Record<string, string> = {
   financeiro: "admfinanceiro@jaboataoprev.jaboatao.pe.gov.br",
