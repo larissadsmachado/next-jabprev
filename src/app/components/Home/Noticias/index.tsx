@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import DivisorDeForma from "../../DivisorDeForma/divisor";
@@ -7,7 +8,7 @@ type Post = {
   id: number;
   title: { rendered: string };
   date: string;
-  featured_media: number; // ID da imagem destacada
+  featured_media: number;
 };
 
 type Media = {
@@ -22,6 +23,7 @@ export const HoverImageLinks: React.FC = () => {
   const [media, setMedia] = useState<{ [key: number]: string }>({});
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
 
   useEffect(() => {
     const fetchNoticias = async () => {
@@ -38,6 +40,12 @@ export const HoverImageLinks: React.FC = () => {
         }
 
         setPosts(data);
+
+        // Captura o total de páginas do cabeçalho da resposta
+        const totalPagesHeader = res.headers.get("X-WP-TotalPages");
+        if (totalPagesHeader) {
+          setTotalPages(parseInt(totalPagesHeader, 10));
+        }
 
         // Buscar imagens destacadas
         const mediaPromises = data.map(async (post) => {
@@ -67,6 +75,67 @@ export const HoverImageLinks: React.FC = () => {
 
     fetchNoticias();
   }, [page]);
+
+  // Função para gerar os botões de paginação corretamente
+  const renderPagination = () => {
+    const maxPagesToShow = 5;
+    let pages: (number | string)[] = [];
+
+    if (totalPages <= maxPagesToShow) {
+      pages = Array.from({ length: totalPages }, (_, i) => i + 1);
+    } else {
+      pages = [1];
+
+      if (page > 3) pages.push("...");
+
+      const middlePages = Array.from(
+        { length: 3 },
+        (_, i) => page - 1 + i
+      ).filter((p) => p > 1 && p < totalPages);
+
+      pages = [...pages, ...middlePages];
+
+      if (page < totalPages - 2) pages.push("...");
+
+      pages.push(totalPages);
+    }
+
+    return (
+      <div className="flex justify-center items-center space-x-2 mt-6">
+        <button
+          onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
+          disabled={page === 1}
+          className={`px-4 py-2 rounded-lg ${page === 1 ? "bg-gray-200 cursor-not-allowed" : "bg-gray-300 hover:bg-gray-400"}`}
+        >
+          ← Anterior
+        </button>
+
+        {pages.map((p, index) =>
+          p === "..." ? (
+            <span key={index} className="px-3">...</span>
+          ) : (
+            <button
+              key={index}
+              onClick={() => setPage(Number(p))}
+              className={`px-4 py-2 rounded-lg ${
+                page === p ? "bg-blue-500 text-white" : "bg-gray-300 hover:bg-gray-400"
+              }`}
+            >
+              {p}
+            </button>
+          )
+        )}
+
+        <button
+          onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
+          disabled={page === totalPages}
+          className={`px-4 py-2 rounded-lg ${page === totalPages ? "bg-gray-200 cursor-not-allowed" : "bg-gray-300 hover:bg-gray-400"}`}
+        >
+          Próxima →
+        </button>
+      </div>
+    );
+  };
 
   return (
     <section id="noticias">
@@ -102,23 +171,7 @@ export const HoverImageLinks: React.FC = () => {
             ))}
           </div>
 
-          {/* Paginação */}
-          <div className="flex justify-center space-x-4 mt-6">
-            {page > 1 && (
-              <button
-                onClick={() => setPage(page - 1)}
-                className="bg-gray-300 px-4 py-2 rounded-lg hover:bg-gray-400"
-              >
-                ← Anterior
-              </button>
-            )}
-            <button
-              onClick={() => setPage(page + 1)}
-              className="bg-gray-300 px-4 py-2 rounded-lg hover:bg-gray-400"
-            >
-              Próxima →
-            </button>
-          </div>
+          {renderPagination()}
         </>
       )}
     </section>
