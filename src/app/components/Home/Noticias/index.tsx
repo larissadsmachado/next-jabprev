@@ -118,7 +118,7 @@ export const HoverImageLinks: React.FC = () => {
               key={index}
               onClick={() => setPage(Number(p))}
               className={`px-4 py-2 rounded-lg ${
-                page === p ? "bg-blue-500 text-white" : "bg-gray-300 hover:bg-gray-400"
+                page === p ? "bg-green-700 text-white" : "bg-gray-300 hover:bg-gray-400"
               }`}
             >
               {p}
@@ -147,7 +147,7 @@ export const HoverImageLinks: React.FC = () => {
       <DivisorDeForma />
 
       {loading ? (
-        <p className="text-center text-gray-500 my-4">Carregando...</p>
+        <p className="text-center text-gray-600 my-4">Carregando...</p>
       ) : (
         <>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4 px-36 py-20">
@@ -163,7 +163,7 @@ export const HoverImageLinks: React.FC = () => {
                   <p className="text-sm text-gray-500">
                     📅 {new Date(post.date).toLocaleDateString("pt-BR")}
                   </p>
-                  <Link href={`/noticia/${post.id}`} className="text-blue-600 font-bold mt-2 block">
+                  <Link href={`/noticia/${post.id}`} className="text-blue-700 hover:text-blue-800 font-bold mt-2 block">
                     Leia mais →
                   </Link>
                 </div>
