@@ -58,9 +58,11 @@ const FeedbackForm = () => {
   };
 
   return (
-    <div className="flex justify-center items-center bg-gradient-to-b from-[#003470] via-[#9ccef0] to-[#003470] py-36">
+    <div 
+    id="enquete"
+    className="flex justify-center items-center bg-gradient-to-b from-[#003470] via-[#9ccef0] to-[#003470] py-32">
       <div className="">
-        <h2 className="text-4xl font-bold text-center mb-4 text-white uppercase pb-3">
+        <h2 className="text-4xl font-bold text-center mb-10 text-white uppercase pb-3">
           Avalie nosso serviço
         </h2>
 
