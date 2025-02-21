@@ -1,9 +1,9 @@
-import Cartilha from "./cartilha";
+import PlanodeAção from "./conteudo";
 import Model from "../components/model-page/index";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Cartilha Previdenciária - JaboatãoPrev",
+  title: "Plano de Ação - JaboatãoPrev",
 };
 
 export default function config() {
@@ -11,7 +11,7 @@ export default function config() {
     <div>
       <Model
         caminhoImagem={"/images/"}
-        titulo={"Cartilha Previdenciária"}
+        titulo={"Plano de Ação"}
         subtitulo={
           <span>
             <Link
@@ -22,12 +22,12 @@ export default function config() {
             </Link>
             &nbsp;»{" "}
             <span className="brightness-125">
-            Cartilha Previdenciária
+            Plano de Ação
             </span>
           </span>
         }
       >
-        <Cartilha />
+        <PlanodeAção/>
       </Model>
     </div>
   );

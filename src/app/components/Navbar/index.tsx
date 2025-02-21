@@ -23,16 +23,15 @@ const navigation: NavItem[] = [
       { name: "A equipe JaboatãoPREV", href: "./Institucional#organograma" },
       {
         name: "Certificações Profissional",
-        href: "./Certificacoes-profissional",
+        href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/04/CERTIFICACOES-GERAIS-Atualizado.pdf",
       },
       { name: "Perguntas Frequentes", href: "./Perguntas-Frequentes" },
       { name: "Legislação", href: "Legislacao" },
-      { name: "Cartilha Previdenciária", href: "Cartilha-Previdenciaria" },
+      { name: "Cartilha Previdenciária", href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/09/CARTILHA-JABOATAOPREV-NEW.pdf" },
       { name: "Boletins Informativos", href: "Boletins-Informativos" },
       { name: "Controle Interno", href: "Controle-Interno" },
     ],
   },
-
 
 
   {
@@ -111,24 +110,22 @@ const navigation: NavItem[] = [
       },
 
       { name: "folha de pagamento", href: "Folha-de-Pagamento" },
+      
       { name: "cronograma de capacitação", href: "Cronograma-de-Capacitacao" },
+      
       { name: "plano de ação", href: "Plano-de-Acao" },
-      { name: "programa 55", href: "Programa-55" },
+      { name: "programa 55", href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/01/Apresenta%C3%A7%C3%A3o%205s%20att.pptx" },
       { name: "relatório anual de gestão", href: "Relatorio-anual-de-gestao" },
       { name: "obrigações fiscais", href: "Obrigacoes-fiscais" },
     ],
   },
 
 
-
-
-
-
   {
     name: "Financeiro",
     href: "#",
     submenu: [
-      { name: "receitas", href: "Receitas" },
+      { name: "receitas", href: "https://portaldatransparencia.jaboatao.pe.gov.br/receitas/" },
       { name: "despesas", href: "Despesas" },
       { name: "despesas adminstrativas", href: "Despesas-Administrativas" },
       { name: "demonstrativos contábeis", href: "Demonstrativos-contabeis" },

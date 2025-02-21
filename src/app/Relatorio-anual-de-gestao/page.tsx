@@ -1,9 +1,9 @@
-import Certificacoes from "./certificacoes";
+import Controle from "./conteudo";
 import Model from "../components/model-page/index";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Certificação Profissional - JaboatãoPrev",
+  title: "Relatório Anual de Gestão - JaboatãoPrev",
 };
 
 export default function config() {
@@ -11,7 +11,7 @@ export default function config() {
     <div>
       <Model
         caminhoImagem={"/images/"}
-        titulo={"Certificação Profissional"}
+        titulo={"Relatório Anual de Gestão"}
         subtitulo={
           <span>
             <Link
@@ -22,12 +22,12 @@ export default function config() {
             </Link>
             &nbsp;»{" "}
             <span className="brightness-125">
-            Certificação Profissional
+            Relatório Anual de Gestão
             </span>
           </span>
         }
       >
-        <Certificacoes />
+        <Controle />
       </Model>
     </div>
   );
