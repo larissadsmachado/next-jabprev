@@ -67,7 +67,10 @@ export const HoverImageLinks: React.FC = () => {
                 const mediaData = await mediaRes.json();
                 return { id: post.featured_media, url: mediaData.source_url };
               } catch (error) {
-                console.error(`❌ Erro ao buscar imagem do post ${post.id}:`, error);
+                console.error(
+                  `❌ Erro ao buscar imagem do post ${post.id}:`,
+                  error
+                );
                 return null;
               }
             }
@@ -82,10 +85,14 @@ export const HoverImageLinks: React.FC = () => {
 
         setMedia(mediaMap);
 
-        const categoryIds = [...new Set(data.flatMap((post) => post.categories))];
+        const categoryIds = [
+          ...new Set(data.flatMap((post) => post.categories)),
+        ];
         if (categoryIds.length > 0) {
           const categoryRes = await fetch(
-            `https://jaboataoprev.jaboatao.pe.gov.br/wp-json/wp/v2/categories?include=${categoryIds.join(",")}`
+            `https://jaboataoprev.jaboatao.pe.gov.br/wp-json/wp/v2/categories?include=${categoryIds.join(
+              ","
+            )}`
           );
           const categoryData: Category[] = await categoryRes.json();
           const categoryMap = categoryData.reduce(
@@ -126,27 +133,45 @@ export const HoverImageLinks: React.FC = () => {
                 ? `https://jaboataoprev.jaboatao.pe.gov.br${imageUrl}`
                 : imageUrl;
 
-              const postCategories = post.categories.map((catId) => categories[catId] || "Sem categoria");
+              const postCategories = post.categories.map(
+                (catId) => categories[catId] || "Sem categoria"
+              );
 
               return (
-                <div key={post.id} className="bg-white shadow-md rounded-lg relative">
-                  {/* Categoria em destaque */}
-                  {postCategories.length > 0 && (
-                    <div className="absolute top-0 left-0 bg-blue-700 text-white text-xs font-bold px-3 py-1 rounded-tl-lg rounded-br-lg">
-                      {postCategories[0]}
-                    </div>
-                  )}
+                <div
+                  key={post.id}
+                  className="bg-white shadow-md rounded-lg relative "
+                >
+                  <Link
+                    href={`/noticia/${post.id}`}
+                    className="block group relative"
+                  >
+                    {/* Categoria em destaque */}
+                    {postCategories.length > 0 && (
+                      <div className="absolute top-0 left-0 bg-blue-700 text-white text-xs font-bold px-3 py-1 rounded-tl-lg rounded-br-lg z-10">
+                        {postCategories[0]}
+                      </div>
+                    )}
 
-                  {/* Imagem destacada */}
-                  <Image
-                    key={finalUrl}
-                    src={`/api/image-proxy?url=${encodeURIComponent(finalUrl)}`}
-                    alt={post.title.rendered}
-                    width={500}
-                    height={300}
-                    className="w-full h-48 object-cover rounded-t-lg"
-                    unoptimized
-                  />
+                    {/* Container da Imagem com overlay */}
+                    <div className="relative w-full h-48 overflow-hidden rounded-t-lg">
+                      {/* Imagem destacada */}
+                      <Image
+                        key={finalUrl}
+                        src={`/api/image-proxy?url=${encodeURIComponent(
+                          finalUrl
+                        )}`}
+                        alt={post.title.rendered}
+                        width={500}
+                        height={300}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        unoptimized
+                      />
+
+                      {/* Overlay escuro apenas na imagem */}
+                      <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-300 pointer-events-none" />
+                    </div>
+                  </Link>
 
                   <div className="p-4">
                     <h2 className="text-lg font-bold">{post.title.rendered}</h2>
@@ -156,12 +181,6 @@ export const HoverImageLinks: React.FC = () => {
                     <p className="text-sm text-gray-600 mt-1">
                       🏷 {postCategories.slice(1).join(", ")}
                     </p>
-                    <Link
-                      href={`/noticia/${post.id}`}
-                      className="text-blue-700 hover:text-blue-800 font-bold mt-2 block"
-                    >
-                      Leia mais →
-                    </Link>
                   </div>
                 </div>
               );
@@ -173,29 +192,58 @@ export const HoverImageLinks: React.FC = () => {
               onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
               disabled={page === 1}
               className={`px-4 py-2 rounded-lg ${
-                page === 1 ? "bg-gray-200 cursor-not-allowed" : "bg-gray-300 hover:bg-gray-400"
+                page === 1
+                  ? "bg-gray-200 cursor-not-allowed"
+                  : "bg-gray-300 hover:bg-gray-400"
               }`}
             >
               ← Anterior
             </button>
 
-            {[...Array(totalPages)].map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setPage(i + 1)}
-                className={`px-4 py-2 rounded-lg ${
-                  page === i + 1 ? "bg-green-700 text-white" : "bg-gray-300 hover:bg-gray-400"
-                }`}
-              >
-                {i + 1}
-              </button>
-            ))}
+            {[...Array(totalPages)].map((_, i) => {
+              const pageNumber = i + 1;
+
+              if (
+                pageNumber === 1 || // Primeiro número
+                pageNumber === 2 || // Segundo número
+                pageNumber === totalPages || // Último número
+                pageNumber === page || // Página atual
+                pageNumber === page - 1 || // Página anterior à atual
+                pageNumber === page + 1 // Página posterior à atual
+              ) {
+                return (
+                  <button
+                    key={i}
+                    onClick={() => setPage(pageNumber)}
+                    className={`px-4 py-2 rounded-lg ${
+                      page === pageNumber
+                        ? "bg-green-700 text-white"
+                        : "bg-gray-300 hover:bg-gray-400"
+                    }`}
+                  >
+                    {pageNumber}
+                  </button>
+                );
+              }
+
+              if (pageNumber === page - 2 || pageNumber === page + 2) {
+                return (
+                  <span key={i} className="px-4 py-2 rounded-lg bg-gray-300">
+                    ...
+                  </span>
+                );
+              }
+
+              return null;
+            })}
 
             <button
               onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
               disabled={page === totalPages}
               className={`px-4 py-2 rounded-lg ${
-                page === totalPages ? "bg-gray-200 cursor-not-allowed" : "bg-gray-300 hover:bg-gray-400"
+                page === totalPages
+                  ? "bg-gray-200 cursor-not-allowed"
+                  : "bg-gray-300 hover:bg-gray-400"
               }`}
             >
               Próxima →
