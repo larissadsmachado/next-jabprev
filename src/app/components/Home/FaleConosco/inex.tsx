@@ -83,9 +83,7 @@ const FaleConosco = () => {
         </div>
         <DivisorDeForma />
         <div className="relative z-10 min-h-screen text-white p-8 flex items-center justify-center bg-opacity-30">
-
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 max-w-7xl w-full">
-
             <div className="w-full md:w-1/2 h-[670px] rounded-xl">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.5114253262363!2d-34.925620124244986!3d-8.151115381647537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7aae1dc7561cffd%3A0xe6fbfb0ef7cd1451!2sCentro%20Administrativo%20de%20Jaboat%C3%A3o%20dos%20Guararapes!5e0!3m2!1spt-BR!2sbr!4v1726165314278!5m2!1spt-BR!2sbr"
@@ -98,30 +96,28 @@ const FaleConosco = () => {
             </div>
 
             <div className="w-full md:w-1/2 bg-[#00000088] p-4 rounded-lg shadow-md flex flex-col justify-between overflow-hidden">
-
               <h2 className="text-[40px] font-semibold">Fale Conosco</h2>
 
-              <p>
-
-                Instituto de Previdência dos Servidores do Município Jaboatão dos Guararapes.
-                <br/><br/>
-                Celular: (81) 9 9756-0292
-                <br/><br/>
-                E-mails Institucionais:
-                <br/>
+              <div>
+                <p>
+                  Instituto de Previdência dos Servidores do Município Jaboatão
+                  dos Guararapes.
+                  <br />
+                  <br />
+                  Celular: (81) 9 9756-0292
+                  <br />
+                  <br />
+                  E-mails Institucionais:
+                </p>
                 <ul className="list-disc pl-4">
-                  <li>presidencia@jaboataoprev.jaboatao.pe.gov.br
-                  </li>
-                  <li>investimentos@jaboataoprev.jaboatao.pe.gov.br
-                  </li>
-                  <li>jurídico@jaboataoprev.jaboatao.pe.gov.br
-                  </li>
-                  <li>admfinanceiro@jaboataoprev.jaboatao.pe.gov.br
-                  </li>
-                  <li>beneficios@jaboataoprev.jaboatao.pe.gov.br
-                  </li>
+                  <li>presidencia@jaboataoprev.jaboatao.pe.gov.br</li>
+                  <li>investimentos@jaboataoprev.jaboatao.pe.gov.br</li>
+                  <li>jurídico@jaboataoprev.jaboatao.pe.gov.br</li>
+                  <li>admfinanceiro@jaboataoprev.jaboatao.pe.gov.br</li>
+                  <li>beneficios@jaboataoprev.jaboatao.pe.gov.br</li>
                 </ul>
-              </p>
+              </div>
+
               <form
                 onSubmit={handleSubmit}
                 className="flex flex-col gap-4 w-full pt-8 pb-2"

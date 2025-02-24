@@ -175,17 +175,27 @@ export const HoverImageLinks: React.FC = () => {
       <DivisorDeForma />
 
       {loading ? (
-        <p className="text-center text-gray-600 my-20 text-xl">Carregando...</p>
+        <p className="flex text-center items-center justify-center text-gray-600 h-auto text-xl py-60">Carregando...</p>
       ) : (
         <>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4 px-36 py-20 bg-gradient-to-b from-[#ffffff] to-[#003470]">
             {posts.map((post) => (
               <div key={post.id} className="bg-white shadow-md rounded-lg">
-                <img
-                  src={media[post.featured_media] || "/placeholder.jpg"}
-                  alt={post.title.rendered}
-                  className="w-full h-48 object-cover rounded-t-lg"
-                />
+              {(() => {
+                const imageUrl = media[post.featured_media];
+                const finalUrl = imageUrl?.startsWith("/")
+                  ? `https://jaboataoprev.jaboatao.pe.gov.br${imageUrl}`
+                  : imageUrl;
+            
+                return (
+                  <img
+                    key={finalUrl} // Força a re-renderização
+                    src={finalUrl || "/placeholder.jpg"}
+                    alt={post.title.rendered}
+                    className="w-full h-48 object-cover rounded-t-lg"
+                  />
+                );
+              })()} 
 
                 <div className="p-4">
                   <h2 className="text-lg font-bold">{post.title.rendered}</h2>
