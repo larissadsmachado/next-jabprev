@@ -54,6 +54,46 @@ export const HoverImageLinks: React.FC = () => {
         if (totalPagesHeader) {
           setTotalPages(parseInt(totalPagesHeader, 10));
         }
+
+        const mediaResults = await Promise.all(
+          data.map(async (post) => {
+            if (post.featured_media) {
+              try {
+                const mediaRes = await fetch(
+                  `https://jaboataoprev.jaboatao.pe.gov.br/wp-json/wp/v2/media/${post.featured_media}`
+                );
+                if (!mediaRes.ok) throw new Error("Erro ao buscar imagem");
+
+                const mediaData = await mediaRes.json();
+                return { id: post.featured_media, url: mediaData.source_url };
+              } catch (error) {
+                console.error(`❌ Erro ao buscar imagem do post ${post.id}:`, error);
+                return null;
+              }
+            }
+            return null;
+          })
+        );
+
+        const mediaMap = mediaResults.reduce((acc, item) => {
+          if (item) acc[item.id] = item.url;
+          return acc;
+        }, {} as { [key: number]: string });
+
+        setMedia(mediaMap);
+
+        const categoryIds = [...new Set(data.flatMap((post) => post.categories))];
+        if (categoryIds.length > 0) {
+          const categoryRes = await fetch(
+            `https://jaboataoprev.jaboatao.pe.gov.br/wp-json/wp/v2/categories?include=${categoryIds.join(",")}`
+          );
+          const categoryData: Category[] = await categoryRes.json();
+          const categoryMap = categoryData.reduce(
+            (acc, cat) => ({ ...acc, [cat.id]: cat.name }),
+            {} as { [key: number]: string }
+          );
+          setCategories(categoryMap);
+        }
       } catch (error) {
         console.error("Erro ao buscar notícias:", error);
       } finally {
@@ -63,38 +103,6 @@ export const HoverImageLinks: React.FC = () => {
 
     fetchNoticias();
   }, [page]);
-
-  const renderPagination = () => {
-    const pages = [];
-    if (totalPages <= 5) {
-      for (let i = 1; i <= totalPages; i++) {
-        pages.push(i);
-      }
-    } else {
-      pages.push(1);
-      if (page > 3) pages.push("...");
-      let start = Math.max(2, page - 1);
-      let end = Math.min(totalPages - 1, page + 1);
-      for (let i = start; i <= end; i++) {
-        pages.push(i);
-      }
-      if (page < totalPages - 2) pages.push("...");
-      pages.push(totalPages);
-    }
-
-    return pages.map((p, index) => (
-      <button
-        key={index}
-        onClick={() => typeof p === "number" && setPage(p)}
-        className={`px-4 py-2 rounded-lg ${
-          page === p ? "bg-green-700 text-white" : "bg-gray-300 hover:bg-gray-400"
-        } ${p === "..." ? "cursor-default" : ""}`}
-        disabled={p === "..."}
-      >
-        {p}
-      </button>
-    ));
-  };
 
   return (
     <section id="noticias">
@@ -118,8 +126,18 @@ export const HoverImageLinks: React.FC = () => {
                 ? `https://jaboataoprev.jaboatao.pe.gov.br${imageUrl}`
                 : imageUrl;
 
+              const postCategories = post.categories.map((catId) => categories[catId] || "Sem categoria");
+
               return (
                 <div key={post.id} className="bg-white shadow-md rounded-lg relative">
+                  {/* Categoria em destaque */}
+                  {postCategories.length > 0 && (
+                    <div className="absolute top-0 left-0 bg-blue-700 text-white text-xs font-bold px-3 py-1 rounded-tl-lg rounded-br-lg">
+                      {postCategories[0]}
+                    </div>
+                  )}
+
+                  {/* Imagem destacada */}
                   <Image
                     key={finalUrl}
                     src={`/api/image-proxy?url=${encodeURIComponent(finalUrl)}`}
@@ -129,9 +147,15 @@ export const HoverImageLinks: React.FC = () => {
                     className="w-full h-48 object-cover rounded-t-lg"
                     unoptimized
                   />
+
                   <div className="p-4">
                     <h2 className="text-lg font-bold">{post.title.rendered}</h2>
-                    <p className="text-sm text-gray-500">📅 {new Date(post.date).toLocaleDateString("pt-BR")}</p>
+                    <p className="text-sm text-gray-500">
+                      📅 {new Date(post.date).toLocaleDateString("pt-BR")}
+                    </p>
+                    <p className="text-sm text-gray-600 mt-1">
+                      🏷 {postCategories.slice(1).join(", ")}
+                    </p>
                     <Link
                       href={`/noticia/${post.id}`}
                       className="text-blue-700 hover:text-blue-800 font-bold mt-2 block"
@@ -154,7 +178,19 @@ export const HoverImageLinks: React.FC = () => {
             >
               ← Anterior
             </button>
-            {renderPagination()}
+
+            {[...Array(totalPages)].map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setPage(i + 1)}
+                className={`px-4 py-2 rounded-lg ${
+                  page === i + 1 ? "bg-green-700 text-white" : "bg-gray-300 hover:bg-gray-400"
+                }`}
+              >
+                {i + 1}
+              </button>
+            ))}
+
             <button
               onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
               disabled={page === totalPages}
