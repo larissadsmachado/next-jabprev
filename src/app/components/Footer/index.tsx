@@ -8,10 +8,10 @@ interface Social {
 }
 
 const socialLinks: Social[] = [
-  { imgsrc: "/images/Footer/x.svg", href: "https://twitter.com/" },
-  { imgsrc: "/images/Footer/facebook.svg", href: "https://dribble.com/" },
-  { imgsrc: "/images/Footer/insta.svg", href: "https://instagram.com/" },
-  { imgsrc: "/images/Footer/youtube.svg", href: "https://youtube.com/" },
+  { imgsrc: "/images/Footer/x.svg", href: "https://x.com/jaboataoonline" },
+  { imgsrc: "/images/Footer/facebook.svg", href: "https://www.facebook.com/PrefeituradoJaboatao" },
+  { imgsrc: "/images/Footer/insta.svg", href: "https://www.instagram.com/prefjaboatao/" },
+  { imgsrc: "/images/Footer/youtube.svg", href: "https://www.youtube.com/user/prefeiturajaboatao/videos" },
 ];
 
 const Footer = () => {

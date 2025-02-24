@@ -48,33 +48,7 @@ const NoticiaDetalhada = ({ post }: { post: any }) => {
             </div>
           </div>
 
-          {/* Links para compartilhamento */}
-          <div className="flex gap-4 mt-4 items-center justify-center">
-            <a
-              href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-yellow-400"
-            >
-              <FaFacebook size={25} />
-            </a>
-            <a
-              href={`https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}%20${encodeURIComponent(shareUrl)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-yellow-400"
-            >
-              <FaWhatsapp size={25} />
-            </a>
-            <a
-              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}%20${encodeURIComponent(shareUrl)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-yellow-400"
-            >
-              <FaTwitter size={25} />
-            </a>
-          </div>
+          
           </div>
         </div>
       </div>
