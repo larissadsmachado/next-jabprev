@@ -3,6 +3,30 @@
 @tailwind utilities;
 
 
+@font-face {
+  font-family: 'Montserrat-Bold';
+  src: url('/fonts/Montserrat-Bold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+.Montserrat-Bold{
+  font-family: 'Montserrat-Bold', sans-serif;
+}
+
+
+@font-face {
+  font-family: 'montserrat-regular';
+  src: url('/fonts/montserrat-regular.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+.montserrat-regular {
+  font-family: 'montserrat-regular', sans-serif;
+}
+
+
 body {
   color: var(--foreground);
   background: var(--background);
@@ -16,4 +40,7 @@ body {
 .footer-icons:hover {
   transform: translateY(-8px);
 }
+
+
+
 

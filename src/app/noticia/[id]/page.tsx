@@ -17,17 +17,23 @@ const NoticiaDetalhada = ({ post }: { post: any }) => {
   });
 
   return (
-    <main className="max-full mx-auto p-6 h-full">
+    <main className="max-full mx-auto h-full">
       {/* Seção da imagem de destaque e informações */}
       <div className="relative w-full">
-        <img
-          src={post.featured_media}
-          alt={post.title.rendered}
-          className="w-full h-[400px] object-cover"
-        />
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-white p-6">
-          <h1 className="text-3xl font-bold">{post.title.rendered}</h1>
-          <div className="flex gap-4 mt-2">
+        {post.featured_image_url && ( // Garante que só renderiza se houver imagem
+          <img
+            src={`/api/image-proxy?url=${encodeURIComponent(post.featured_image_url)}`}
+            alt={post.title.rendered}
+            className="w-full h-screen object-cover"
+          />
+        )}
+        <div className="absolute inset-0 bg-black bg-opacity-20 flex flex-col justify-center items-center text-white p-6 ">
+
+          <div className="absolute bottom-0 left-0 w-full bg-[#00347070] p-[32px] drop-shadow-[0_4px_6px_rgba(0,0,0,0.9)]">
+
+          <h1 className="Montserrat-Bold uppercase text-[40px] text-white text-center">{post.title.rendered}</h1>
+
+          <div className="flex gap-4 mt-2 items-center justify-center">
             <div className="flex items-center gap-2">
               <FaCalendarAlt />
               <span>{formattedDate}</span>
@@ -41,8 +47,9 @@ const NoticiaDetalhada = ({ post }: { post: any }) => {
               <span>{post.category || "Sem categoria"}</span>
             </div>
           </div>
+
           {/* Links para compartilhamento */}
-          <div className="flex items-center gap-4 mt-4">
+          <div className="flex gap-4 mt-4 items-center justify-center">
             <a
               href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`}
               target="_blank"
@@ -68,13 +75,29 @@ const NoticiaDetalhada = ({ post }: { post: any }) => {
               <FaTwitter size={25} />
             </a>
           </div>
+          </div>
         </div>
       </div>
 
+
       {/* Conteúdo da notícia */}
-      <section className="mt-10 max-w-3xl mx-auto">
-        <h1 className="text-3xl font-bold text-red-500 mb-4">{post.title.rendered}</h1>
-        <div className="prose prose-lg max-w-none" dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
+      <section className="my-20 max-w-6xl mx-auto shadow-2xl bg-white p-10">
+        <h1 className="Montserrat-Bold text-5xl font-bold mb-4 text-center pb-5">{post.title.rendered}</h1>
+
+
+        <div className="flex gap-4 mt-2 mb-5 items-center justify-center">
+            <div className="flex items-center gap-2">
+              <FaCalendarAlt />
+              <span>{formattedDate}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <FaClock />
+              <span>{formattedTime}</span>
+            </div>
+          </div>
+
+
+        <div className="montserrat-regular prose prose-lg max-w-none text-xl" dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
       </section>
     </main>
   );
