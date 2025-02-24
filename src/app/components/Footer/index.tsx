@@ -20,14 +20,15 @@ const Footer = () => {
       {/* TOPO RODAPE AMALERO */}
       <div className="flex justify-center items-center">
         <Image
-          src={"/images/Rodape/topo-rodape.png"}
+          src="/images/Rodape/topo-rodape.png"
           alt="logo-image"
-          layout="intrinsic"
           width={1500}
-          height={5}
-          className="w-full"
+          height={50}
+          style={{ width: "100%", height: "auto" }}
+          priority // <--- Adiciona prioridade de carregamento
         />
       </div>
+
       {/* Fundo azul */}
       <div className="bg-[#002D9E] text-white w-full">
         {/* Grid principal */}
@@ -443,8 +444,9 @@ const Footer = () => {
                 src="/images/Logo/logo-longa.png"
                 alt="logo-image"
                 width={200}
-                height={100} 
+                height={100}
                 className="md:block"
+                style={{ width: "auto", height: "auto" }}
               />
             </div>
 

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import DivisorDeForma from "../../DivisorDeForma/divisor";
+import Image from "next/image";
 
 type Post = {
   id: number;
@@ -58,12 +59,13 @@ export const HoverImageLinks: React.FC = () => {
                 if (!mediaRes.ok) throw new Error("Erro ao buscar imagem");
 
                 const mediaData = await mediaRes.json();
-                console.log("🔍 URL da Imagem:", mediaData.guid.rendered); // Debug para ver a URL
+                console.log("🔍 URL da Imagem:", mediaData.source_url); // Debug para ver a URL
 
                 return {
                   id: post.featured_media,
-                  url: mediaData.guid.rendered,
+                  url: mediaData.source_url,
                 };
+                
               } catch (error) {
                 console.error(
                   `❌ Erro ao buscar imagem do post ${post.id}:`,
@@ -175,27 +177,33 @@ export const HoverImageLinks: React.FC = () => {
       <DivisorDeForma />
 
       {loading ? (
-        <p className="flex text-center items-center justify-center text-gray-600 h-auto text-xl py-60">Carregando...</p>
+        <p className="flex text-center items-center justify-center text-gray-600 h-auto text-xl py-60">
+          Carregando...
+        </p>
       ) : (
         <>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4 px-36 py-20 bg-gradient-to-b from-[#ffffff] to-[#003470]">
             {posts.map((post) => (
               <div key={post.id} className="bg-white shadow-md rounded-lg">
-              {(() => {
-                const imageUrl = media[post.featured_media];
-                const finalUrl = imageUrl?.startsWith("/")
-                  ? `https://jaboataoprev.jaboatao.pe.gov.br${imageUrl}`
-                  : imageUrl;
-            
-                return (
-                  <img
-                    key={finalUrl} // Força a re-renderização
-                    src={finalUrl || "/placeholder.jpg"}
-                    alt={post.title.rendered}
-                    className="w-full h-48 object-cover rounded-t-lg"
-                  />
-                );
-              })()} 
+                {(() => {
+                  const imageUrl = media[post.featured_media];
+                  const finalUrl = imageUrl?.startsWith("/")
+                    ? `https://jaboataoprev.jaboatao.pe.gov.br${imageUrl}`
+                    : imageUrl;
+
+                  return (
+                    <Image
+                      key={finalUrl}
+                      // src={finalUrl || "/images/placeholder.png"}
+                      src={`/api/image-proxy?url=${encodeURIComponent(finalUrl)}`}
+                      alt={post.title.rendered}
+                      width={500}
+                      height={300}
+                      className="w-full h-48 object-cover rounded-t-lg"
+                      unoptimized
+                    />
+                  );
+                })()}
 
                 <div className="p-4">
                   <h2 className="text-lg font-bold">{post.title.rendered}</h2>

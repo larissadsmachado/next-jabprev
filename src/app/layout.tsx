@@ -1,3 +1,5 @@
+"use client";
+
 import './globals.css';
 import Navbar from './components/Navbar/index';
 import ScrollToTop from './components/ScrollToTop/index';
@@ -6,10 +8,6 @@ import Vlibras from './components/Vlibras/index';
 import AccessibilityButton from "./components/AccessibilityButton/index";
 import BotaoFlutuante from "./components/BotaoFlutuante/index"
 
-export const metadata = {
-  title: 'JABPREV',
-  description: 'Desenvolvido por: Secretaria Executiva de Governo Digital | SEGD'
-};
 
 export default function RootLayout({
   children,

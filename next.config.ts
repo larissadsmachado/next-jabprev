@@ -1,7 +1,13 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "jaboataoprev.pe.gov.br", // Permite subdomínios
+      },
+    ],
+  },
+  reactStrictMode: false, // Desativa o Strict Mode
 };
 
 export default nextConfig;
