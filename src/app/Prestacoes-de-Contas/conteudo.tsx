@@ -9,22 +9,50 @@ const exercises: Exercise[] = [
   {
     year: "2023",
     content: [
-      { text: "PRESTAÇÃO DE CONTAS", url: "#" },
-      { text: "Prestação de Contas aguardando verificação de conformidade pelo Tribunal de Contas-PE.", url: "#" },
+      { text: "PRESTAÇÃO DE CONTAS", url: "https://etce.tce.pe.gov.br/epp/ConsultaPublica/listView.seam" },
+      { text: "Prestação de Contas aguardando verificação de conformidade pelo Tribunal de Contas-PE.", url: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/09/RESOLUCAO-TC-No-205-DE-21-DE-JUNHO-DE-2023.pdf" },
     ],
   },
   {
     year: "2022",
     content: [
-      { text: "PRESTAÇÃO DE CONTAS", url: "#" },
-      { text: "Prestação de Contas aguardando verificação de conformidade pelo Tribunal de Contas-PE.", url: "#" },
+      { text: "PRESTAÇÃO DE CONTAS", url: "https://etce.tce.pe.gov.br/epp/ConsultaPublica/listView.seam" },
+      { text: "Prestação de Contas aguardando verificação de conformidade pelo Tribunal de Contas-PE.", url: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/09/RESOLUCAO-TC-No-205-DE-21-DE-JUNHO-DE-2023.pdf" },
     ],
   },
   {
     year: "2021",
     content: [
-      { text: "PRESTAÇÃO DE CONTAS", url: "#" },
-      { text: "Prestação de contas arquivada temporariamente pelo TCE, na forma da Resolução TCE-PE nº 205/2023.", url: "#" },
+      { text: "PRESTAÇÃO DE CONTAS", url: "https://etce.tce.pe.gov.br/epp/ConsultaPublica/listView.seam" },
+      { text: "Prestação de contas arquivada temporariamente pelo TCE, na forma da Resolução TCE-PE nº 205/2023.", url: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/09/RESOLUCAO-TC-No-205-DE-21-DE-JUNHO-DE-2023.pdf" },
+    ],
+  },
+  {
+    year: "2020",
+    content: [
+      { text: "PRESTAÇÃO DE CONTAS", url: "https://etce.tce.pe.gov.br/epp/ConsultaPublica/listView.seam" },
+      { text: "Prestação de contas arquivada temporariamente pelo TCE, na forma da Resolução TCE-PE nº 205/2023.", url: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/09/RESOLUCAO-TC-No-205-DE-21-DE-JUNHO-DE-2023.pdf" },
+    ],
+  },
+  {
+    year: "2019",
+    content: [
+      { text: "PRESTAÇÃO DE CONTAS", url: "https://etce.tce.pe.gov.br/epp/ConsultaPublica/listView.seam" },
+      { text: "Prestação de contas arquivada temporariamente pelo TCE, na forma da Resolução TCE-PE nº 205/2023.", url: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/09/RESOLUCAO-TC-No-205-DE-21-DE-JUNHO-DE-2023.pdf" },
+    ],
+  },
+  {
+    year: "2018",
+    content: [
+      { text: "PRESTAÇÃO DE CONTAS", url: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/08/MPCO_ContasPrefeitos-2018.pdf" },
+      { text: "Prestação de contas arquivada temporariamente pelo TCE, na forma da Resolução TCE-PE nº 205/2023.", url: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/09/RESOLUCAO-TC-No-205-DE-21-DE-JUNHO-DE-2023.pdf" },
+    ],
+  },
+  {
+    year: "2017",
+    content: [
+      { text: "PRESTAÇÃO DE CONTAS", url: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/08/MPCO_ContasPrefeitos-2017.pdf" },
+      { text: "Prestação de contas arquivada temporariamente pelo TCE, na forma da Resolução TCE-PE nº 205/2023.", url: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/09/RESOLUCAO-TC-No-205-DE-21-DE-JUNHO-DE-2023.pdf" },
     ],
   },
 ];
