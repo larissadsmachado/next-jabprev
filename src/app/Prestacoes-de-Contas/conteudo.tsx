@@ -1,0 +1,61 @@
+import React from "react";
+
+interface Exercise {
+  year: string;
+  content: { text: string; url?: string }[];
+}
+
+const exercises: Exercise[] = [
+  {
+    year: "2023",
+    content: [
+      { text: "PRESTAÇÃO DE CONTAS", url: "#" },
+      { text: "Prestação de Contas aguardando verificação de conformidade pelo Tribunal de Contas-PE.", url: "#" },
+    ],
+  },
+  {
+    year: "2022",
+    content: [
+      { text: "PRESTAÇÃO DE CONTAS", url: "#" },
+      { text: "Prestação de Contas aguardando verificação de conformidade pelo Tribunal de Contas-PE.", url: "#" },
+    ],
+  },
+  {
+    year: "2021",
+    content: [
+      { text: "PRESTAÇÃO DE CONTAS", url: "#" },
+      { text: "Prestação de contas arquivada temporariamente pelo TCE, na forma da Resolução TCE-PE nº 205/2023.", url: "#" },
+    ],
+  },
+];
+
+const FinancialExercises: React.FC = () => {
+  return (
+    <div className="h-auto bg-gradient-to-b from-[#dcecff] to-[#fef9e0] p-10">
+      {exercises.map(({ year, content }) => (
+        <div key={year} className="space-y-4 mb-10 max-w-5xl mx-auto">
+          {/* Título do exercício */}
+          <h2 className="text-2xl Montserrat-Bold  text-blue-900">
+            EXERCÍCIO {year}
+          </h2>
+          <hr className="border-t-2 border-blue-900 w-16" />
+
+          {/* Conteúdo com links apenas no hover */}
+          {content.map((item, index) =>
+            item.url ? (
+              <p key={index} className="text-blue-900 montserrat-regular">
+                <a href={item.url} className="hover:underline">
+                  {item.text}
+                </a>
+              </p>
+            ) : (
+              <p key={index} className="text-blue-900">{item.text}</p>
+            )
+          )}
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default FinancialExercises;
