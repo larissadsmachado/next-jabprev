@@ -562,7 +562,7 @@ const data = {
 
 const Links = () => {
   return (
-    <div className="h-auto bg-gradient-to-b from-[#cee5ff] to-[#fff4be] p-10">
+    <div className="h-auto bg-gradient-to-b from-[#dcecff] to-[#fef9e0] p-10">
   {Object.entries(data)
     .sort(([yearA], [yearB]) => Number(yearB) - Number(yearA)) // Ordena do maior para o menor
     .map(([year, links]) => (

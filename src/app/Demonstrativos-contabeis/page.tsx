@@ -1,0 +1,34 @@
+import Controle from "./conteudo";
+import Model from "../components/model-page/index";
+import Link from "next/link";
+
+export const metadata = {
+  title: "Demonstrativos Contábeis - JaboatãoPrev",
+};
+
+export default function config() {
+  return (
+    <div>
+      <Model
+        caminhoImagem={"/images/"}
+        titulo={"Demonstrativos Contábeis"}
+        subtitulo={
+          <span>
+            <Link
+              href="../"
+              className="text-white hover:underline hover:text-yellow-500 hover:brightness-125 transition-all"
+            >
+              INÍCIO
+            </Link>
+            &nbsp;»{" "}
+            <span className="brightness-125">
+            Demonstrativos Contábeis
+            </span>
+          </span>
+        }
+      >
+        <Controle />
+      </Model>
+    </div>
+  );
+}
