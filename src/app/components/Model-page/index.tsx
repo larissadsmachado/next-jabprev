@@ -2,10 +2,10 @@ interface ModelProps {
   children: React.ReactNode;
   caminhoImagem?: string;
   titulo: string;
-  subtitulo: string;
+  subtitulo: React.ReactNode; // Alterado para aceitar JSX
 }
 
-export default function Model({ children, caminhoImagem, titulo, subtitulo }: ModelProps) {
+export default function Model({ children, titulo, subtitulo }: ModelProps) {
   return (
     <div>
       <div className="relative w-full h-[250px] flex items-end justify-center bg-[#051f60]">
