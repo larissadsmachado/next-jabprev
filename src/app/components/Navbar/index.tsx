@@ -7,6 +7,7 @@ import { FaSearch } from "react-icons/fa";
 import Image from "next/image";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/20/solid";
 import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
+
 interface NavItem {
   name: string;
   href: string;
@@ -18,21 +19,23 @@ const navigation: NavItem[] = [
     name: "Institucional",
     href: "#",
     submenu: [
-      { name: "O que é o JaboatãoPrev", href: "./Institucional" },
-      { name: "Missão, visão e valores", href: "./Institucional/#missao" },
-      { name: "A equipe JaboatãoPREV", href: "./Institucional#organograma" },
+      { name: "O que é o JaboatãoPrev", href: "/Institucional" },
+      { name: "Missão, visão e valores", href: "/Institucional/#missao" },
+      { name: "A equipe JaboatãoPREV", href: "/Institucional#organograma" },
       {
         name: "Certificações Profissional",
         href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/04/CERTIFICACOES-GERAIS-Atualizado.pdf",
       },
-      { name: "Perguntas Frequentes", href: "./Perguntas-Frequentes" },
-      { name: "Legislação", href: "Legislacao" },
-      { name: "Cartilha Previdenciária", href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/09/CARTILHA-JABOATAOPREV-NEW.pdf" },
-      { name: "Boletins Informativos", href: "Boletins-Informativos" },
-      { name: "Controle Interno", href: "Controle-Interno" },
+      { name: "Perguntas Frequentes", href: "/Perguntas-Frequentes" },
+      { name: "Legislação", href: "/Legislacao" },
+      {
+        name: "Cartilha Previdenciária",
+        href: "https:/jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/09/CARTILHA-JABOATAOPREV-NEW.pdf",
+      },
+      { name: "Boletins Informativos", href: "/Boletins-Informativos" },
+      { name: "Controle Interno", href: "/Controle-Interno" },
     ],
   },
-
 
   {
     name: "Administrativo",
@@ -44,12 +47,12 @@ const navigation: NavItem[] = [
         submenu: [
           {
             name: "Atas do Conselho Deliberativo",
-            href: "Conselho-Administrativo",
+            href: "/Conselho-Administrativo",
           },
-          { name: "Atas do Conselho Fiscal", href: "Atas-do-Conselho-Fiscal" },
+          { name: "Atas do Conselho Fiscal", href: "/Atas-do-Conselho-Fiscal" },
           {
             name: "Atas do Comitê de Investimentos",
-            href: "Atas-do-Conselho-de-Investimentos",
+            href: "/Atas-do-Conselho-de-Investimentos",
           },
         ],
       },
@@ -66,17 +69,35 @@ const navigation: NavItem[] = [
             name: "Calendários de Reuniões",
             href: "#",
             submenu: [
-              { name: "Reuniões do Conselho Fiscal", href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Calendario-de-Reunioes-do-Conselho-Fiscal-2025.pdf" },
+              {
+                name: "Reuniões do Conselho Fiscal",
+                href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Calendario-de-Reunioes-do-Conselho-Fiscal-2025.pdf",
+              },
 
-              { name: "Reuniões do Conselho Deliberativo", href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Calendario-de-Reunioes-do-Conselho-Deliberativo-2025.pdf" },
+              {
+                name: "Reuniões do Conselho Deliberativo",
+                href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Calendario-de-Reunioes-do-Conselho-Deliberativo-2025.pdf",
+              },
 
-              { name: "Reuniões do Comitê de Investimentos", href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Calendario-de-Reunioes-gerenciais-2025.pdf" },
+              {
+                name: "Reuniões do Comitê de Investimentos",
+                href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Calendario-de-Reunioes-gerenciais-2025.pdf",
+              },
 
-              { name: "Reuniões da diretoria Executiva", href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Calendario-de-Reunioes-gerenciais-2025-1.pdf" },
+              {
+                name: "Reuniões da diretoria Executiva",
+                href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Calendario-de-Reunioes-gerenciais-2025-1.pdf",
+              },
 
-              { name: "Reuniões setoriais", href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Calendario-de-Reunioes-Setoriais-2025.pdf" },
+              {
+                name: "Reuniões setoriais",
+                href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Calendario-de-Reunioes-Setoriais-2025.pdf",
+              },
 
-              { name: "Reuniões do Monitoramento", href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Calendario-de-Reunioes-de-Monitoramento-2025.pdf" },
+              {
+                name: "Reuniões do Monitoramento",
+                href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Calendario-de-Reunioes-de-Monitoramento-2025.pdf",
+              },
 
               {
                 name: "Reuniões da comissão de revisão de benefícios",
@@ -84,7 +105,7 @@ const navigation: NavItem[] = [
               },
             ],
           },
-          
+
           {
             name: "Calendário de obrigações",
             href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Calendario-de-Envio-de-Informacoes-2025.pdf",
@@ -94,42 +115,51 @@ const navigation: NavItem[] = [
             name: "Calendários de Eventos",
             href: "#",
             submenu: [
-              { name: " Dia de acolhimento e boas vindas", 
-                href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Calendario-cafe-da-manha-2025-1.pdf" },
-
+              {
+                name: " Dia de acolhimento e boas vindas",
+                href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Calendario-cafe-da-manha-2025-1.pdf",
+              },
             ],
           },
-
         ],
       },
 
       { name: "Contratos", href: "Contratos" },
 
-      { name: "Educação previdenciária e financeira",
+      {
+        name: "Educação previdenciária e financeira",
         href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/04/Cronograma-de-Educacao-Previdenciaria-2024.pdf",
       },
 
-      { name: "folha de pagamento", href: "Folha-de-Pagamento" },
-      
-      { name: "cronograma de capacitação", href: "Cronograma-de-Capacitacao" },
-      
-      { name: "plano de ação", href: "Plano-de-Acao" },
-      { name: "programa 55", href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/01/Apresenta%C3%A7%C3%A3o%205s%20att.pptx" },
-      { name: "relatório anual de gestão", href: "Relatorio-anual-de-gestao" },
-      { name: "obrigações fiscais", href: "Obrigacoes-fiscais" },
+      { name: "folha de pagamento", href: "/Folha-de-Pagamento" },
+
+      { name: "cronograma de capacitação", href: "/Cronograma-de-Capacitacao" },
+
+      { name: "plano de ação", href: "/Plano-de-Acao" },
+      {
+        name: "programa 55",
+        href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/01/Apresenta%C3%A7%C3%A3o%205s%20att.pptx",
+      },
+      { name: "relatório anual de gestão", href: "/Relatorio-anual-de-gestao" },
+      { name: "obrigações fiscais", href: "/Obrigacoes-fiscais" },
     ],
   },
-
 
   {
     name: "Financeiro",
     href: "#",
     submenu: [
-      { name: "receitas", href: "https://portaldatransparencia.jaboatao.pe.gov.br/receitas/" },
-      { name: "despesas", href: "https://portaldatransparencia.jaboatao.pe.gov.br/despesas/" },
-      { name: "despesas adminstrativas", href: "Despesas-Administrativas" },
-      { name: "demonstrativos contábeis", href: "Demonstrativos-contabeis" },
-      { name: "prestações de contas", href: "Prestacoes-de-Contas" },
+      {
+        name: "receitas",
+        href: "https://portaldatransparencia.jaboatao.pe.gov.br/receitas/",
+      },
+      {
+        name: "despesas",
+        href: "https://portaldatransparencia.jaboatao.pe.gov.br/despesas/",
+      },
+      { name: "despesas adminstrativas", href: "/Despesas-Administrativas" },
+      { name: "demonstrativos contábeis", href: "/Demonstrativos-contabeis" },
+      { name: "prestações de contas", href: "/Prestacoes-de-Contas" },
       {
         name: "mapeamento",
         href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/04/FINANCEIRO-2.pdf",
@@ -142,17 +172,24 @@ const navigation: NavItem[] = [
     submenu: [
       {
         name: "Apr-autorização de aplicação e resgate",
-        href: "Apr-autorizacao-de-aplicacao-e-resgate",
+        href: "/Apr-autorizacao-de-aplicacao-e-resgate",
       },
       { name: "credenciamentos", href: "#" },
-      { name: "política de investimentos", href: "Politica-de-Investimentos" },
-      { name: "Relatório anual de investimentos", href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/02/13.-RELATORIO-ANUAL-2023.pdf" },
-      { name: "regime interno", href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/03/REGIMENTO-INTERNO-COMITE-DE-INVESTIMENTOS.pdf" },
-      { name: "relatório mensais", href: "Relatorio-mensais" },
-      {name: "relatório de inteligência de dados(bi)", href: "#",
+      { name: "política de investimentos", href: "/Politica-de-Investimentos" },
+      {
+        name: "Relatório anual de investimentos",
+        href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/02/13.-RELATORIO-ANUAL-2023.pdf",
       },
-      { name: "Estudo de alm", href: "Estudo-de-alm" },
-      { name: "mapeamento", href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/04/MAPEAMENTO-SETOR-DE-INVESTIMENTOS.pdf",
+      {
+        name: "regime interno",
+        href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/03/REGIMENTO-INTERNO-COMITE-DE-INVESTIMENTOS.pdf",
+      },
+      { name: "relatório mensais", href: "/Relatorio-mensais" },
+      { name: "relatório de inteligência de dados(bi)", href: "#" },
+      { name: "Estudo de alm", href: "/Estudo-de-alm" },
+      {
+        name: "mapeamento",
+        href: "/https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/04/MAPEAMENTO-SETOR-DE-INVESTIMENTOS.pdf",
       },
     ],
   },
@@ -160,13 +197,13 @@ const navigation: NavItem[] = [
     name: "previdência",
     href: "#",
     submenu: [
-      { name: "previdência complementar", href: "Previdencia-complementar" },
+      { name: "previdência complementar", href: "/Previdencia-complementar" },
       {
         name: "dia de acolhimento e boas vindas",
-        href: "Dia-de-acolhimento-e-boas-vindas",
+        href: "/Dia-de-acolhimento-e-boas-vindas",
       },
-      { name: "provisões matemáticas", href: "Provisoes-matemáticas" },
-      { name: "relatório gestão atuaial", href: "Relatorio-gestao-atual" },
+      { name: "provisões matemáticas", href: "/Provisoes-matemáticas" },
+      { name: "relatório gestão atuaial", href: "/Relatorio-gestao-atual" },
       {
         name: "relatórios atuariais ",
         href: "#",
@@ -396,18 +433,23 @@ const MobileMenu = () => {
     <div className="lg:hidden p-4 pt-10">
       {navigation.map((item) => (
         <div key={item.name} className="mb-2">
-          <button
-            onClick={() => toggleMenu(item.name)}
-            className="w-full flex justify-between text-[#0037C1] text-lg font-normal hover:underline"
-          >
-            {item.name}
-            {item.submenu &&
-              (openMenus[item.name] ? (
-                <ChevronUpIcon className="h-5 w-5" />
-              ) : (
-                <ChevronDownIcon className="h-5 w-5" />
-              ))}
-          </button>
+          <Link href={item.href || "#"} className="block w-full">
+            <button
+              onClick={(e) => {
+                e.preventDefault(); // Evita que o link seja seguido ao apenas expandir
+                toggleMenu(item.name);
+              }}
+              className="w-full flex justify-between text-[#0037C1] text-lg font-normal hover:underline"
+            >
+              {item.name}
+              {item.submenu &&
+                (openMenus[item.name] ? (
+                  <ChevronUpIcon className="h-5 w-5" />
+                ) : (
+                  <ChevronDownIcon className="h-5 w-5" />
+                ))}
+            </button>
+          </Link>
 
           {openMenus[item.name] && item.submenu && (
             <div className="pl-4 mt-2">
