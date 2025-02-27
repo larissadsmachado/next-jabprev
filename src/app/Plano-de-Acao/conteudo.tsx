@@ -27,7 +27,7 @@ const planos = [
 
 const PlanosAcao: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center  bg-gradient-to-b from-[#00BDFF] to-[#008C32] text-white">
+    <div className="flex flex-col items-center justify-center bg-gradient-to-b from-[#00BDFF] to-[#008C32] text-white">
       <div className="relative w-full">
         <svg
           width="100%"
