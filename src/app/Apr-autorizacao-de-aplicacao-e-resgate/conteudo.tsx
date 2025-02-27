@@ -108,7 +108,7 @@ const reportsData: ReportsByYear = {
       },
       {
         name: "APR – Outubro – 2023",
-        url: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/01/10.-APR-OUTUBRO-2023.pdfi",
+        url: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/01/10.-APR-OUTUBRO-2023.pdf",
       },
       {
         name: "APR – Novembro – 2023",
