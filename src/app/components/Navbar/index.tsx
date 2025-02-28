@@ -410,105 +410,46 @@ const NavLinks = () => {
 
 const MobileMenu = () => {
   const [openMenus, setOpenMenus] = useState<{ [key: string]: boolean }>({});
-  const [openSubMenus, setOpenSubMenus] = useState<{ [key: string]: boolean }>(
-    {}
-  );
-  const [openSubSubMenus, setOpenSubSubMenus] = useState<{
-    [key: string]: boolean;
-  }>({});
 
   const toggleMenu = (menu: string) => {
     setOpenMenus((prev) => ({ ...prev, [menu]: !prev[menu] }));
   };
 
-  const toggleSubMenu = (menu: string) => {
-    setOpenSubMenus((prev) => ({ ...prev, [menu]: !prev[menu] }));
-  };
-
-  const toggleSubSubMenu = (menu: string) => {
-    setOpenSubSubMenus((prev) => ({ ...prev, [menu]: !prev[menu] }));
+  const renderSubMenu = (items: NavItem[], level = 1) => {
+    return (
+      <div className={`pl-${level * 4} mt-2`}> {/* Indentação dinâmica */}
+        {items.map((item) => (
+          <div key={item.name} className="mb-2">
+            {item.submenu ? (
+              <button
+                onClick={() => toggleMenu(item.name)}
+                className="w-full flex items-center text-center justify-between text-[#0037C1] text-lg font-normal hover:underline"
+              >
+                {item.name}
+                {openMenus[item.name] ? (
+                  <ChevronUpIcon className="h-5 w-5" />
+                ) : (
+                  <ChevronDownIcon className="h-5 w-5" />
+                )}
+              </button>
+            ) : (
+              <Link
+                href={item.href}
+                className="block w-full text-[#0037C1] text-lg font-normal hover:underline"
+              >
+                {item.name}
+              </Link>
+            )}
+            {item.submenu && openMenus[item.name] && renderSubMenu(item.submenu, level + 1)}
+          </div>
+        ))}
+      </div>
+    );
   };
 
   return (
     <div className="lg:hidden p-4 pt-10">
-      {navigation.map((item) => (
-        <div key={item.name} className="mb-2">
-          <Link href={item.href || "#"} className="block w-full">
-            <button
-              onClick={(e) => {
-                e.preventDefault(); // Evita que o link seja seguido ao apenas expandir
-                toggleMenu(item.name);
-              }}
-              className="w-full flex justify-between text-[#0037C1] text-lg font-normal hover:underline"
-            >
-              {item.name}
-              {item.submenu &&
-                (openMenus[item.name] ? (
-                  <ChevronUpIcon className="h-5 w-5" />
-                ) : (
-                  <ChevronDownIcon className="h-5 w-5" />
-                ))}
-            </button>
-          </Link>
-
-          {openMenus[item.name] && item.submenu && (
-            <div className="pl-4 mt-2">
-              {item.submenu.map((subItem) => (
-                <div key={subItem.name} className="mb-2">
-                  <button
-                    onClick={() => toggleSubMenu(subItem.name)}
-                    className="w-full flex justify-between text-[#0037C1] text-lg font-normal hover:underline"
-                  >
-                    {subItem.name}
-                    {subItem.submenu &&
-                      (openSubMenus[subItem.name] ? (
-                        <ChevronUpIcon className="h-5 w-5" />
-                      ) : (
-                        <ChevronDownIcon className="h-5 w-5" />
-                      ))}
-                  </button>
-
-                  {openSubMenus[subItem.name] && subItem.submenu && (
-                    <div className="pl-4 mt-2">
-                      {subItem.submenu.map((subSubItem) => (
-                        <div key={subSubItem.name} className="mb-2">
-                          <button
-                            onClick={() => toggleSubSubMenu(subSubItem.name)}
-                            className="w-full flex justify-between text-[#0037C1] text-lg font-normal hover:underline"
-                          >
-                            {subSubItem.name}
-                            {subSubItem.submenu &&
-                              (openSubSubMenus[subSubItem.name] ? (
-                                <ChevronUpIcon className="h-5 w-5" />
-                              ) : (
-                                <ChevronDownIcon className="h-5 w-5" />
-                              ))}
-                          </button>
-
-                          {openSubSubMenus[subSubItem.name] &&
-                            subSubItem.submenu && (
-                              <div className="pl-4 mt-2">
-                                {subSubItem.submenu.map((subSubSubItem) => (
-                                  <Link
-                                    key={subSubSubItem.name}
-                                    href={subSubSubItem.href}
-                                    className="block px-4 py-2 text-[#0037C1] hover:bg-gray-100"
-                                  >
-                                    {subSubSubItem.name}
-                                  </Link>
-                                ))}
-                              </div>
-                            )}
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      ))}
+      {renderSubMenu(navigation, 1)}
     </div>
   );
 };
@@ -576,3 +517,11 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+
+
+
+
+
+
