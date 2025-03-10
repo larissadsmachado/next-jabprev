@@ -198,7 +198,7 @@ const navigation: NavItem[] = [
     href: "#",
     submenu: [
       { name: "previdência complementar", href: "/Previdencia-complementar" },
-      { name: "provisões matemáticas", href: "/Provisoes-matemáticas" },
+      { name: "provisões matemáticas", href: "/Provisoes-matematicas" },
       { name: "relatório gestão atuaial", href: "/Pdf/Jaboatao-dos-Guararapes-PE-Relatorio-Pro-Gestao-2023-Nivel-II.pdf" },
       {
         name: "relatórios atuariais ",

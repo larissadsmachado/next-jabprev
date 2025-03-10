@@ -13,7 +13,7 @@ interface ReportsByYear {
 }
 
 const reportsData: ReportsByYear = {
-  "2025": { title: "2017", url: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/CRP-2025_30.07.25.pdf" },
+  "2025": { title: "2025", url: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/CRP-2025_30.07.25.pdf" },
 };
 
 const FinancialReports: React.FC = () => {
