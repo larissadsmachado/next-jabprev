@@ -7,6 +7,8 @@ import { FaSearch } from "react-icons/fa";
 import Image from "next/image";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/20/solid";
 import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
+import { motion } from "framer-motion";
+
 
 interface NavItem {
   name: string;
@@ -450,29 +452,52 @@ const MobileMenu = () => {
   );
 };
 
+
 const SearchBar = () => {
   const [showSearch, setShowSearch] = useState(false);
+
   return (
-    <div className="hidden lg:flex items-center relative">
+    <div className="relative">
       <button
-        onClick={() => setShowSearch(!showSearch)}
+        onClick={() => setShowSearch(true)}
         className="text-[#0037C1] text-xl focus:outline-none"
         aria-label="Toggle Search"
       >
         <FaSearch />
       </button>
+
       {showSearch && (
-        <div className="absolute top-full mt-2 bg-white p-2 rounded shadow-lg w-64">
-          <input
-            type="text"
-            placeholder="Search..."
-            className="text-black placeholder-gray-500 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent w-full"
-          />
-        </div>
+        <motion.div 
+          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          <motion.div 
+            className="relative w-full max-w-2xl"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+          >
+            <button
+              onClick={() => setShowSearch(false)}
+              className="absolute top-2 right-7 text-white hover:text-gray-400 text-xl"
+              aria-label="Close Search"
+            >
+              &times;
+            </button>
+            <input
+              type="text"
+              placeholder="Search..."
+              className="text-white placeholder-gray-300 px-7 py-3 rounded-full border-2 border-blue-600 bg-transparent focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent w-full text-2xl"
+            />
+          </motion.div>
+        </motion.div>
       )}
     </div>
   );
 };
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
