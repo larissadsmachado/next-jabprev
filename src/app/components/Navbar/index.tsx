@@ -174,7 +174,7 @@ const navigation: NavItem[] = [
         name: "Apr-autorização de aplicação e resgate",
         href: "/Apr-autorizacao-de-aplicacao-e-resgate",
       },
-      { name: "credenciamentos", href: "/VERDEPOIS" },
+      { name: "credenciamentos", href: "/Credenciamentos" },
       { name: "política de investimentos", href: "/Politica-de-Investimentos" },
       {
         name: "Relatório anual de investimentos",
@@ -266,15 +266,15 @@ const navigation: NavItem[] = [
     submenu: [
       {
         name: "DIPR - Demonstrativo De Informações Previdenciárias E Repasses",
-        href: "/dipr-demonstrativo-de-informacoes-previdenciarias-e-repasses",
+        href: "/Dipr-demonstrativo-de-informacoes-previdenciarias-e-repasses",
       },
       {
         name: "DAIR - Demonstrativo das aplicações e investimentos dos recursos",
-        href: "/dair-demonstrativo-das-aplicacoes-e-investimentos-dos-recursos",
+        href: "/Dair-demonstrativo-das-aplicacoes-e-investimentos-dos-recursos",
       },
-      { name: "DPIN - demonstrativo de políticas de investimento", href: "/dpin-demonstrativo-de-politicas-de-investimento" },
-      { name: "AP - Acordo de parcelamento", href: "/ap-acordo-de-parcelamento" },
-      { name: "CRP - Certidão de regularidade previdenciária", href: "/crp-certidao-de-regularidade-previdenciaria" },
+      { name: "DPIN - demonstrativo de políticas de investimento", href: "/Dpin-demonstrativo-de-politicas-de-investimento" },
+      { name: "AP - Acordo de parcelamento", href: "/Ap-acordo-de-parcelamento" },
+      { name: "CRP - Certidão de regularidade previdenciária", href: "/Crp-certidao-de-regularidade-previdenciaria" },
     ],
   },
   {
