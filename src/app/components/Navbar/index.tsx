@@ -24,13 +24,13 @@ const navigation: NavItem[] = [
       { name: "A equipe JaboatãoPREV", href: "/Institucional#organograma" },
       {
         name: "Certificações Profissional",
-        href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/04/CERTIFICACOES-GERAIS-Atualizado.pdf",
+        href: "/Pdf/CERTIFICACOES-GERAIS.pdf",
       },
       { name: "Perguntas Frequentes", href: "/Perguntas-Frequentes" },
       { name: "Legislação", href: "/Legislacao" },
       {
         name: "Cartilha Previdenciária",
-        href: "https:/jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/09/CARTILHA-JABOATAOPREV-NEW.pdf",
+        href: "/Pdf/CARTILHA.pdf",
       },
       { name: "Boletins Informativos", href: "/Boletins-Informativos" },
       { name: "Controle Interno", href: "/Controle-Interno" },
@@ -62,7 +62,7 @@ const navigation: NavItem[] = [
         submenu: [
           {
             name: "Calendário de Pagamento",
-            href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/02/CALENDARIO-DE-PAGAMENTO-2024.pdf",
+            href: "/Pdf/CALENDARIO-DE-PAGAMENTO-2024.pdf",
           },
 
           {
@@ -71,44 +71,44 @@ const navigation: NavItem[] = [
             submenu: [
               {
                 name: "Reuniões do Conselho Fiscal",
-                href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Calendario-de-Reunioes-do-Conselho-Fiscal-2025.pdf",
+                href: "/Pdf/Calendario-de-Reunioes-do-Conselho-Fiscal-2025.pdf",
               },
 
               {
                 name: "Reuniões do Conselho Deliberativo",
-                href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Calendario-de-Reunioes-do-Conselho-Deliberativo-2025.pdf",
+                href: "/Pdf/Calendario-de-Reunioes-do-Conselho-Deliberativo-2025.pdf",
               },
 
               {
                 name: "Reuniões do Comitê de Investimentos",
-                href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Calendario-de-Reunioes-gerenciais-2025.pdf",
+                href: "/Pdf/Calendario-de-Reunioes-gerenciais-2025.pdf",
               },
 
               {
                 name: "Reuniões da diretoria Executiva",
-                href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Calendario-de-Reunioes-gerenciais-2025-1.pdf",
+                href: "/Pdf/Calendario-de-Reunioes-gerenciais-2025-1.pdf",
               },
 
               {
                 name: "Reuniões setoriais",
-                href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Calendario-de-Reunioes-Setoriais-2025.pdf",
+                href: "/Pdf/Calendario-de-Reunioes-Setoriais-2025.pdf",
               },
 
               {
                 name: "Reuniões do Monitoramento",
-                href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Calendario-de-Reunioes-de-Monitoramento-2025.pdf",
+                href: "/Pdf/Calendario-de-Reunioes-de-Monitoramento-2025.pdf",
               },
 
               {
                 name: "Reuniões da comissão de revisão de benefícios",
-                href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/CALENDARIO-DE-REUNIOES-Comissao-2025.pdf%22%20title=%22CALENDARIO%20DE%20REUNIOES%20-%20Comiss%C3%A3o%202025",
+                href: "/Pdf/CALENDARIO-DE-REUNIOES-Comissao-2025.pdf",
               },
             ],
           },
 
           {
             name: "Calendário de obrigações",
-            href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Calendario-de-Envio-de-Informacoes-2025.pdf",
+            href: "/Pdf/Calendario-de-Envio-de-Informacoes-2025.pdf",
           },
 
           {
@@ -117,7 +117,7 @@ const navigation: NavItem[] = [
             submenu: [
               {
                 name: " Dia de acolhimento e boas vindas",
-                href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Calendario-cafe-da-manha-2025-1.pdf",
+                href: "/Pdf/Calendario-cafe-da-manha-2025-1.pdf",
               },
             ],
           },
@@ -128,7 +128,7 @@ const navigation: NavItem[] = [
 
       {
         name: "Educação previdenciária e financeira",
-        href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/04/Cronograma-de-Educacao-Previdenciaria-2024.pdf",
+        href: "/Pdf/Cronograma-de-Educacao-Previdenciaria-2024.pdf",
       },
 
       { name: "folha de pagamento", href: "/Folha-de-Pagamento" },
@@ -137,7 +137,7 @@ const navigation: NavItem[] = [
 
       { name: "plano de ação", href: "/Plano-de-Acao" },
       {
-        name: "programa 55",
+        name: "programa 5S",
         href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/01/Apresenta%C3%A7%C3%A3o%205s%20att.pptx",
       },
       { name: "relatório anual de gestão", href: "/Relatorio-anual-de-gestao" },
@@ -162,7 +162,7 @@ const navigation: NavItem[] = [
       { name: "prestações de contas", href: "/Prestacoes-de-Contas" },
       {
         name: "mapeamento",
-        href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/04/FINANCEIRO-2.pdf",
+        href: "/Pdf/FINANCEIRO-2.pdf",
       },
     ],
   },
@@ -178,18 +178,18 @@ const navigation: NavItem[] = [
       { name: "política de investimentos", href: "/Politica-de-Investimentos" },
       {
         name: "Relatório anual de investimentos",
-        href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/02/13.-RELATORIO-ANUAL-2023.pdf",
+        href: "13.-RELATORIO-ANUAL-2023.pdf",
       },
       {
         name: "regime interno",
-        href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/03/REGIMENTO-INTERNO-COMITE-DE-INVESTIMENTOS.pdf",
+        href: "/Pdf/REGIMENTO-INTERNO-COMITE-DE-INVESTIMENTOS.pdf",
       },
       { name: "relatório mensais", href: "/Relatorio-mensais" },
       { name: "relatório de inteligência de dados(bi)", href: "#" },
       { name: "Estudo de alm", href: "/Estudo-de-alm" },
       {
         name: "mapeamento",
-        href: "/https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/04/MAPEAMENTO-SETOR-DE-INVESTIMENTOS.pdf",
+        href: "/Pdf/MAPEAMENTO-SETOR-DE-INVESTIMENTOS.pdf",
       },
     ],
   },
@@ -210,57 +210,57 @@ const navigation: NavItem[] = [
         submenu: [
           {
             name: "Avaliação Atuarial 2025",
-            href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Jaboatao_dos_GuararapesPE-Relatorio-Avaliacao-Atuarial-Segregacao-2025-N009_V1.pdf",
+            href: "/Pdf/Jaboatao_dos_GuararapesPE-Relatorio-Avaliacao-Atuarial-Segregacao-2025-N009_V1.pdf",
           },
           {
             name: "Avaliação Atuarial 2024",
-            href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/04/Jaboatao-dos-Guararapes-PE-Relatorio-Avaliacao-Atuarial-2024-N021_V1-1.pdf",
+            href: "/Pdf/Jaboatao-dos-Guararapes-PE-Relatorio-Avaliacao-Atuarial-2024-N021_V1-1.pdf",
           },
           {
             name: "Avaliação Atuarial 2023",
-            href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/04/Avalicao-atuarial-2023.pdf",
+            href: "/Pdf/Avalicao-atuarial-2023.pdf",
           },
           {
             name: "Avaliação Atuarial 2022",
-            href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2022/06/Jaboatao-dos-Guararapes-PE-Relatorio-Avaliacao-Atuarial-2022-N043V1-Com-Segregacao-1.pdf",
+            href: "/Pdf/Jaboatao-dos-Guararapes-PE-Relatorio-Avaliacao-Atuarial-2022-N043V1-Com-Segregacao-1.pdf",
           },
           {
             name: "Avaliação Atuarial 2021",
             href: "#",
             submenu: [
-              { name: "Captalizado", href: "#" },
-              { name: "Financeiro", href: "#" },
+              { name: "Captalizado", href: "/Pdf/RelatorioAA-Prev-2021-JABOATAO.pdf" },
+              { name: "Financeiro", href: "/Pdf/RelatorioAA-FINANC-2021-JABOATAO.pdf" },
             ],
           },
           {
             name: "Avaliação Atuarial 2020",
             href: "#",
             submenu: [
-              { name: "Captalizado", href: "#" },
-              { name: "Financeiro", href: "#" },
+              { name: "Captalizado", href: "/Pdf/RelatorioAA-Prev-MAR-2020-JABOATÃO-mesclado.pdf" },
+              { name: "Financeiro", href: "/Pdf/RelatorioAA-FINANC-MAR-2020-JABOATÃO-mesclado.pdf" },
             ],
           },
           {
             name: "Avaliação Atuarial 2019",
-            href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2020/04/Avalia%C3%A7%C3%A3o-Atuarial-2019.pdf",
+            href: "/Pdf/Avaliação-Atuarial-2019.pdf",
           },
           {
             name: "Avaliação Atuarial 2018",
-            href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2020/04/Avalia%C3%A7%C3%A3o-Atuarial-2018.pdf",
+            href: "/Pdf/Avaliação-Atuarial-2018.pdf",
           },
           {
             name: "Avaliação Atuarial 2017",
-            href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2020/04/Avalia%C3%A7%C3%A3o-Atuarial-2017.pdf",
+            href: "/Pdf/Avaliação-Atuarial-2017.pdf",
           },
         ],
       },
       {
         name: "contribuições previdenciária",
-        href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/10/Lei-complementar-40-reorganiza-o-RPPS.pdf",
+        href: "/Pdf/Lei-complementar-40-reorganiza-o-RPPS.pdf",
       },
       {
         name: "mapeamento",
-        href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/04/PREVIDENCIA.pdf",
+        href: "/Pdf/PREVIDENCIA.pdf",
       },
     ],
   },
@@ -283,17 +283,17 @@ const navigation: NavItem[] = [
   },
   {
     name: "Carta de Serviço",
-    href: "#",
+    href: "/Pdf/carta.pdf",
   },
   {
     name: "Sites Relacionados",
     href: "#",
     submenu: [
-      { name: "site Oficial", href: "#" },
-      { name: "diário oficial", href: "#" },
-      { name: "portal da transparência", href: "#" },
-      { name: "ouvidoria", href: "#" },
-      { name: "portal do contribuinte", href: "#" },
+      { name: "site Oficial", href: "https://jaboatao.pe.gov.br/" },
+      { name: "diário oficial", href: "https://diariooficial.jaboatao.pe.gov.br/" },
+      { name: "portal da transparência", href: "https://portaldatransparencia.jaboatao.pe.gov.br/" },
+      { name: "ouvidoria", href: "https://ouvidoria.jaboatao.pe.gov.br/" },
+      { name: "portal do contribuinte", href: "https://www.tinus.com.br/csp/JABOATAO/portal/index.csp" },
     ],
   },
 ];

@@ -9,12 +9,12 @@ GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/3.0.279
 
 
 const pdfFiles = [
-  { local: "/Pdf/capacitacao1.pdf", link: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Relacao-de-Cursos-para-Servidores-JaboataoPrev-2025.pdf" },
-  { local: "/Pdf/capacitacao2.pdf", link: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/03/CRONOGRAMA-DE-CAPACITACAO-2023.pdf" },
-  { local: "/Pdf/capacitacao3.pdf", link: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2022/07/CRONOGRAMA-DE-CURSOS-2022.pdf" },
-  { local: "/Pdf/capacitacao4.pdf", link: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2022/07/CRONOGRAMA-DE-CURSOS-2021.pdf" },
-  { local: "/Pdf/capacitacao5.pdf", link: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2020/03/CAPACITA%C3%87%C3%95ES-2020-1.pdf" },
-  { local: "/Pdf/capacitacao6.pdf", link: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2020/03/REALIZADAS-17-19.pdf" },
+  { local: "/Pdf/Cronograma-de-Capacitacao/capacitacao1.pdf" },
+  { local: "/Pdf/Cronograma-de-Capacitacao/capacitacao2.pdf" },
+  { local: "/Pdf/Cronograma-de-Capacitacao/capacitacao3.pdf"},
+  { local: "/Pdf/Cronograma-de-Capacitacao/capacitacao4.pdf" },
+  { local: "/Pdf/Cronograma-de-Capacitacao/capacitacao5.pdf" },
+  { local: "/Pdf/Cronograma-de-Capacitacao/capacitacao6.pdf" },
 ];
 
 const Certificacoes = () => {
@@ -26,7 +26,7 @@ const Certificacoes = () => {
             O documento publicado está em formato PDF. Caso não consiga abrir o
             arquivo, {" "}
             <a
-              href={pdf.link}
+              href={pdf.local}
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-500 underline"
