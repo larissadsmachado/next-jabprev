@@ -266,15 +266,15 @@ const navigation: NavItem[] = [
     submenu: [
       {
         name: "DIPR - Demonstrativo De Informações Previdenciárias E Repasses",
-        href: "#",
+        href: "/dipr-demonstrativo-de-informacoes-previdenciarias-e-repasses",
       },
       {
         name: "DAIR - Demonstrativo das aplicações e investimentos dos recursos",
-        href: "#",
+        href: "/dair-demonstrativo-das-aplicacoes-e-investimentos-dos-recursos",
       },
-      { name: "DPIN - demonstrativo de políticas de investimento", href: "#" },
-      { name: "AP - Acordo de parcelamento", href: "#" },
-      { name: "CRP - Certidão de regularidade previdenciária", href: "#" },
+      { name: "DPIN - demonstrativo de políticas de investimento", href: "/dpin-demonstrativo-de-politicas-de-investimento" },
+      { name: "AP - Acordo de parcelamento", href: "/ap-acordo-de-parcelamento" },
+      { name: "CRP - Certidão de regularidade previdenciária", href: "/crp-certidao-de-regularidade-previdenciaria" },
     ],
   },
   {
