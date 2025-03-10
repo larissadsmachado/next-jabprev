@@ -64,11 +64,11 @@ const CardContent = ({
 export default function CardGrid() {
   return (
     <div id="servicos" 
-    className="bg-gradient-to-b from-[#ffffff] to-[#003470] text-center">
+    className="bg-gradient-to-b from-[#ffffff] to-[#003470] text-center pb-32">
 
       <DivisorDeForma/>
 
-      <h2 className="text-5xl font-semibold text-[#173b7c] mb-14 uppercase">
+      <h2 className="text-5xl font-semibold text-[#173b7c] mb-14 uppercase pt-10">
         Serviços
       </h2>
 
