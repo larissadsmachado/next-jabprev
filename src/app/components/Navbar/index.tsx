@@ -185,7 +185,7 @@ const navigation: NavItem[] = [
         href: "/Pdf/REGIMENTO-INTERNO-COMITE-DE-INVESTIMENTOS.pdf",
       },
       { name: "relatório mensais", href: "/Relatorio-mensais" },
-      { name: "relatório de inteligência de dados(bi)", href: "/VERDEPOIS" },
+      { name: "relatório de inteligência de dados(bi)", href: "/Relatorio-de-inteligencia-de-dados-bi" },
       { name: "Estudo de alm", href: "/Estudo-de-alm" },
       {
         name: "mapeamento",
