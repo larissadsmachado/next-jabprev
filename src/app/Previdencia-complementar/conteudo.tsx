@@ -2,7 +2,7 @@ import { Divide } from "lucide-react";
 
 const FinancialReports: React.FC = () => {
   return (
-    <div className="h-auto py-32 flex items-center justify-center bg-gradient-to-b from-[#9adff8] to-[#84eda9]">
+    <div className="h-auto py-32 flex items-center justify-center bg-gradient-to-b from-[#c2e3ef] to-[#c5ffd9]">
       <div className="max-w-5xl mx-auto px-4">
         <p className="text-[#122162] text-xl pb-10 font-bold">
           O Regime de Previdência Complementar – RPC visa complementar a renda

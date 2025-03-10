@@ -174,18 +174,18 @@ const navigation: NavItem[] = [
         name: "Apr-autorização de aplicação e resgate",
         href: "/Apr-autorizacao-de-aplicacao-e-resgate",
       },
-      { name: "credenciamentos", href: "#" },
+      { name: "credenciamentos", href: "/VERDEPOIS" },
       { name: "política de investimentos", href: "/Politica-de-Investimentos" },
       {
         name: "Relatório anual de investimentos",
-        href: "13.-RELATORIO-ANUAL-2023.pdf",
+        href: "/Pdf/13.-RELATORIO-ANUAL-2023.pdf",
       },
       {
         name: "regime interno",
         href: "/Pdf/REGIMENTO-INTERNO-COMITE-DE-INVESTIMENTOS.pdf",
       },
       { name: "relatório mensais", href: "/Relatorio-mensais" },
-      { name: "relatório de inteligência de dados(bi)", href: "#" },
+      { name: "relatório de inteligência de dados(bi)", href: "/VERDEPOIS" },
       { name: "Estudo de alm", href: "/Estudo-de-alm" },
       {
         name: "mapeamento",
@@ -198,12 +198,8 @@ const navigation: NavItem[] = [
     href: "#",
     submenu: [
       { name: "previdência complementar", href: "/Previdencia-complementar" },
-      {
-        name: "dia de acolhimento e boas vindas",
-        href: "/Dia-de-acolhimento-e-boas-vindas",
-      },
       { name: "provisões matemáticas", href: "/Provisoes-matemáticas" },
-      { name: "relatório gestão atuaial", href: "/Relatorio-gestao-atual" },
+      { name: "relatório gestão atuaial", href: "/Pdf/Jaboatao-dos-Guararapes-PE-Relatorio-Pro-Gestao-2023-Nivel-II.pdf" },
       {
         name: "relatórios atuariais ",
         href: "#",
