@@ -9,7 +9,6 @@ import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/20/solid";
 import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 import { motion } from "framer-motion";
 
-
 interface NavItem {
   name: string;
   href: string;
@@ -187,7 +186,10 @@ const navigation: NavItem[] = [
         href: "/Pdf/REGIMENTO-INTERNO-COMITE-DE-INVESTIMENTOS.pdf",
       },
       { name: "relatório mensais", href: "/Relatorio-mensais" },
-      { name: "relatório de inteligência de dados(bi)", href: "/Relatorio-de-inteligencia-de-dados-bi" },
+      {
+        name: "relatório de inteligência de dados(bi)",
+        href: "/Relatorio-de-inteligencia-de-dados-bi",
+      },
       { name: "Estudo de alm", href: "/Estudo-de-alm" },
       {
         name: "mapeamento",
@@ -201,7 +203,10 @@ const navigation: NavItem[] = [
     submenu: [
       { name: "previdência complementar", href: "/Previdencia-complementar" },
       { name: "provisões matemáticas", href: "/Provisoes-matematicas" },
-      { name: "relatório gestão atuaial", href: "/Pdf/Jaboatao-dos-Guararapes-PE-Relatorio-Pro-Gestao-2023-Nivel-II.pdf" },
+      {
+        name: "relatório gestão atuaial",
+        href: "/Pdf/Jaboatao-dos-Guararapes-PE-Relatorio-Pro-Gestao-2023-Nivel-II.pdf",
+      },
       {
         name: "relatórios atuariais ",
         href: "#",
@@ -226,16 +231,28 @@ const navigation: NavItem[] = [
             name: "Avaliação Atuarial 2021",
             href: "#",
             submenu: [
-              { name: "Captalizado", href: "/Pdf/RelatorioAA-Prev-2021-JABOATAO.pdf" },
-              { name: "Financeiro", href: "/Pdf/RelatorioAA-FINANC-2021-JABOATAO.pdf" },
+              {
+                name: "Captalizado",
+                href: "/Pdf/RelatorioAA-Prev-2021-JABOATAO.pdf",
+              },
+              {
+                name: "Financeiro",
+                href: "/Pdf/RelatorioAA-FINANC-2021-JABOATAO.pdf",
+              },
             ],
           },
           {
             name: "Avaliação Atuarial 2020",
             href: "#",
             submenu: [
-              { name: "Captalizado", href: "/Pdf/RelatorioAA-Prev-MAR-2020-JABOATÃO-mesclado.pdf" },
-              { name: "Financeiro", href: "/Pdf/RelatorioAA-FINANC-MAR-2020-JABOATÃO-mesclado.pdf" },
+              {
+                name: "Captalizado",
+                href: "/Pdf/RelatorioAA-Prev-MAR-2020-JABOATÃO-mesclado.pdf",
+              },
+              {
+                name: "Financeiro",
+                href: "/Pdf/RelatorioAA-FINANC-MAR-2020-JABOATÃO-mesclado.pdf",
+              },
             ],
           },
           {
@@ -274,9 +291,18 @@ const navigation: NavItem[] = [
         name: "DAIR - Demonstrativo das aplicações e investimentos dos recursos",
         href: "/Dair-demonstrativo-das-aplicacoes-e-investimentos-dos-recursos",
       },
-      { name: "DPIN - demonstrativo de políticas de investimento", href: "/Dpin-demonstrativo-de-politicas-de-investimento" },
-      { name: "AP - Acordo de parcelamento", href: "/Ap-acordo-de-parcelamento" },
-      { name: "CRP - Certidão de regularidade previdenciária", href: "/Crp-certidao-de-regularidade-previdenciaria" },
+      {
+        name: "DPIN - demonstrativo de políticas de investimento",
+        href: "/Dpin-demonstrativo-de-politicas-de-investimento",
+      },
+      {
+        name: "AP - Acordo de parcelamento",
+        href: "/Ap-acordo-de-parcelamento",
+      },
+      {
+        name: "CRP - Certidão de regularidade previdenciária",
+        href: "/Crp-certidao-de-regularidade-previdenciaria",
+      },
     ],
   },
   {
@@ -288,10 +314,19 @@ const navigation: NavItem[] = [
     href: "#",
     submenu: [
       { name: "site Oficial", href: "https://jaboatao.pe.gov.br/" },
-      { name: "diário oficial", href: "https://diariooficial.jaboatao.pe.gov.br/" },
-      { name: "portal da transparência", href: "https://portaldatransparencia.jaboatao.pe.gov.br/" },
+      {
+        name: "diário oficial",
+        href: "https://diariooficial.jaboatao.pe.gov.br/",
+      },
+      {
+        name: "portal da transparência",
+        href: "https://portaldatransparencia.jaboatao.pe.gov.br/",
+      },
       { name: "ouvidoria", href: "https://ouvidoria.jaboatao.pe.gov.br/" },
-      { name: "portal do contribuinte", href: "https://www.tinus.com.br/csp/JABOATAO/portal/index.csp" },
+      {
+        name: "portal do contribuinte",
+        href: "https://www.tinus.com.br/csp/JABOATAO/portal/index.csp",
+      },
     ],
   },
 ];
@@ -406,53 +441,6 @@ const NavLinks = () => {
   );
 };
 
-const MobileMenu = () => {
-  const [openMenus, setOpenMenus] = useState<{ [key: string]: boolean }>({});
-
-  const toggleMenu = (menu: string) => {
-    setOpenMenus((prev) => ({ ...prev, [menu]: !prev[menu] }));
-  };
-
-  const renderSubMenu = (items: NavItem[], level = 1) => {
-    return (
-      <div className={`pl-${level * 4} mt-2`}> {/* Indentação dinâmica */}
-        {items.map((item) => (
-          <div key={item.name} className="mb-2">
-            {item.submenu ? (
-              <button
-                onClick={() => toggleMenu(item.name)}
-                className="w-full flex items-center text-center justify-between text-[#0037C1] text-lg font-normal hover:underline"
-              >
-                {item.name}
-                {openMenus[item.name] ? (
-                  <ChevronUpIcon className="h-5 w-5" />
-                ) : (
-                  <ChevronDownIcon className="h-5 w-5" />
-                )}
-              </button>
-            ) : (
-              <Link
-                href={item.href}
-                className="block w-full text-[#0037C1] text-lg font-normal hover:underline"
-              >
-                {item.name}
-              </Link>
-            )}
-            {item.submenu && openMenus[item.name] && renderSubMenu(item.submenu, level + 1)}
-          </div>
-        ))}
-      </div>
-    );
-  };
-
-  return (
-    <div className="lg:hidden p-4 pt-10">
-      {renderSubMenu(navigation, 1)}
-    </div>
-  );
-};
-
-
 const SearchBar = () => {
   const [showSearch, setShowSearch] = useState(false);
 
@@ -467,13 +455,13 @@ const SearchBar = () => {
       </button>
 
       {showSearch && (
-        <motion.div 
+        <motion.div
           className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
-          <motion.div 
+          <motion.div
             className="relative w-full max-w-2xl"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -498,6 +486,76 @@ const SearchBar = () => {
   );
 };
 
+const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
+  const [openMenus, setOpenMenus] = useState<{ [key: string]: boolean }>({});
+
+  const toggleMenu = (menu: string) => {
+    setOpenMenus((prev) => ({ ...prev, [menu]: !prev[menu] }));
+  };
+
+  const renderSubMenu = (items: NavItem[], level = 1) => {
+    return (
+      <div className={`pl-${level * 4} mt-2`}>
+        {items.map((item) => (
+          <div key={item.name} className="mb-2">
+            {item.submenu ? (
+              <button
+                onClick={() => toggleMenu(item.name)}
+                className="w-full flex items-center text-center justify-between text-[#0037C1] text-lg font-normal hover:underline"
+              >
+                {item.name}
+                {openMenus[item.name] ? (
+                  <ChevronUpIcon className="h-5 w-5" />
+                ) : (
+                  <ChevronDownIcon className="h-5 w-5" />
+                )}
+              </button>
+            ) : (
+              <Link
+                href={item.href}
+                className="block w-full text-[#0037C1] text-lg font-normal hover:underline"
+                onClick={closeMenu} // Fecha o menu ao clicar no link
+              >
+                {item.name}
+              </Link>
+            )}
+            {item.submenu &&
+              openMenus[item.name] &&
+              renderSubMenu(item.submenu, level + 1)}
+          </div>
+        ))}
+      </div>
+    );
+  };
+
+  return (
+    <>
+      {/* Overlay escuro ao abrir o menu */}
+      <motion.div
+        className={`fixed inset-0 bg-black bg-opacity-50`}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: openMenus ? 1 : 0 }}
+        exit={{ opacity: 0 }}
+        onClick={closeMenu} // Fecha o menu ao clicar no fundo
+      ></motion.div>
+
+      {/* Menu lateral que aparece da esquerda */}
+      <motion.div
+        className="fixed top-0 left-0 h-full w-1/2 bg-yellow-400 shadow-lg"
+        initial={{ x: "-100%" }}
+        animate={{ x: openMenus ? 0 : "-100%" }}
+        exit={{ x: "-100%" }}
+        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+      >
+        <div className="p-4 pt-10">
+          <Logo />
+        </div>
+
+        <div className="p-4 pt-10">{renderSubMenu(navigation, 1)}</div>
+      </motion.div>
+    </>
+  );
+};
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -510,6 +568,8 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const closeMenu = () => setIsOpen(false); // Função para fechar o menu
 
   return (
     <Disclosure
@@ -527,11 +587,12 @@ const Navbar = () => {
             <Bars3Icon
               className="h-6 w-6 text-[#0037C1] cursor-pointer"
               aria-hidden="true"
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={() => setIsOpen(!isOpen)} // Controla a abertura do menu
             />
           </div>
         </div>
-        {isOpen && <MobileMenu />}
+        {isOpen && <MobileMenu closeMenu={closeMenu} />}{" "}
+        {/* Passa a função para fechar o menu */}
       </div>
     </Disclosure>
   );
