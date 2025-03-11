@@ -53,7 +53,7 @@ const navigation: NavItem[] = [
           { name: "Atas do Conselho Fiscal", href: "/Atas-do-Conselho-Fiscal" },
           {
             name: "Atas do Comitê de Investimentos",
-            href: "/Atas-do-Conselho-de-Investimentos",
+            href: "/Atas-do-Comite-de-Investimentos",
           },
         ],
       },
@@ -204,7 +204,7 @@ const navigation: NavItem[] = [
       { name: "previdência complementar", href: "/Previdencia-complementar" },
       { name: "provisões matemáticas", href: "/Provisoes-matematicas" },
       {
-        name: "relatório gestão atuaial",
+        name: "relatório gestão atual",
         href: "/Pdf/Jaboatao-dos-Guararapes-PE-Relatorio-Pro-Gestao-2023-Nivel-II.pdf",
       },
       {
@@ -345,6 +345,51 @@ const Logo = () => (
   </div>
 );
 
+const SearchBar = () => {
+  const [showSearch, setShowSearch] = useState(false);
+
+  return (
+    <div className="relative">
+      <button
+        onClick={() => setShowSearch(true)}
+        className="text-[#0037C1] text-xl focus:outline-none"
+        aria-label="Toggle Search"
+      >
+        <FaSearch />
+      </button>
+
+      {showSearch && (
+        <motion.div
+          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          <motion.div
+            className="relative w-full max-w-2xl"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+          >
+            <button
+              onClick={() => setShowSearch(false)}
+              className="absolute top-2 right-7 text-white hover:text-gray-400 text-xl"
+              aria-label="Close Search"
+            >
+              &times;
+            </button>
+            <input
+              type="text"
+              placeholder="Search..."
+              className="text-white placeholder-gray-300 px-7 py-3 rounded-full border-2 border-blue-600 bg-transparent focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent w-full text-2xl"
+            />
+          </motion.div>
+        </motion.div>
+      )}
+    </div>
+  );
+};
+
 const NavLinks = () => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [activeSubMenu, setActiveSubMenu] = useState<string | null>(null);
@@ -437,51 +482,6 @@ const NavLinks = () => {
           )}
         </div>
       ))}
-    </div>
-  );
-};
-
-const SearchBar = () => {
-  const [showSearch, setShowSearch] = useState(false);
-
-  return (
-    <div className="relative">
-      <button
-        onClick={() => setShowSearch(true)}
-        className="text-[#0037C1] text-xl focus:outline-none"
-        aria-label="Toggle Search"
-      >
-        <FaSearch />
-      </button>
-
-      {showSearch && (
-        <motion.div
-          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-        >
-          <motion.div
-            className="relative w-full max-w-2xl"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.8, opacity: 0 }}
-          >
-            <button
-              onClick={() => setShowSearch(false)}
-              className="absolute top-2 right-7 text-white hover:text-gray-400 text-xl"
-              aria-label="Close Search"
-            >
-              &times;
-            </button>
-            <input
-              type="text"
-              placeholder="Search..."
-              className="text-white placeholder-gray-300 px-7 py-3 rounded-full border-2 border-blue-600 bg-transparent focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent w-full text-2xl"
-            />
-          </motion.div>
-        </motion.div>
-      )}
     </div>
   );
 };

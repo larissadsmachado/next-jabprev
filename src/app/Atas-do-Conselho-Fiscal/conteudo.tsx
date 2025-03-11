@@ -26,8 +26,8 @@ const Links = () => (
       </svg>
     </div>
 
-    <div className="mx-auto max-w-6xl p-6 py-20">
-      <h1 className="text-5xl font-bold mb-4 uppercase text-blue-900 leading-tight">
+    <div className="mx-auto max-w-full sm:max-w-4xl md:max-w-6xl p-6 py-12 sm:py-16 md:py-20">
+    <h1 className="lg:text-5xl text-4xl font-bold mb-4 uppercase text-blue-900 leading-tight">
         2025
       </h1>
 
@@ -43,11 +43,11 @@ const Links = () => (
         </li>
       </ul>
 
-      <h1 className="text-5xl font-bold mb-4 uppercase text-blue-900 leading-tight">
+      <h1 className="lg:text-5xl text-4xl font-bold mb-4 uppercase text-blue-900 leading-tight">
         2024
       </h1>
 
-      <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20 grid grid-cols-2">
+      <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20 grid lg:lg:grid-cols-2">
         <li className="py-2">
           <a
             href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/04/01-ATA-CONSELHO-FISCAL-26.01.2024.pdf"
@@ -163,11 +163,11 @@ const Links = () => (
         </li>
       </ul>
 
-      <h1 className="text-5xl font-bold mb-4 uppercase text-blue-900 leading-tight">
+      <h1 className="lg:text-5xl text-4xl font-bold mb-4 uppercase text-blue-900 leading-tight">
         2023
       </h1>
 
-      <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20 grid grid-cols-2">
+      <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20 grid lg:grid-cols-2">
         <li className="py-2">
           <a
             href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/04/REUNIAO-DIA-31-DE-JANEIRO-2023.pdf"
@@ -283,11 +283,11 @@ const Links = () => (
         </li>
       </ul>
 
-      <h1 className="text-5xl font-bold mb-4 uppercase text-blue-900 leading-tight">
+      <h1 className="lg:text-5xl text-4xl font-bold mb-4 uppercase text-blue-900 leading-tight">
         2022
       </h1>
 
-      <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20 grid grid-cols-2">
+      <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20 grid lg:grid-cols-2">
         <li className="py-2">
           <a
             href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2022/08/01-ATA-CONSELHO-FISCAL-21-01-2022.pdf"
@@ -395,11 +395,11 @@ const Links = () => (
 
       </ul>
 
-      <h1 className="text-5xl font-bold mb-4 uppercase text-blue-900 leading-tight">
+      <h1 className="lg:text-5xl text-4xl font-bold mb-4 uppercase text-blue-900 leading-tight">
         2021
       </h1>
 
-      <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20 grid grid-cols-2">
+      <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20 grid lg:grid-cols-2">
         <li className="py-2">
           <a
             href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2022/03/27-Abril-2021.pdf"
@@ -489,7 +489,7 @@ const Links = () => (
 
       </ul>
 
-      <h1 className="text-5xl font-bold mb-4 uppercase text-blue-900 leading-tight">
+      <h1 className="lg:text-5xl text-4xl font-bold mb-4 uppercase text-blue-900 leading-tight">
         2020
       </h1>
 
@@ -555,7 +555,7 @@ const Links = () => (
         </li>
       </ul>
 
-      <h1 className="text-5xl font-bold mb-4 uppercase text-blue-900 leading-tight">
+      <h1 className="lg:text-5xl text-4xl font-bold mb-4 uppercase text-blue-900 leading-tight">
         2019
       </h1>
 
@@ -602,11 +602,11 @@ const Links = () => (
  
       </ul>
 
-      <h1 className="text-5xl font-bold mb-4 uppercase text-blue-900 leading-tight">
+      <h1 className="lg:text-5xl text-4xl font-bold mb-4 uppercase text-blue-900 leading-tight">
         2018
       </h1>
 
-      <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20 grid grid-cols-2">
+      <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20 grid lg:grid-cols-2">
         <li className="py-2">
           <a
             href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2018/12/SCAN_20181203_091859632.pdf"
@@ -661,7 +661,7 @@ const Links = () => (
 
 
 
-      <h1 className="text-5xl font-bold mb-4 uppercase text-blue-900 leading-tight">
+      <h1 className="lg:text-5xl text-4xl font-bold mb-4 uppercase text-blue-900 leading-tight">
       De 2014 a 2017 - Administrativo e Fiscal (reuniões conjuntas)
       </h1>
 
@@ -710,7 +710,7 @@ const Links = () => (
       </ul>
 
 
-      <h1 className="text-5xl font-bold mb-4 uppercase text-blue-900 leading-tight">
+      <h1 className="lg:text-5xl text-4xl font-bold mb-4 uppercase text-blue-900 leading-tight">
       De 2010 a 2013
       </h1>
 

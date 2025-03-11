@@ -4,11 +4,12 @@ import DivisorDeForma from "../components/DivisorDeForma/divisor";
 import FaleConosco from "../components/Home/FaleConosco/inex";
 
 const Sobre = () => (
-  <div id="sobre" 
-  className="flex flex-col md:flex-row items-center mx-auto max-w-7xl p-6 h-auto py-32">
-    
-    <div className="flex-1">
-      <h1 className="text-5xl font-bold mb-4 uppercase text-blue-900 leading-tight">
+  <div
+    id="sobre"
+    className="flex flex-col md:flex-row items-center mx-auto max-w-7xl p-6 h-auto lg:py-32 py-10"
+  >
+    <div className="flex-1 text-center md:text-left">
+      <h1 className="lg:text-5xl text-4xl font-bold mb-4 uppercase text-blue-900 leading-tight">
         O que é Jaboatãoprev?
       </h1>
       <p className="text-[#122162] text-xl">
@@ -27,6 +28,8 @@ const Sobre = () => (
     </div>
   </div>
 );
+
+
 
 const MissaoVisaoValores = () => (
   <div id="missao"
@@ -66,8 +69,10 @@ const MissaoVisaoValores = () => (
 );
 
 const Equipe = () => (
-  <div id="equipe"
-   className="flex flex-col items-center bg-gradient-to-b from-[#cee5ff] to-[#ffffff] w-full h-auto pb-32">
+  <div
+    id="equipe"
+    className="flex flex-col items-center bg-gradient-to-b from-[#cee5ff] to-[#ffffff] w-full h-auto pb-32"
+  >
     <div className="relative w-full">
       <svg
         width="100%"
@@ -91,10 +96,12 @@ const Equipe = () => (
         />
       </svg>
     </div>
-    <h1 className="text-5xl font-bold text-green-900 text-center mb-8 py-32">
+    <h1 className="lg:text-5xl md:text-4xl text-3xl font-bold text-green-900 text-center mb-8 lg:py-32 pt-20">
       A EQUIPE DO JABOATÃOPREV
     </h1>
-    <div className="grid grid-cols-3 text-green-900 text-xl text-center pb-32">
+
+    {/* Grid responsivo para os itens da equipe */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-green-900 text-xl text-center gap-8 pb-32">
       <div>
         <p>
           <strong>Mayara Lima</strong>
@@ -168,8 +175,9 @@ const Equipe = () => (
       </div>
     </div>
 
-    <div className="flex items-center justify-center w-full max-w-4xl mx-auto">
-      <div className="flex justify-center">
+    {/* Seção com imagem e descrição */}
+    <div className="flex flex-col lg:flex-row items-center justify-center w-full max-w-4xl mx-auto gap-8">
+      <div className="flex justify-center w-full lg:w-1/2">
         <img
           src="/images/Instituicao/luci.jpeg"
           alt="Jaboatãoprev"
@@ -177,7 +185,7 @@ const Equipe = () => (
         />
       </div>
 
-      <div className="bg-white rounded-3xl p-10">
+      <div className="bg-white rounded-3xl p-10 w-full lg:w-1/2">
         <h2 className="text-2xl font-semibold text-cyan-400 uppercase text-center">
           Luci Lopes
         </h2>
@@ -197,9 +205,10 @@ const Equipe = () => (
         </p>
       </div>
     </div>
-
   </div>
 );
+
+
 
 const pdfUrl = "/Pdf/Organograma-2025-Site.pdf";
 

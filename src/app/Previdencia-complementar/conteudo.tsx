@@ -1,9 +1,11 @@
-import { Divide } from "lucide-react";
+import DivisorDeForma from "../components/DivisorDeForma/divisor";
 
 const FinancialReports: React.FC = () => {
   return (
-    <div className="h-auto py-32 flex items-center justify-center bg-gradient-to-b from-[#c2e3ef] to-[#c5ffd9]">
-      <div className="max-w-5xl mx-auto px-4">
+    <div className="h-auto  items-center justify-center bg-gradient-to-b from-[#c2e3ef] to-[#c5ffd9]">
+      <DivisorDeForma />
+      <div className="lg:py-32 py-14 max-w-5xl mx-auto lg:px-4 px-14">
+
         <p className="text-[#122162] text-xl pb-10 font-bold">
           O Regime de Previdência Complementar – RPC visa complementar a renda
           do servidor no momento de sua aposentadoria, proporcionando uma
@@ -57,6 +59,7 @@ const FinancialReports: React.FC = () => {
             ))}
           </div>
         </div>
+
       </div>
     </div>
   );

@@ -571,7 +571,7 @@ const Links = () => {
         <h1 className="text-4xl font-bold text-blue-900 mb-4 py-4">{year}</h1>
         
         {/* 🔹 Lista contínua de links */}
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4">
           {Object.entries(links).map(([title, link]) => (
             <a
               key={title}

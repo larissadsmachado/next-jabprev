@@ -16,16 +16,16 @@ const investmentPolicies = [
 
 const InvestmentPolicies: React.FC = () => {
   return (
-    <div className="h-auto bg-gradient-to-b from-[#dcecff] to-[#fef9e0] p-10">
-      <div className="grid grid-cols-3 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+    <div className="h-auto bg-gradient-to-b from-[#dcecff] to-[#fef9e0] p-6 sm:p-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
         {investmentPolicies.map((policy, index) => (
           <div
             key={policy.year}
             className={`p-6 text-center bg-white shadow-md rounded-lg ${
-              index === 0 ? "md:col-span-3" : ""
+              index === 0 ? "sm:col-span-2 md:col-span-3" : ""
             }`}
           >
-            <h2 className="text-3xl font-bold text-blue-900">{policy.year}</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-blue-900">{policy.year}</h2>
             <hr className="border-t-2 border-blue-900 w-16 mx-auto my-2" />
             <a href={policy.link} className="text-blue-700 text-lg hover:underline">
               Política de Investimento
@@ -36,5 +36,6 @@ const InvestmentPolicies: React.FC = () => {
     </div>
   );
 };
+
 
 export default InvestmentPolicies;
