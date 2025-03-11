@@ -441,9 +441,9 @@ const Footer = () => {
             {/* COLUNA 1 */}
             <div className="flex justify-center items-center">
               <Image
-                src="/images/Logo/logo-longa.png"
-                alt="logo-image"
-                width={200}
+                src="/images/Logo/logotop.png"
+                alt="logo-image" 
+                width={120}
                 height={100}
                 className="md:block"
                 style={{ width: "auto", height: "auto" }}
