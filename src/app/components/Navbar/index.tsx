@@ -1,7 +1,6 @@
 "use client";
 import { Disclosure } from "@headlessui/react";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { FaSearch } from "react-icons/fa";
 import Image from "next/image";
@@ -10,7 +9,8 @@ import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 import { motion } from "framer-motion";
 import { KeyboardEvent } from 'react';
 import { useRouter } from 'next/router';
-import { useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import React from "react";
 
 
 interface NavItem {
@@ -352,10 +352,17 @@ const Logo = () => (
 
 
 
+
+
 const SearchBar = () => {
   const [showSearch, setShowSearch] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null); // Declare o inputRef corretamente
+  const [isMounted, setIsMounted] = useState(false); // Controle para garantir que useRouter seja executado no cliente
   const router = useRouter();
+
+  useEffect(() => {
+    setIsMounted(true); // Atualiza o estado após o componente ser montado no cliente
+  }, []);
 
   // Função que lida com o evento de pressionar a tecla Enter
   const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
@@ -383,7 +390,9 @@ const SearchBar = () => {
       }
     }
   };
-  
+
+  // Verifica se o componente foi montado para evitar erro do Next.js
+  if (!isMounted) return null;
 
   return (
     <div className="relative">
@@ -428,6 +437,10 @@ const SearchBar = () => {
     </div>
   );
 };
+
+
+
+
 
 
 
