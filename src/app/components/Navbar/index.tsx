@@ -8,6 +8,10 @@ import Image from "next/image";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/20/solid";
 import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 import { motion } from "framer-motion";
+import { KeyboardEvent } from 'react';
+import { useRouter } from 'next/router';
+import { useRef } from 'react';
+
 
 interface NavItem {
   name: string;
@@ -345,8 +349,41 @@ const Logo = () => (
   </div>
 );
 
+
+
+
 const SearchBar = () => {
   const [showSearch, setShowSearch] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null); // Declare o inputRef corretamente
+  const router = useRouter();
+
+  // Função que lida com o evento de pressionar a tecla Enter
+  const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      e.preventDefault(); // Previne o comportamento padrão do Enter
+  
+      const searchInput = inputRef.current?.value; // Obtém o valor do input
+      if (searchInput) {
+        // Faz uma requisição para a API search.ts
+        fetch(`/api/search?searchTerm=${searchInput}`)
+          .then(response => response.json())
+          .then((data) => {
+            const routeFiltered = data.route; // Supondo que você retorne a rota no backend como { route: string }
+            if (routeFiltered) {
+              // Caso tenha uma rota filtrada, redireciona para a nova URL
+              router.push(`${process.env.NEXT_PUBLIC_URL_API}${routeFiltered}`);
+            } else {
+              // Caso não encontre nenhuma rota correspondente, pode exibir uma mensagem ou fazer algo
+              console.log("Nenhuma rota encontrada.");
+            }
+          })
+          .catch(error => {
+            console.error('Erro ao buscar rota:', error);
+          });
+      }
+    }
+  };
+  
 
   return (
     <div className="relative">
@@ -379,9 +416,11 @@ const SearchBar = () => {
               &times;
             </button>
             <input
+              ref={inputRef}
               type="text"
               placeholder="Search..."
               className="text-white placeholder-gray-300 px-7 py-3 rounded-full border-2 border-blue-600 bg-transparent focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent w-full text-2xl"
+              onKeyPress={handleKeyPress}
             />
           </motion.div>
         </motion.div>
@@ -389,6 +428,13 @@ const SearchBar = () => {
     </div>
   );
 };
+
+
+
+
+
+
+
 
 const NavLinks = () => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
