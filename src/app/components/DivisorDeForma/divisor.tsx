@@ -1,3 +1,5 @@
+import React from "react";
+
 const DivisorDeForma = () => {
   return (
     <div className="relative w-full">

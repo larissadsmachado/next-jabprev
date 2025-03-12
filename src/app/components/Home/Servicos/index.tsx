@@ -2,7 +2,6 @@ import React from "react";
 import { FaInfoCircle } from "react-icons/fa";
 import { MdOutlineAttachMoney } from "react-icons/md";
 import { FaPiggyBank, FaBookOpen, FaPhoneAlt } from "react-icons/fa";
-import DivisorDeForma from "../../DivisorDeForma/divisor";
 
 const Card = ({
   title,

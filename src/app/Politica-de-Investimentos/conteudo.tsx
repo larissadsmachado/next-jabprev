@@ -16,12 +16,12 @@ const investmentPolicies = [
 
 const InvestmentPolicies: React.FC = () => {
   return (
-    <div className="h-auto bg-gradient-to-b from-[#dcecff] to-[#fef9e0] p-6 sm:p-10">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+    <div className="h-auto bg-gradient-to-b from-[#ffffff] via-[#dcecff] to-[#cbe1fc] p-6 sm:p-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto py-11">
         {investmentPolicies.map((policy, index) => (
           <div
             key={policy.year}
-            className={`p-6 text-center bg-white shadow-md rounded-lg ${
+            className={`p-6 text-center bg-amber-400 border-2 border-blue-900 shadow-md rounded-lg ${
               index === 0 ? "sm:col-span-2 md:col-span-3" : ""
             }`}
           >

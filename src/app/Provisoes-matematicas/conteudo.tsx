@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import DivisorDeForma from "../components/DivisorDeForma/divisor";
 
 interface Report {
   name: string;
@@ -278,9 +277,8 @@ const reportsData: ReportsByYear = {
 
 const FinancialReports: React.FC = () => {
   return (
-    <div className="bg-gradient-to-b from-[#dcecff] to-[#fef9e0] min-h-screen pb-10">
+    <div className="bg-gradient-to-b from-[#ffffff] via-[#dcecff] to-[#cbe1fc] min-h-screen pb-10">
       <div className="relative w-full">
-        <DivisorDeForma />
       </div>
 
       {Object.keys(reportsData)

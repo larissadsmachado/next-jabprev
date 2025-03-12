@@ -59,7 +59,7 @@ const exercises: Exercise[] = [
 
 const FinancialExercises: React.FC = () => {
   return (
-    <div className="h-auto bg-gradient-to-b from-[#dcecff] to-[#fef9e0] p-10">
+    <div className="h-auto bg-gradient-to-b from-[#ffffff] via-[#dcecff] to-[#cbe1fc] p-10">
       {exercises.map(({ year, content }) => (
         <div key={year} className="space-y-4 mb-10 max-w-5xl mx-auto">
           {/* Título do exercício */}

@@ -1,6 +1,8 @@
+import React from "react";
+
 const FinancialReports: React.FC = () => {
   return (
-    <div className="h-auto py-44 flex items-center justify-center bg-[#003476]">
+    <div className="h-auto py-44 flex items-center justify-center bg-gradient-to-b from-[#ffffff] to-[#094ba1]">
       <a
         href="http://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2022/05/RELATORIO-DE-ALM.pdf"
         target="_blank"

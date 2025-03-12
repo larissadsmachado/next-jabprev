@@ -31,7 +31,7 @@
   "include": [
     "scripts/**/*.ts",
     ".next/types/**/*.ts",
-    "scripts/generate-routes.js"
+    "scripts/generate-routes.cjs"
   ],
   "exclude": [
     "node_modules"

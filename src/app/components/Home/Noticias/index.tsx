@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import DivisorDeForma from "../../DivisorDeForma/divisor";
 import Image from "next/image";
+import React from "react";
 
 type Post = {
   id: number;

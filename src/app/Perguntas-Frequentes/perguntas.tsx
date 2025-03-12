@@ -1,5 +1,7 @@
 "use client";
 
+import React from "react";
+
 const Servicos = () => (
   <div className="mx-auto max-w-6xl p-6 h-auto py-20">
     <div>
@@ -25,7 +27,7 @@ const Servicos = () => (
 );
 
 const Aposentadorias = () => (
-  <div className="bg-gradient-to-b from-[#fffffe] via-[#f5e9c3] to-[#aadcee]">
+  <div>
     <div className="max-w-6xl mx-auto h-auto p-6">
       <div>
         <h1 className="text-3xl font-bold mb-4 uppercase text-blue-900 leading-tight border-b-4 border-blue-900 inline-block">
@@ -175,7 +177,7 @@ const Aposentadorias = () => (
 );
 
 const AposentadoriasEspeciais = () => (
-  <div className="bg-gradient-to-b from-[#aadcee] to-[#ffffff]">
+  <div>
     <div className="max-w-6xl mx-auto h-auto p-6">
       <div>
         <h1 className="text-3xl font-bold mb-4 uppercase text-blue-900 leading-tight border-b-4 border-blue-900 inline-block">
@@ -367,7 +369,7 @@ const AposentadoriasEspeciais = () => (
 );
 
 const Regras = () => (
-  <div className="bg-gradient-to-b from-white to-gray-200">
+  <div>
     <div className="max-w-6xl mx-auto h-auto p-6">
       <h1 className="text-3xl font-bold mb-4 uppercase text-blue-900 leading-tight border-b-4 border-blue-900 inline-block">
         Regras de transição
@@ -1044,7 +1046,7 @@ const Regras = () => (
 
 const Perguntas = () => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col bg-gradient-to-b from-white to-[#d5e8ff]">
       <Servicos />
       <Aposentadorias />
       <AposentadoriasEspeciais />

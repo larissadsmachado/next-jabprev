@@ -626,7 +626,7 @@ const FinancialReports: React.FC = () => {
   }
 
   return (
-    <div className="h-auto bg-gradient-to-b from-[#dcecff] to-[#fef9e0] p-6 sm:p-10">
+    <div className="h-auto bg-gradient-to-b from-[#ffffff] via-[#dcecff] to-[#cbe1fc] p-6 sm:p-10">
       {Object.keys(reportsData)
         .sort((a, b) => Number(b) - Number(a)) // Ordenação decrescente
         .map((year) => {

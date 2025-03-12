@@ -30,6 +30,16 @@
     "description": "Descrição da página /Atas-do-Comite-de-Investimentos/page"
   },
   {
+    "path": "/Atas-do-Conselho-Administrativo/conteudo",
+    "title": "conteudo",
+    "description": "Descrição da página /Atas-do-Conselho-Administrativo/conteudo"
+  },
+  {
+    "path": "/Atas-do-Conselho-Administrativo/page",
+    "title": "page",
+    "description": "Descrição da página /Atas-do-Conselho-Administrativo/page"
+  },
+  {
     "path": "/Atas-do-Conselho-Fiscal/conteudo",
     "title": "conteudo",
     "description": "Descrição da página /Atas-do-Conselho-Fiscal/conteudo"
@@ -115,16 +125,6 @@
     "description": "Descrição da página /components/Vlibras/index"
   },
   {
-    "path": "/Conselho-Administrativo/conteudo",
-    "title": "conteudo",
-    "description": "Descrição da página /Conselho-Administrativo/conteudo"
-  },
-  {
-    "path": "/Conselho-Administrativo/page",
-    "title": "page",
-    "description": "Descrição da página /Conselho-Administrativo/page"
-  },
-  {
     "path": "/Contratos/conteudo",
     "title": "conteudo",
     "description": "Descrição da página /Contratos/conteudo"
@@ -165,24 +165,24 @@
     "description": "Descrição da página /Cronograma-de-Capacitacao/page"
   },
   {
-    "path": "/crp-certidao-de-regularidade-previdenciaria/conteudo",
+    "path": "/Crp-certidao-de-regularidade-previdenciaria/conteudo",
     "title": "conteudo",
-    "description": "Descrição da página /crp-certidao-de-regularidade-previdenciaria/conteudo"
+    "description": "Descrição da página /Crp-certidao-de-regularidade-previdenciaria/conteudo"
   },
   {
-    "path": "/crp-certidao-de-regularidade-previdenciaria/page",
+    "path": "/Crp-certidao-de-regularidade-previdenciaria/page",
     "title": "page",
-    "description": "Descrição da página /crp-certidao-de-regularidade-previdenciaria/page"
+    "description": "Descrição da página /Crp-certidao-de-regularidade-previdenciaria/page"
   },
   {
-    "path": "/dair-demonstrativo-das-aplicacoes-e-investimentos-dos-recursos/conteudo",
+    "path": "/Dair-demonstrativo-das-aplicacoes-e-investimentos-dos-recursos/conteudo",
     "title": "conteudo",
-    "description": "Descrição da página /dair-demonstrativo-das-aplicacoes-e-investimentos-dos-recursos/conteudo"
+    "description": "Descrição da página /Dair-demonstrativo-das-aplicacoes-e-investimentos-dos-recursos/conteudo"
   },
   {
-    "path": "/dair-demonstrativo-das-aplicacoes-e-investimentos-dos-recursos/page",
+    "path": "/Dair-demonstrativo-das-aplicacoes-e-investimentos-dos-recursos/page",
     "title": "page",
-    "description": "Descrição da página /dair-demonstrativo-das-aplicacoes-e-investimentos-dos-recursos/page"
+    "description": "Descrição da página /Dair-demonstrativo-das-aplicacoes-e-investimentos-dos-recursos/page"
   },
   {
     "path": "/Demonstrativos-contabeis/conteudo",
@@ -205,24 +205,24 @@
     "description": "Descrição da página /Despesas-Administrativas/page"
   },
   {
-    "path": "/dipr-demonstrativo-de-informacoes-previdenciarias-e-repasses/conteudo",
+    "path": "/Dipr-demonstrativo-de-informacoes-previdenciarias-e-repasses/conteudo",
     "title": "conteudo",
-    "description": "Descrição da página /dipr-demonstrativo-de-informacoes-previdenciarias-e-repasses/conteudo"
+    "description": "Descrição da página /Dipr-demonstrativo-de-informacoes-previdenciarias-e-repasses/conteudo"
   },
   {
-    "path": "/dipr-demonstrativo-de-informacoes-previdenciarias-e-repasses/page",
+    "path": "/Dipr-demonstrativo-de-informacoes-previdenciarias-e-repasses/page",
     "title": "page",
-    "description": "Descrição da página /dipr-demonstrativo-de-informacoes-previdenciarias-e-repasses/page"
+    "description": "Descrição da página /Dipr-demonstrativo-de-informacoes-previdenciarias-e-repasses/page"
   },
   {
-    "path": "/dpin-demonstrativo-de-politicas-de-investimento/conteudo",
+    "path": "/Dpin-demonstrativo-de-politicas-de-investimento/conteudo",
     "title": "conteudo",
-    "description": "Descrição da página /dpin-demonstrativo-de-politicas-de-investimento/conteudo"
+    "description": "Descrição da página /Dpin-demonstrativo-de-politicas-de-investimento/conteudo"
   },
   {
-    "path": "/dpin-demonstrativo-de-politicas-de-investimento/page",
+    "path": "/Dpin-demonstrativo-de-politicas-de-investimento/page",
     "title": "page",
-    "description": "Descrição da página /dpin-demonstrativo-de-politicas-de-investimento/page"
+    "description": "Descrição da página /Dpin-demonstrativo-de-politicas-de-investimento/page"
   },
   {
     "path": "/Estudo-de-alm/conteudo",
