@@ -10,6 +10,7 @@ import {
   ThumbsUp,
   Star,
 } from "lucide-react";
+import React from "react";
 
 const FeedbackForm = () => {
   const [nota, setNota] = useState("");
