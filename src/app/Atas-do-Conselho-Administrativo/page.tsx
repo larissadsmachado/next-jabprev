@@ -1,6 +1,7 @@
 import Controle from "./conteudo";
 import Model from "../components/model-page/index";
 import Link from "next/link";
+import React from "react";
 
 export const metadata = {
   title: "Atas do Conselho Deliberativo - JaboatãoPrev",
