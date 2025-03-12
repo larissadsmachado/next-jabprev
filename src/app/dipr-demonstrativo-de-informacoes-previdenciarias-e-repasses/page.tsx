@@ -1,6 +1,7 @@
 import Controle from "./conteudo";
 import Model from "../components/model-page/index";
 import Link from "next/link";
+import React from "react";
 
 export const metadata = {
   title: "DIPR – Demonstrativo de Informações Previdenciárias e Repasses - JaboatãoPrev",
@@ -9,7 +10,7 @@ export const metadata = {
 export default function config() {
   return (
     <div>
-      <Model
+      <Model 
         caminhoImagem={"/images/"}
         titulo={"DIPR – Demonstrativo de Informações Previdenciárias e Repasses"}
         subtitulo={
