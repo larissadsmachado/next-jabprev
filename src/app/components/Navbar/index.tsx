@@ -7,11 +7,10 @@ import Image from "next/image";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/20/solid";
 import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 import { motion } from "framer-motion";
-import { KeyboardEvent } from 'react';
-import { useRouter } from 'next/router';
-import { useState, useRef, useEffect } from 'react';
+import { KeyboardEvent } from "react";
+import { useRouter } from "next/navigation"; // 🔹 Import correto para App Router
+import { useState, useRef, useEffect } from "react";
 import React from "react";
-
 
 interface NavItem {
   name: string;
@@ -349,49 +348,41 @@ const Logo = () => (
   </div>
 );
 
-
-
-
-
-
 const SearchBar = () => {
   const [showSearch, setShowSearch] = useState(false);
-  const inputRef = useRef<HTMLInputElement>(null); // Declare o inputRef corretamente
-  const [isMounted, setIsMounted] = useState(false); // Controle para garantir que useRouter seja executado no cliente
-  const router = useRouter();
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [isMounted, setIsMounted] = useState(false);
+  let router;
 
   useEffect(() => {
-    setIsMounted(true); // Atualiza o estado após o componente ser montado no cliente
+    setIsMounted(true);
   }, []);
 
-  // Função que lida com o evento de pressionar a tecla Enter
+  if (typeof window !== "undefined") {
+    router = useRouter();
+  }
+
   const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
-      e.preventDefault(); // Previne o comportamento padrão do Enter
-  
-      const searchInput = inputRef.current?.value; // Obtém o valor do input
-      if (searchInput) {
-        // Faz uma requisição para a API search.ts
+      e.preventDefault();
+
+      const searchInput = inputRef.current?.value;
+      if (searchInput && router) {
         fetch(`/api/search?searchTerm=${searchInput}`)
-          .then(response => response.json())
+          .then((response) => response.json())
           .then((data) => {
-            const routeFiltered = data.route; // Supondo que você retorne a rota no backend como { route: string }
+            const routeFiltered = data.route;
             if (routeFiltered) {
-              // Caso tenha uma rota filtrada, redireciona para a nova URL
-              router.push(`${process.env.NEXT_PUBLIC_URL_API}${routeFiltered}`);
+              router.push(`${process.env.NEXT_PUBLIC_LOCAL}${routeFiltered}`);
             } else {
-              // Caso não encontre nenhuma rota correspondente, pode exibir uma mensagem ou fazer algo
               console.log("Nenhuma rota encontrada.");
             }
           })
-          .catch(error => {
-            console.error('Erro ao buscar rota:', error);
-          });
+          .catch((error) => console.error("Erro ao buscar rota:", error));
       }
     }
   };
 
-  // Verifica se o componente foi montado para evitar erro do Next.js
   if (!isMounted) return null;
 
   return (
@@ -437,17 +428,6 @@ const SearchBar = () => {
     </div>
   );
 };
-
-
-
-
-
-
-
-
-
-
-
 
 const NavLinks = () => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);

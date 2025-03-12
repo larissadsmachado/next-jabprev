@@ -1,4 +1,4 @@
-import routes from '../../routes-front/routes.json';
+import routes from '../../routes-front-end/routes.json';
 
 interface Route {
   path: string;
