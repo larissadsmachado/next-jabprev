@@ -2,12 +2,13 @@
 import React from "react";
 import { useState, useMemo } from "react";
 
+
 const emailDestinations: Record<string, string> = {
-  financeiro: "admfinanceiro@jaboataoprev.jaboatao.pe.gov.br",
-  juridico: "jurídico@jaboataoprev.jaboatao.pe.gov.br",
-  beneficios: "beneficios@jaboataoprev.jaboatao.pe.gov.br",
-  investimento: "investimentos@jaboataoprev.jaboatao.pe.gov.br",
-  presidencia: "presidencia@jaboataoprev.jaboatao.pe.gov.br",
+  financeiro: "carla.correiasouza9@gmail.com",
+  juridico: "carla9correia@gmail.com",
+  beneficios: "carla9correia@gmail.com",
+  investimento: "carla.correiasouza9@gmail.com",
+  presidencia: "carla9correia@gmail.com",
 };
 
 const FaleConosco = () => {
