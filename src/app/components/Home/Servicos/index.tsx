@@ -94,7 +94,7 @@ export default function CardGrid() {
         Serviços
       </h2>
 
-      <div className="mx-auto w-5/6 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-10 px-20">
+      <div className="mx-auto lg:w-5/6 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-10 px-20">
         <Card
           title="Contra-Cheque"
           icon={<MdOutlineAttachMoney />}

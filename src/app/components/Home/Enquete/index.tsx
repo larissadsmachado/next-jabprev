@@ -86,24 +86,25 @@ const FeedbackForm = () => {
       </div>
 
       <div className="max-w-2xl mx-auto w-full py-32">
-        <h2
-          className="text-5xl text-center mb-10 uppercase pb-3 font-bold text-[#173B7C]">
+        <h2 className="text-5xl text-center mb-10 uppercase pb-3 font-bold text-[#173B7C]">
           Avalie nosso serviço
         </h2>
 
-        <div className="bg-white border-4 border-blue-900 shadow-lg rounded-3xl px-8 py-9">
+        <div className="bg-white border-4 border-blue-900 shadow-lg rounded-3xl px-8 py-9 md:mx-0 mx-8">
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid grid-cols-2 gap-4 mx-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mx-3">
               {notas.map(({ label, icon }) => (
                 <button
                   key={label}
                   type="button"
                   onClick={() => setNota(label)}
-                  className={`flex items-center justify-center gap-3 p-4 rounded-2xl border w-full text-center transition-all duration-200 transform Montserrat-Medium ${
-                    nota === label
-                      ? "bg-[#17347f] text-white border-2 border-gray-300"
-                      : "bg-gray-100 text-gray-800 hover:bg-gray-300 border-2 border-blue-900"
-                  } hover:scale-105`}
+                  className={`flex items-center justify-center gap-3 p-4 rounded-2xl border w-full text-center transition-all duration-200 transform Montserrat-Medium 
+            ${
+              nota === label
+                ? "bg-[#17347f] text-white border-2 border-gray-300"
+                : "bg-gray-100 text-gray-800 hover:bg-gray-300 border-2 border-blue-900"
+            } 
+            hover:scale-105`}
                 >
                   {icon} {label}
                 </button>
@@ -132,6 +133,7 @@ const FeedbackForm = () => {
             </p>
           )}
         </div>
+        
       </div>
     </div>
   );

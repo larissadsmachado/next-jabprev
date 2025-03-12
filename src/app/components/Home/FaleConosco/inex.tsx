@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import { useState, useMemo } from "react";
 
 const emailDestinations: Record<string, string> = {
@@ -61,7 +62,8 @@ const FaleConosco = () => {
   };
 
   return (
-    <div>
+    <div
+    id="fale-conosco" >
       {loading && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg text-center">
