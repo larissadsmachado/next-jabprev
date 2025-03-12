@@ -148,7 +148,7 @@ export const HoverImageLinks: React.FC = () => {
         </p>
       ) : (
         <>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4 px-36 py-20 bg-gradient-to-b from-[#ffffff] to-[#003470]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4 lg:px-36 px-10 py-20 bg-gradient-to-b from-[#ffffff] to-[#003470]">
             {posts.map((post) => {
               const imageUrl = media[post.featured_media];
               const finalUrl = imageUrl?.startsWith("/")
