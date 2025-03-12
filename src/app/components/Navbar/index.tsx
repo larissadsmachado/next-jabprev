@@ -414,7 +414,7 @@ const SearchBar = () => {
               ref={inputRef}
               type="text"
               placeholder="Search..."
-              className="text-white placeholder-gray-300 px-7 py-3 rounded-full border-2 border-blue-600 bg-transparent focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent w-full text-2xl"
+              className="text-white placeholder-gray-300 px-7 py-3 rounded-full border-2 border-blue-600 bg-transparent focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent w-full text-2xl capitalize"
               onKeyPress={handleKeyPress}
             />
           </motion.div>

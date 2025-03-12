@@ -11,9 +11,12 @@ export default function handler(req, res) {
     return res.status(400).json({ message: 'No search term provided' }); // Retorna um erro caso não haja termo
   }
 
-  // Filtra as rotas que incluem o termo de busca
+  // Transforma o searchTerm em minúsculas para garantir a busca insensível a maiúsculas/minúsculas
+  const lowerCaseSearchTerm = searchTerm.toLowerCase();
+
+  // Filtra as rotas que incluem o termo de busca (também converte as rotas para minúsculas)
   const filteredRoutes = (routes as Route[]).filter(route =>
-    route.path.includes(searchTerm.replace(/\s+/g, '-'))
+    route.path.toLowerCase().includes(lowerCaseSearchTerm.replace(/\s+/g, '-'))
   );
 
   if (filteredRoutes.length === 0) {

@@ -1,5 +1,7 @@
 "use client";
 
+import React from "react";
+
 const Links = () => (
   <div className="h-auto bg-gradient-to-b from-[#dcecff] to-[#fef9e0]">
     <div className="relative w-full">
