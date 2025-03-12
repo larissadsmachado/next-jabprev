@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Atas do Conselho Deliberativo - JaboatãoPrev",
 };
-
+ 
 export default function config() {
   return (
     <div>

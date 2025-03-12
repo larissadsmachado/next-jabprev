@@ -51,7 +51,7 @@ const navigation: NavItem[] = [
         submenu: [
           {
             name: "Atas do Conselho Deliberativo",
-            href: "/Conselho-Administrativo",
+            href: "/Atas-do-Conselho-Administrativo",
           },
           { name: "Atas do Conselho Fiscal", href: "/Atas-do-Conselho-Fiscal" },
           {
@@ -352,33 +352,28 @@ const SearchBar = () => {
   const [showSearch, setShowSearch] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const [isMounted, setIsMounted] = useState(false);
-  let router;
+  const router = useRouter();
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
-
-  if (typeof window !== "undefined") {
-    router = useRouter();
-  }
 
   const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       e.preventDefault();
 
       const searchInput = inputRef.current?.value;
-      if (searchInput && router) {
-        fetch(`/api/search?searchTerm=${searchInput}`)
-          .then((response) => response.json())
+      if (searchInput) {
+        fetch(`/api/search?searchTerm=${encodeURIComponent(searchInput)}`)
+          .then(response => response.json())
           .then((data) => {
-            const routeFiltered = data.route;
-            if (routeFiltered) {
-              router.push(`${process.env.NEXT_PUBLIC_LOCAL}${routeFiltered}`);
+            if (data.route) {
+              router.push(`${process.env.NEXT_PUBLIC_LOCAL}${data.route}`);
             } else {
               console.log("Nenhuma rota encontrada.");
             }
           })
-          .catch((error) => console.error("Erro ao buscar rota:", error));
+          .catch(error => console.error("Erro ao buscar rota:", error));
       }
     }
   };
@@ -428,6 +423,7 @@ const SearchBar = () => {
     </div>
   );
 };
+
 
 const NavLinks = () => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
