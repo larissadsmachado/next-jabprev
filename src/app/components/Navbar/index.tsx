@@ -365,7 +365,7 @@ const SearchBar = () => {
       const searchInput = inputRef.current?.value;
       if (searchInput) {
         fetch(`/api/search?searchTerm=${encodeURIComponent(searchInput)}`)
-          .then(response => response.json())
+          .then((response) => response.json())
           .then((data) => {
             if (data.route) {
               router.push(`${process.env.NEXT_PUBLIC_LOCAL}${data.route}`);
@@ -373,7 +373,7 @@ const SearchBar = () => {
               console.log("Nenhuma rota encontrada.");
             }
           })
-          .catch(error => console.error("Erro ao buscar rota:", error));
+          .catch((error) => console.error("Erro ao buscar rota:", error));
       }
     }
   };
@@ -423,7 +423,6 @@ const SearchBar = () => {
     </div>
   );
 };
-
 
 const NavLinks = () => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
@@ -523,62 +522,82 @@ const NavLinks = () => {
 
 const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
   const [openMenus, setOpenMenus] = useState<{ [key: string]: boolean }>({});
+  const [isMenuOpen, setIsMenuOpen] = useState(true); // Estado para o menu todo
 
   const toggleMenu = (menu: string) => {
     setOpenMenus((prev) => ({ ...prev, [menu]: !prev[menu] }));
   };
 
-  const renderSubMenu = (items: NavItem[], level = 1) => {
-    return (
-      <div className={`pl-${level * 4} mt-2`}>
-        {items.map((item) => (
-          <div key={item.name} className="mb-2">
-            {item.submenu ? (
-              <button
-                onClick={() => toggleMenu(item.name)}
-                className="w-full flex items-center text-center justify-between text-[#0037C1] text-lg font-normal hover:underline"
+  const renderSubMenu = (items: NavItem[], level = 1) => (
+    <div className={`pl-${level * 4} mt-2`}>
+      {items.map((item) => (
+        <div key={item.name} className="mb-2">
+          {item.submenu ? (
+            <div className="flex items-center justify-between w-full">
+              <Link
+                href={item.href ?? "#"} // Garante um href válido
+                className="flex-1 text-[#0037C1] text-lg font-normal hover:underline p-2"
+                onClick={(e) => {
+                  if (item.submenu) {
+                    e.preventDefault(); // Impede que o link navegue se for um submenu
+                    toggleMenu(item.name);
+                  } else {
+                    closeMenu();
+                  }
+                }}
               >
                 {item.name}
+              </Link>
+              <button
+                onClick={() => toggleMenu(item.name)}
+                className="p-2 flex-shrink-0"
+              >
                 {openMenus[item.name] ? (
                   <ChevronUpIcon className="h-5 w-5" />
                 ) : (
                   <ChevronDownIcon className="h-5 w-5" />
                 )}
               </button>
-            ) : (
-              <Link
-                href={item.href}
-                className="block w-full text-[#0037C1] text-lg font-normal hover:underline"
-                onClick={closeMenu} // Fecha o menu ao clicar no link
-              >
-                {item.name}
-              </Link>
-            )}
-            {item.submenu &&
-              openMenus[item.name] &&
-              renderSubMenu(item.submenu, level + 1)}
-          </div>
-        ))}
-      </div>
-    );
-  };
+            </div>
+          ) : (
+            <Link
+              href={item.href}
+              className="block w-full text-[#0037C1] text-lg font-normal hover:underline p-2"
+              onClick={closeMenu}
+            >
+              {item.name}
+            </Link>
+          )}
+
+          {item.submenu &&
+            openMenus[item.name] &&
+            renderSubMenu(item.submenu, level + 1)}
+        </div>
+      ))}
+    </div>
+  );
 
   return (
     <>
-      {/* Overlay escuro ao abrir o menu */}
-      <motion.div
-        className={`fixed inset-0 bg-black bg-opacity-50`}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: openMenus ? 1 : 0 }}
-        exit={{ opacity: 0 }}
-        onClick={closeMenu} // Fecha o menu ao clicar no fundo
-      ></motion.div>
+      {/* Overlay para capturar cliques e fechar o menu */}
+      {isMenuOpen && (
+        <motion.div
+          className="fixed inset-0 bg-black bg-opacity-50"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={() => {
+            closeMenu();
+            setIsMenuOpen(false);
+          }}
+        />
+      )}
 
-      {/* Menu lateral que aparece da esquerda */}
+      {/* Menu lateral */}
       <motion.div
-        className="fixed top-0 left-0 h-full w-1/2 bg-yellow-400 shadow-lg"
+        className="fixed top-0 left-0 h-full w-2/3 bg-yellow-400 shadow-lg"
         initial={{ x: "-100%" }}
-        animate={{ x: openMenus ? 0 : "-100%" }}
+        animate={{ x: isMenuOpen ? 0 : "-100%" }}
         exit={{ x: "-100%" }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
       >
