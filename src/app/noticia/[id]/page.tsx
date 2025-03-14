@@ -7,7 +7,20 @@ interface NoticiaPageProps {
   params: { id: string };
 }
 
-const NoticiaDetalhada = ({ post }: { post: any }) => {
+interface Post {
+  id: number;
+  title: {
+    rendered: string;
+  };
+  date: string;
+  category: string;
+  content: {
+    rendered: string;
+  };
+  featured_image_url?: string;
+}
+
+const NoticiaDetalhada = ({ post }: { post: Post }) => {
 
   const formattedDate = new Date(post.date).toLocaleDateString("pt-BR");
   const formattedTime = new Date(post.date).toLocaleTimeString("pt-BR", {

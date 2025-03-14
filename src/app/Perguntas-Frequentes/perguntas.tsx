@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
 const Servicos = () => (
   <div className="mx-auto max-w-6xl p-6 h-auto py-20">
@@ -157,11 +158,13 @@ const Aposentadorias = () => (
           </tbody>
         </table>
 
-        <img
-          src="/images/Perguntas/calculo.png"
-          alt="Prêmio 1"
-          className="pt-12"
-        />
+        <Image
+  src="/images/Perguntas/calculo.png"
+  alt="Prêmio 1"
+  className="pt-12"
+   width={500}  // Largura relativa, ajuste conforme necessário
+  height={333} // Altura relativa, ajuste conforme necessário
+/>
 
         <p className="text-[#122162] text-lg mt-4">
           Proventos: 60% +2% para cada ano que exceder o tempo de contribuição

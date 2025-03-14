@@ -57,12 +57,14 @@ const Banner = () => {
         {/* Ícones de premiação */}
         <div className="flex justify-center gap-4 sm:gap-6 mt-6 flex-wrap">
           {awards.map((num) => (
-            <img
-              key={num}
-              src={`/images/Medalha/premio${num}.png`}
-              alt={`Prêmio ${num}`}
-              className="h-16 sm:h-20 md:h-24 lg:h-52"
-            />
+            <Image
+            key={num}
+            src={`/images/Medalha/premio${num}.png`}
+            alt={`Prêmio ${num}`}
+            className="h-16 sm:h-20 md:h-24 lg:h-52"
+            width={500}  // Largura relativa, ajuste conforme necessário
+            height={333} // Altura relativa, ajuste conforme necessário
+          />
           ))}
         </div>
       </div>

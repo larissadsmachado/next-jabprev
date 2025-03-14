@@ -21,7 +21,6 @@ const Sobre = () => (
       </p>
     </div>
     <div className="flex-1 flex justify-center mt-4 md:mt-0">
-    import Image from "next/image";
 
 <Image
   src="/images/Instituicao/fachada.jpeg"
@@ -185,11 +184,15 @@ const Equipe = () => (
     {/* Seção com imagem e descrição */}
     <div className="flex flex-col lg:flex-row items-center justify-center w-full max-w-4xl mx-auto gap-8">
       <div className="flex justify-center w-full lg:w-1/2">
-        <img
-          src="/images/Instituicao/luci.jpeg"
-          alt="Jaboatãoprev"
-          className="w-80 max-w-md rounded-lg shadow-md"
-        />
+      <Image
+  src="/images/Instituicao/luci.jpeg"
+  alt="Jaboatãoprev"
+  className="w-80 max-w-md rounded-lg shadow-md"
+  layout="responsive"
+  width={1200}  // Largura relativa
+  height={800}  // Altura relativa
+/>
+
       </div>
 
       <div className="bg-white rounded-3xl p-10 w-full lg:w-1/2">
@@ -243,10 +246,17 @@ const Organograma = () => (
     </div>
     <div className="flex items-center justify-center w-full max-w-4xl mx-auto">
       <div className="flex justify-center">
-        <img
-          src="/images/Instituicao/ornograma.png"
-          alt="Jaboatãoprev"
-        />
+      import Image from 'next/image';
+
+<Image
+  src="/images/Instituicao/luci.jpeg"
+  alt="Jaboatãoprev"
+  className="w-80 max-w-md rounded-lg shadow-md"
+  layout="intrinsic" // Ajusta a imagem para manter a proporção
+  width={500} // Proporção da largura
+  height={333} // Proporção da altura (ajuste conforme necessário)
+ />
+
       </div>
       </div>
   </div>

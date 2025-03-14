@@ -1,9 +1,5 @@
 import React from "react";
 
-interface Report {
-  name: string;
-  url: string;
-}
 
 interface ReportsByYear {
   [year: string]: {
