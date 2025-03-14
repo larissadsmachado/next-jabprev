@@ -4,6 +4,8 @@ import { FaCalendarAlt, FaClock, FaTag } from "react-icons/fa";
 import Image from 'next/image';
 
 
+
+// Este tipo agora está correto para a página dinâmica no Next.js 13
 export default async function NoticiaPage({ params }: { params: { id: string } }) {
   if (!params?.id) {
     return notFound(); // Retorna 404 se não houver um `id` válido
