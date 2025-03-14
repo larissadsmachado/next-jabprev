@@ -9,10 +9,6 @@ const FloatingButtons: React.FC = () => {
     window.open('https://wa.me/5581991782389', '_blank');
   };
 
-  const handleFormClick = () => {
-    // Substitua pela URL do formulário
-    window.location.href = '../Formulario/#formulario';
-  };
 
   return (
     <div style={styles.container}>
@@ -32,11 +28,11 @@ const FloatingButtons: React.FC = () => {
 
 const styles = {
   container: {
-    position: 'fixed' as 'fixed',
+    position: 'fixed' as const,
     bottom: '40px',
     right: '40px',
     display: 'flex',
-    flexDirection: 'column' as 'column',
+    flexDirection: 'column' as const,
     gap: '15px', // Espaçamento entre os botões
     zIndex: 9999, // Garante que fique à frente
   },

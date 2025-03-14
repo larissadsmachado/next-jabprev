@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useState, useMemo } from "react";
+import { useState } from "react";
 
 
 const emailDestinations: Record<string, string> = {
@@ -51,7 +51,7 @@ const FaleConosco = () => {
         const data = await response.json();
         alert(`Erro: ${data.message}`);
       }
-    } catch (error) {
+    } catch  {
       alert("Ocorreu um erro ao enviar a mensagem.");
     }
 

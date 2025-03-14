@@ -1,6 +1,6 @@
 "use client";
-
 import React from "react";
+import Image from "next/image";
 
 const Banner = () => {
   const scrollToSection = (id: string) => {
@@ -33,11 +33,13 @@ const Banner = () => {
 
       {/* Conteúdo do banner */}
       <div className="relative text-center px-4 w-full">
-        <img
-          src="/images/Logo/logo-jabprev.png"
-          alt="Logo Jaboatão Prev"
-          className="mx-auto h-20 sm:h-24 md:h-32 lg:h-52 w-auto"
-        />
+      <Image
+  src="/images/Logo/logo-jabprev.png"
+  alt="Logo Jaboatão Prev"
+  width={300} // Ajuste conforme necessário
+  height={208} // Ajuste conforme necessário
+  className="mx-auto h-20 sm:h-24 md:h-32 lg:h-52 w-auto"
+/>
 
         {/* Botões */}
         <div className="flex justify-center gap-6 my-6 flex-wrap px-2">

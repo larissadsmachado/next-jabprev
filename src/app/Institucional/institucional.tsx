@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import FaleConosco from "../components/Home/FaleConosco";
 import React from "react";
+import Image from "next/image";
 
 const Sobre = () => (
   <div
@@ -20,11 +21,16 @@ const Sobre = () => (
       </p>
     </div>
     <div className="flex-1 flex justify-center mt-4 md:mt-0">
-      <img
-        src="/images/Instituicao/fachada.jpeg"
-        alt="Jaboatãoprev"
-        className="w-80 max-w-md rounded-lg shadow-md"
-      />
+    import Image from "next/image";
+
+<Image
+  src="/images/Instituicao/fachada.jpeg"
+  alt="Jaboatãoprev"
+  width={320} // Equivalente a "w-80" no Tailwind
+  height={200} // Ajuste conforme necessário
+  className="max-w-md rounded-lg shadow-md"
+/>
+
     </div>
   </div>
 );

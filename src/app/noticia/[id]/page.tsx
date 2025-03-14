@@ -1,14 +1,13 @@
 import { notFound } from "next/navigation";
 import { fetchPostById } from "@/lib/api";
 import { FaCalendarAlt, FaClock, FaTag } from "react-icons/fa";
+import Image from 'next/image';
 
 interface NoticiaPageProps {
   params: { id: string };
 }
 
 const NoticiaDetalhada = ({ post }: { post: any }) => {
-  const shareUrl = `https://www.example.com/noticia/${post.id}`;
-  const shareText = `Confira essa notícia: ${post.title.rendered}`;
 
   const formattedDate = new Date(post.date).toLocaleDateString("pt-BR");
   const formattedTime = new Date(post.date).toLocaleTimeString("pt-BR", {
@@ -21,9 +20,11 @@ const NoticiaDetalhada = ({ post }: { post: any }) => {
       {/* Seção da imagem de destaque e informações */}
       <div className="relative w-full">
         {post.featured_image_url && ( // Garante que só renderiza se houver imagem
-          <img
+          <Image
             src={`/api/image-proxy?url=${encodeURIComponent(post.featured_image_url)}`}
             alt={post.title.rendered}
+            width={1200}
+            height={800}
             className="w-full h-screen object-cover"
           />
         )}
@@ -76,6 +77,8 @@ const NoticiaDetalhada = ({ post }: { post: any }) => {
     </main>
   );
 };
+
+
 
 export default async function NoticiaPage({ params }: NoticiaPageProps) {
   if (!params?.id) {
