@@ -246,7 +246,6 @@ const Organograma = () => (
     </div>
     <div className="flex items-center justify-center w-full max-w-4xl mx-auto">
       <div className="flex justify-center">
-      import Image from 'next/image';
 
 <Image
   src="/images/Instituicao/luci.jpeg"
