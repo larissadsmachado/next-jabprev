@@ -3,10 +3,6 @@ import { fetchPostById } from "@/lib/api";
 import { FaCalendarAlt, FaClock, FaTag } from "react-icons/fa";
 import Image from 'next/image';
 
-interface NoticiaPageProps {
-  params: { id: string };
-}
-
 interface Post {
   id: number;
   title: {
@@ -18,6 +14,13 @@ interface Post {
     rendered: string;
   };
   featured_image_url?: string;
+}
+
+
+interface NoticiaPageProps {
+  params: {
+    id: string; // O `id` vem da URL
+  };
 }
 
 const NoticiaDetalhada = ({ post }: { post: Post }) => {
@@ -85,15 +88,15 @@ const NoticiaDetalhada = ({ post }: { post: Post }) => {
 };
 
 export default async function NoticiaPage({ params }: NoticiaPageProps) {
-  if (!params?.id) {
-    return notFound();
+  if (!params?.id) { // Verifica se o id existe
+    return notFound(); // Retorna 404 se o id não for encontrado
   }
 
-  const post = await fetchPostById(params.id);
+  const post = await fetchPostById(params.id); // Busca o post pelo id
 
-  if (!post) {
-    return notFound();
+  if (!post) { // Se não encontrar o post
+    return notFound(); // Retorna 404
   }
 
-  return <NoticiaDetalhada post={post} />;
+  return <NoticiaDetalhada post={post} />; // Renderiza o componente NoticiaDetalhada
 }
