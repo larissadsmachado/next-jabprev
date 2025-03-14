@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import DivisorDeForma from "../components/DivisorDeForma/divisor";
 
 
 interface Report {

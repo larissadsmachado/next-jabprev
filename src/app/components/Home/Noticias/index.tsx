@@ -13,10 +13,6 @@ type Post = {
   categories: number[];
 };
 
-type Media = {
-  id: number;
-  source_url: string;
-};
 
 type Category = {
   id: number;

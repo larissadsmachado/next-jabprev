@@ -14,11 +14,7 @@ const emailDestinations: Record<string, string> = {
 const FaleConosco = () => {
   const [loading, setLoading] = useState(false);
   const [selectedSubject, setSelectedSubject] = useState<string>("financeiro");
-
-  const initialFormState = useMemo(
-    () => ({ name: "", email: "", message: "" }),
-    []
-  );
+  
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import FaleConosco from "../components/Home/FaleConosco/inex";
+import FaleConosco from "../components/Home/FaleConosco";
 import React from "react";
 
 const Sobre = () => (

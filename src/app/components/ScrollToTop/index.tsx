@@ -55,7 +55,7 @@ const ScrollToTop: React.FC = () => {
 
 const styles = {
   scrollToTop: {
-    position: 'fixed' as 'fixed',  // Defina explicitamente o tipo como 'fixed'
+    position: 'fixed' as const,
     bottom: '40px',
     right: '110px',
     borderRadius: '50%',

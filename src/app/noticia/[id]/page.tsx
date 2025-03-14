@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { fetchPostById } from "@/lib/api";
-import { FaFacebook, FaWhatsapp, FaTwitter, FaCalendarAlt, FaClock, FaTag } from "react-icons/fa";
+import { FaCalendarAlt, FaClock, FaTag } from "react-icons/fa";
 
 interface NoticiaPageProps {
   params: { id: string };
