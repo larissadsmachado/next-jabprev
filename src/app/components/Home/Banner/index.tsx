@@ -62,8 +62,8 @@ const Banner = () => {
             src={`/images/Medalha/premio${num}.png`}
             alt={`Prêmio ${num}`}
             className="h-16 sm:h-20 md:h-24 lg:h-52"
-            width={500}  // Largura relativa, ajuste conforme necessário
-            height={333} // Altura relativa, ajuste conforme necessário
+            width={150}  // Largura relativa, ajuste conforme necessário
+            height={100} // Altura relativa, ajuste conforme necessário
           />
           ))}
         </div>
