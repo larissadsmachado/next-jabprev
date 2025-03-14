@@ -3,27 +3,19 @@ import { fetchPostById } from "@/lib/api";
 import { FaCalendarAlt, FaClock, FaTag } from "react-icons/fa";
 import Image from 'next/image';
 
-interface Post {
-  id: number;
-  title: {
-    rendered: string;
-  };
-  date: string;
-  category: string;
-  content: {
-    rendered: string;
-  };
-  featured_image_url?: string;
-}
 
+export default async function NoticiaPage({ params }: { params: { id: string } }) {
+  if (!params?.id) {
+    return notFound(); // Retorna 404 se não houver um `id` válido
+  }
 
-interface NoticiaPageProps {
-  params: {
-    id: string; // O `id` vem da URL
-  };
-}
+  // Busca o post pelo ID
+  const post = await fetchPostById(params.id);
 
-const NoticiaDetalhada = ({ post }: { post: Post }) => {
+  if (!post) {
+    return notFound(); // Se o post não for encontrado, retorna 404
+  }
+
   const formattedDate = new Date(post.date).toLocaleDateString("pt-BR");
   const formattedTime = new Date(post.date).toLocaleTimeString("pt-BR", {
     hour: "2-digit",
@@ -85,18 +77,4 @@ const NoticiaDetalhada = ({ post }: { post: Post }) => {
       </section>
     </main>
   );
-};
-
-export default async function NoticiaPage({ params }: NoticiaPageProps) {
-  if (!params?.id) { // Verifica se o id existe
-    return notFound(); // Retorna 404 se o id não for encontrado
-  }
-
-  const post = await fetchPostById(params.id); // Busca o post pelo id
-
-  if (!post) { // Se não encontrar o post
-    return notFound(); // Retorna 404
-  }
-
-  return <NoticiaDetalhada post={post} />; // Renderiza o componente NoticiaDetalhada
 }
