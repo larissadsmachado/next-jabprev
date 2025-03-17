@@ -351,12 +351,34 @@ const Logo = () => (
 const SearchBar = () => {
   const [showSearch, setShowSearch] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+  const searchContainerRef = useRef<HTMLDivElement>(null);
   const [isMounted, setIsMounted] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        searchContainerRef.current &&
+        !searchContainerRef.current.contains(event.target as Node)
+      ) {
+        setShowSearch(false);
+      }
+    };
+
+    if (showSearch) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showSearch]);
 
   const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
@@ -398,6 +420,7 @@ const SearchBar = () => {
           exit={{ opacity: 0 }}
         >
           <motion.div
+            ref={searchContainerRef}
             className="relative w-full max-w-2xl"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -405,7 +428,7 @@ const SearchBar = () => {
           >
             <button
               onClick={() => setShowSearch(false)}
-              className="absolute top-2 right-7 text-white hover:text-gray-400 text-xl"
+              className="absolute top-2 right-20 text-white hover:text-gray-400 text-3xl"
               aria-label="Close Search"
             >
               &times;
@@ -413,8 +436,8 @@ const SearchBar = () => {
             <input
               ref={inputRef}
               type="text"
-              placeholder="Search..."
-              className="text-white placeholder-gray-300 px-7 py-3 rounded-full border-2 border-blue-600 bg-transparent focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent w-full text-2xl capitalize"
+              placeholder="Buscar..."
+              className="text-white placeholder-gray-300 px-20 py-3 rounded-full border-2 border-blue-600 bg-transparent focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent w-full text-2xl capitalize"
               onKeyPress={handleKeyPress}
             />
           </motion.div>
@@ -423,6 +446,7 @@ const SearchBar = () => {
     </div>
   );
 };
+
 
 const NavLinks = () => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
