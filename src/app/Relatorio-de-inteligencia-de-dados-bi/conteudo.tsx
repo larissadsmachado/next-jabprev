@@ -1,5 +1,7 @@
 "use client";
 
+import React from "react";
+
 const Legislacao = () => {
   return (
     <div className="flex flex-col">

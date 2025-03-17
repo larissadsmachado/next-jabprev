@@ -4,11 +4,11 @@ import { useState } from "react";
 
 
 const emailDestinations: Record<string, string> = {
-  financeiro: "carla.correiasouza9@gmail.com",
-  juridico: "carla9correia@gmail.com",
-  beneficios: "carla9correia@gmail.com",
-  investimento: "carla.correiasouza9@gmail.com",
-  presidencia: "carla9correia@gmail.com",
+  financeiro: "admfinanceiro@jaboataoprev.jaboatao.pe.gov.br",
+  juridico: "jurídico@jaboataoprev.jaboatao.pe.gov.br",
+  beneficios: "beneficios@jaboataoprev.jaboatao.pe.gov.br",
+  investimento: "investimentos@jaboataoprev.jaboatao.pe.gov.br",
+  presidencia: "presidencia@jaboataoprev.jaboatao.pe.gov.br",
 };
 
 const FaleConosco = () => {
@@ -108,10 +108,9 @@ const FaleConosco = () => {
     </div> 
 
 
-
         <div className="relative z-10 min-h-screen text-white p-8 flex items-center justify-center bg-opacity-30">
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 max-w-7xl w-full">
-            <div className="w-full md:w-1/2 h-[670px] rounded-xl">
+            <div className="w-full lg:h-[670px] md:w-1/2 h-[470px]">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.5114253262363!2d-34.925620124244986!3d-8.151115381647537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7aae1dc7561cffd%3A0xe6fbfb0ef7cd1451!2sCentro%20Administrativo%20de%20Jaboat%C3%A3o%20dos%20Guararapes!5e0!3m2!1spt-BR!2sbr!4v1726165314278!5m2!1spt-BR!2sbr"
                 width="100%"
