@@ -3,7 +3,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "jaboataoprev.pe.gov.br", // Permite subdomínios
+        hostname: "jaboataoprev.pe.gov.br", 
       },
     ],
   },
