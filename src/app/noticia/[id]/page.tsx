@@ -4,7 +4,8 @@ import { FaCalendarAlt, FaClock, FaTag } from "react-icons/fa";
 import Image from 'next/image';
 
 interface NoticiaPageProps {
-  params: { id: string };
+  params: { id: number };
+  searchParams?: { [key: string]: string | string[] | undefined };
 }
 
 interface Post {
@@ -61,8 +62,6 @@ const NoticiaDetalhada = ({ post }: { post: Post }) => {
               <span>{post.category || "Sem categoria"}</span>
             </div>
           </div>
-
-          
           </div>
         </div>
       </div>
@@ -96,7 +95,7 @@ export default async function NoticiaPage({ params }: NoticiaPageProps) {
     return notFound();
   }
 
-  const post = await fetchPostById(params.id);
+  const post = await fetchPostById(String(params.id));
 
   if (!post) {
     return notFound();
