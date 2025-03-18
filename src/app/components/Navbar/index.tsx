@@ -447,7 +447,6 @@ const SearchBar = () => {
   );
 };
 
-
 const NavLinks = () => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [activeSubMenu, setActiveSubMenu] = useState<string | null>(null);
@@ -546,7 +545,7 @@ const NavLinks = () => {
 
 const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
   const [openMenus, setOpenMenus] = useState<{ [key: string]: boolean }>({});
-  const [isMenuOpen, setIsMenuOpen] = useState(true); // Estado para o menu todo
+  const [isMenuOpen, setIsMenuOpen] = useState(true);
 
   const toggleMenu = (menu: string) => {
     setOpenMenus((prev) => ({ ...prev, [menu]: !prev[menu] }));
@@ -559,11 +558,11 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
           {item.submenu ? (
             <div className="flex items-center justify-between w-full">
               <Link
-                href={item.href ?? "#"} // Garante um href válido
+                href={item.href ?? "#"}
                 className="flex-1 text-[#0037C1] text-lg font-normal hover:underline p-2"
                 onClick={(e) => {
                   if (item.submenu) {
-                    e.preventDefault(); // Impede que o link navegue se for um submenu
+                    e.preventDefault();
                     toggleMenu(item.name);
                   } else {
                     closeMenu();
@@ -619,7 +618,7 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
 
       {/* Menu lateral */}
       <motion.div
-        className="fixed top-0 left-0 h-full w-2/3 bg-yellow-400 shadow-lg"
+        className="fixed top-0 left-0 h-full w-2/3 bg-yellow-400 shadow-lg flex flex-col"
         initial={{ x: "-100%" }}
         animate={{ x: isMenuOpen ? 0 : "-100%" }}
         exit={{ x: "-100%" }}
@@ -629,7 +628,14 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
           <Logo />
         </div>
 
-        <div className="p-4 pt-10">{renderSubMenu(navigation, 1)}</div>
+        <div className="p-4 pt-6 flex-1 overflow-auto">
+          {renderSubMenu(navigation, 1)}
+        </div>
+
+        <div className="pb-56 flex justify-center">
+          <SearchBar />
+        </div>
+
       </motion.div>
     </>
   );
@@ -647,33 +653,40 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const closeMenu = () => setIsOpen(false); // Função para fechar o menu
+  const closeMenu = () => setIsOpen(false);
 
   return (
     <Disclosure
       as="nav"
-      className={`fixed top-0 w-full transition-all duration-300 z-50 ${
+      className={`fixed top-0 w-full transition-all duration-300 z-50 px-20 ${
         scrolled ? "bg-[#fdc200d1] shadow-md" : "bg-[#FDC300]"
       }`}
     >
-      <div className="relative max-w-8xl mx-auto p-2 md:p-3 lg:px-32">
+      <div className="relative mx-auto py-3">
         <div className="relative flex h-14 items-center justify-between">
           <Logo />
-          <NavLinks />
-          <SearchBar />
-          <div className="block lg:hidden">
+          {/* Esconde os links e a barra de pesquisa em telas menores que xl */}
+          <div className="hidden xl:flex">
+            <NavLinks />
+          </div>
+          <div className="hidden xl:flex">
+            <SearchBar />
+          </div>
+          {/* Ícone de menu hamburguer aparece apenas em telas xl ou menores */}
+          <div className="xl:hidden">
             <Bars3Icon
               className="h-6 w-6 text-[#0037C1] cursor-pointer"
               aria-hidden="true"
-              onClick={() => setIsOpen(!isOpen)} // Controla a abertura do menu
+              onClick={() => setIsOpen(!isOpen)}
             />
           </div>
         </div>
-        {isOpen && <MobileMenu closeMenu={closeMenu} />}{" "}
-        {/* Passa a função para fechar o menu */}
+        {/* Menu Mobile aparece apenas se isOpen for true */}
+        {isOpen && <MobileMenu closeMenu={closeMenu} />}
       </div>
     </Disclosure>
   );
 };
 
 export default Navbar;
+

@@ -61,7 +61,7 @@ const Banner = () => {
             key={num}
             src={`/images/Medalha/premio${num}.png`}
             alt={`Prêmio ${num}`}
-            className="h-32 w-28 lg:w-auto sm:h-20 md:h-20 lg:h-52"
+            className="h-36 w-28"
             width={150}  
             height={100} 
           />
