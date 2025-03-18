@@ -65,7 +65,7 @@ export default function CardGrid() {
   return (
     <div
       id="servicos"
-      className="flex flex-col items-center justify-center bg-gradient-to-b from-[#ffffff] to-[#004619] text-center pb-36"
+      className="flex flex-col items-center justify-center bg-gradient-to-b from-[#CBD5E1] to-[#004619] text-center pb-36"
     >
       <div className="relative w-full">
         <svg

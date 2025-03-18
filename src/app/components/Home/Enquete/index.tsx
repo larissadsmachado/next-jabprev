@@ -59,7 +59,7 @@ const FeedbackForm = () => {
   return (
     <div
       id="enquete"
-      className=" justify-center items-center bg-gradient-to-b from-[#ffffff] to-[#004619]"
+      className=" justify-center items-center bg-gradient-to-b from-[#dce5f0] to-[#004619]"
     >
       <div className="relative w-full">
         <svg
