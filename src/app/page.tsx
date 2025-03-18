@@ -3,9 +3,10 @@ import Servicos from "./components/Home/Servicos/index";
 import Enquete from "./components/Home/Enquete/index"
 import FaleConosco from "./components/Home/FaleConosco/index";
 import Noticia from "./components/Home/Noticias/index";
+import React from "react";
 
 export const metadata = {
-  title: 'JABPREV',
+  title: 'JABOATÃO PREV',
   description: 'Desenvolvido por: Secretaria Executiva de Governo Digital | SEGD'
 };
 

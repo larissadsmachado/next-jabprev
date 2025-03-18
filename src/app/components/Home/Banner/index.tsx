@@ -32,17 +32,17 @@ const Banner = () => {
       <div className="absolute inset-0 bg-black bg-opacity-75"></div>
 
       {/* Conteúdo do banner */}
-      <div className="relative text-center px-4 w-full">
-      <Image
-  src="/images/Logo/logo-jabprev.png"
-  alt="Logo Jaboatão Prev"
-  width={300} // Ajuste conforme necessário
-  height={208} // Ajuste conforme necessário
-  className="mx-auto h-20 sm:h-24 md:h-32 lg:h-52 w-auto"
-/>
+      <div className="relative text-center w-full mt-20">
+        <Image
+          src="/images/Logo/logo-jabprev.png"
+          alt="Logo Jaboatão Prev"
+          width={300} // Ajuste conforme necessário
+          height={208} // Ajuste conforme necessário
+          className="mx-auto h-20 sm:h-24 md:h-32 lg:h-40 w-auto"
+        />
 
         {/* Botões */}
-        <div className="flex justify-center gap-6 my-6 flex-wrap px-2">
+        <div className="flex justify-center gap-6 flex-wrap px-2 py-10">
           {buttons.map(({ label, section }) => (
             <button
               key={section}
@@ -55,16 +55,16 @@ const Banner = () => {
         </div>
 
         {/* Ícones de premiação */}
-        <div className="flex justify-center gap-4 sm:gap-6 mt-6 flex-wrap">
+        <div className="flex justify-center gap-4 sm:gap-6 flex-wrap mt-12">
           {awards.map((num) => (
             <Image
-            key={num}
-            src={`/images/Medalha/premio${num}.png`}
-            alt={`Prêmio ${num}`}
-            className="h-36 w-28"
-            width={150}  
-            height={100} 
-          />
+              key={num}
+              src={`/images/Medalha/premio${num}.png`}
+              alt={`Prêmio ${num}`}
+              className="w-auto 2xl:h-auto lg:h-44 sm:h-40 h-32" 
+              width={150}
+              height={100}
+            />
           ))}
         </div>
       </div>

@@ -109,8 +109,8 @@ export const HoverImageLinks: React.FC = () => {
   return (
     <section id="noticias">
 
-      <div className="p-4 md:p-10 bg-slate-300">
-        <h1 className="flex justify-center text-5xl font-semibold text-[#146c33] mb-14 uppercase pt-14">
+      <div className="bg-slate-300">
+        <h1 className="flex justify-center text-5xl font-semibold text-[#146c33] uppercase pt-16">
           Notícias
         </h1>
       </div>
