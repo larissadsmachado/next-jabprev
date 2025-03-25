@@ -534,7 +534,9 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
         </div>
 
         <div className="pb-56 flex justify-center">
-          <SearchBar />
+          <SearchBar setIsLoading={function (value: React.SetStateAction<boolean>): void {
+            throw new Error("Function not implemented.");
+          } } />
         </div>
 
       </motion.div>
@@ -543,7 +545,11 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
 };
 
 
-const SearchBar = () => {
+interface SearchBarProps {
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const SearchBar = ({ setIsLoading }: SearchBarProps) => {
   const [showSearch, setShowSearch] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const searchContainerRef = useRef<HTMLDivElement>(null);
@@ -581,6 +587,9 @@ const SearchBar = () => {
 
       const searchInput = inputRef.current?.value;
       if (searchInput) {
+        setIsLoading(true); // Exibe a tela de carregamento
+
+        // Inicia a requisição de busca
         fetch(`/api/search?searchTerm=${encodeURIComponent(searchInput)}`)
           .then((response) => response.json())
           .then((data) => {
@@ -590,7 +599,15 @@ const SearchBar = () => {
               console.log("Nenhuma rota encontrada.");
             }
           })
-          .catch((error) => console.error("Erro ao buscar rota:", error));
+          .catch((error) => {
+            console.error("Erro ao buscar rota:", error);
+          })
+          .finally(() => {
+            // Garantir que a tela de carregamento fique visível por mais tempo
+            setTimeout(() => {
+              setIsLoading(false); // Esconde a tela de carregamento
+            }, 2000); // 2 segundos adicionais
+          });
       }
     }
   };
@@ -660,6 +677,7 @@ const LoadingScreen = () => {
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -674,21 +692,17 @@ const Navbar = () => {
   return (
     <Disclosure
       as="nav"
-      className={`fixed top-0 w-full transition-all duration-300 z-50 px-20 ${
-        scrolled ? "bg-[#fdc200d1] shadow-md" : "bg-[#FDC300]"
-      }`}
+      className={`fixed top-0 w-full transition-all duration-300 z-50 px-20 ${scrolled ? "bg-[#fdc200d1] shadow-md" : "bg-[#FDC300]"}`}
     >
       <div className="relative mx-auto py-3">
         <div className="relative flex h-14 items-center justify-between">
           <Logo />
-          {/* Esconde os links e a barra de pesquisa em telas menores que xl */}
           <div className="hidden xl:flex">
             <NavLinks />
           </div>
           <div className="hidden xl:flex">
-            <SearchBar />
+            <SearchBar setIsLoading={setIsLoading} />  {/* Passando setIsLoading */}
           </div>
-          {/* Ícone de menu hamburguer aparece apenas em telas xl ou menores */}
           <div className="xl:hidden">
             <Bars3Icon
               className="h-6 w-6 text-[#0037C1] cursor-pointer"
@@ -697,16 +711,13 @@ const Navbar = () => {
             />
           </div>
         </div>
-        {/* Menu Mobile aparece apenas se isOpen for true */}
         {isOpen && <MobileMenu closeMenu={closeMenu} />}
       </div>
 
-      
-
-
+      {/* Tela de carregamento exibida aqui enquanto isLoading for true */}
+      {isLoading && <LoadingScreen />}
     </Disclosure>
   );
 };
 
 export default Navbar;
-
