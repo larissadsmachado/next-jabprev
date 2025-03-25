@@ -75,7 +75,7 @@ const Formulario = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex flex-col items-center justify-center min-h-screen">
       <form onSubmit={handleSubmit} className="max-w-4xl mx-auto p-10 border-2 border-yellow-400 rounded-lg shadow-xl my-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
