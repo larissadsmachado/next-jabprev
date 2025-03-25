@@ -348,105 +348,6 @@ const Logo = () => (
   </div>
 );
 
-const SearchBar = () => {
-  const [showSearch, setShowSearch] = useState(false);
-  const inputRef = useRef<HTMLInputElement>(null);
-  const searchContainerRef = useRef<HTMLDivElement>(null);
-  const [isMounted, setIsMounted] = useState(false);
-  const router = useRouter();
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        searchContainerRef.current &&
-        !searchContainerRef.current.contains(event.target as Node)
-      ) {
-        setShowSearch(false);
-      }
-    };
-
-    if (showSearch) {
-      document.addEventListener("mousedown", handleClickOutside);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [showSearch]);
-
-  const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
-      e.preventDefault();
-
-      const searchInput = inputRef.current?.value;
-      if (searchInput) {
-        fetch(`/api/search?searchTerm=${encodeURIComponent(searchInput)}`)
-          .then((response) => response.json())
-          .then((data) => {
-            if (data.route) {
-              router.push(`${process.env.NEXT_PUBLIC_LOCAL}${data.route}`);
-            } else {
-              console.log("Nenhuma rota encontrada.");
-            }
-          })
-          .catch((error) => console.error("Erro ao buscar rota:", error));
-      }
-    }
-  };
-
-  if (!isMounted) return null;
-
-  return (
-    <div className="relative">
-      <button
-        onClick={() => setShowSearch(true)}
-        className="text-[#0037C1] text-xl focus:outline-none"
-        aria-label="Toggle Search"
-      >
-        <FaSearch />
-      </button>
-
-      {showSearch && (
-        <motion.div
-          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-        >
-          <motion.div
-            ref={searchContainerRef}
-            className="relative w-full max-w-2xl"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.8, opacity: 0 }}
-          >
-            <button
-              onClick={() => setShowSearch(false)}
-              className="absolute top-2 right-20 text-white hover:text-gray-400 text-3xl"
-              aria-label="Close Search"
-            >
-              &times;
-            </button>
-            <input
-              ref={inputRef}
-              type="text"
-              placeholder="Buscar..."
-              className="text-white placeholder-gray-300 px-20 py-3 rounded-full border-2 border-blue-600 bg-transparent focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent w-full text-2xl capitalize"
-              onKeyPress={handleKeyPress}
-            />
-          </motion.div>
-        </motion.div>
-      )}
-    </div>
-  );
-};
-
 const NavLinks = () => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [activeSubMenu, setActiveSubMenu] = useState<string | null>(null);
@@ -641,6 +542,121 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
   );
 };
 
+
+const SearchBar = () => {
+  const [showSearch, setShowSearch] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const searchContainerRef = useRef<HTMLDivElement>(null);
+  const [isMounted, setIsMounted] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        searchContainerRef.current &&
+        !searchContainerRef.current.contains(event.target as Node)
+      ) {
+        setShowSearch(false);
+      }
+    };
+
+    if (showSearch) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showSearch]);
+
+  const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+
+      const searchInput = inputRef.current?.value;
+      if (searchInput) {
+        fetch(`/api/search?searchTerm=${encodeURIComponent(searchInput)}`)
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.route) {
+              router.push(`${process.env.NEXT_PUBLIC_LOCAL}${data.route}`);
+            } else {
+              console.log("Nenhuma rota encontrada.");
+            }
+          })
+          .catch((error) => console.error("Erro ao buscar rota:", error));
+      }
+    }
+  };
+
+  if (!isMounted) return null;
+
+  return (
+    <div className="relative">
+      <button
+        onClick={() => setShowSearch(true)}
+        className="text-[#0037C1] text-xl focus:outline-none"
+        aria-label="Toggle Search"
+      >
+        <FaSearch />
+      </button>
+
+      {showSearch && (
+        <motion.div
+          className="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm flex items-center justify-center z-50"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          <motion.div
+            ref={searchContainerRef}
+            className="relative w-full max-w-2xl"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+          >
+            <button
+              onClick={() => setShowSearch(false)}
+              className="absolute top-2 right-20 text-white hover:text-gray-400 text-3xl"
+              aria-label="Close Search"
+            >
+              &times;
+            </button>
+            <input
+              ref={inputRef}
+              autoFocus
+              type="text"
+              placeholder="Buscar..."
+              className="bg-transparent text-white text-2xl mt-20 text-center px-4 py-2 w-full border-b-2 border-gray-300 rounded-lg placeholder-white focus:outline-none focus:border-white focus:ring-0 focus:shadow-none"
+              onKeyDown={handleKeyPress}
+            />
+          </motion.div>
+        </motion.div>
+      )}
+    </div>
+  );
+};
+
+const LoadingScreen = () => {
+  return (
+    <div className="fixed inset-0 bg-[#FDC300] flex flex-col items-center justify-center z-50">
+      <Image
+        src="/images/Logo/logotop.png"
+        alt="Carregando"
+        width={150}
+        height={110}
+        className="animate-pulse"
+      />
+    </div>
+  );
+};
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -684,6 +700,10 @@ const Navbar = () => {
         {/* Menu Mobile aparece apenas se isOpen for true */}
         {isOpen && <MobileMenu closeMenu={closeMenu} />}
       </div>
+
+      
+
+
     </Disclosure>
   );
 };
