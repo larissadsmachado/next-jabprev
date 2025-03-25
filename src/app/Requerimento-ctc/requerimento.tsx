@@ -1,6 +1,5 @@
 "use client";
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 
 const Formulario = () => {
   const [formData, setFormData] = useState({
@@ -12,20 +11,22 @@ const Formulario = () => {
     dataEmissao: "",
     dataExoneracao: "",
     arquivos: {
-      rg: null,
-      cpf: null,
-      pisPasep: null,
-      comprovante: null,
+      rg: null as File | null,
+      cpf: null as File | null,
+      pisPasep: null as File | null,
+      comprovante: null as File | null,
     },
   });
-  
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, files } = e.target;
-    if (files) {
+    if (files && files[0]) {
       setFormData({
         ...formData,
         arquivos: { ...formData.arquivos, [name]: files[0] },
@@ -33,9 +34,44 @@ const Formulario = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formData);
+
+    const formDataToSend = new FormData();
+    // Adiciona os campos de texto
+    formDataToSend.append("nome", formData.nome);
+    formDataToSend.append("matricula", formData.matricula);
+    formDataToSend.append("telefone", formData.telefone);
+    formDataToSend.append("email", formData.email);
+    formDataToSend.append("orgao", formData.orgao);
+    formDataToSend.append("dataEmissao", formData.dataEmissao);
+    formDataToSend.append("dataExoneracao", formData.dataExoneracao);
+
+    // Adiciona os arquivos individualmente
+    Object.entries(formData.arquivos).forEach(([key, file]) => {
+      if (file) {
+        formDataToSend.append(key, file);
+      }
+    });
+
+    try {
+      const response = await fetch("/api/sendEmail", {
+        method: "POST",
+        body: formDataToSend,
+      });
+
+      if (response.ok) {
+        setSuccessMessage("Formulário enviado com sucesso!");
+        setErrorMessage(null);
+      } else {
+        setErrorMessage("Falha ao enviar o formulário.");
+        setSuccessMessage(null);
+      }
+    } catch (error) {
+      console.error(error);
+      setErrorMessage("Erro ao enviar formulário.");
+      setSuccessMessage(null);
+    }
   };
 
   return (
@@ -82,7 +118,11 @@ const Formulario = () => {
           </div>
         ))}
       </div>
-      <button type="submit" className="mt-10 w-full bg-blue-900 text-white font-semibold p-2 rounded-xl hover:bg-blue-950">Enviar Formulário</button>
+      <button type="submit" className="mt-10 w-full bg-blue-900 text-white font-semibold p-2 rounded-xl hover:bg-blue-950">
+        Enviar Formulário
+      </button>
+      {successMessage && <div className="mt-4 text-green-500">{successMessage}</div>}
+      {errorMessage && <div className="mt-4 text-red-500">{errorMessage}</div>}
     </form>
   );
 };

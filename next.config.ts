@@ -3,7 +3,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "jaboataoprev.pe.gov.br", 
+        hostname: "https://jaboataoprev.jaboatao.pe.gov.br", 
       },
     ],
   },

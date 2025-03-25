@@ -1,6 +1,7 @@
 import Requerimento from "./requerimento";
 import Model from "../components/model-page/index";
-import Link from "next/link";
+import Link from "next/link"; 
+import React from "react";
 
 export const metadata = {
   title: "Requerimento CTC - JaboatãoPrev",
