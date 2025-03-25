@@ -75,55 +75,68 @@ const Formulario = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-4xl mx-auto p-10 border-2 border-yellow-400 rounded-lg shadow-xl my-20">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label className="block font-semibold">Nome Completo *</label>
-          <input type="text" name="nome" value={formData.nome} onChange={handleChange} required className="w-full p-2 border rounded" />
-        </div>
-        <div>
-          <label className="block font-semibold">Matrícula *</label>
-          <input type="number" name="matricula" value={formData.matricula} onChange={handleChange} required className="w-full p-2 border rounded" />
-        </div>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-        <div>
-          <label className="block font-semibold">Telefone *</label>
-          <input type="tel" name="telefone" value={formData.telefone} onChange={handleChange} required className="w-full p-2 border rounded" />
-        </div>
-        <div>
-          <label className="block font-semibold">E-mail</label>
-          <input type="email" name="email" value={formData.email} onChange={handleChange} className="w-full p-2 border rounded" />
-        </div>
-      </div>
-      <div className="mt-4">
-        <label className="block font-semibold">Órgão de Aproveitamento *</label>
-        <textarea name="orgao" value={formData.orgao} onChange={handleChange} required className="w-full p-2 border rounded" />
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-        <div>
-          <label className="block font-semibold">Data de Emissão *</label>
-          <input type="date" name="dataEmissao" value={formData.dataEmissao} onChange={handleChange} required className="w-full p-2 border rounded" />
-        </div>
-        <div>
-          <label className="block font-semibold">Data de Exoneração *</label>
-          <input type="date" name="dataExoneracao" value={formData.dataExoneracao} onChange={handleChange} required className="w-full p-2 border rounded" />
-        </div>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-        {Object.keys(formData.arquivos).map((key) => (
-          <div key={key}>
-            <label className="block font-semibold">{key.toUpperCase()} *</label>
-            <input type="file" name={key} onChange={handleFileChange} required className="w-full p-2 border rounded" />
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+      <form onSubmit={handleSubmit} className="max-w-4xl mx-auto p-10 border-2 border-yellow-400 rounded-lg shadow-xl my-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label className="block font-semibold">Nome Completo *</label>
+            <input type="text" name="nome" value={formData.nome} onChange={handleChange} required className="w-full p-2 border rounded" />
           </div>
-        ))}
-      </div>
-      <button type="submit" className="mt-10 w-full bg-blue-900 text-white font-semibold p-2 rounded-xl hover:bg-blue-950">
-        Enviar Formulário
-      </button>
-      {successMessage && <div className="mt-4 text-green-500">{successMessage}</div>}
-      {errorMessage && <div className="mt-4 text-red-500">{errorMessage}</div>}
-    </form>
+          <div>
+            <label className="block font-semibold">Matrícula *</label>
+            <input type="number" name="matricula" value={formData.matricula} onChange={handleChange} required className="w-full p-2 border rounded" />
+          </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+          <div>
+            <label className="block font-semibold">Telefone *</label>
+            <input type="tel" name="telefone" value={formData.telefone} onChange={handleChange} required className="w-full p-2 border rounded" />
+          </div>
+          <div>
+            <label className="block font-semibold">E-mail</label>
+            <input type="email" name="email" value={formData.email} onChange={handleChange} className="w-full p-2 border rounded" />
+          </div>
+        </div>
+        <div className="mt-4">
+          <label className="block font-semibold">Órgão de Aproveitamento *</label>
+          <textarea name="orgao" value={formData.orgao} onChange={handleChange} required className="w-full p-2 border rounded" />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+          <div>
+            <label className="block font-semibold">Data de Emissão *</label>
+            <input type="date" name="dataEmissao" value={formData.dataEmissao} onChange={handleChange} required className="w-full p-2 border rounded" />
+          </div>
+          <div>
+            <label className="block font-semibold">Data de Exoneração *</label>
+            <input type="date" name="dataExoneracao" value={formData.dataExoneracao} onChange={handleChange} required className="w-full p-2 border rounded" />
+          </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+          {Object.keys(formData.arquivos).map((key) => (
+            <div key={key}>
+              <label className="block font-semibold">{key.toUpperCase()} *</label>
+              <input type="file" name={key} onChange={handleFileChange} required className="w-full p-2 border rounded" />
+            </div>
+          ))}
+        </div>
+        <button type="submit" className="mt-10 w-full bg-blue-900 text-white font-semibold p-2 rounded-xl hover:bg-blue-950">
+          Enviar Formulário
+        </button>
+      </form>
+
+      {/* Mensagens de Sucesso ou Erro centralizadas */}
+      {successMessage && (
+        <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-500 text-white p-4 rounded-lg shadow-lg">
+          {successMessage}
+        </div>
+      )}
+
+      {errorMessage && (
+        <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-red-500 text-white p-4 rounded-lg shadow-lg">
+          {errorMessage}
+        </div>
+      )}
+    </div>
   );
 };
 

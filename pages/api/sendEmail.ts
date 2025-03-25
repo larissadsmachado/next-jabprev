@@ -41,7 +41,7 @@ export default async function handler(
         return res.status(400).json({ message: "All fields are required." });
       }
 
-      const recipientEmail = "larissadsmachado@gmail.com";
+      const recipientEmail = "beneficios@jaboataoprev.jaboatao.pe.gov.br";
 
       // Processa os arquivos para criar anexos, tratando a possibilidade de arrays
       const attachments: any[] = Object.keys(files).map((key) => {
