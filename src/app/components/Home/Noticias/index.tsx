@@ -117,7 +117,7 @@ export const HoverImageLinks: React.FC = () => {
      
 
       {loading ? (
-        <p className="flex text-center items-center justify-center text-gray-600 h-auto text-xl py-60">
+        <p className="bg-gradient-to-b from-[#CBD5E1] to-[#004619] flex text-center items-center justify-center text-gray-300 h-auto text-xl py-60">
           Carregando...
         </p>
       ) : (

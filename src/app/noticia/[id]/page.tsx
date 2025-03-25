@@ -4,6 +4,7 @@ import { fetchPostById } from "@/lib/api";
 import { FaCalendarAlt, FaClock, FaTag } from "react-icons/fa";
 import Image from "next/image";
 import { JSX } from "react/jsx-runtime";
+import React from "react";
 
 // Definindo o tipo Post
 interface Post {
