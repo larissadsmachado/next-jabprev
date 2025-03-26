@@ -60,14 +60,15 @@ const CardContent = ({
   </>
 );
 
+
 export default function CardGrid() {
   return (
     <div className="bg-white">
       <div
         id="servicos"
-        className="flex flex-col items-center justify-center min-h-[80vh] w-[100%] mx-auto px-20 bg-[#044F1C] text-center rounded-[50px] pb-20"
+        className="flex flex-col items-center justify-center min-h-[80vh] w-full mx-auto bg-[#044F1C] text-center rounded-[50px] pb-20"
       >
-        <div className="w-9/12 py-14 relative">
+        <div className="w-8/12 py-14 relative">
           <h1 className="w-full relative flex justify-center text-5xl font-semibold text-slate-200 uppercase">
             <span className="mx-20">Serviços</span>
             <div className="absolute top-1/2 left-0 w-full flex items-center">

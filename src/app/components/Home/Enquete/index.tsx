@@ -104,7 +104,7 @@ const FeedbackForm = () => {
                   className={`flex items-center justify-center gap-3 p-4 rounded-2xl border w-full text-center transition-all duration-200 transform Montserrat-Medium 
             ${
               nota === label
-                ? "bg-green-700 text-slate-100 border-2 border-blue-900"
+                ? "bg-sky-200 text-slate-800 border-2 border-blue-900"
                 : "bg-gray-100 text-gray-800 hover:bg-gray-300 border-2 border-blue-900"
             } 
             hover:scale-105`}
