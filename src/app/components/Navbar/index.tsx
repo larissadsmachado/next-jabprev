@@ -12,6 +12,7 @@ import { useRouter } from "next/navigation"; // 🔹 Import correto para App Rou
 import { useState, useRef, useEffect } from "react";
 import React from "react";
 
+
 interface NavItem {
   name: string;
   href: string;
@@ -377,7 +378,7 @@ const NavLinks = () => {
           </Link>
 
           {activeMenu === item.name && item.submenu && (
-            <div className="absolute left-0 bg-[#0037C1] shadow-lg w-60 border border-white z-50 flex flex-col py-2">
+            <div className="absolute left-0 bg-[#2b73d0e0] shadow-lg w-60 border border-white z-50 flex flex-col py-2">
               {item.submenu.map((subItem) => (
                 <div
                   key={subItem.name}
@@ -387,7 +388,7 @@ const NavLinks = () => {
                 >
                   <Link
                     href={subItem.href}
-                    className="px-4 py-2 text-white hover:bg-[#0055C1] text-[15px] flex items-center"
+                    className="px-4 py-2 text-white hover:bg-[#fdfdfd] hover:text-[#2b63ab] text-[15px] flex items-center"
                   >
                     {subItem.name}
                     {subItem.submenu && (
@@ -396,7 +397,7 @@ const NavLinks = () => {
                   </Link>
 
                   {activeSubMenu === subItem.name && subItem.submenu && (
-                    <div className="absolute left-full top-0 bg-[#0037C1] shadow-lg py-2 w-56 border border-white z-50 flex flex-col">
+                    <div className="absolute left-full top-0 bg-[#2b73d0e0] shadow-lg py-2 w-56 border border-white z-50 flex flex-col">
                       {subItem.submenu.map((subSubItem) => (
                         <div
                           key={subSubItem.name}
@@ -408,7 +409,7 @@ const NavLinks = () => {
                         >
                           <Link
                             href={subSubItem.href}
-                            className="px-4 py-2 text-white hover:bg-[#0055C1] text-base flex items-center"
+                            className="px-4 py-2 text-white hover:bg-[#fdfdfd] hover:text-[#2b63ab] text-base flex items-center"
                           >
                             {subSubItem.name}
                             {subSubItem.submenu && (
@@ -418,12 +419,12 @@ const NavLinks = () => {
 
                           {activeSubSubMenu === subSubItem.name &&
                             subSubItem.submenu && (
-                              <div className="absolute left-full top-0 bg-[#0037C1] shadow-lg py-2 w-56 border border-white z-50 flex flex-col">
+                              <div className="absolute left-full top-0 bg-[#2b73d0e0] shadow-lg py-2 w-56 border border-white z-50 flex flex-col">
                                 {subSubItem.submenu.map((subSubSubItem) => (
                                   <Link
                                     key={subSubSubItem.name}
                                     href={subSubSubItem.href}
-                                    className="block px-4 py-2 text-white hover:bg-[#0055C1] text-base"
+                                    className="block px-4 py-2 text-white hover:bg-[#fdfdfd] hover:text-[#2b63ab] text-base"
                                   >
                                     {subSubSubItem.name}
                                   </Link>
@@ -534,16 +535,18 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
         </div>
 
         <div className="pb-56 flex justify-center">
-          <SearchBar setIsLoading={function (value: React.SetStateAction<boolean>): void {
-            throw new Error("Function not implemented.");
-          } } />
+          <SearchBar
+            setIsLoading={function (
+              value: React.SetStateAction<boolean>
+            ): void {
+              throw new Error("Function not implemented.");
+            }}
+          />
         </div>
-
       </motion.div>
     </>
   );
 };
-
 
 interface SearchBarProps {
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
@@ -692,7 +695,9 @@ const Navbar = () => {
   return (
     <Disclosure
       as="nav"
-      className={`fixed top-0 w-full transition-all duration-300 z-50 px-20 ${scrolled ? "bg-[#fdc200d1] shadow-md" : "bg-[#FDC300]"}`}
+      className={`fixed top-0 w-full transition-all duration-300 z-50 px-20 ${
+        scrolled ? "bg-[#fdc200d1] shadow-md" : "bg-[#FDC300]"
+      }`}
     >
       <div className="relative mx-auto py-3">
         <div className="relative flex h-14 items-center justify-between">
@@ -701,7 +706,8 @@ const Navbar = () => {
             <NavLinks />
           </div>
           <div className="hidden xl:flex">
-            <SearchBar setIsLoading={setIsLoading} />  {/* Passando setIsLoading */}
+            <SearchBar setIsLoading={setIsLoading} />{" "}
+            {/* Passando setIsLoading */}
           </div>
           <div className="xl:hidden">
             <Bars3Icon
