@@ -66,9 +66,9 @@ export default function CardGrid() {
     <div className="bg-white">
       <div
         id="servicos"
-        className="flex flex-col items-center justify-center min-h-[80vh] w-full mx-auto bg-[#044F1C] text-center rounded-[50px] pb-20"
+        className="flex flex-col items-center justify-center min-h-[80vh] w-full mx-auto bg-[#044F1C] text-center rounded-[50px] py-24"
       >
-        <div className="w-8/12 py-14 relative">
+        <div className="w-8/12 pb-14 relative">
           <h1 className="w-full relative flex justify-center text-5xl font-semibold text-slate-200 uppercase">
             <span className="mx-20">Serviços</span>
             <div className="absolute top-1/2 left-0 w-full flex items-center">
@@ -97,7 +97,7 @@ export default function CardGrid() {
           </h1>
         </div>
 
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 sm:px-6 md:px-10 lg:px-16 mx-auto text-center place-content-center">
+        <div className="w-11/12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 sm:px-6 md:px-10 lg:px-16 mx-auto text-center place-content-center">
           {[
             {
               title: "Contra-Cheque",
