@@ -31,7 +31,7 @@ const NoticiaDetalhada = ({ post }: { post: Post }): JSX.Element => {
       {/* Imagem de fundo */}
       <div className="absolute inset-0 w-full h-1/2">
         <Image
-          src="/images/Noticias/bandeira.jpeg"
+          src="/images/Bandeira/bandeira.jpeg"
           alt="Imagem de fundo"
           layout="fill"
           objectFit="cover"

@@ -17,7 +17,8 @@ export default function RootLayout({
   return (
     <html lang="pt-br"
     suppressHydrationWarning>
-      <body>
+      <body 
+        cz-shortcut-listen="true">
         <Navbar />
         {children}
         <AccessibilityButton />
