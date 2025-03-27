@@ -27,11 +27,11 @@ const planos = [
 
 const PlanosAcao: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center bg-gradient-to-b from-[#ffffff] to-[#01376b] text-white">
+    <div className="flex flex-col items-center justify-center bg-gradient-to-b from-[#ffffff] to-[#01580e] text-white">
 
 
       <div className="text-center px-4 max-w-4xl py-28">
-        <h2 className="Montserrat-SemiBold text-xl md:text-2xl font-light mb-10 uppercase text-blue-900">
+        <h2 className="Montserrat-SemiBold text-xl md:text-2xl font-light mb-10 uppercase text-green-900">
           Os documentos publicados estão em formato PDF. Clique nos botões
           abaixo para visualizar os arquivos em PDF.
         </h2>
@@ -42,7 +42,7 @@ const PlanosAcao: React.FC = () => {
               href={plano.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full bg-blue-900 border border-transparent hover:bg-[#3062B3] hover:border-2 hover:border-yellow-500 hover:text-yellow-500 transition-colors text-center py-3 rounded-lg shadow-md text-lg font-semibold"
+              className="block w-full bg-green-900 border border-transparent hover:bg-[#156720] hover:border-2 hover:border-yellow-500 hover:text-yellow-500 transition-colors text-center py-3 rounded-lg shadow-md text-lg font-semibold"
             >
               PLANO DE AÇÃO {plano.ano}
             </a>
