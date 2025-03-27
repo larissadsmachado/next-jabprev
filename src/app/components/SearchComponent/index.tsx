@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { FaSearch } from "react-icons/fa";
 
 const API_SEARCH_URL = "https://jaboataoprev.jaboatao.pe.gov.br/wp-json/custom-api/v1/search/?query=";
- 
+  
 const SearchComponent = () => {
   const [isSearching, setIsSearching] = useState(false);
   const [isLoading, setIsLoading] = useState(false);

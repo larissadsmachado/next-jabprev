@@ -59,9 +59,9 @@ const FeedbackForm = () => {
   return (
     <div
       id="enquete"
-      className="mb-5 justify-center items-center rounded-b-[50px] mx-20 my-4"
+      className="justify-center items-center rounded-b-[50px] mx-20 my-10"
     >
-      <div className="pt-20 pb-14 ">
+      <div className="pt-20 pb-20">
         <h1 className="relative flex justify-center text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-5xl font-semibold text-[#1E3A8A] uppercase">
           <span className="px-4 text-center">
             Avalie Nosso <br /> Serviço
@@ -104,7 +104,7 @@ const FeedbackForm = () => {
                   className={`flex items-center justify-center gap-3 p-4 rounded-2xl border w-full text-center transition-all duration-200 transform Montserrat-Medium 
             ${
               nota === label
-                ? "bg-sky-200 text-slate-800 border-2 border-blue-900"
+                ? "bg-green-700 text-white border-2 border-blue-900"
                 : "bg-gray-100 text-gray-800 hover:bg-gray-300 border-2 border-blue-900"
             } 
             hover:scale-105`}
