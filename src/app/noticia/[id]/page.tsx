@@ -42,10 +42,11 @@ const NoticiaDetalhada = ({ post }: { post: Post }): JSX.Element => {
       </div>
 
       {/* Imagem destacada e Título */}
-      <div className="Montserrat-Medium relative z-10 w-full h-1/2 flex flex-col justify-center items-center text-white p-6">
+      <div className="Montserrat-Medium relative z-10 w-full h-1/2 flex flex-col justify-center  text-white p-6">
         {/* TÍTULO */}
-        <div className="mt-6 pt-44">
-          <div className="flex gap-4 mt-2 items-center">
+        <div className="mt-6 pt-44 ">
+
+          <div className="flex gap-4 mt-2 items-center max-w-[1190px] mx-auto">
             <div className="flex items-center gap-2">
               <FaCalendarAlt />
               <span>{formattedDate}</span>
@@ -56,7 +57,7 @@ const NoticiaDetalhada = ({ post }: { post: Post }): JSX.Element => {
             </div>
           </div>
 
-          <h1 className="text-4xl font-bold uppercase pt-3 pb-14 break-words leading-tight max-w-[800px] mx-auto">
+          <h1 className="text-4xl font-bold uppercase pt-3 pb-14 break-words leading-tight max-w-[1190px] mx-auto">
             {post.title.rendered}
           </h1>
         </div>
