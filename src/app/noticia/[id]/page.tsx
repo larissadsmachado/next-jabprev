@@ -57,7 +57,7 @@ const NoticiaDetalhada = ({ post }: { post: Post }): JSX.Element => {
             </div>
           </div>
 
-          <h1 className="text-4xl font-bold uppercase pt-3 pb-14 break-words leading-tight max-w-[1190px] mx-auto">
+          <h1 className="text-5xl font-bold uppercase pt-3 pb-14 break-words leading-tight max-w-[1190px] mx-auto">
             {post.title.rendered}
           </h1>
         </div>
