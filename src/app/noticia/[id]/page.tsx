@@ -31,7 +31,7 @@ const NoticiaDetalhada = ({ post }: { post: Post }): JSX.Element => {
       {/* Imagem de fundo */}
       <div className="absolute inset-0 w-full h-1/2">
         <Image
-          src="/images/Instituicao/fachada.jpeg"
+          src="/images/Noticias/bandeira.jpeg"
           alt="Imagem de fundo"
           layout="fill"
           objectFit="cover"
@@ -42,7 +42,7 @@ const NoticiaDetalhada = ({ post }: { post: Post }): JSX.Element => {
       </div>
 
       {/* Imagem destacada e Título */}
-      <div className="relative z-10 w-full h-1/2 flex flex-col justify-center items-center text-white p-6">
+      <div className="Montserrat-Medium relative z-10 w-full h-1/2 flex flex-col justify-center items-center text-white p-6">
         {/* TÍTULO */}
         <div className="mt-6 pt-44">
           <div className="flex gap-4 mt-2 items-center">
@@ -53,10 +53,6 @@ const NoticiaDetalhada = ({ post }: { post: Post }): JSX.Element => {
             <div className="flex items-center gap-2">
               <FaClock />
               <span>{formattedTime}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <FaTag />
-              <span>{post.category || "Sem categoria"}</span>
             </div>
           </div>
 

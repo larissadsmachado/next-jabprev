@@ -301,7 +301,7 @@ export const HoverImageLinks: React.FC = () => {
                 className={`px-4 py-2 rounded-lg font-bold ${
                   page === totalPages
                     ? "bg-gray-200 text-gray-500 cursor-not-allowed"
-                    : "bg-blue-700 text-white hover:bg-blue-400"
+                    : "bg-blue-700 text-white hover:bg-blue-500"
                 }`}
               >
                 Final

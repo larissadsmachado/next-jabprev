@@ -66,7 +66,7 @@ export default function CardGrid() {
     <div className="bg-white">
       <div
         id="servicos"
-        className="flex flex-col items-center justify-center min-h-[80vh] w-full mx-auto bg-[#044F1C] text-center rounded-[50px] py-24"
+        className="flex flex-col items-center justify-center min-h-[80vh] w-full mx-auto bg-green-800 text-center rounded-[50px] py-24"
       >
         <div className="w-8/12 pb-14 relative">
           <h1 className="w-full relative flex justify-center text-5xl font-semibold text-slate-200 uppercase">
@@ -78,7 +78,7 @@ export default function CardGrid() {
                 style={{
                   height: "4px",
                   background:
-                    "linear-gradient(to right, #044F1C, white, white)",
+                    "linear-gradient(to right, #166534, white, white)",
                 }}
               ></div>
 
@@ -90,7 +90,7 @@ export default function CardGrid() {
                 style={{
                   height: "4px",
                   background:
-                    "linear-gradient(to left,  #044F1C, white, white)",
+                    "linear-gradient(to left,  #166534, white, white)",
                 }}
               ></div>
             </div>
