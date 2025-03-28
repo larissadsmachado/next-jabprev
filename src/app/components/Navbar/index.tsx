@@ -12,7 +12,6 @@ import { useRouter } from "next/navigation"; // 🔹 Import correto para App Rou
 import { useState, useRef, useEffect } from "react";
 import React from "react";
 
-
 interface NavItem {
   name: string;
   href: string;
@@ -355,7 +354,7 @@ const NavLinks = () => {
   const [activeSubSubMenu, setActiveSubSubMenu] = useState<string | null>(null);
 
   return (
-    <div className="hidden lg:flex items-center space-x-6 relative uppercase">
+    <div className="hidden lg:flex items-center  relative uppercase">
       {navigation.map((item) => (
         <div
           key={item.name}
@@ -369,16 +368,16 @@ const NavLinks = () => {
         >
           <Link
             href={item.href}
-            className="text-[#0037C1] text-[15px] hover:underline font-semibold flex"
+            className="text-[#0037C1] hover:bg-[#224276] hover:text-[#ffffff] text-[15px] hover:underline decoration-[#13AFF0] font-semibold flex p-3"
           >
             {item.name}
             {item.submenu && (
-              <MdKeyboardArrowDown className="ml-2 text-[#0037C1]" />
+              <MdKeyboardArrowDown className="ml-2" />
             )}
           </Link>
 
           {activeMenu === item.name && item.submenu && (
-            <div className="absolute left-0 bg-[#2b73d0e0] shadow-lg w-60 border border-white z-50 flex flex-col py-2">
+            <div className="absolute left-0 bg-[#2b73d0f5] shadow-lg w-60 border border-white z-50 flex flex-col py-2">
               {item.submenu.map((subItem) => (
                 <div
                   key={subItem.name}
@@ -397,7 +396,7 @@ const NavLinks = () => {
                   </Link>
 
                   {activeSubMenu === subItem.name && subItem.submenu && (
-                    <div className="absolute left-full top-0 bg-[#2b73d0e0] shadow-lg py-2 w-56 border border-white z-50 flex flex-col">
+                    <div className="absolute left-full top-0 bg-[#2b73d0f5] shadow-lg py-2 w-56 border border-white z-50 flex flex-col">
                       {subItem.submenu.map((subSubItem) => (
                         <div
                           key={subSubItem.name}
@@ -419,7 +418,7 @@ const NavLinks = () => {
 
                           {activeSubSubMenu === subSubItem.name &&
                             subSubItem.submenu && (
-                              <div className="absolute left-full top-0 bg-[#2b73d0e0] shadow-lg py-2 w-56 border border-white z-50 flex flex-col">
+                              <div className="absolute left-full top-0 bg-[#2b73d0f5] shadow-lg py-2 w-56 border border-white z-50 flex flex-col">
                                 {subSubItem.submenu.map((subSubSubItem) => (
                                   <Link
                                     key={subSubSubItem.name}
@@ -454,14 +453,14 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
   };
 
   const renderSubMenu = (items: NavItem[], level = 1) => (
-    <div className={`pl-${level * 4} mt-2`}>
+    <div className={`pl-${level * 4} mt-2 text-center`}>
       {items.map((item) => (
         <div key={item.name} className="mb-2">
           {item.submenu ? (
-            <div className="flex items-center justify-between w-full">
+            <div className="flex items-center justify-center w-full">
               <Link
                 href={item.href ?? "#"}
-                className="flex-1 text-[#0037C1] text-lg font-normal hover:underline p-2"
+                className="text-[#0037C1] text-lg font-normal hover:underline p-2 flex items-center gap-2"
                 onClick={(e) => {
                   if (item.submenu) {
                     e.preventDefault();
@@ -472,31 +471,24 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
                 }}
               >
                 {item.name}
-              </Link>
-              <button
-                onClick={() => toggleMenu(item.name)}
-                className="p-2 flex-shrink-0"
-              >
                 {openMenus[item.name] ? (
                   <ChevronUpIcon className="h-5 w-5" />
                 ) : (
                   <ChevronDownIcon className="h-5 w-5" />
                 )}
-              </button>
+              </Link>
             </div>
           ) : (
             <Link
               href={item.href}
-              className="block w-full text-[#0037C1] text-lg font-normal hover:underline p-2"
+              className="block w-full text-[#0037C1] text-lg font-normal hover:underline p-2 text-center"
               onClick={closeMenu}
             >
               {item.name}
             </Link>
           )}
 
-          {item.submenu &&
-            openMenus[item.name] &&
-            renderSubMenu(item.submenu, level + 1)}
+          {item.submenu && openMenus[item.name] && renderSubMenu(item.submenu, level + 1)}
         </div>
       ))}
     </div>
@@ -518,35 +510,38 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
         />
       )}
 
-      {/* Menu lateral */}
+      {/* Menu de cima para baixo */}
       <motion.div
-        className="fixed top-0 left-0 h-full w-2/3 bg-yellow-400 shadow-lg flex flex-col"
-        initial={{ x: "-100%" }}
-        animate={{ x: isMenuOpen ? 0 : "-100%" }}
-        exit={{ x: "-100%" }}
+        className="fixed top-0 left-0 w-full h-full bg-yellow-400 shadow-lg flex flex-col"
+        initial={{ y: "-100%" }}
+        animate={{ y: isMenuOpen ? 0 : "-100%" }}
+        exit={{ y: "-100%" }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
       >
-        <div className="p-4 pt-10">
+        {/* Botão de fechar */}
+        <div className="p-4 flex justify-end">
+          <button onClick={closeMenu} className="p-2 text-black text-2xl">✕</button>
+        </div>
+
+        {/* Logo */}
+        <div className="p-4 flex justify-center">
           <Logo />
         </div>
 
-        <div className="p-4 pt-6 flex-1 overflow-auto">
+        {/* Navegação */}
+        <div className="p-4 flex-1 overflow-auto text-center">
           {renderSubMenu(navigation, 1)}
         </div>
 
-        <div className="pb-56 flex justify-center">
-          <SearchBar
-            setIsLoading={function (
-              value: React.SetStateAction<boolean>
-            ): void {
-              throw new Error("Function not implemented.");
-            }}
-          />
+        {/* Barra de pesquisa */}
+        <div className="pb-10 flex justify-center">
+          <SearchBar setIsLoading={() => {}} />
         </div>
       </motion.div>
     </>
   );
 };
+
 
 interface SearchBarProps {
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
