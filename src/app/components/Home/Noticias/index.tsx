@@ -109,7 +109,6 @@ export const HoverImageLinks: React.FC = () => {
 
   return (
     <section id="noticias">
-      
       <div className="pt-20">
         <h1 className="relative flex justify-center text-5xl font-semibold text-[#146c33] uppercase">
           <span className="px-4">Notícias</span>
@@ -210,26 +209,25 @@ export const HoverImageLinks: React.FC = () => {
             })}
           </div>
 
-
           <div className="flex justify-center pb-20">
-            <div className="flex justify-center items-center space-x-2 bg-slate-200 p-5 rounded-lg shadow-lg">
+            <div className="flex flex-wrap justify-center items-center space-x-1 sm:space-x-2 bg-slate-200 p-3 sm:p-5 rounded-lg shadow-lg">
               {/* Números das páginas */}
               {[...Array(totalPages)].map((_, i) => {
                 const pageNumber = i + 1;
 
                 if (
-                  pageNumber === 1 || // Primeiro número
-                  pageNumber === 2 || // Segundo número
-                  pageNumber === totalPages || // Último número
-                  pageNumber === page || // Página atual
-                  pageNumber === page - 1 || // Página anterior à atual
-                  pageNumber === page + 1 // Página posterior à atual
+                  pageNumber === 1 ||
+                  pageNumber === 2 ||
+                  pageNumber === totalPages ||
+                  pageNumber === page ||
+                  pageNumber === page - 1 ||
+                  pageNumber === page + 1
                 ) {
                   return (
                     <button
                       key={i}
                       onClick={() => setPage(pageNumber)}
-                      className={`px-4 py-2 rounded-lg ${
+                      className={`px-3 py-1 sm:px-4 sm:py-2 rounded-lg text-sm sm:text-base ${
                         page === pageNumber
                           ? "bg-blue-700 text-white font-bold"
                           : "bg-gray-300 text-black hover:bg-gray-400"
@@ -242,7 +240,10 @@ export const HoverImageLinks: React.FC = () => {
 
                 if (pageNumber === page - 2 || pageNumber === page + 2) {
                   return (
-                    <span key={i} className="px-4 py-2 rounded-lg bg-gray-300">
+                    <span
+                      key={i}
+                      className="px-3 py-1 sm:px-4 sm:py-2 rounded-lg bg-gray-300 text-sm sm:text-base"
+                    >
                       ...
                     </span>
                   );
@@ -257,7 +258,7 @@ export const HoverImageLinks: React.FC = () => {
                   setPage((prev) => Math.min(prev + 1, totalPages))
                 }
                 disabled={page === totalPages}
-                className={`px-4 py-2 rounded-lg font-bold ${
+                className={`px-3 py-1 sm:px-4 sm:py-2 rounded-lg font-bold text-sm sm:text-base ${
                   page === totalPages
                     ? "bg-gray-200 text-gray-500 cursor-not-allowed"
                     : "bg-green-700 text-white hover:bg-green-800"
@@ -270,7 +271,7 @@ export const HoverImageLinks: React.FC = () => {
               <button
                 onClick={() => setPage((prev) => Math.max(prev - 10, 1))}
                 disabled={page <= 10}
-                className={`px-4 py-2 rounded-lg font-bold ${
+                className={`px-3 py-1 sm:px-4 sm:py-2 rounded-lg font-bold text-sm sm:text-base ${
                   page <= 10
                     ? "bg-gray-200 text-gray-500 cursor-not-allowed"
                     : "bg-yellow-500 text-black hover:bg-yellow-600"
@@ -285,7 +286,7 @@ export const HoverImageLinks: React.FC = () => {
                   setPage((prev) => Math.min(prev + 10, totalPages))
                 }
                 disabled={page >= totalPages - 10}
-                className={`px-4 py-2 rounded-lg font-bold ${
+                className={`px-3 py-1 sm:px-4 sm:py-2 rounded-lg font-bold text-sm sm:text-base ${
                   page >= totalPages - 10
                     ? "bg-gray-200 text-gray-500 cursor-not-allowed"
                     : "bg-yellow-500 text-black hover:bg-yellow-600"
@@ -298,7 +299,7 @@ export const HoverImageLinks: React.FC = () => {
               <button
                 onClick={() => setPage(totalPages)}
                 disabled={page === totalPages}
-                className={`px-4 py-2 rounded-lg font-bold ${
+                className={`px-3 py-1 sm:px-4 sm:py-2 rounded-lg font-bold text-sm sm:text-base ${
                   page === totalPages
                     ? "bg-gray-200 text-gray-500 cursor-not-allowed"
                     : "bg-blue-700 text-white hover:bg-blue-500"
@@ -308,8 +309,6 @@ export const HoverImageLinks: React.FC = () => {
               </button>
             </div>
           </div>
-
-
         </>
       )}
     </section>

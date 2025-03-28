@@ -66,10 +66,12 @@ const NoticiaDetalhada = ({ post }: { post: Post }): JSX.Element => {
       <div className="pt-[150px]"></div>
 
       {/* Imagem destacada e Título */}
+
+      {/* Imagem destacada e Título */}
       <div className="Montserrat-Medium relative z-10 flex flex-col text-white p-6">
         {/* TÍTULO */}
-        <div className="w-[1200px] mx-auto">
-          <div className="flex gap-4 mt-2 ">
+        <div className="w-full max-w-[1200px] mx-auto">
+          <div className="flex gap-4 mt-2">
             <div className="flex gap-2">
               <FaCalendarAlt />
               <span>{formattedDate}</span>
@@ -80,14 +82,13 @@ const NoticiaDetalhada = ({ post }: { post: Post }): JSX.Element => {
             </div>
           </div>
 
-          <h1 className="text-5xl font-bold uppercase pt-3 pb-14 break-words leading-tight">
+          <h1 className="w-full text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold uppercase pt-3 pb-14 break-words text-wrap balance leading-tight">
             {post.title.rendered}
           </h1>
         </div>
-
-        {/* IMAGEM DESTAQUE COM TAMANHO FIXO */}
+        {/* IMAGEM DESTAQUE RESPONSIVA */}
         {post.featured_image_url && (
-          <div className="w-[1200px] h-[600px] max-w-full mx-auto overflow-hidden rounded-lg shadow-lg">
+          <div className="w-full max-w-[1200px] mx-auto overflow-hidden rounded-lg shadow-lg">
             <Image
               src={`/api/image-proxy?url=${encodeURIComponent(
                 post.featured_image_url
@@ -95,7 +96,7 @@ const NoticiaDetalhada = ({ post }: { post: Post }): JSX.Element => {
               alt={post.title.rendered}
               width={1200}
               height={600}
-              className="w-full h-full object-cover"
+              className="w-full h-auto max-h-[600px] sm:h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px] object-cover"
             />
           </div>
         )}

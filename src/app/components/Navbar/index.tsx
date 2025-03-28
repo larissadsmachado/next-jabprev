@@ -8,7 +8,7 @@ import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/20/solid";
 import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 import { motion } from "framer-motion";
 import { KeyboardEvent } from "react";
-import { useRouter } from "next/navigation"; // 🔹 Import correto para App Router
+import { useRouter } from "next/navigation"; 
 import { useState, useRef, useEffect } from "react";
 import React from "react";
 
@@ -516,7 +516,7 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
         initial={{ y: "-100%" }}
         animate={{ y: isMenuOpen ? 0 : "-100%" }}
         exit={{ y: "-100%" }}
-        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        transition={{ type: "spring", stiffness: 300, damping: 60 }}
       >
         {/* Botão de fechar */}
         <div className="p-4 flex justify-end">
