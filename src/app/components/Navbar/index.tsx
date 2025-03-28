@@ -8,7 +8,7 @@ import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/20/solid";
 import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 import { motion } from "framer-motion";
 import { KeyboardEvent } from "react";
-import { useRouter } from "next/navigation"; 
+import { useRouter } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 import React from "react";
 
@@ -371,9 +371,7 @@ const NavLinks = () => {
             className="text-[#0037C1] hover:bg-[#224276] hover:text-[#ffffff] text-[15px] hover:underline decoration-[#13AFF0] font-semibold flex p-3"
           >
             {item.name}
-            {item.submenu && (
-              <MdKeyboardArrowDown className="ml-2" />
-            )}
+            {item.submenu && <MdKeyboardArrowDown className="ml-2" />}
           </Link>
 
           {activeMenu === item.name && item.submenu && (
@@ -488,7 +486,9 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
             </Link>
           )}
 
-          {item.submenu && openMenus[item.name] && renderSubMenu(item.submenu, level + 1)}
+          {item.submenu &&
+            openMenus[item.name] &&
+            renderSubMenu(item.submenu, level + 1)}
         </div>
       ))}
     </div>
@@ -516,39 +516,53 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
         initial={{ y: "-100%" }}
         animate={{ y: isMenuOpen ? 0 : "-100%" }}
         exit={{ y: "-100%" }}
-        transition={{ type: "spring", stiffness: 300, damping: 60 }}
+        transition={{ type: "spring", stiffness: 300, damping: 50 }}
       >
-        {/* Botão de fechar */}
-        <div className="p-4 flex justify-end">
-          <button onClick={closeMenu} className="p-2 text-black text-2xl">✕</button>
-        </div>
 
-        {/* Logo */}
-        <div className="p-4 flex justify-center">
-          <Logo />
-        </div>
+<div className="py-5 px-5 flex flex-col border-b border-gray-200">
+  {/* Botão de fechar e Logo alinhados com espaçamento */}
+  <div className="flex justify-between items-center">
+
+    {/* Logo */}
+    <div className="min-w-40 h-auto">
+      <Logo />
+    </div>
+
+
+    {/* Botão de fechar */}
+    <div>
+      <button onClick={closeMenu} className="p-2 text-black text-2xl">
+        ✕
+      </button>
+    </div>
+
+    
+  </div>
+</div>
+
+
 
         {/* Navegação */}
         <div className="p-4 flex-1 overflow-auto text-center">
           {renderSubMenu(navigation, 1)}
         </div>
 
-        {/* Barra de pesquisa */}
+        {/* Barra de pesquisa no mobile menu (sem ícone) */}
         <div className="pb-10 flex justify-center">
-          <SearchBar setIsLoading={() => {}} />
+          <SearchBar setIsLoading={() => {}} hideIcon={true} />
         </div>
       </motion.div>
     </>
   );
 };
 
-
 interface SearchBarProps {
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  hideIcon?: boolean; // Nova prop para esconder o ícone
 }
 
-const SearchBar = ({ setIsLoading }: SearchBarProps) => {
-  const [showSearch, setShowSearch] = useState(false);
+const SearchBar = ({ setIsLoading, hideIcon = false }: SearchBarProps) => {
+  const [showSearch, setShowSearch] = useState(hideIcon);
   const inputRef = useRef<HTMLInputElement>(null);
   const searchContainerRef = useRef<HTMLDivElement>(null);
   const [isMounted, setIsMounted] = useState(false);
@@ -568,7 +582,7 @@ const SearchBar = ({ setIsLoading }: SearchBarProps) => {
       }
     };
 
-    if (showSearch) {
+    if (showSearch && !hideIcon) {
       document.addEventListener("mousedown", handleClickOutside);
     } else {
       document.removeEventListener("mousedown", handleClickOutside);
@@ -577,7 +591,7 @@ const SearchBar = ({ setIsLoading }: SearchBarProps) => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [showSearch]);
+  }, [showSearch, hideIcon]);
 
   const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
@@ -585,9 +599,8 @@ const SearchBar = ({ setIsLoading }: SearchBarProps) => {
 
       const searchInput = inputRef.current?.value;
       if (searchInput) {
-        setIsLoading(true); // Exibe a tela de carregamento
+        setIsLoading(true);
 
-        // Inicia a requisição de busca
         fetch(`/api/search?searchTerm=${encodeURIComponent(searchInput)}`)
           .then((response) => response.json())
           .then((data) => {
@@ -601,10 +614,9 @@ const SearchBar = ({ setIsLoading }: SearchBarProps) => {
             console.error("Erro ao buscar rota:", error);
           })
           .finally(() => {
-            // Garantir que a tela de carregamento fique visível por mais tempo
             setTimeout(() => {
-              setIsLoading(false); // Esconde a tela de carregamento
-            }, 2000); // 2 segundos adicionais
+              setIsLoading(false);
+            }, 2000);
           });
       }
     }
@@ -614,42 +626,62 @@ const SearchBar = ({ setIsLoading }: SearchBarProps) => {
 
   return (
     <div className="relative">
-      <button
-        onClick={() => setShowSearch(true)}
-        className="text-[#0037C1] text-xl focus:outline-none"
-        aria-label="Toggle Search"
-      >
-        <FaSearch />
-      </button>
+      {!hideIcon && (
+        <button
+          onClick={() => setShowSearch(true)}
+          className="text-[#0037C1] text-xl focus:outline-none"
+          aria-label="Toggle Search"
+        >
+          <FaSearch />
+        </button>
+      )}
 
       {showSearch && (
         <motion.div
-          className="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm flex items-center justify-center z-50"
-          initial={{ opacity: 0 }}
+          className={`${
+            hideIcon
+              ? "relative w-full" // No menu mobile, sem overlay
+              : "fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm flex items-center justify-center z-50"
+          }`}
+          initial={{ opacity: hideIcon ? 1 : 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
           <motion.div
             ref={searchContainerRef}
             className="relative w-full max-w-2xl"
-            initial={{ scale: 0.8, opacity: 0 }}
+            initial={{ scale: hideIcon ? 1 : 0.8, opacity: hideIcon ? 1 : 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.8, opacity: 0 }}
           >
-            <button
-              onClick={() => setShowSearch(false)}
-              className="absolute top-2 right-20 text-white hover:text-gray-400 text-3xl"
-              aria-label="Close Search"
-            >
-              &times;
-            </button>
+            {!hideIcon && (
+              <button
+                onClick={() => setShowSearch(false)}
+                className="absolute top-2 right-20 text-white hover:text-gray-400 text-3xl"
+                aria-label="Close Search"
+              >
+                &times;
+              </button>
+            )}
+
+            {/* Input para MOBILE */}
             <input
               ref={inputRef}
               autoFocus
               type="text"
               placeholder="Buscar..."
-              className="bg-transparent text-white text-2xl mt-20 text-center px-4 py-2 w-full border-b-2 border-gray-300 rounded-lg placeholder-white focus:outline-none focus:border-white focus:ring-0 focus:shadow-none"
               onKeyDown={handleKeyPress}
+              className="w-full p-3 bg-white text-blue-900 border-2 border-blue-700 rounded-lg placeholder-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-500 sm:hidden"
+            />
+
+            {/* Input para DESKTOP */}
+            <input
+              ref={inputRef}
+              autoFocus
+              type="text"
+              placeholder="Buscar..."
+              onKeyDown={handleKeyPress}
+              className="hidden sm:block bg-transparent text-white text-2xl text-center px-4 py-2 w-full border-b-2 border-gray-300 rounded-none placeholder-white focus:outline-none focus:border-white focus:ring-0 focus:shadow-none"
             />
           </motion.div>
         </motion.div>

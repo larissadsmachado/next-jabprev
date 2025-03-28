@@ -83,7 +83,7 @@ const AccessibilityButton = () => {
           top: 50%;
           left: 0;
           transform: translateY(-50%);
-          z-index: 50;
+          z-index: 10;
         }
 
         .accessibility-panel {
