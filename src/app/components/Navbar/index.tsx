@@ -348,13 +348,21 @@ const Logo = () => (
   </div>
 );
 
-const NavLinks = () => {
+const NavLinks: React.FC = () => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [activeSubMenu, setActiveSubMenu] = useState<string | null>(null);
   const [activeSubSubMenu, setActiveSubSubMenu] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleClick = () => {
+    setIsLoading(true);
+    // Simulação de carregamento – substitua por sua lógica real, se necessário
+    setTimeout(() => setIsLoading(false), 1000);
+  };
 
   return (
-    <div className="hidden lg:flex items-center  relative uppercase">
+    <div className="hidden lg:flex items-center relative uppercase">
+      {isLoading && <LoadingScreen />}
       {navigation.map((item) => (
         <div
           key={item.name}
@@ -369,6 +377,7 @@ const NavLinks = () => {
           <Link
             href={item.href}
             className="text-[#0037C1] hover:bg-[#224276] hover:text-[#ffffff] text-[15px] hover:underline decoration-[#13AFF0] font-semibold flex p-3"
+            onClick={handleClick}
           >
             {item.name}
             {item.submenu && <MdKeyboardArrowDown className="ml-2" />}
@@ -386,13 +395,13 @@ const NavLinks = () => {
                   <Link
                     href={subItem.href}
                     className="px-4 py-2 text-white hover:bg-[#fdfdfd] hover:text-[#2b63ab] text-[15px] flex items-center"
+                    onClick={handleClick}
                   >
                     {subItem.name}
                     {subItem.submenu && (
                       <MdKeyboardArrowRight className="ml-2 text-white" />
                     )}
                   </Link>
-
                   {activeSubMenu === subItem.name && subItem.submenu && (
                     <div className="absolute left-full top-0 bg-[#2b73d0f5] shadow-lg py-2 w-56 border border-white z-50 flex flex-col">
                       {subItem.submenu.map((subSubItem) => (
@@ -407,13 +416,13 @@ const NavLinks = () => {
                           <Link
                             href={subSubItem.href}
                             className="px-4 py-2 text-white hover:bg-[#fdfdfd] hover:text-[#2b63ab] text-base flex items-center"
+                            onClick={handleClick}
                           >
                             {subSubItem.name}
                             {subSubItem.submenu && (
                               <MdKeyboardArrowRight className="ml-2 text-white" />
                             )}
                           </Link>
-
                           {activeSubSubMenu === subSubItem.name &&
                             subSubItem.submenu && (
                               <div className="absolute left-full top-0 bg-[#2b73d0f5] shadow-lg py-2 w-56 border border-white z-50 flex flex-col">
@@ -422,6 +431,7 @@ const NavLinks = () => {
                                     key={subSubSubItem.name}
                                     href={subSubSubItem.href}
                                     className="block px-4 py-2 text-white hover:bg-[#fdfdfd] hover:text-[#2b63ab] text-base"
+                                    onClick={handleClick}
                                   >
                                     {subSubSubItem.name}
                                   </Link>
@@ -442,12 +452,25 @@ const NavLinks = () => {
   );
 };
 
-const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
+interface MobileMenuProps {
+  closeMenu: () => void;
+}
+
+const MobileMenu: React.FC<MobileMenuProps> = ({ closeMenu }) => {
   const [openMenus, setOpenMenus] = useState<{ [key: string]: boolean }>({});
   const [isMenuOpen, setIsMenuOpen] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   const toggleMenu = (menu: string) => {
     setOpenMenus((prev) => ({ ...prev, [menu]: !prev[menu] }));
+  };
+
+  const handleClick = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      closeMenu();
+    }, 1000);
   };
 
   const renderSubMenu = (items: NavItem[], level = 1) => (
@@ -457,14 +480,14 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
           {item.submenu ? (
             <div className="flex items-center justify-center w-full">
               <Link
-                href={item.href ?? "#"}
+                href={item.href}
                 className="text-[#0037C1] text-lg font-normal hover:underline p-2 flex items-center gap-2"
                 onClick={(e) => {
                   if (item.submenu) {
                     e.preventDefault();
                     toggleMenu(item.name);
                   } else {
-                    closeMenu();
+                    handleClick();
                   }
                 }}
               >
@@ -480,12 +503,11 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
             <Link
               href={item.href}
               className="block w-full text-[#0037C1] text-lg font-normal hover:underline p-2 text-center"
-              onClick={closeMenu}
+              onClick={handleClick}
             >
               {item.name}
             </Link>
           )}
-
           {item.submenu &&
             openMenus[item.name] &&
             renderSubMenu(item.submenu, level + 1)}
@@ -496,7 +518,8 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
 
   return (
     <>
-      {/* Overlay para capturar cliques e fechar o menu */}
+      {isLoading && <LoadingScreen />}
+      {/* Overlay para fechar o menu */}
       {isMenuOpen && (
         <motion.div
           className="fixed inset-0 bg-black bg-opacity-50"
@@ -509,8 +532,6 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
           }}
         />
       )}
-
-      {/* Menu de cima para baixo */}
       <motion.div
         className="fixed top-0 left-0 w-full h-full bg-yellow-400 shadow-lg flex flex-col"
         initial={{ y: "-100%" }}
@@ -518,36 +539,21 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
         exit={{ y: "-100%" }}
         transition={{ type: "spring", stiffness: 300, damping: 50 }}
       >
-
-<div className="py-5 px-5 flex flex-col border-b border-gray-200">
-  {/* Botão de fechar e Logo alinhados com espaçamento */}
-  <div className="flex justify-between items-center">
-
-    {/* Logo */}
-    <div className="min-w-40 h-auto">
-      <Logo />
-    </div>
-
-
-    {/* Botão de fechar */}
-    <div>
-      <button onClick={closeMenu} className="p-2 text-black text-2xl">
-        ✕
-      </button>
-    </div>
-
-    
-  </div>
-</div>
-
-
-
-        {/* Navegação */}
+        <div className="py-5 px-5 flex flex-col border-b border-gray-200">
+          <div className="flex justify-between items-center">
+            <div className="min-w-40 h-auto">
+              <Logo />
+            </div>
+            <div>
+              <button onClick={closeMenu} className="p-2 text-black text-2xl">
+                ✕
+              </button>
+            </div>
+          </div>
+        </div>
         <div className="p-4 flex-1 overflow-auto text-center">
           {renderSubMenu(navigation, 1)}
         </div>
-
-        {/* Barra de pesquisa no mobile menu (sem ícone) */}
         <div className="pb-10 flex justify-center">
           <SearchBar setIsLoading={() => {}} hideIcon={true} />
         </div>
@@ -558,7 +564,7 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
 
 interface SearchBarProps {
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
-  hideIcon?: boolean; // Nova prop para esconder o ícone
+  hideIcon?: boolean;
 }
 
 const SearchBar = ({ setIsLoading, hideIcon = false }: SearchBarProps) => {
@@ -566,10 +572,13 @@ const SearchBar = ({ setIsLoading, hideIcon = false }: SearchBarProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const searchContainerRef = useRef<HTMLDivElement>(null);
   const [isMounted, setIsMounted] = useState(false);
+  const [isSearching, setIsSearching] = useState(false); // Estado para gerenciar o processo de busca
   const router = useRouter();
+  const [pathname, setPathname] = useState<string>("");
 
   useEffect(() => {
     setIsMounted(true);
+    setPathname(window.location.pathname);
   }, []);
 
   useEffect(() => {
@@ -593,36 +602,51 @@ const SearchBar = ({ setIsLoading, hideIcon = false }: SearchBarProps) => {
     };
   }, [showSearch, hideIcon]);
 
-  const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
-      e.preventDefault();
+  const handleSearch = async () => {
+    const searchInput = inputRef.current?.value;
+    if (searchInput) {
+      setIsSearching(true); // A busca começou
+      setIsLoading(true);   // Inicia o carregamento
+      setShowSearch(false); // Fecha o campo de busca
 
-      const searchInput = inputRef.current?.value;
-      if (searchInput) {
-        setIsLoading(true);
+      try {
+        const response = await fetch(`/api/search?searchTerm=${encodeURIComponent(searchInput)}`);
+        const data = await response.json();
 
-        fetch(`/api/search?searchTerm=${encodeURIComponent(searchInput)}`)
-          .then((response) => response.json())
-          .then((data) => {
-            if (data.route) {
-              router.push(`${process.env.NEXT_PUBLIC_LOCAL}${data.route}`);
-            } else {
-              console.log("Nenhuma rota encontrada.");
-            }
-          })
-          .catch((error) => {
-            console.error("Erro ao buscar rota:", error);
-          })
-          .finally(() => {
-            setTimeout(() => {
-              setIsLoading(false);
-            }, 2000);
-          });
+        if (data.route) {
+          // Delay mínimo para exibir o carregamento por pelo menos 1 segundo
+          setTimeout(() => {
+            router.push(`${process.env.NEXT_PUBLIC_LOCAL}${data.route}`);
+          }, 1000); // 1 segundo de delay
+        } else {
+          console.log("Nenhuma rota encontrada.");
+        }
+      } catch (error) {
+        console.error("Erro ao buscar rota:", error);
+      } finally {
+        // Após 1 segundo de delay, desativa o carregamento
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 2000); // O carregamento vai continuar por 1 segundo após a requisição
       }
     }
   };
 
-  if (!isMounted) return null;
+  const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      handleSearch();
+    }
+  };
+
+  useEffect(() => {
+    if (isMounted && pathname !== window.location.pathname && isSearching) {
+      setIsSearching(false); // Resetando o estado de busca
+      setPathname(window.location.pathname); // Atualizando o pathname
+    }
+  }, [pathname, isMounted, isSearching]);
+
+  if (!isMounted) return null; // Garante que o código só seja executado no cliente
 
   return (
     <div className="relative">
@@ -640,7 +664,7 @@ const SearchBar = ({ setIsLoading, hideIcon = false }: SearchBarProps) => {
         <motion.div
           className={`${
             hideIcon
-              ? "relative w-full" // No menu mobile, sem overlay
+              ? "relative w-full"
               : "fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm flex items-center justify-center z-50"
           }`}
           initial={{ opacity: hideIcon ? 1 : 0 }}
@@ -689,6 +713,8 @@ const SearchBar = ({ setIsLoading, hideIcon = false }: SearchBarProps) => {
     </div>
   );
 };
+
+
 
 const LoadingScreen = () => {
   return (

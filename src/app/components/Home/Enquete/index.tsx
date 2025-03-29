@@ -57,17 +57,13 @@ const FeedbackForm = () => {
   };
 
   return (
-    <div
-      id="enquete"
-      className="justify-center items-center rounded-b-[50px] mx-20 my-10"
-    >
-      <div className="pt-20 pb-20">
-        <h1 className="relative flex justify-center text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-5xl font-semibold text-[#1E3A8A] uppercase">
+    <div id="enquete" className="justify-center items-center rounded-b-[50px] px-4 sm:px-8 md:px-20 my-10">
+      <div className="pt-10 pb-10">
+      <h1 className="relative flex justify-center text-3xl sm:text-xl md:text-4xl lg:text-5xl xl:text-5xl font-semibold text-[#1E3A8A] uppercase">
           <span className="px-4 text-center">
             Avalie Nosso <br /> Serviço
           </span>
           <div className="absolute top-1/2 left-0 w-full flex items-center">
-            {/* Gradiente da esquerda indo do verde até o branco e continuando branco */}
             <div
               className="flex-1 border-t-4"
               style={{
@@ -79,7 +75,6 @@ const FeedbackForm = () => {
 
             <div className="w-1/4 sm:w-2/12 md:w-4/12 lg:w-4/12 xl:w-3/12"></div>
 
-            {/* Gradiente da direita indo do branco até o verde e começando branco */}
             <div
               className="flex-1 border-t-4"
               style={{
@@ -92,30 +87,30 @@ const FeedbackForm = () => {
         </h1>
       </div>
 
-      <div className="max-w-2xl mx-auto w-full pb-28">
-        <div className="bg-white border-4 border-[#1E3A8A] shadow-lg rounded-3xl px-8 py-9 md:mx-0 mx-8">
+      <div className="max-w-2xl mx-auto w-full pb-20">
+        <div className="bg-white border-4 border-[#1E3A8A] shadow-lg rounded-3xl px-6 py-8">
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mx-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {notas.map(({ label, icon }) => (
                 <button
                   key={label}
                   type="button"
                   onClick={() => setNota(label)}
-                  className={`flex items-center justify-center gap-3 p-4 rounded-2xl border w-full text-center transition-all duration-200 transform Montserrat-Medium 
+                  className={`flex flex-col items-center justify-center gap-2 p-4 rounded-xl border w-full text-center transition-all duration-200 transform
             ${
               nota === label
-                ? "bg-green-700 text-white border-2 border-blue-900"
-                : "bg-gray-100 text-gray-800 hover:bg-gray-300 border-2 border-blue-900"
-            } 
-            hover:scale-105`}
+                ? "bg-green-700 text-white border-blue-900"
+                : "bg-gray-100 text-gray-800 hover:bg-gray-300 border-blue-900"
+            } hover:scale-105`}
                 >
-                  {icon} {label}
+                  {icon}
+                  <span className="text-sm sm:text-base">{label}</span>
                 </button>
               ))}
             </div>
             <button
               type="submit"
-              className="w-full bg-green-800 hover:bg-green-900 border border-slate-400 text-white text-xl py-3 rounded-xl transition-all duration-200 transform flex items-center justify-center hover:scale-105"
+              className="w-full bg-green-800 hover:bg-green-900 border border-slate-400 text-white text-lg py-3 rounded-xl transition-all duration-200 transform flex items-center justify-center hover:scale-105"
               disabled={loading}
             >
               {loading ? (
@@ -131,8 +126,7 @@ const FeedbackForm = () => {
                 <CheckCircle className="text-green-500" size={20} />
               ) : (
                 "❌"
-              )}{" "}
-              {message}
+              )} {message}
             </p>
           )}
         </div>

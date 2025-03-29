@@ -10,9 +10,18 @@ interface Social {
 
 const socialLinks: Social[] = [
   { imgsrc: "/images/Footer/x.svg", href: "https://x.com/jaboataoonline" },
-  { imgsrc: "/images/Footer/facebook.svg", href: "https://www.facebook.com/PrefeituradoJaboatao" },
-  { imgsrc: "/images/Footer/insta.svg", href: "https://www.instagram.com/prefjaboatao/" },
-  { imgsrc: "/images/Footer/youtube.svg", href: "https://www.youtube.com/user/prefeiturajaboatao/videos" },
+  {
+    imgsrc: "/images/Footer/facebook.svg",
+    href: "https://www.facebook.com/PrefeituradoJaboatao",
+  },
+  {
+    imgsrc: "/images/Footer/insta.svg",
+    href: "https://www.instagram.com/prefjaboatao/",
+  },
+  {
+    imgsrc: "/images/Footer/youtube.svg",
+    href: "https://www.youtube.com/user/prefeiturajaboatao/videos",
+  },
 ];
 
 const Footer = () => {
@@ -443,7 +452,7 @@ const Footer = () => {
             <div className="flex justify-center items-center">
               <Image
                 src="/images/Logo/logotop.png"
-                alt="logo-image" 
+                alt="logo-image"
                 width={120}
                 height={100}
                 className="md:block"

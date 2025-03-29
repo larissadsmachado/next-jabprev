@@ -110,7 +110,7 @@ export const HoverImageLinks: React.FC = () => {
   return (
     <section id="noticias">
       <div className="pt-20">
-        <h1 className="relative flex justify-center text-5xl font-semibold text-[#146c33] uppercase">
+        <h1 className="relative flex justify-center text-3xl sm:text-xl md:text-4xl lg:text-5xl xl:text-5xl font-semibold text-[#146c33] uppercase">
           <span className="px-4">Notícias</span>
           <div className="absolute top-1/2 left-0 w-full flex items-center">
             {/* Gradiente da esquerda indo do verde até o branco e continuando branco */}

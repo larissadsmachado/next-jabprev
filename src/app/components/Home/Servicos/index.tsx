@@ -60,7 +60,6 @@ const CardContent = ({
   </>
 );
 
-
 export default function CardGrid() {
   return (
     <div className="bg-white">
@@ -68,8 +67,8 @@ export default function CardGrid() {
         id="servicos"
         className="flex flex-col items-center justify-center min-h-[80vh] w-full mx-auto bg-green-800 text-center rounded-[50px] py-24"
       >
-        <div className="w-8/12 pb-14 relative">
-          <h1 className="w-full relative flex justify-center text-5xl font-semibold text-slate-200 uppercase">
+        <div className="w-full sm:w-8/12 pb-14 relative px-4">
+          <h1 className="relative flex justify-center text-3xl sm:text-xl md:text-4xl lg:text-5xl xl:text-5xl font-semibold text-slate-200 uppercase">
             <span className="mx-20">Serviços</span>
             <div className="absolute top-1/2 left-0 w-full flex items-center">
               {/* Gradiente da esquerda indo do verde até o branco e continuando branco */}

@@ -988,7 +988,7 @@ const Regras = () => (
           <li>Cópia da Certidão de Casamento / nascimento;</li>
           <li>
             Declaração de Nada Consta de Jaboatão. Solicitar na ouvidoria
-            (contato: 3476.6066 / 08000818899. Atentar para validade deste
+            contato: 3476.6066 / 08000818899. Atentar para validade deste
             documento que é de apenas 30 Dias.
           </li>
           <li>

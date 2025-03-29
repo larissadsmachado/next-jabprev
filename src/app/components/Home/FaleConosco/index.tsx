@@ -9,7 +9,7 @@ const emailDestinations: Record<string, string> = {
   investimento: "investimentos@jaboataoprev.jaboatao.pe.gov.br",
   presidencia: "presidencia@jaboataoprev.jaboatao.pe.gov.br",
 };
-
+ 
 const FaleConosco = () => {
   const [loading, setLoading] = useState(false);
   const [selectedSubject, setSelectedSubject] = useState<string>("financeiro");
@@ -96,7 +96,7 @@ const FaleConosco = () => {
               <h2 className="text-[40px] font-semibold">Fale Conosco</h2>
 
               <div>
-                <p>
+                <p suppressHydrationWarning>
                   Instituto de Previdência dos Servidores do Município Jaboatão
                   dos Guararapes.
                   <br />
