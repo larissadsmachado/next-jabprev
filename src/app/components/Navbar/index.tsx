@@ -555,6 +555,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ closeMenu }) => {
           {renderSubMenu(navigation, 1)}
         </div>
         <div className="pb-10 flex justify-center">
+          {/* Passando uma função de setIsLoading vazia, para que o estado de carregamento no SearchBar não interfira */}
           <SearchBar setIsLoading={() => {}} hideIcon={true} />
         </div>
       </motion.div>
@@ -572,7 +573,7 @@ const SearchBar = ({ setIsLoading, hideIcon = false }: SearchBarProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const searchContainerRef = useRef<HTMLDivElement>(null);
   const [isMounted, setIsMounted] = useState(false);
-  const [isSearching, setIsSearching] = useState(false); // Estado para gerenciar o processo de busca
+  const [isSearching, setIsSearching] = useState(false);
   const router = useRouter();
   const [pathname, setPathname] = useState<string>("");
 
@@ -605,29 +606,27 @@ const SearchBar = ({ setIsLoading, hideIcon = false }: SearchBarProps) => {
   const handleSearch = async () => {
     const searchInput = inputRef.current?.value;
     if (searchInput) {
-      setIsSearching(true); // A busca começou
-      setIsLoading(true);   // Inicia o carregamento
-      setShowSearch(false); // Fecha o campo de busca
+      setIsSearching(true);
+      setIsLoading(true);
+      setShowSearch(false);
 
       try {
         const response = await fetch(`/api/search?searchTerm=${encodeURIComponent(searchInput)}`);
         const data = await response.json();
 
         if (data.route) {
-          // Delay mínimo para exibir o carregamento por pelo menos 1 segundo
           setTimeout(() => {
             router.push(`${process.env.NEXT_PUBLIC_LOCAL}${data.route}`);
-          }, 1000); // 1 segundo de delay
+          },);
         } else {
           console.log("Nenhuma rota encontrada.");
         }
       } catch (error) {
         console.error("Erro ao buscar rota:", error);
       } finally {
-        // Após 1 segundo de delay, desativa o carregamento
         setTimeout(() => {
           setIsLoading(false);
-        }, 2000); // O carregamento vai continuar por 1 segundo após a requisição
+        }, 2500);
       }
     }
   };
@@ -639,14 +638,18 @@ const SearchBar = ({ setIsLoading, hideIcon = false }: SearchBarProps) => {
     }
   };
 
+  const handleButtonSearch = () => {
+    handleSearch();
+  };
+
   useEffect(() => {
     if (isMounted && pathname !== window.location.pathname && isSearching) {
-      setIsSearching(false); // Resetando o estado de busca
-      setPathname(window.location.pathname); // Atualizando o pathname
+      setIsSearching(false);
+      setPathname(window.location.pathname);
     }
   }, [pathname, isMounted, isSearching]);
 
-  if (!isMounted) return null; // Garante que o código só seja executado no cliente
+  if (!isMounted) return null;
 
   return (
     <div className="relative">
@@ -688,7 +691,6 @@ const SearchBar = ({ setIsLoading, hideIcon = false }: SearchBarProps) => {
               </button>
             )}
 
-            {/* Input para MOBILE */}
             <input
               ref={inputRef}
               autoFocus
@@ -698,7 +700,13 @@ const SearchBar = ({ setIsLoading, hideIcon = false }: SearchBarProps) => {
               className="w-full p-3 bg-white text-blue-900 border-2 border-blue-700 rounded-lg placeholder-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-500 sm:hidden"
             />
 
-            {/* Input para DESKTOP */}
+            <button
+              onClick={handleButtonSearch}
+              className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg w-full sm:hidden"
+            >
+              Buscar
+            </button>
+
             <input
               ref={inputRef}
               autoFocus
