@@ -34,7 +34,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'column' as const,
     gap: '15px', // Espaçamento entre os botões
-    zIndex: 9999, // Garante que fique à frente
+    zIndex: 10, // Garante que fique à frente
   },
   button: {
     width: '50px',

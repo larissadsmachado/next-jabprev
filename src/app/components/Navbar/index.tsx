@@ -702,7 +702,7 @@ const SearchBar = ({ setIsLoading, hideIcon = false }: SearchBarProps) => {
 
             <button
               onClick={handleButtonSearch}
-              className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg w-full sm:hidden"
+              className="mt-4 px-4 py-2 bg-blue-500 active:bg-blue-900 text-white rounded-lg w-full sm:hidden"
             >
               Buscar
             </button>
