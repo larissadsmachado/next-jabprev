@@ -35,7 +35,7 @@ const Sobre = () => (
 );
 
 const MissaoVisaoValores = () => (
-  <div id="missao" className="bg-gradient-to-b from-[#ffffff] to-[#cee5ff]">
+  <div id="missao" className="bg-gradient-to-b from-[#ffffff] to-[#b4c9e2]">
     <div className="flex items-center justify-center h-auto py-20 bg-[#083516] rounded-[50px] min-h-[750px]">
       <div className="mx-auto max-w-[1700px] px-8 flex items-center justify-center">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-20 w-full">
@@ -79,83 +79,87 @@ const MissaoVisaoValores = () => (
 const Equipe = () => (
   <div
     id="equipe"
-    className="flex flex-col items-center bg-[#cee5ff] w-full h-auto pb-32 rounded-b-[50px] xl:px-72 md:px-32 px-8"
+    className="flex flex-col items-center bg-[#b4c9e2] py-32 w-full h-auto pb-32 rounded-b-[50px] xl:px-72 md:px-32 px-8"
   >
-    <h1 className="xl:text-5xl md:text-4xl text-3xl font-bold text-green-900 text-center mb-8 xl:py-32 pt-20">
+    <h1 className="xl:text-5xl md:text-4xl text-3xl font-bold text-blue-900 text-center mb-8 xl:pb-12">
       A EQUIPE DO JABOATÃOPREV
     </h1>
 
     {/* Grid responsivo para os itens da equipe */}
-    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 text-green-900 text-xl gap-4 pb-32 leading-relaxed text-center xl:text-left">
+    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 text-blue-900 text-xl gap-4 text-center xl:text-left pb-20">
       <div>
         <p>
-          <strong>Mayara Lima</strong>
+          <strong>Gerente Administrativa e Financeiro</strong>
           <br />
-          Gerente Administrativa e Financeiro
+          Mayara Lima
         </p>
-        <p>
-          <strong>Edson Silva</strong>
+        <p className="pt-4">
+          <strong>Coordenador da Contabilidade</strong>
           <br />
-          Coordenador da Contabilidade
+          Edson Silva
         </p>
-        <p>
-          <strong>Katia Cyntia</strong>
+        <p className="pt-4">
+          <strong>Coordenadora Administrativo Financeiro</strong>
           <br />
-          Coordenadora Administrativo Financeiro
+          Katia Cyntia
         </p>
-        <p>
-          <strong>Manuela Araújo</strong>
+        <p className="pt-4">
+          <strong>Coordenadora da Folha de Pagamento</strong>
           <br />
-          Coordenadora da Folha de Pagamento
+          Manuela Araújo
         </p>
       </div>
+
       <div>
         <p>
-          <strong>Pierre Leon</strong>
+          <strong>Gerente de Investimentos</strong>
           <br />
-          Gerente de Investimentos
+          Pierre Leon
         </p>
-        <p>
-          <strong>Ícaro Santos</strong>
+        <p className="pt-4">
+          <strong>Assessor de Investimentos</strong>
           <br />
-          Assessor de Investimentos
+          Ícaro Santos
         </p>
-        <p>
-          <strong>Rafaela Bezerra</strong>
+        <p className="pt-4">
+          <strong>Gerente Jurídica</strong>
           <br />
-          Gerente Jurídica
+          Rafaela Bezerra
         </p>
-        <p>
-          <strong>Taís Cavalcante</strong>
+        <p className="pt-4">
+          <strong>Assessora Jurídica</strong>
           <br />
-          Assessora Jurídica
+          Taís Cavalcante
         </p>
-        <p>
-          <strong>Julyana Porto</strong>
+        <p className="pt-4">
+          <strong>Assessora Jurídica</strong>
           <br />
-          Assessora Jurídica
+          Julyana Porto
         </p>
       </div>
+
       <div>
         <p>
-          <strong>Karla Ramires</strong>
+          <strong>Gerente de Benefícios</strong>
           <br />
-          Gerente de Benefícios
+          Karla Ramires
         </p>
-        <p>
-          <strong>Ângela Maria</strong>
+        <p className="pt-4">
+          <strong>Coordenadora de Benefícios</strong>
           <br />
-          Coordenadora de Benefícios
+          Ângela Maria
         </p>
-        <p>
-          <strong>Izabeli Cynthia</strong>
+        <p className="pt-4">
+          <strong>Assessora da Presidente</strong>
           <br />
-          Assessora da Presidente
+          Izabeli Cynthia
         </p>
-        <p>
-          <strong>Mayara Mendes</strong>
+        <p className="pt-4">
+          <strong>
+            Coordenadora de Planejamento, Monitoramento e Controle
+          </strong>
           <br />
-          Coordenadora de Planejamento, Monitoramento e Controle
+          Mayara Mendes
         </p>
       </div>
     </div>
