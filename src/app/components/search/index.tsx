@@ -89,7 +89,9 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
         setMedia(mediaMap);
 
         // Buscar categorias
-        const categoryIds = [...new Set(data.flatMap((post) => post.categories))];
+        const categoryIds = [
+          ...new Set(data.flatMap((post) => post.categories)),
+        ];
         if (categoryIds.length > 0) {
           const categoryRes = await fetch(
             `https://jaboataoprev.jaboatao.pe.gov.br/wp-json/wp/v2/categories?include=${categoryIds.join(
@@ -145,7 +147,10 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
       ) : (
         <>
           {/* Se houver notícias, exibe os cards de posts */}
-          {posts.length > 0 && (
+          <h2 className="text-2xl font-bold mb-4 text-center text-gray-600 pt-20">
+            Notícias Encontradas:
+          </h2>
+          {posts.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 p-6 lg:px-36 px-10 py-20 bg-white">
               {posts.map((post) => {
                 const imageUrl = media[post.featured_media];
@@ -190,7 +195,9 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
                       </div>
 
                       <div className="p-4">
-                        <h2 className="text-lg font-bold">{post.title.rendered}</h2>
+                        <h2 className="text-lg font-bold">
+                          {post.title.rendered}
+                        </h2>
                         <p className="text-sm text-gray-500">
                           📅 {new Date(post.date).toLocaleDateString("pt-BR")}
                         </p>
@@ -200,11 +207,17 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
                 );
               })}
             </div>
+          ) : (
+            <div className="py-10 flex text-center items-center justify-center text-gray-600 h-auto text-xl">
+              <p>Nenhuma Notícia correspondente.</p>
+            </div>
           )}
 
           {/* Se houver páginas estáticas (rotas), exibe-as abaixo */}
           <div className="bg-white px-36 pt-8 pb-28">
-            <h2 className="text-2xl font-bold mb-4 text-center text-gray-600 pb-6">Páginas Encontradas</h2>
+            <h2 className="text-2xl font-bold mb-4 text-center text-gray-600 pb-6">
+              Páginas Encontradas:
+            </h2>
             {filteredRoutes.length === 0 ? (
               <div className="py-10 flex text-center items-center justify-center text-gray-600 h-auto text-xl">
                 <p>Nenhuma página correspondente.</p>
@@ -212,15 +225,19 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                 {filteredRoutes.map((r: any) => (
-                  <div
-                    key={r.path}
-                    className="bg-white shadow-lg rounded-lg p-4"
+                  <Link
+                    href={r.path}
+                    className="text-green-700 hover:text-green-900 border-2 border-bg-slate-300 shadow-lg rounded-lg hover:shadow-2xl transition-shadow duration-300"
                   >
-                    <Link href={r.path} className="text-green-700 hover:underline">
+                    <div
+                      key={r.path}
+                      className="bg-slate-100 hover:bg-slate-200 shadow-lg rounded-lg p-6 hover:shadow-2xl transition-shadow duration-300"
+                    >
                       <h3 className="text-lg font-bold">{r.title}</h3>
-                    </Link>
-                    <p className="text-sm text-gray-600">{r.description}</p>
-                  </div>
+
+                      <p className="text-sm text-gray-600">{r.description}</p>
+                    </div>
+                  </Link>
                 ))}
               </div>
             )}

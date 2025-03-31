@@ -384,7 +384,7 @@ const NavLinks: React.FC = () => {
           </Link>
 
           {activeMenu === item.name && item.submenu && (
-            <div className="absolute left-0 bg-[#2b73d0f5] shadow-lg w-60 border border-white z-50 flex flex-col py-2">
+            <div className="absolute left-0 bg-[#2b73d0f5]  shadow-lg w-60 border border-white z-50 flex flex-col ">
               {item.submenu.map((subItem) => (
                 <div
                   key={subItem.name}
@@ -394,7 +394,7 @@ const NavLinks: React.FC = () => {
                 >
                   <Link
                     href={subItem.href}
-                    className="px-4 py-2 text-white hover:bg-[#fdfdfd] hover:text-[#2b63ab] text-[15px] flex items-center"
+                    className="px-4 py-3 text-white hover:bg-[#fdfdfd] hover:text-[#2b63ab] text-[15px] flex items-center"
                     onClick={handleClick}
                   >
                     {subItem.name}
@@ -490,7 +490,6 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ closeMenu }) => {
       }
     }
   };
-  
 
   const renderSubMenu = (items: any[], level = 1) => (
     <div className={`pl-${level * 4} mt-2 text-center`}>
@@ -527,7 +526,9 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ closeMenu }) => {
               {item.name}
             </Link>
           )}
-          {item.submenu && openMenus[item.name] && renderSubMenu(item.submenu, level + 1)}
+          {item.submenu &&
+            openMenus[item.name] &&
+            renderSubMenu(item.submenu, level + 1)}
         </div>
       ))}
     </div>
@@ -554,7 +555,9 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ closeMenu }) => {
         <div className="py-5 px-5 flex flex-col border-b border-gray-200">
           <div className="flex justify-between items-center">
             <Logo />
-            <button onClick={handleClose} className="p-2 text-black text-2xl">✕</button>
+            <button onClick={handleClose} className="p-2 text-black text-2xl">
+              ✕
+            </button>
           </div>
         </div>
         <div className="p-4 flex-1 overflow-auto text-center">
