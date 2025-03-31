@@ -1,8 +1,10 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Fuse from "fuse.js";
+import { motion } from "framer-motion";
 import React from "react";
 
 type Post = {
@@ -31,7 +33,8 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
   const [filteredRoutes, setFilteredRoutes] = useState<any[]>([]);
 
   useEffect(() => {
-    async function fetchNoticias() {
+    async function fetchData() {
+      // Se não houver termo de pesquisa, zera os estados
       if (!searchTerm) {
         setPosts([]);
         setFilteredRoutes([]);
@@ -42,13 +45,14 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
       setLoading(true);
 
       try {
-        // Fetching posts (Notícias)
+        // Buscar posts (Notícias)
         const res = await fetch(
           `https://jaboataoprev.jaboatao.pe.gov.br/wp-json/wp/v2/posts?search=${encodeURIComponent(
             searchTerm
           )}&page=${page}&per_page=${POSTS_PER_PAGE}`
         );
         const data: Post[] = await res.json();
+
         if (!Array.isArray(data)) {
           console.error("Erro ao buscar notícias:", data);
           setPosts([]);
@@ -61,6 +65,7 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
           setTotalPages(parseInt(totalPagesHeader, 10));
         }
 
+        // Buscar imagens para cada post
         const mediaResults = await Promise.all(
           data.map(async (post) => {
             if (!post.featured_media) return null;
@@ -77,17 +82,14 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
             }
           })
         );
-
         const mediaMap = mediaResults.reduce((acc, item) => {
           if (item) acc[item.id] = item.url;
           return acc;
         }, {} as { [key: number]: string });
         setMedia(mediaMap);
 
-        // Fetching Categories
-        const categoryIds = [
-          ...new Set(data.flatMap((post) => post.categories)),
-        ];
+        // Buscar categorias
+        const categoryIds = [...new Set(data.flatMap((post) => post.categories))];
         if (categoryIds.length > 0) {
           const categoryRes = await fetch(
             `https://jaboataoprev.jaboatao.pe.gov.br/wp-json/wp/v2/categories?include=${categoryIds.join(
@@ -95,21 +97,22 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
             )}`
           );
           const categoryData: Category[] = await categoryRes.json();
-          const categoryMap = categoryData.reduce((acc, cat) => {
-            acc[cat.id] = cat.name;
-            return acc;
-          }, {} as { [key: number]: string });
+          const categoryMap = categoryData.reduce(
+            (acc, cat) => ({ ...acc, [cat.id]: cat.name }),
+            {} as { [key: number]: string }
+          );
           setCategories(categoryMap);
         }
 
-        // Fetching Routes (Páginas Estáticas)
+        // Buscar rotas (Páginas Estáticas)
         const routesRes = await fetch("/data/routes.json");
         if (!routesRes.ok) throw new Error("Erro ao buscar routes.json");
         const allRoutes = await routesRes.json();
 
+        // Normaliza o termo de pesquisa para comparação
         const normalizedSearchTerm = searchTerm
           .normalize("NFD") // Remove acentos
-          .replace(/[\u0300-\u036f]/g, "") // Remove caracteres diacríticos
+          .replace(/[\u0300-\u036f]/g, "") // Remove diacríticos
           .toLowerCase()
           .replace(/\s+/g, "-"); // Substitui espaços por hífen
 
@@ -130,7 +133,7 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
       }
     }
 
-    fetchNoticias();
+    fetchData();
   }, [searchTerm, page]);
 
   return (
@@ -141,79 +144,79 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
         </p>
       ) : (
         <>
-          {/* Exibindo os Posts de Notícias */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4 px-36 py-20 bg-gradient-to-b from-[#ffffff] to-[#003470]">
-            {posts.map((post) => {
-              const imageUrl = media[post.featured_media];
-              const finalUrl = imageUrl?.startsWith("/")
-                ? `https://procon.jaboatao.pe.gov.br${imageUrl}`
-                : imageUrl;
+          {/* Se houver notícias, exibe os cards de posts */}
+          {posts.length > 0 && (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-6 lg:px-36 px-10 py-20 bg-white">
+              {posts.map((post) => {
+                const imageUrl = media[post.featured_media];
+                const finalUrl = imageUrl?.startsWith("/")
+                  ? `https://jaboataoprev.jaboatao.pe.gov.br${imageUrl}`
+                  : imageUrl;
 
-              const postCategories = post.categories.map(
-                (catId) => categories[catId] || "Sem categoria"
-              );
+                const postCategories = post.categories.map(
+                  (catId) => categories[catId] || "Sem categoria"
+                );
 
-              return (
-                <div
-                  key={post.id}
-                  className="bg-white shadow-md rounded-lg relative"
-                >
-                  <Link
-                    href={`/noticia/${post.id}`}
-                    className="block group relative"
+                return (
+                  <motion.div
+                    key={post.id}
+                    className="bg-slate-100 shadow-md rounded-xl relative border-8 border-[#dee1f2] hover:border-[#0d7c34] p-2 hover:shadow-2xl transition-shadow duration-300"
+                    whileHover={{ scale: 1.05, y: -5 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
                   >
-                    {postCategories.length > 0 && (
-                      <div className="absolute top-0 left-0 bg-blue-700 text-white text-xs font-bold px-3 py-1 rounded-tl-lg rounded-br-lg z-10">
-                        {postCategories[0]}
+                    <Link
+                      href={`/noticia/${post.id}`}
+                      className="block group relative transition-transform duration-300"
+                    >
+                      {postCategories.length > 0 && (
+                        <div className="absolute top-0 left-0 bg-[#008C32] text-white text-xs font-bold px-3 py-1 rounded-tl-lg rounded-br-lg z-10">
+                          {postCategories[0]}
+                        </div>
+                      )}
+
+                      <div className="relative w-full h-48 overflow-hidden rounded-t-lg">
+                        <Image
+                          key={finalUrl}
+                          src={`/api/image-proxy?url=${encodeURIComponent(
+                            finalUrl || ""
+                          )}`}
+                          alt={post.title.rendered}
+                          width={500}
+                          height={300}
+                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                          unoptimized
+                        />
+                        <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-300 pointer-events-none" />
                       </div>
-                    )}
 
-                    <div className="relative w-full h-48 overflow-hidden rounded-t-lg">
-                      <Image
-                        key={finalUrl}
-                        src={`/api/image-proxy?url=${encodeURIComponent(
-                          finalUrl || ""
-                        )}`}
-                        alt={post.title.rendered}
-                        width={500}
-                        height={300}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                        unoptimized
-                      />
-                      <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-300 pointer-events-none" />
-                    </div>
-                  </Link>
+                      <div className="p-4">
+                        <h2 className="text-lg font-bold">{post.title.rendered}</h2>
+                        <p className="text-sm text-gray-500">
+                          📅 {new Date(post.date).toLocaleDateString("pt-BR")}
+                        </p>
+                      </div>
+                    </Link>
+                  </motion.div>
+                );
+              })}
+            </div>
+          )}
 
-                  <div className="p-4">
-                    <h2 className="text-lg font-bold">{post.title.rendered}</h2>
-                    <p className="text-sm text-gray-500">
-                      📅 {new Date(post.date).toLocaleDateString("pt-BR")}
-                    </p>
-                    <p className="text-sm text-gray-600 mt-1">
-                      🏷 {postCategories.slice(1).join(", ")}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Exibindo as Páginas Estáticas */}
-          <div className="bg-[#ffffff] px-36 py-8">
-            <h2 className="text-xl font-bold mb-4 uppercase">Páginas Encontradas</h2>
+          {/* Se houver páginas estáticas (rotas), exibe-as abaixo */}
+          <div className="bg-white px-36 pt-8 pb-28">
+            <h2 className="text-2xl font-bold mb-4 text-center text-gray-600 pb-6">Páginas Encontradas</h2>
             {filteredRoutes.length === 0 ? (
-              <p>Nenhuma página correspondente.</p>
+              <div className="py-10 flex text-center items-center justify-center text-gray-600 h-auto text-xl">
+                <p>Nenhuma página correspondente.</p>
+              </div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {filteredRoutes.map((r) => (
+                {filteredRoutes.map((r: any) => (
                   <div
                     key={r.path}
                     className="bg-white shadow-lg rounded-lg p-4"
                   >
-                    <Link
-                      href={r.path}
-                      className="text-blue-700 hover:underline"
-                    >
+                    <Link href={r.path} className="text-green-700 hover:underline">
                       <h3 className="text-lg font-bold">{r.title}</h3>
                     </Link>
                     <p className="text-sm text-gray-600">{r.description}</p>

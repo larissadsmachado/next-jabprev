@@ -162,24 +162,12 @@ export const HoverImageLinks: React.FC = () => {
                   whileHover={{ scale: 1.05, y: -5 }}
                   transition={{ duration: 0.3, ease: "easeOut" }}
                 >
-                  <Link
-                    href={`/noticia/${post.id}`}
-                    className="block group relative transition-transform duration-300"
-                  >
-                    {/* Categoria em destaque */}
-                    {postCategories.length > 0 && (
-                      <div className="absolute top-0 left-0 bg-[#008C32] text-white text-xs font-bold px-3 py-1 rounded-tl-lg rounded-br-lg z-10">
-                        {postCategories[0]}
-                      </div>
-                    )}
-
-                    {/* Container da Imagem com overlay */}
+                  <Link href={`/noticia/${post.id}`} className="block group">
                     <div className="relative w-full h-48 overflow-hidden rounded-t-lg">
-                      {/* Imagem destacada */}
                       <Image
                         key={finalUrl}
                         src={`/api/image-proxy?url=${encodeURIComponent(
-                          finalUrl
+                          finalUrl || ""
                         )}`}
                         alt={post.title.rendered}
                         width={500}
@@ -187,20 +175,14 @@ export const HoverImageLinks: React.FC = () => {
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                         unoptimized
                       />
-
-                      {/* Overlay escuro apenas na imagem */}
                       <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-300 pointer-events-none" />
                     </div>
-
                     <div className="p-4">
                       <h2 className="text-lg font-bold">
                         {post.title.rendered}
                       </h2>
                       <p className="text-sm text-gray-500">
                         📅 {new Date(post.date).toLocaleDateString("pt-BR")}
-                      </p>
-                      <p className="text-sm text-gray-600 mt-1">
-                        🏷 {postCategories.slice(1).join(", ")}
                       </p>
                     </div>
                   </Link>
