@@ -68,31 +68,21 @@ export default function CardGrid() {
         className="flex flex-col items-center justify-center min-h-[80vh] w-full mx-auto bg-green-800 text-center rounded-[50px] py-24"
       >
         <div className="w-full sm:w-8/12 pb-14 relative px-4">
-          <h1 className="relative flex justify-center text-3xl sm:text-xl md:text-4xl lg:text-5xl xl:text-5xl font-semibold text-slate-200 uppercase">
-            <span className="mx-20">Serviços</span>
-            <div className="absolute top-1/2 left-0 w-full flex items-center">
-              {/* Gradiente da esquerda indo do verde até o branco e continuando branco */}
-              <div
-                className="flex-1 relative"
-                style={{
-                  height: "4px",
-                  background:
-                    "linear-gradient(to right, #166534, white, white)",
-                }}
-              ></div>
+          <h1 className="relative flex justify-center text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-green-700 uppercase">
+            {/* Linha atravessando o texto */}
+            <div
+              className="absolute top-1/2 left-0 w-full"
+              style={{
+                height: "4px",
+                background:
+                  "linear-gradient(to right, #166534, white, #166534)",
+                transform: "translateY(-50%)",
+              }}
+            ></div>
 
-              <div className="w-72"></div>
-
-              {/* Gradiente da direita indo do branco até o verde e começando branco */}
-              <div
-                className="flex-1 relative"
-                style={{
-                  height: "4px",
-                  background:
-                    "linear-gradient(to left,  #166534, white, white)",
-                }}
-              ></div>
-            </div>
+            <span className="bg-slate-200 px-4 sm:px-6 py-1 sm:py-2 rounded-full relative z-10">
+              Serviços
+            </span>
           </h1>
         </div>
 

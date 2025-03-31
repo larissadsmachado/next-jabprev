@@ -110,33 +110,23 @@ export const HoverImageLinks: React.FC = () => {
   return (
     <section id="noticias">
       <div className="pt-20">
-        <h1 className="relative flex justify-center text-3xl sm:text-xl md:text-4xl lg:text-5xl xl:text-5xl font-semibold text-[#146c33] uppercase">
-          <span className="px-4">Notícias</span>
-          <div className="absolute top-1/2 left-0 w-full flex items-center">
-            {/* Gradiente da esquerda indo do verde até o branco e continuando branco */}
-            <div
-              className="flex-1 border-t-4"
-              style={{
-                borderImage:
-                  "linear-gradient(to right, white, white,  #146c33) 1",
-                borderImageSlice: 1,
-              }}
-            ></div>
+  <h1 className="relative flex justify-center text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-slate-200 uppercase">
+    {/* Linha atravessando o texto */}
+    <div
+      className="absolute top-1/2 left-0 w-full"
+      style={{
+        height: "4px",
+        background: "linear-gradient(to right, white, #146c33, white)",
+        transform: "translateY(-50%)",
+      }}
+    ></div>
 
-            <div className="w-64"></div>
+    <span className="bg-[#146c33] px-4 sm:px-6 py-2 sm:py-4 rounded-full relative z-10">
+      Notícias
+    </span>
+  </h1>
+</div>
 
-            {/* Gradiente da direita indo do branco até o verde e começando branco */}
-            <div
-              className="flex-1 border-t-4"
-              style={{
-                borderImage:
-                  "linear-gradient(to left, white, white,  #146c33) 1",
-                borderImageSlice: 1,
-              }}
-            ></div>
-          </div>
-        </h1>
-      </div>
 
       {loading ? (
         <p className="bg-gradient-to-b flex text-center items-center justify-center h-auto text-xl py-60 text-green-800">
@@ -144,7 +134,7 @@ export const HoverImageLinks: React.FC = () => {
         </p>
       ) : (
         <>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 p-4 lg:px-36 px-10 py-20 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-10 p-4 lg:px-36 px-10 py-20 ">
             {posts.map((post) => {
               const imageUrl = media[post.featured_media];
               const finalUrl = imageUrl?.startsWith("/")

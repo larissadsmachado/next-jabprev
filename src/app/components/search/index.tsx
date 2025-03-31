@@ -147,11 +147,11 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
       ) : (
         <>
           {/* Se houver notícias, exibe os cards de posts */}
-          <h2 className="text-2xl font-bold mb-4 text-center text-gray-600 pt-20">
+          <h2 className="text-2xl font-bold mb-4 text-center text-gray-600 pt-20 uppercase">
             Notícias Encontradas:
           </h2>
           {posts.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 p-6 lg:px-36 px-10 py-20 bg-white">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-10 p-4 lg:px-36 px-10 py-20 ">
               {posts.map((post) => {
                 const imageUrl = media[post.featured_media];
                 const finalUrl = imageUrl?.startsWith("/")
@@ -208,14 +208,14 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
               })}
             </div>
           ) : (
-            <div className="py-10 flex text-center items-center justify-center text-gray-600 h-auto text-xl">
+            <div className="py-10 flex text-center items-center justify-center text-gray-600 h-auto text-xl ">
               <p>Nenhuma Notícia correspondente.</p>
             </div>
           )}
 
           {/* Se houver páginas estáticas (rotas), exibe-as abaixo */}
           <div className="bg-white px-36 pt-8 pb-28">
-            <h2 className="text-2xl font-bold mb-4 text-center text-gray-600 pb-6">
+            <h2 className="text-2xl font-bold mb-4 text-center text-gray-600 pb-6 uppercase">
               Páginas Encontradas:
             </h2>
             {filteredRoutes.length === 0 ? (

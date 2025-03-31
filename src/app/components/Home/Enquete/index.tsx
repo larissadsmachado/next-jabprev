@@ -57,33 +57,25 @@ const FeedbackForm = () => {
   };
 
   return (
-    <div id="enquete" className="justify-center items-center rounded-b-[50px] px-4 sm:px-8 md:px-20 my-10">
+    <div
+      id="enquete"
+      className="justify-center items-center rounded-b-[50px] px-4 sm:px-8 md:px-20 my-10"
+    >
       <div className="pt-10 pb-10">
-      <h1 className="relative flex justify-center text-3xl sm:text-xl md:text-4xl lg:text-5xl xl:text-5xl font-semibold text-[#1E3A8A] uppercase">
-          <span className="px-4 text-center">
+        <h1 className="relative flex flex-col items-center text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl leading-loose font-semibold text-slate-200 uppercase text-center">
+          {/* Linha atravessando o texto */}
+          <div
+            className="absolute top-1/2 left-0 w-full"
+            style={{
+              height: "4px",
+              background: "linear-gradient(to right,white, #1E3A8A, white)",
+              transform: "translateY(-50%)",
+            }}
+          ></div>
+
+          <span className="bg-[#1E3A8A] px-4 sm:px-9 py-1 sm:py-5 rounded-full relative z-10">
             Avalie Nosso <br /> Serviço
           </span>
-          <div className="absolute top-1/2 left-0 w-full flex items-center">
-            <div
-              className="flex-1 border-t-4"
-              style={{
-                borderImage:
-                  "linear-gradient(to right, white, white,  #1E3A8A) 1",
-                borderImageSlice: 1,
-              }}
-            ></div>
-
-            <div className="w-1/4 sm:w-2/12 md:w-4/12 lg:w-4/12 xl:w-3/12"></div>
-
-            <div
-              className="flex-1 border-t-4"
-              style={{
-                borderImage:
-                  "linear-gradient(to left, white, white,  #1E3A8A) 1",
-                borderImageSlice: 1,
-              }}
-            ></div>
-          </div>
         </h1>
       </div>
 
@@ -126,7 +118,8 @@ const FeedbackForm = () => {
                 <CheckCircle className="text-blue-500" size={20} />
               ) : (
                 "❌"
-              )} {message}
+              )}{" "}
+              {message}
             </p>
           )}
         </div>
