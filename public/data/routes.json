@@ -1,407 +1,237 @@
 [
   {
-    "path": "/Ap-acordo-de-parcelamento",
-    "title": "Ap-acordo-de-parcelamento",
-    "description": "Descrição da página Ap-acordo-de-parcelamento"
+    "path": "/ap-acordo-de-parcelamento",
+    "title": "AP ACORDO DE PARCELAMENTO",
+    "description": "Descrição da página AP ACORDO DE PARCELAMENTO"
   },
   {
-    "path": "/Ap-acordo-de-parcelamento",
-    "title": "Ap-acordo-de-parcelamento",
-    "description": "Descrição da página Ap-acordo-de-parcelamento"
+    "path": "/apr-autorizacao-de-aplicacao-e-resgate",
+    "title": "APR AUTORIZACAO DE APLICACAO E RESGATE",
+    "description": "Descrição da página APR AUTORIZACAO DE APLICACAO E RESGATE"
   },
   {
-    "path": "/Apr-autorizacao-de-aplicacao-e-resgate",
-    "title": "Apr-autorizacao-de-aplicacao-e-resgate",
-    "description": "Descrição da página Apr-autorizacao-de-aplicacao-e-resgate"
+    "path": "/atas-do-comite-de-investimentos",
+    "title": "ATAS DO COMITE DE INVESTIMENTOS",
+    "description": "Descrição da página ATAS DO COMITE DE INVESTIMENTOS"
   },
   {
-    "path": "/Apr-autorizacao-de-aplicacao-e-resgate",
-    "title": "Apr-autorizacao-de-aplicacao-e-resgate",
-    "description": "Descrição da página Apr-autorizacao-de-aplicacao-e-resgate"
+    "path": "/atas-do-conselho-administrativo",
+    "title": "ATAS DO CONSELHO ADMINISTRATIVO",
+    "description": "Descrição da página ATAS DO CONSELHO ADMINISTRATIVO"
   },
   {
-    "path": "/Atas-do-Comite-de-Investimentos",
-    "title": "Atas-do-Comite-de-Investimentos",
-    "description": "Descrição da página Atas-do-Comite-de-Investimentos"
-  },
-  {
-    "path": "/Atas-do-Comite-de-Investimentos",
-    "title": "Atas-do-Comite-de-Investimentos",
-    "description": "Descrição da página Atas-do-Comite-de-Investimentos"
-  },
-  {
-    "path": "/Atas-do-Conselho-Administrativo",
-    "title": "Atas-do-Conselho-Administrativo",
-    "description": "Descrição da página Atas-do-Conselho-Administrativo"
-  },
-  {
-    "path": "/Atas-do-Conselho-Administrativo",
-    "title": "Atas-do-Conselho-Administrativo",
-    "description": "Descrição da página Atas-do-Conselho-Administrativo"
-  },
-  {
-    "path": "/Atas-do-Conselho-Fiscal",
-    "title": "Atas-do-Conselho-Fiscal",
-    "description": "Descrição da página Atas-do-Conselho-Fiscal"
-  },
-  {
-    "path": "/Atas-do-Conselho-Fiscal",
-    "title": "Atas-do-Conselho-Fiscal",
-    "description": "Descrição da página Atas-do-Conselho-Fiscal"
-  },
-  {
-    "path": "/Boletins-Informativos",
-    "title": "Boletins-Informativos",
-    "description": "Descrição da página Boletins-Informativos"
-  },
-  {
-    "path": "/Boletins-Informativos",
-    "title": "Boletins-Informativos",
-    "description": "Descrição da página Boletins-Informativos"
+    "path": "/atas-do-conselho-fiscal",
+    "title": "ATAS DO CONSELHO FISCAL",
+    "description": "Descrição da página ATAS DO CONSELHO FISCAL"
   },
   {
     "path": "/AccessibilityButton",
-    "title": "AccessibilityButton",
-    "description": "Descrição da página AccessibilityButton"
+    "title": "ACCESSIBILITYBUTTON",
+    "description": "Descrição da página ACCESSIBILITYBUTTON"
   },
   {
     "path": "/BotaoFlutuante",
-    "title": "BotaoFlutuante",
-    "description": "Descrição da página BotaoFlutuante"
+    "title": "BOTAOFLUTUANTE",
+    "description": "Descrição da página BOTAOFLUTUANTE"
   },
   {
     "path": "/DivisorDeForma",
-    "title": "DivisorDeForma",
-    "description": "Descrição da página DivisorDeForma"
+    "title": "DIVISORDEFORMA",
+    "description": "Descrição da página DIVISORDEFORMA"
   },
   {
     "path": "/Footer",
-    "title": "Footer",
-    "description": "Descrição da página Footer"
+    "title": "FOOTER",
+    "description": "Descrição da página FOOTER"
   },
   {
     "path": "/Banner",
-    "title": "Banner",
-    "description": "Descrição da página Banner"
+    "title": "BANNER",
+    "description": "Descrição da página BANNER"
   },
   {
     "path": "/Enquete",
-    "title": "Enquete",
-    "description": "Descrição da página Enquete"
+    "title": "ENQUETE",
+    "description": "Descrição da página ENQUETE"
   },
   {
     "path": "/FaleConosco",
-    "title": "FaleConosco",
-    "description": "Descrição da página FaleConosco"
+    "title": "FALECONOSCO",
+    "description": "Descrição da página FALECONOSCO"
   },
   {
     "path": "/Noticias",
-    "title": "Noticias",
-    "description": "Descrição da página Noticias"
+    "title": "NOTICIAS",
+    "description": "Descrição da página NOTICIAS"
   },
   {
     "path": "/Servicos",
-    "title": "Servicos",
-    "description": "Descrição da página Servicos"
+    "title": "SERVICOS",
+    "description": "Descrição da página SERVICOS"
   },
   {
     "path": "/model-page",
-    "title": "model-page",
-    "description": "Descrição da página model-page"
+    "title": "MODEL PAGE",
+    "description": "Descrição da página MODEL PAGE"
   },
   {
     "path": "/Navbar",
-    "title": "Navbar",
-    "description": "Descrição da página Navbar"
+    "title": "NAVBAR",
+    "description": "Descrição da página NAVBAR"
   },
   {
     "path": "/ScrollToTop",
-    "title": "ScrollToTop",
-    "description": "Descrição da página ScrollToTop"
+    "title": "SCROLLTOTOP",
+    "description": "Descrição da página SCROLLTOTOP"
   },
   {
     "path": "/search",
-    "title": "search",
-    "description": "Descrição da página search"
-  },
-  {
-    "path": "/SearchComponent",
-    "title": "SearchComponent",
-    "description": "Descrição da página SearchComponent"
+    "title": "SEARCH",
+    "description": "Descrição da página SEARCH"
   },
   {
     "path": "/Vlibras",
-    "title": "Vlibras",
-    "description": "Descrição da página Vlibras"
+    "title": "VLIBRAS",
+    "description": "Descrição da página VLIBRAS"
   },
   {
-    "path": "/Contratos",
-    "title": "Contratos",
-    "description": "Descrição da página Contratos"
+    "path": "/contratos",
+    "title": "CONTRATOS",
+    "description": "Descrição da página CONTRATOS"
   },
   {
-    "path": "/Contratos",
-    "title": "Contratos",
-    "description": "Descrição da página Contratos"
+    "path": "/controle-interno",
+    "title": "CONTROLE INTERNO",
+    "description": "Descrição da página CONTROLE INTERNO"
   },
   {
-    "path": "/Controle-Interno",
-    "title": "Controle-Interno",
-    "description": "Descrição da página Controle-Interno"
+    "path": "/credenciamentos",
+    "title": "CREDENCIAMENTOS",
+    "description": "Descrição da página CREDENCIAMENTOS"
   },
   {
-    "path": "/Controle-Interno",
-    "title": "Controle-Interno",
-    "description": "Descrição da página Controle-Interno"
+    "path": "/cronograma-de-capacitacao",
+    "title": "CRONOGRAMA DE CAPACITACAO",
+    "description": "Descrição da página CRONOGRAMA DE CAPACITACAO"
   },
   {
-    "path": "/Credenciamentos",
-    "title": "Credenciamentos",
-    "description": "Descrição da página Credenciamentos"
+    "path": "/crp-certidao-de-regularidade-previdenciaria",
+    "title": "CRP CERTIDAO DE REGULARIDADE PREVIDENCIARIA",
+    "description": "Descrição da página CRP CERTIDAO DE REGULARIDADE PREVIDENCIARIA"
   },
   {
-    "path": "/Credenciamentos",
-    "title": "Credenciamentos",
-    "description": "Descrição da página Credenciamentos"
+    "path": "/dair-demonstrativo-das-aplicacoes-e-investimentos-dos-recursos",
+    "title": "DAIR DEMONSTRATIVO DAS APLICACOES E INVESTIMENTOS DOS RECURSOS",
+    "description": "Descrição da página DAIR DEMONSTRATIVO DAS APLICACOES E INVESTIMENTOS DOS RECURSOS"
   },
   {
-    "path": "/Cronograma-de-Capacitacao",
-    "title": "Cronograma-de-Capacitacao",
-    "description": "Descrição da página Cronograma-de-Capacitacao"
+    "path": "/demonstrativos-contabeis",
+    "title": "DEMONSTRATIVOS CONTABEIS",
+    "description": "Descrição da página DEMONSTRATIVOS CONTABEIS"
   },
   {
-    "path": "/Cronograma-de-Capacitacao",
-    "title": "Cronograma-de-Capacitacao",
-    "description": "Descrição da página Cronograma-de-Capacitacao"
+    "path": "/despesas-Administrativas",
+    "title": "DESPESAS ADMINISTRATIVAS",
+    "description": "Descrição da página DESPESAS ADMINISTRATIVAS"
   },
   {
-    "path": "/Crp-certidao-de-regularidade-previdenciaria",
-    "title": "Crp-certidao-de-regularidade-previdenciaria",
-    "description": "Descrição da página Crp-certidao-de-regularidade-previdenciaria"
+    "path": "/dipr-demonstrativo-de-informacoes-previdenciarias-e-repasses",
+    "title": "DIPR DEMONSTRATIVO DE INFORMACOES PREVIDENCIARIAS E REPASSES",
+    "description": "Descrição da página DIPR DEMONSTRATIVO DE INFORMACOES PREVIDENCIARIAS E REPASSES"
   },
   {
-    "path": "/Crp-certidao-de-regularidade-previdenciaria",
-    "title": "Crp-certidao-de-regularidade-previdenciaria",
-    "description": "Descrição da página Crp-certidao-de-regularidade-previdenciaria"
+    "path": "/dpin-demonstrativo-de-politicas-de-investimento",
+    "title": "DPIN DEMONSTRATIVO DE POLITICAS DE INVESTIMENTO",
+    "description": "Descrição da página DPIN DEMONSTRATIVO DE POLITICAS DE INVESTIMENTO"
   },
   {
-    "path": "/Dair-demonstrativo-das-aplicacoes-e-investimentos-dos-recursos",
-    "title": "Dair-demonstrativo-das-aplicacoes-e-investimentos-dos-recursos",
-    "description": "Descrição da página Dair-demonstrativo-das-aplicacoes-e-investimentos-dos-recursos"
+    "path": "/estudo-de-alm",
+    "title": "ESTUDO DE ALM",
+    "description": "Descrição da página ESTUDO DE ALM"
   },
   {
-    "path": "/Dair-demonstrativo-das-aplicacoes-e-investimentos-dos-recursos",
-    "title": "Dair-demonstrativo-das-aplicacoes-e-investimentos-dos-recursos",
-    "description": "Descrição da página Dair-demonstrativo-das-aplicacoes-e-investimentos-dos-recursos"
+    "path": "/folha-de-pagamento",
+    "title": "FOLHA DE PAGAMENTO",
+    "description": "Descrição da página FOLHA DE PAGAMENTO"
   },
   {
-    "path": "/Demonstrativos-contabeis",
-    "title": "Demonstrativos-contabeis",
-    "description": "Descrição da página Demonstrativos-contabeis"
-  },
-  {
-    "path": "/Demonstrativos-contabeis",
-    "title": "Demonstrativos-contabeis",
-    "description": "Descrição da página Demonstrativos-contabeis"
-  },
-  {
-    "path": "/Despesas-Administrativas",
-    "title": "Despesas-Administrativas",
-    "description": "Descrição da página Despesas-Administrativas"
-  },
-  {
-    "path": "/Despesas-Administrativas",
-    "title": "Despesas-Administrativas",
-    "description": "Descrição da página Despesas-Administrativas"
-  },
-  {
-    "path": "/Dipr-demonstrativo-de-informacoes-previdenciarias-e-repasses",
-    "title": "Dipr-demonstrativo-de-informacoes-previdenciarias-e-repasses",
-    "description": "Descrição da página Dipr-demonstrativo-de-informacoes-previdenciarias-e-repasses"
-  },
-  {
-    "path": "/Dipr-demonstrativo-de-informacoes-previdenciarias-e-repasses",
-    "title": "Dipr-demonstrativo-de-informacoes-previdenciarias-e-repasses",
-    "description": "Descrição da página Dipr-demonstrativo-de-informacoes-previdenciarias-e-repasses"
-  },
-  {
-    "path": "/Dpin-demonstrativo-de-politicas-de-investimento",
-    "title": "Dpin-demonstrativo-de-politicas-de-investimento",
-    "description": "Descrição da página Dpin-demonstrativo-de-politicas-de-investimento"
-  },
-  {
-    "path": "/Dpin-demonstrativo-de-politicas-de-investimento",
-    "title": "Dpin-demonstrativo-de-politicas-de-investimento",
-    "description": "Descrição da página Dpin-demonstrativo-de-politicas-de-investimento"
-  },
-  {
-    "path": "/Estudo-de-alm",
-    "title": "Estudo-de-alm",
-    "description": "Descrição da página Estudo-de-alm"
-  },
-  {
-    "path": "/Estudo-de-alm",
-    "title": "Estudo-de-alm",
-    "description": "Descrição da página Estudo-de-alm"
-  },
-  {
-    "path": "/Folha-de-Pagamento",
-    "title": "Folha-de-Pagamento",
-    "description": "Descrição da página Folha-de-Pagamento"
-  },
-  {
-    "path": "/Folha-de-Pagamento",
-    "title": "Folha-de-Pagamento",
-    "description": "Descrição da página Folha-de-Pagamento"
-  },
-  {
-    "path": "/Institucional",
-    "title": "Institucional",
-    "description": "Descrição da página Institucional"
-  },
-  {
-    "path": "/Institucional",
-    "title": "Institucional",
-    "description": "Descrição da página Institucional"
+    "path": "/institucional",
+    "title": "INSTITUCIONAL",
+    "description": "Descrição da página INSTITUCIONAL"
   },
   {
     "path": "/app",
-    "title": "app",
-    "description": "Descrição da página app"
+    "title": "APP",
+    "description": "Descrição da página APP"
   },
   {
-    "path": "/Legislacao",
-    "title": "Legislacao",
-    "description": "Descrição da página Legislacao"
-  },
-  {
-    "path": "/Legislacao",
-    "title": "Legislacao",
-    "description": "Descrição da página Legislacao"
+    "path": "/legislacao",
+    "title": "LEGISLACAO",
+    "description": "Descrição da página LEGISLACAO"
   },
   {
     "path": "/[id]",
-    "title": "[id]",
-    "description": "Descrição da página [id]"
+    "title": "[ID]",
+    "description": "Descrição da página [ID]"
   },
   {
-    "path": "/Obrigacoes-fiscais",
-    "title": "Obrigacoes-fiscais",
-    "description": "Descrição da página Obrigacoes-fiscais"
+    "path": "/obrigacoes-fiscais",
+    "title": "OBRIGACOES FISCAIS",
+    "description": "Descrição da página OBRIGACOES FISCAIS"
   },
   {
-    "path": "/Obrigacoes-fiscais",
-    "title": "Obrigacoes-fiscais",
-    "description": "Descrição da página Obrigacoes-fiscais"
+    "path": "/perguntas-frequentes",
+    "title": "PERGUNTAS FREQUENTES",
+    "description": "Descrição da página PERGUNTAS FREQUENTES"
   },
   {
-    "path": "/app",
-    "title": "app",
-    "description": "Descrição da página app"
+    "path": "/plano-de-acao",
+    "title": "PLANO DE ACAO",
+    "description": "Descrição da página PLANO DE ACAO"
   },
   {
-    "path": "/Perguntas-Frequentes",
-    "title": "Perguntas-Frequentes",
-    "description": "Descrição da página Perguntas-Frequentes"
+    "path": "/politica-de-investimentos",
+    "title": "POLITICA DE INVESTIMENTOS",
+    "description": "Descrição da página POLITICA DE INVESTIMENTOS"
   },
   {
-    "path": "/Perguntas-Frequentes",
-    "title": "Perguntas-Frequentes",
-    "description": "Descrição da página Perguntas-Frequentes"
+    "path": "/prestacoes-de-contas",
+    "title": "PRESTACOES DE CONTAS",
+    "description": "Descrição da página PRESTACOES DE CONTAS"
   },
   {
-    "path": "/Plano-de-Acao",
-    "title": "Plano-de-Acao",
-    "description": "Descrição da página Plano-de-Acao"
+    "path": "/previdencia-complementar",
+    "title": "PREVIDENCIA COMPLEMENTAR",
+    "description": "Descrição da página PREVIDENCIA COMPLEMENTAR"
   },
   {
-    "path": "/Plano-de-Acao",
-    "title": "Plano-de-Acao",
-    "description": "Descrição da página Plano-de-Acao"
+    "path": "/provisoes-matematicas",
+    "title": "PROVISOES MATEMATICAS",
+    "description": "Descrição da página PROVISOES MATEMATICAS"
   },
   {
-    "path": "/Politica-de-Investimentos",
-    "title": "Politica-de-Investimentos",
-    "description": "Descrição da página Politica-de-Investimentos"
+    "path": "/relatorio-anual-de-gestao",
+    "title": "RELATORIO ANUAL DE GESTAO",
+    "description": "Descrição da página RELATORIO ANUAL DE GESTAO"
   },
   {
-    "path": "/Politica-de-Investimentos",
-    "title": "Politica-de-Investimentos",
-    "description": "Descrição da página Politica-de-Investimentos"
+    "path": "/relatorio-de-inteligencia-de-dados-bi",
+    "title": "RELATORIO DE INTELIGENCIA DE DADOS BI",
+    "description": "Descrição da página RELATORIO DE INTELIGENCIA DE DADOS BI"
   },
   {
-    "path": "/Prestacoes-de-Contas",
-    "title": "Prestacoes-de-Contas",
-    "description": "Descrição da página Prestacoes-de-Contas"
+    "path": "/relatorio-mensais",
+    "title": "RELATORIO MENSAIS",
+    "description": "Descrição da página RELATORIO MENSAIS"
   },
   {
-    "path": "/Prestacoes-de-Contas",
-    "title": "Prestacoes-de-Contas",
-    "description": "Descrição da página Prestacoes-de-Contas"
-  },
-  {
-    "path": "/Previdencia-complementar",
-    "title": "Previdencia-complementar",
-    "description": "Descrição da página Previdencia-complementar"
-  },
-  {
-    "path": "/Previdencia-complementar",
-    "title": "Previdencia-complementar",
-    "description": "Descrição da página Previdencia-complementar"
-  },
-  {
-    "path": "/Provisoes-matematicas",
-    "title": "Provisoes-matematicas",
-    "description": "Descrição da página Provisoes-matematicas"
-  },
-  {
-    "path": "/Provisoes-matematicas",
-    "title": "Provisoes-matematicas",
-    "description": "Descrição da página Provisoes-matematicas"
-  },
-  {
-    "path": "/Relatorio-anual-de-gestao",
-    "title": "Relatorio-anual-de-gestao",
-    "description": "Descrição da página Relatorio-anual-de-gestao"
-  },
-  {
-    "path": "/Relatorio-anual-de-gestao",
-    "title": "Relatorio-anual-de-gestao",
-    "description": "Descrição da página Relatorio-anual-de-gestao"
-  },
-  {
-    "path": "/Relatorio-de-inteligencia-de-dados-bi",
-    "title": "Relatorio-de-inteligencia-de-dados-bi",
-    "description": "Descrição da página Relatorio-de-inteligencia-de-dados-bi"
-  },
-  {
-    "path": "/Relatorio-de-inteligencia-de-dados-bi",
-    "title": "Relatorio-de-inteligencia-de-dados-bi",
-    "description": "Descrição da página Relatorio-de-inteligencia-de-dados-bi"
-  },
-  {
-    "path": "/Relatorio-mensais",
-    "title": "Relatorio-mensais",
-    "description": "Descrição da página Relatorio-mensais"
-  },
-  {
-    "path": "/Relatorio-mensais",
-    "title": "Relatorio-mensais",
-    "description": "Descrição da página Relatorio-mensais"
-  },
-  {
-    "path": "/Requerimento-ctc",
-    "title": "Requerimento-ctc",
-    "description": "Descrição da página Requerimento-ctc"
-  },
-  {
-    "path": "/Requerimento-ctc",
-    "title": "Requerimento-ctc",
-    "description": "Descrição da página Requerimento-ctc"
+    "path": "/requerimento-ctc",
+    "title": "REQUERIMENTO CTC",
+    "description": "Descrição da página REQUERIMENTO CTC"
   },
   {
     "path": "/[query]",
-    "title": "[query]",
-    "description": "Descrição da página [query]"
+    "title": "[QUERY]",
+    "description": "Descrição da página [QUERY]"
   }
 ]
