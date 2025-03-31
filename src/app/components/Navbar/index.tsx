@@ -23,21 +23,21 @@ const navigation: NavItem[] = [
     name: "Institucional",
     href: "#",
     submenu: [
-      { name: "O que é o JaboatãoPrev", href: "/Institucional" },
-      { name: "Missão, visão e valores", href: "/Institucional/#missao" },
-      { name: "A equipe JaboatãoPREV", href: "/Institucional#organograma" },
+      { name: "O que é o JaboatãoPrev", href: "/institucional" },
+      { name: "Missão, visão e valores", href: "/institucional/#missao" },
+      { name: "A equipe JaboatãoPREV", href: "/institucional/#organograma" },
       {
         name: "Certificações Profissional",
         href: "/Pdf/CERTIFICACOES-GERAIS.pdf",
       },
-      { name: "Perguntas Frequentes", href: "/Perguntas-Frequentes" },
-      { name: "Legislação", href: "/Legislacao" },
+      { name: "Perguntas Frequentes", href: "/perguntas-frequentes" },
+      { name: "Legislação", href: "/legislacao" },
       {
         name: "Cartilha Previdenciária",
         href: "/Pdf/CARTILHA.pdf",
       },
-      { name: "Boletins Informativos", href: "/Boletins-Informativos" },
-      { name: "Controle Interno", href: "/Controle-Interno" },
+      { name: "Boletins Informativos", href: "/boletins-informativos" },
+      { name: "Controle Interno", href: "/controle-Interno" },
     ],
   },
 
@@ -51,12 +51,12 @@ const navigation: NavItem[] = [
         submenu: [
           {
             name: "Atas do Conselho Deliberativo",
-            href: "/Atas-do-Conselho-Administrativo",
+            href: "/atas-do-Conselho-Administrativo",
           },
-          { name: "Atas do Conselho Fiscal", href: "/Atas-do-Conselho-Fiscal" },
+          { name: "Atas do Conselho Fiscal", href: "/atas-do-Conselho-Fiscal" },
           {
             name: "Atas do Comitê de Investimentos",
-            href: "/Atas-do-Comite-de-Investimentos",
+            href: "/atas-do-Comite-de-Investimentos",
           },
         ],
       },
@@ -135,17 +135,17 @@ const navigation: NavItem[] = [
         href: "/Pdf/Cronograma-de-Educacao-Previdenciaria-2024.pdf",
       },
 
-      { name: "folha de pagamento", href: "/Folha-de-Pagamento" },
+      { name: "folha de pagamento", href: "/folha-de-Pagamento" },
 
-      { name: "cronograma de capacitação", href: "/Cronograma-de-Capacitacao" },
+      { name: "cronograma de capacitação", href: "/cronograma-de-Capacitacao" },
 
-      { name: "plano de ação", href: "/Plano-de-Acao" },
+      { name: "plano de ação", href: "/plano-de-Acao" },
       {
         name: "programa 5S",
-        href: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/01/Apresenta%C3%A7%C3%A3o%205s%20att.pptx",
+        href: "/pptx/Programa-5S.pptx",
       },
-      { name: "relatório anual de gestão", href: "/Relatorio-anual-de-gestao" },
-      { name: "obrigações fiscais", href: "/Obrigacoes-fiscais" },
+      { name: "relatório anual de gestão", href: "/relatorio-anual-de-gestao" },
+      { name: "obrigações fiscais", href: "/obrigacoes-fiscais" },
     ],
   },
 
@@ -161,9 +161,9 @@ const navigation: NavItem[] = [
         name: "despesas",
         href: "https://portaldatransparencia.jaboatao.pe.gov.br/despesas/",
       },
-      { name: "despesas adminstrativas", href: "/Despesas-Administrativas" },
-      { name: "demonstrativos contábeis", href: "/Demonstrativos-contabeis" },
-      { name: "prestações de contas", href: "/Prestacoes-de-Contas" },
+      { name: "despesas adminstrativas", href: "/despesas-administrativas" },
+      { name: "demonstrativos contábeis", href: "/demonstrativos-contabeis" },
+      { name: "prestações de contas", href: "/prestacoes-de-contas" },
       {
         name: "mapeamento",
         href: "/Pdf/FINANCEIRO-2.pdf",
@@ -176,10 +176,10 @@ const navigation: NavItem[] = [
     submenu: [
       {
         name: "Apr-autorização de aplicação e resgate",
-        href: "/Apr-autorizacao-de-aplicacao-e-resgate",
+        href: "/apr-autorizacao-de-aplicacao-e-resgate",
       },
       { name: "credenciamentos", href: "/Credenciamentos" },
-      { name: "política de investimentos", href: "/Politica-de-Investimentos" },
+      { name: "política de investimentos", href: "/politica-de-investimentos" },
       {
         name: "Relatório anual de investimentos",
         href: "/Pdf/13.-RELATORIO-ANUAL-2023.pdf",
@@ -188,12 +188,12 @@ const navigation: NavItem[] = [
         name: "regime interno",
         href: "/Pdf/REGIMENTO-INTERNO-COMITE-DE-INVESTIMENTOS.pdf",
       },
-      { name: "relatório mensais", href: "/Relatorio-mensais" },
+      { name: "relatório mensais", href: "/relatorio-mensais" },
       {
         name: "relatório de inteligência de dados(bi)",
-        href: "/Relatorio-de-inteligencia-de-dados-bi",
+        href: "/relatorio-de-inteligencia-de-dados-bi",
       },
-      { name: "Estudo de alm", href: "/Estudo-de-alm" },
+      { name: "Estudo de alm", href: "/estudo-de-alm" },
       {
         name: "mapeamento",
         href: "/Pdf/MAPEAMENTO-SETOR-DE-INVESTIMENTOS.pdf",
@@ -204,8 +204,8 @@ const navigation: NavItem[] = [
     name: "previdência",
     href: "#",
     submenu: [
-      { name: "previdência complementar", href: "/Previdencia-complementar" },
-      { name: "provisões matemáticas", href: "/Provisoes-matematicas" },
+      { name: "previdência complementar", href: "/previdencia-complementar" },
+      { name: "provisões matemáticas", href: "/provisoes-matematicas" },
       {
         name: "relatório gestão atual",
         href: "/Pdf/Jaboatao-dos-Guararapes-PE-Relatorio-Pro-Gestao-2023-Nivel-II.pdf",
@@ -288,11 +288,11 @@ const navigation: NavItem[] = [
     submenu: [
       {
         name: "DIPR - Demonstrativo De Informações Previdenciárias E Repasses",
-        href: "/Dipr-demonstrativo-de-informacoes-previdenciarias-e-repasses",
+        href: "/dipr-demonstrativo-de-informacoes-previdenciarias-e-repasses",
       },
       {
         name: "DAIR - Demonstrativo das aplicações e investimentos dos recursos",
-        href: "/Dair-demonstrativo-das-aplicacoes-e-investimentos-dos-recursos",
+        href: "/dair-demonstrativo-das-aplicacoes-e-investimentos-dos-recursos",
       },
       {
         name: "DPIN - demonstrativo de políticas de investimento",
@@ -300,11 +300,11 @@ const navigation: NavItem[] = [
       },
       {
         name: "AP - Acordo de parcelamento",
-        href: "/Ap-acordo-de-parcelamento",
+        href: "/ap-acordo-de-parcelamento",
       },
       {
         name: "CRP - Certidão de regularidade previdenciária",
-        href: "/Crp-certidao-de-regularidade-previdenciaria",
+        href: "/crp-certidao-de-regularidade-previdenciaria",
       },
     ],
   },
@@ -569,159 +569,62 @@ interface SearchBarProps {
 }
 
 const SearchBar = ({ setIsLoading, hideIcon = false }: SearchBarProps) => {
-  const [showSearch, setShowSearch] = useState(hideIcon);
-  const inputRef = useRef<HTMLInputElement>(null);
-  const searchContainerRef = useRef<HTMLDivElement>(null);
-  const [isMounted, setIsMounted] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
-  const [pathname, setPathname] = useState<string>("");
 
-  useEffect(() => {
-    setIsMounted(true);
-    setPathname(window.location.pathname);
-  }, []);
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        searchContainerRef.current &&
-        !searchContainerRef.current.contains(event.target as Node)
-      ) {
-        setShowSearch(false);
-      }
-    };
-
-    if (showSearch && !hideIcon) {
-      document.addEventListener("mousedown", handleClickOutside);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [showSearch, hideIcon]);
-
-  const handleSearch = async () => {
-    const searchInput = inputRef.current?.value;
-    if (searchInput) {
-      setIsSearching(true);
-      setIsLoading(true);
-      setShowSearch(false);
-
-      try {
-        const response = await fetch(`/api/search?searchTerm=${encodeURIComponent(searchInput)}`);
-        const data = await response.json();
-
-        if (data.route) {
-          setTimeout(() => {
-            router.push(`${process.env.NEXT_PUBLIC_LOCAL}${data.route}`);
-          },);
-        } else {
-          console.log("Nenhuma rota encontrada.");
-        }
-      } catch (error) {
-        console.error("Erro ao buscar rota:", error);
-      } finally {
-        setTimeout(() => {
-          setIsLoading(false);
-        }, 2500);
-      }
-    }
-  };
-
-  const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       e.preventDefault();
-      handleSearch();
+      const searchInput = inputRef.current?.value;
+      if (searchInput) {
+        setIsLoading(true);
+        router.push(`/search/${encodeURIComponent(searchInput)}`);
+        setTimeout(() => {
+          setIsLoading(false);
+          setIsSearching(false);
+        }, 2000);
+      }
     }
   };
-
-  const handleButtonSearch = () => {
-    handleSearch();
-  };
-
-  useEffect(() => {
-    if (isMounted && pathname !== window.location.pathname && isSearching) {
-      setIsSearching(false);
-      setPathname(window.location.pathname);
-    }
-  }, [pathname, isMounted, isSearching]);
-
-  if (!isMounted) return null;
 
   return (
-    <div className="relative">
+    <>
       {!hideIcon && (
         <button
-          onClick={() => setShowSearch(true)}
+          onClick={() => setIsSearching(true)}
           className="text-[#0037C1] text-xl focus:outline-none"
-          aria-label="Toggle Search"
+          aria-label="Abrir busca"
         >
           <FaSearch />
         </button>
       )}
 
-      {showSearch && (
-        <motion.div
-          className={`${
-            hideIcon
-              ? "relative w-full"
-              : "fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm flex items-center justify-center z-50"
-          }`}
-          initial={{ opacity: hideIcon ? 1 : 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-        >
-          <motion.div
-            ref={searchContainerRef}
-            className="relative w-full max-w-2xl"
-            initial={{ scale: hideIcon ? 1 : 0.8, opacity: hideIcon ? 1 : 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.8, opacity: 0 }}
+      {isSearching && (
+        <div className="fixed inset-0 bg-[#010306c0] backdrop-blur-sm flex items-center justify-center z-50">
+          <button
+            className="fixed top-4 right-4 text-white text-4xl p-4 hover:text-gray-300 transition-colors duration-200"
+            onClick={() => setIsSearching(false)}
           >
-            {!hideIcon && (
-              <button
-                onClick={() => setShowSearch(false)}
-                className="absolute top-2 right-20 text-white hover:text-gray-400 text-3xl"
-                aria-label="Close Search"
-              >
-                &times;
-              </button>
-            )}
+            &times;
+          </button>
 
+          <div className="relative w-full max-w-xl">
             <input
+              type="text"
+              name="search"
+              placeholder="BUSCAR"
+              className="bg-transparent text-white text-[20px] mt-20 text-center px-4 py-2 w-full border-b-2 border-gray-300 rounded-lg placeholder-white focus:outline-none focus:border-white focus:ring-0 focus:shadow-none"
               ref={inputRef}
               autoFocus
-              type="text"
-              placeholder="Buscar..."
               onKeyDown={handleKeyPress}
-              className="w-full p-3 bg-white text-blue-900 border-2 border-blue-700 rounded-lg placeholder-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-500 sm:hidden"
             />
-
-            <button
-              onClick={handleButtonSearch}
-              className="mt-4 px-4 py-2 bg-blue-500 active:bg-blue-900 text-white rounded-lg w-full sm:hidden"
-            >
-              Buscar
-            </button>
-
-            <input
-              ref={inputRef}
-              autoFocus
-              type="text"
-              placeholder="Buscar..."
-              onKeyDown={handleKeyPress}
-              className="hidden sm:block bg-transparent text-white text-2xl text-center px-4 py-2 w-full border-b-2 border-gray-300 rounded-none placeholder-white focus:outline-none focus:border-white focus:ring-0 focus:shadow-none"
-            />
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       )}
-    </div>
+    </>
   );
 };
-
 
 
 const LoadingScreen = () => {

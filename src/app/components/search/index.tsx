@@ -32,18 +32,17 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
 
   useEffect(() => {
     async function fetchNoticias() {
-
       if (!searchTerm) {
         setPosts([]);
         setFilteredRoutes([]);
         setLoading(false);
         return;
       }
-  
+
       setLoading(true);
-  
+
       try {
-     
+        // Fetching posts (Notícias)
         const res = await fetch(
           `https://jaboataoprev.jaboatao.pe.gov.br/wp-json/wp/v2/posts?search=${encodeURIComponent(
             searchTerm
@@ -56,13 +55,12 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
         } else {
           setPosts(data);
         }
-  
+
         const totalPagesHeader = res.headers.get("X-WP-TotalPages");
         if (totalPagesHeader) {
           setTotalPages(parseInt(totalPagesHeader, 10));
         }
-  
-      
+
         const mediaResults = await Promise.all(
           data.map(async (post) => {
             if (!post.featured_media) return null;
@@ -79,18 +77,22 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
             }
           })
         );
-  
+
         const mediaMap = mediaResults.reduce((acc, item) => {
           if (item) acc[item.id] = item.url;
           return acc;
         }, {} as { [key: number]: string });
         setMedia(mediaMap);
-  
-        // 3) Buscar as categorias dos posts
-        const categoryIds = [...new Set(data.flatMap((post) => post.categories))];
+
+        // Fetching Categories
+        const categoryIds = [
+          ...new Set(data.flatMap((post) => post.categories)),
+        ];
         if (categoryIds.length > 0) {
           const categoryRes = await fetch(
-            `https://jaboataoprev.jaboatao.pe.gov.br/wp-json/wp/v2/categories?include=${categoryIds.join(",")}`
+            `https://jaboataoprev.jaboatao.pe.gov.br/wp-json/wp/v2/categories?include=${categoryIds.join(
+              ","
+            )}`
           );
           const categoryData: Category[] = await categoryRes.json();
           const categoryMap = categoryData.reduce((acc, cat) => {
@@ -99,40 +101,38 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
           }, {} as { [key: number]: string });
           setCategories(categoryMap);
         }
-  
+
+        // Fetching Routes (Páginas Estáticas)
         const routesRes = await fetch("/data/routes.json");
         if (!routesRes.ok) throw new Error("Erro ao buscar routes.json");
         const allRoutes = await routesRes.json();
-  
-      
+
         const normalizedSearchTerm = searchTerm
-          .normalize("NFD")
-          .replace(/[\u0300-\u036f]/g, "")
-          .toLowerCase();
-  
-        
+          .normalize("NFD") // Remove acentos
+          .replace(/[\u0300-\u036f]/g, "") // Remove caracteres diacríticos
+          .toLowerCase()
+          .replace(/\s+/g, "-"); // Substitui espaços por hífen
+
         const fuseOptions = {
           keys: ["title", "path", "description"],
-          threshold: 0.3,   
+          threshold: 0.3,
           ignoreLocation: true,
         };
-  
+
         const fuse = new Fuse(allRoutes, fuseOptions);
         const fuseResults = fuse.search(normalizedSearchTerm);
         const filtered = fuseResults.map((result) => result.item);
         setFilteredRoutes(filtered);
-        
       } catch (error) {
         console.error("Erro ao buscar dados:", error);
       } finally {
         setLoading(false);
       }
     }
-  
+
     fetchNoticias();
   }, [searchTerm, page]);
 
-  // ------------------ Layout ------------------
   return (
     <section id="noticias">
       {loading ? (
@@ -141,11 +141,12 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
         </p>
       ) : (
         <>
+          {/* Exibindo os Posts de Notícias */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4 px-36 py-20 bg-gradient-to-b from-[#ffffff] to-[#003470]">
             {posts.map((post) => {
               const imageUrl = media[post.featured_media];
               const finalUrl = imageUrl?.startsWith("/")
-                ? `https://jaboataoprev.jaboatao.pe.gov.br${imageUrl}`
+                ? `https://procon.jaboatao.pe.gov.br${imageUrl}`
                 : imageUrl;
 
               const postCategories = post.categories.map(
@@ -153,8 +154,14 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
               );
 
               return (
-                <div key={post.id} className="bg-white shadow-md rounded-lg relative">
-                  <Link href={`/noticia/${post.id}`} className="block group relative">
+                <div
+                  key={post.id}
+                  className="bg-white shadow-md rounded-lg relative"
+                >
+                  <Link
+                    href={`/noticia/${post.id}`}
+                    className="block group relative"
+                  >
                     {postCategories.length > 0 && (
                       <div className="absolute top-0 left-0 bg-blue-700 text-white text-xs font-bold px-3 py-1 rounded-tl-lg rounded-br-lg z-10">
                         {postCategories[0]}
@@ -164,7 +171,9 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
                     <div className="relative w-full h-48 overflow-hidden rounded-t-lg">
                       <Image
                         key={finalUrl}
-                        src={`/api/image-proxy?url=${encodeURIComponent(finalUrl || "")}`}
+                        src={`/api/image-proxy?url=${encodeURIComponent(
+                          finalUrl || ""
+                        )}`}
                         alt={post.title.rendered}
                         width={500}
                         height={300}
@@ -189,79 +198,28 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
             })}
           </div>
 
-          {/* Paginação das Notícias */}
-          <div className="flex justify-center items-center space-x-2 bg-[#003470] pb-40">
-            <button
-              onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
-              disabled={page === 1}
-              className={`px-4 py-2 rounded-lg ${
-                page === 1 ? "bg-gray-200 cursor-not-allowed" : "bg-gray-300 hover:bg-gray-400"
-              }`}
-            >
-              ← Anterior
-            </button>
-
-            {[...Array(totalPages)].map((_, i) => {
-              const pageNumber = i + 1;
-              if (
-                pageNumber === 1 ||
-                pageNumber === 2 ||
-                pageNumber === totalPages ||
-                pageNumber === page ||
-                pageNumber === page - 1 ||
-                pageNumber === page + 1
-              ) {
-                return (
-                  <button
-                    key={i}
-                    onClick={() => setPage(pageNumber)}
-                    className={`px-4 py-2 rounded-lg ${
-                      page === pageNumber
-                        ? "bg-green-700 text-white"
-                        : "bg-gray-300 hover:bg-gray-400"
-                    }`}
-                  >
-                    {pageNumber}
-                  </button>
-                );
-              }
-
-              if (pageNumber === page - 2 || pageNumber === page + 2) {
-                return (
-                  <span key={i} className="px-4 py-2 rounded-lg bg-gray-300">
-                    ...
-                  </span>
-                );
-              }
-              return null;
-            })}
-
-            <button
-              onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
-              disabled={page === totalPages}
-              className={`px-4 py-2 rounded-lg ${
-                page === totalPages ? "bg-gray-200 cursor-not-allowed" : "bg-gray-300 hover:bg-gray-400"
-              }`}
-            >
-              Próxima →
-            </button>
-          </div>
-
+          {/* Exibindo as Páginas Estáticas */}
           <div className="bg-[#ffffff] px-36 py-8">
             <h2 className="text-xl font-bold mb-4">Páginas Encontradas</h2>
             {filteredRoutes.length === 0 ? (
               <p>Nenhuma página correspondente.</p>
             ) : (
-              <ul className="list-disc list-inside space-y-2">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {filteredRoutes.map((r) => (
-                  <li key={r.path}>
-                    <Link href={r.path} className="text-blue-600 underline">
-                      {r.path} - {r.title}
+                  <div
+                    key={r.path}
+                    className="bg-white shadow-lg rounded-lg p-4"
+                  >
+                    <Link
+                      href={r.path}
+                      className="text-blue-600 hover:underline"
+                    >
+                      <h3 className="text-lg font-bold">{r.title}</h3>
                     </Link>
                     <p className="text-sm text-gray-600">{r.description}</p>
-                  </li>
+                  </div>
                 ))}
-              </ul>
+              </div>
             )}
           </div>
         </>

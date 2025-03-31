@@ -59,13 +59,12 @@ const NoticiaDetalhada = ({ post }: { post: Post }): JSX.Element => {
           className="z-0"
         />
         {/* Gradiente com transparência ajustada */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#060d29ef] to-[#0000018c]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#060d29a4] to-[#0000015e]" />
       </div>
 
       {/* Espaço reservado para empurrar o conteúdo para baixo sem alterar a imagem de fundo */}
       <div className="pt-[150px]"></div>
-
-      {/* Imagem destacada e Título */}
+ 
 
       {/* Imagem destacada e Título */}
       <div className="Montserrat-Medium relative z-10 flex flex-col text-white p-6">
@@ -82,7 +81,7 @@ const NoticiaDetalhada = ({ post }: { post: Post }): JSX.Element => {
             </div>
           </div>
 
-          <h1 className="w-full text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold uppercase pt-3 pb-14 break-words text-wrap balance leading-tight">
+          <h1 className="shadow-xl w-full text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold uppercase pt-3 pb-14 break-words text-wrap balance leading-tight">
             {post.title.rendered}
           </h1>
         </div>
@@ -103,7 +102,7 @@ const NoticiaDetalhada = ({ post }: { post: Post }): JSX.Element => {
       </div>
 
       {/* Conteúdo da notícia */}
-      <section className="relative z-10 my-20 max-w-6xl mx-auto  bg-white p-10 rounded-lg">
+      <section className="relative z-10 mb-20 max-w-6xl mx-auto  bg-white p-10 rounded-lg">
         <h1 className="text-5xl font-bold mb-4 text-center pb-5 text-green-900">
           {post.title.rendered}
         </h1>

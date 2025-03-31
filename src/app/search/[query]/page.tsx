@@ -15,7 +15,7 @@ export default function SearchResults({
   const searchTerm = decodeURIComponent(query);
 
   return (
-    <div>
+    <div className="mt-96">
       <h1>Resultados para: {searchTerm}</h1>
       {/* Agora passamos esse searchTerm para o componente client */}
       <SearchPage searchTerm={searchTerm} />

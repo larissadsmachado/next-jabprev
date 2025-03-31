@@ -16,12 +16,19 @@ function walkDir(dir) {
       const route = filePath
         .replace(pagesDir, '')
         .replace(/\.(js|jsx|tsx)$/, '')
-        .replace(/\\/g, '/'); // Normaliza caminhos para Unix
+        .replace(/\\/g, '/') // Normaliza caminhos para Unix
+        .replace(/\/page$/, ''); // Remove o "/page" no final
+
+      // Se a pasta for encontrada, vamos considerar o nome dela como a rota
+      const folderName = path.basename(path.dirname(filePath)); // Nome da pasta
+
+      // Agora, usamos o nome da pasta como o título
       routes.push({
-        path: route === '/page' ? '/' : route, // Remove "/index" da rota principal
-        title: file.replace(/\.(js|jsx|tsx)$/, ''),
-        description: `Descrição da página ${route}`,
+        path: `/${folderName}`, // Usa o nome da pasta
+        title: folderName,      // Usa o nome da pasta como o título
+        description: `Descrição da página ${folderName}`,
       });
+
     }
   });
 }

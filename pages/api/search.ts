@@ -1,34 +1,46 @@
-import routes from '../../routes-front-end/routes.json';
+import routes from "../../routes-front-end/routes.json";
 
 interface Route {
   path: string;
+  title?: string;
+  description?: string;
 }
 
-export default function handler(req, res) {
-  const { searchTerm } = req.query; // Obtém o parâmetro searchTerm da URL
-
+export function HandleSearch(searchTerm: string): string | undefined {
   if (!searchTerm) {
-    return res.status(400).json({ message: 'No search term provided' }); // Retorna um erro caso não haja termo
+    return undefined;
   }
 
-  // Transforma o searchTerm em minúsculas para garantir a busca insensível a maiúsculas/minúsculas
-  const lowerCaseSearchTerm = searchTerm.toLowerCase();
+  console.log("🔍 Termo de busca recebido:", searchTerm);
+  console.log("📂 Rotas disponíveis:", routes);
 
-  // Filtra as rotas que incluem o termo de busca (também converte as rotas para minúsculas)
-  const filteredRoutes = (routes as Route[]).filter(route =>
-    route.path.toLowerCase().includes(lowerCaseSearchTerm.replace(/\s+/g, '-'))
+  // Normaliza o termo de busca (remove acentos, deixa minúsculo e troca espaços por hífen)
+  const normalizedSearchTerm = searchTerm
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/\s+/g, "-");
+
+  console.log("🔎 Termo normalizado:", normalizedSearchTerm);
+
+  // Filtra as rotas baseadas no termo normalizado
+  const filteredRoutes = (routes as Route[]).filter((route) =>
+    route.path
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .includes(normalizedSearchTerm)
   );
 
   if (filteredRoutes.length === 0) {
-    return res.status(404).json({ route: null }); // Retorna erro se não encontrar nenhuma rota
+    console.log("⚠️ Nenhuma rota encontrada para:", normalizedSearchTerm);
+    return undefined;
   }
 
-  // Ajusta a rota
-  let finalRoute = filteredRoutes[0].path;
+  console.log(`✅ Rotas encontradas: ${filteredRoutes.map((r) => r.path).join(", ")}`);
 
-  // Remove '/page' ou outras subpastas, deixando apenas o nome da pasta principal
-  const pathParts = finalRoute.split('/'); // Divide a rota pelo separador '/'
-  finalRoute = pathParts.slice(0, 2).join('/'); // Usa as duas primeiras partes (por exemplo: "Boletins-Informativos")
-
-  return res.status(200).json({ route: finalRoute }); // Retorna a rota sem as subpastas extras
+  // Retorna a primeira rota encontrada, ajustando "/page" se necessário
+  return filteredRoutes[0].path.includes("/page")
+    ? filteredRoutes[0].path.replace("/page", "")
+    : filteredRoutes[0].path;
 }
