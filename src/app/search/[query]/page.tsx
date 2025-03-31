@@ -1,6 +1,8 @@
 import { use } from "react";
-import SearchPage from "../../components/search"; 
+import SearchPage from "../../components/search";
+import Model from "../../components/model-page/index";
 import React from "react";
+import Link from "next/link";
 
 export default function SearchResults({
   params,
@@ -15,9 +17,20 @@ export default function SearchResults({
   const searchTerm = decodeURIComponent(query);
 
   return (
-    <div className="mt-96">
-      <h1>Resultados para: {searchTerm}</h1>
-      {/* Agora passamos esse searchTerm para o componente client */}
+    <div>
+      <Model
+        caminhoImagem={"/images/"}
+        titulo={`Resultados para: ${searchTerm || ""}`} // Garante que searchTerm apareça corretamente
+        subtitulo={<span>
+          <Link
+            href="../"
+            className="text-white hover:underline hover:text-yellow-500 hover:brightness-125 transition-all"
+          >
+            INÍCIO
+          </Link>
+          &nbsp;» <span className="brightness-125">SEARCH</span>
+        </span>} children={undefined}></Model>
+
       <SearchPage searchTerm={searchTerm} />
     </div>
   );

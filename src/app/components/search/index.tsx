@@ -200,7 +200,7 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
 
           {/* Exibindo as Páginas Estáticas */}
           <div className="bg-[#ffffff] px-36 py-8">
-            <h2 className="text-xl font-bold mb-4">Páginas Encontradas</h2>
+            <h2 className="text-xl font-bold mb-4 uppercase">Páginas Encontradas</h2>
             {filteredRoutes.length === 0 ? (
               <p>Nenhuma página correspondente.</p>
             ) : (
@@ -212,7 +212,7 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
                   >
                     <Link
                       href={r.path}
-                      className="text-blue-600 hover:underline"
+                      className="text-blue-700 hover:underline"
                     >
                       <h3 className="text-lg font-bold">{r.title}</h3>
                     </Link>
