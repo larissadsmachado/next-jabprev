@@ -144,7 +144,7 @@ export const HoverImageLinks: React.FC = () => {
         </p>
       ) : (
         <>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4 lg:px-36 px-10 py-20 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 p-4 lg:px-36 px-10 py-20 ">
             {posts.map((post) => {
               const imageUrl = media[post.featured_media];
               const finalUrl = imageUrl?.startsWith("/")
@@ -158,11 +158,18 @@ export const HoverImageLinks: React.FC = () => {
               return (
                 <motion.div
                   key={post.id}
-                  className="bg-slate-100 shadow-md rounded-xl relative border-8 border-[#dee1f2] hover:border-[#0d7c34] p-2 hover:shadow-2xl transition-shadow duration-300"
+                  className="bg-slate-100 shadow-md rounded-xl relative border-8 border-[#dee1f2] hover:border-slate-500 hover:shadow-2xl p-2 transition-shadow duration-300"
                   whileHover={{ scale: 1.05, y: -5 }}
                   transition={{ duration: 0.3, ease: "easeOut" }}
                 >
                   <Link href={`/noticia/${post.id}`} className="block group">
+                    {/* Categoria em destaque */}
+                    {postCategories.length > 0 && (
+                      <div className="absolute top-2 left-2 bg-[#008C32] text-white text-xs font-bold px-3 py-1 rounded-tl-md rounded-br-lg z-10">
+                        {postCategories[0]}
+                      </div>
+                    )}
+
                     <div className="relative w-full h-48 overflow-hidden rounded-t-lg">
                       <Image
                         key={finalUrl}
@@ -178,11 +185,12 @@ export const HoverImageLinks: React.FC = () => {
                       <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-300 pointer-events-none" />
                     </div>
                     <div className="p-4">
-                      <h2 className="text-lg font-bold">
+                      <h2 className="text-lg font-bold leading-tight text-blue-900">
                         {post.title.rendered}
                       </h2>
-                      <p className="text-sm text-gray-500">
-                        📅 {new Date(post.date).toLocaleDateString("pt-BR")}
+                      <p className="mt-2 text-sm text-gray-500 flex items-center gap-1">
+                        <span className="grayscale opacity-80">📅</span>
+                        {new Date(post.date).toLocaleDateString("pt-BR")}
                       </p>
                     </div>
                   </Link>

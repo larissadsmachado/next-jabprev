@@ -146,7 +146,7 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
         <>
           {/* Se houver notícias, exibe os cards de posts */}
           {posts.length > 0 && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-6 lg:px-36 px-10 py-20 bg-white">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 p-6 lg:px-36 px-10 py-20 bg-white">
               {posts.map((post) => {
                 const imageUrl = media[post.featured_media];
                 const finalUrl = imageUrl?.startsWith("/")
@@ -210,7 +210,7 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
                 <p>Nenhuma página correspondente.</p>
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                 {filteredRoutes.map((r: any) => (
                   <div
                     key={r.path}
