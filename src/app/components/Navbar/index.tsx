@@ -342,7 +342,7 @@ const Logo = () => (
         alt="Logo"
         height={20}
         width={220}
-        className="w-[180px] h-auto sm:w-[200px] sm:h-auto md:w-[200px] md:h-auto lg:w-[310px] lg:h-auto xl:w-[230px] xl:h-auto"
+        className="w-[180px] h-auto sm:w-[200px] sm:h-auto md:w-[200px] md:h-auto lg:w-[210px] lg:h-auto xl:w-[230px] xl:h-auto"
       />
     </Link>
   </div>
