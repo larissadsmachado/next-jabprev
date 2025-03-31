@@ -18,11 +18,11 @@ const FeedbackForm = () => {
   const [loading, setLoading] = useState(false);
 
   const notas = [
-    { label: "Péssimo", icon: <XCircle className="w-7 h-7 text-red-500" /> },
-    { label: "Ruim", icon: <ThumbsDown className="w-7 h-7 text-orange-500" /> },
-    { label: "Regular", icon: <Meh className="w-7 h-7 text-yellow-500" /> },
-    { label: "Bom", icon: <ThumbsUp className="w-7 h-7 text-green-500" /> },
-    { label: "Excelente", icon: <Star className="w-7 h-7 text-blue-500" /> },
+    { label: "Péssimo", icon: <XCircle className="w-7 h-7 text-red-600" /> },
+    { label: "Ruim", icon: <ThumbsDown className="w-7 h-7 text-orange-600" /> },
+    { label: "Regular", icon: <Meh className="w-7 h-7 text-yellow-600" /> },
+    { label: "Bom", icon: <ThumbsUp className="w-7 h-7 text-green-600" /> },
+    { label: "Excelente", icon: <Star className="w-7 h-7 text-blue-600" /> },
   ];
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -99,7 +99,7 @@ const FeedbackForm = () => {
                   className={`flex flex-col items-center justify-center gap-2 p-4 rounded-xl border w-full text-center transition-all duration-200 transform
             ${
               nota === label
-                ? "bg-green-700 text-white border-blue-900"
+                ? "bg-slate-400 text-bold border-blue-900"
                 : "bg-gray-100 text-gray-800 hover:bg-gray-300 border-blue-900"
             } hover:scale-105`}
                 >
@@ -110,7 +110,7 @@ const FeedbackForm = () => {
             </div>
             <button
               type="submit"
-              className="w-full bg-green-800 hover:bg-green-900 border border-slate-400 text-white text-lg py-3 rounded-xl transition-all duration-200 transform flex items-center justify-center hover:scale-105"
+              className="w-full bg-blue-800 hover:bg-blue-900 border border-slate-400 text-white text-lg py-3 rounded-xl transition-all duration-200 transform flex items-center justify-center hover:scale-105"
               disabled={loading}
             >
               {loading ? (
@@ -123,7 +123,7 @@ const FeedbackForm = () => {
           {message && (
             <p className="mt-4 text-center text-lg font-semibold flex items-center justify-center gap-2">
               {message.includes("sucesso") ? (
-                <CheckCircle className="text-green-500" size={20} />
+                <CheckCircle className="text-blue-500" size={20} />
               ) : (
                 "❌"
               )} {message}

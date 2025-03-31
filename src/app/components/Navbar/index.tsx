@@ -459,21 +459,22 @@ interface MobileMenuProps {
 const MobileMenu: React.FC<MobileMenuProps> = ({ closeMenu }) => {
   const [openMenus, setOpenMenus] = useState<{ [key: string]: boolean }>({});
   const [isMenuOpen, setIsMenuOpen] = useState(true);
+  const [isClosing, setIsClosing] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const toggleMenu = (menu: string) => {
     setOpenMenus((prev) => ({ ...prev, [menu]: !prev[menu] }));
   };
 
-  const handleClick = () => {
-    setIsLoading(true);
+  const handleClose = () => {
+    setIsClosing(true);
     setTimeout(() => {
-      setIsLoading(false);
+      setIsMenuOpen(false);
       closeMenu();
-    }, 1000);
+    }, 500);
   };
 
-  const renderSubMenu = (items: NavItem[], level = 1) => (
+  const renderSubMenu = (items: any[], level = 1) => (
     <div className={`pl-${level * 4} mt-2 text-center`}>
       {items.map((item) => (
         <div key={item.name} className="mb-2">
@@ -487,7 +488,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ closeMenu }) => {
                     e.preventDefault();
                     toggleMenu(item.name);
                   } else {
-                    handleClick();
+                    handleClose();
                   }
                 }}
               >
@@ -503,14 +504,12 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ closeMenu }) => {
             <Link
               href={item.href}
               className="block w-full text-[#0037C1] text-lg font-normal hover:underline p-2 text-center"
-              onClick={handleClick}
+              onClick={handleClose}
             >
               {item.name}
             </Link>
           )}
-          {item.submenu &&
-            openMenus[item.name] &&
-            renderSubMenu(item.submenu, level + 1)}
+          {item.submenu && openMenus[item.name] && renderSubMenu(item.submenu, level + 1)}
         </div>
       ))}
     </div>
@@ -519,43 +518,31 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ closeMenu }) => {
   return (
     <>
       {isLoading && <LoadingScreen />}
-      {/* Overlay para fechar o menu */}
       {isMenuOpen && (
         <motion.div
           className="fixed inset-0 bg-black bg-opacity-50"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          onClick={() => {
-            closeMenu();
-            setIsMenuOpen(false);
-          }}
+          onClick={handleClose}
         />
       )}
       <motion.div
         className="fixed top-0 left-0 w-full h-full bg-yellow-400 shadow-lg flex flex-col"
         initial={{ y: "-100%" }}
-        animate={{ y: isMenuOpen ? 0 : "-100%" }}
-        exit={{ y: "-100%" }}
+        animate={{ y: isClosing ? "-100%" : 0 }}
         transition={{ type: "spring", stiffness: 300, damping: 50 }}
       >
         <div className="py-5 px-5 flex flex-col border-b border-gray-200">
           <div className="flex justify-between items-center">
-            <div className="min-w-40 h-auto">
-              <Logo />
-            </div>
-            <div>
-              <button onClick={closeMenu} className="p-2 text-black text-2xl">
-                ✕
-              </button>
-            </div>
+            <Logo />
+            <button onClick={handleClose} className="p-2 text-black text-2xl">✕</button>
           </div>
         </div>
         <div className="p-4 flex-1 overflow-auto text-center">
           {renderSubMenu(navigation, 1)}
         </div>
         <div className="pb-10 flex justify-center">
-          {/* Passando uma função de setIsLoading vazia, para que o estado de carregamento no SearchBar não interfira */}
           <SearchBar setIsLoading={() => {}} hideIcon={true} />
         </div>
       </motion.div>
