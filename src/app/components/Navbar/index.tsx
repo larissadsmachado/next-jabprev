@@ -461,6 +461,8 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ closeMenu }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(true);
   const [isClosing, setIsClosing] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const router = useRouter();
 
   const toggleMenu = (menu: string) => {
     setOpenMenus((prev) => ({ ...prev, [menu]: !prev[menu] }));
@@ -473,6 +475,22 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ closeMenu }) => {
       closeMenu();
     }, 500);
   };
+
+  const handleSearch = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      const searchInput = inputRef.current?.value;
+      if (searchInput) {
+        setIsLoading(true);
+        router.push(`/search/${encodeURIComponent(searchInput)}`);
+        setTimeout(() => {
+          setIsLoading(false);
+          handleClose(); // Fechar o menu ao pesquisar
+        }, 2000); // Esse tempo deve ser o suficiente para a animação de carregamento
+      }
+    }
+  };
+  
 
   const renderSubMenu = (items: any[], level = 1) => (
     <div className={`pl-${level * 4} mt-2 text-center`}>
@@ -542,8 +560,17 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ closeMenu }) => {
         <div className="p-4 flex-1 overflow-auto text-center">
           {renderSubMenu(navigation, 1)}
         </div>
-        <div className="pb-10 flex justify-center">
-          <SearchBar setIsLoading={() => {}} hideIcon={true} />
+        <div className="p-4 flex justify-center border-t border-gray-200">
+          <div className="relative w-full max-w-md flex items-center bg-white px-4 py-2 rounded-full shadow-md">
+            <FaSearch className="text-gray-500" />
+            <input
+              type="text"
+              placeholder="Buscar"
+              className="flex-1 px-2 text-gray-700 focus:outline-none"
+              ref={inputRef}
+              onKeyDown={handleSearch}
+            />
+          </div>
         </div>
       </motion.div>
     </>
