@@ -626,7 +626,6 @@ const SearchBar = ({ setIsLoading, hideIcon = false }: SearchBarProps) => {
   );
 };
 
-
 const LoadingScreen = () => {
   return (
     <div className="fixed inset-0 bg-[#FDC300] flex flex-col items-center justify-center z-50">
@@ -659,21 +658,21 @@ const Navbar = () => {
   return (
     <Disclosure
       as="nav"
-      className={`fixed top-0 w-full transition-all duration-300 z-50 px-20 ${
+      className={`fixed top-0 w-full transition-all duration-300 z-50 px-[50px] ${
         scrolled ? "bg-[#fdc200d1] shadow-md" : "bg-[#FDC300]"
       }`}
     >
       <div className="relative mx-auto py-3">
         <div className="relative flex h-14 items-center justify-between">
           <Logo />
-          <div className="hidden xl:flex">
+          <div className="hidden 2xl:flex">
             <NavLinks />
           </div>
-          <div className="hidden xl:flex">
+          <div className="hidden 2xl:flex">
             <SearchBar setIsLoading={setIsLoading} />{" "}
             {/* Passando setIsLoading */}
           </div>
-          <div className="xl:hidden">
+          <div className="2xl:hidden">
             <Bars3Icon
               className="h-6 w-6 text-[#0037C1] cursor-pointer"
               aria-hidden="true"
