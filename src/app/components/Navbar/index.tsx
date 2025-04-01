@@ -51,12 +51,12 @@ const navigation: NavItem[] = [
         submenu: [
           {
             name: "Atas do Conselho Deliberativo",
-            href: "/atas-do-Conselho-Administrativo",
+            href: "/atas-do-conselho-administrativo",
           },
-          { name: "Atas do Conselho Fiscal", href: "/atas-do-Conselho-Fiscal" },
+          { name: "Atas do Conselho Fiscal", href: "/atas-do-conselho-fiscal" },
           {
             name: "Atas do Comitê de Investimentos",
-            href: "/atas-do-Comite-de-Investimentos",
+            href: "/atas-do-comite-de-investimentos",
           },
         ],
       },
@@ -135,11 +135,11 @@ const navigation: NavItem[] = [
         href: "/Pdf/Cronograma-de-Educacao-Previdenciaria-2024.pdf",
       },
 
-      { name: "folha de pagamento", href: "/folha-de-Pagamento" },
+      { name: "folha de pagamento", href: "/folha-de-pagamento" },
 
-      { name: "cronograma de capacitação", href: "/cronograma-de-Capacitacao" },
+      { name: "cronograma de capacitação", href: "/cronograma-de-capacitacao" },
 
-      { name: "plano de ação", href: "/plano-de-Acao" },
+      { name: "plano de ação", href: "/plano-de-acao" },
       {
         name: "programa 5S",
         href: "/pptx/Programa-5S.pptx",
@@ -296,7 +296,7 @@ const navigation: NavItem[] = [
       },
       {
         name: "DPIN - demonstrativo de políticas de investimento",
-        href: "/Dpin-demonstrativo-de-politicas-de-investimento",
+        href: "/dpin-demonstrativo-de-politicas-de-investimento",
       },
       {
         name: "AP - Acordo de parcelamento",
@@ -384,7 +384,7 @@ const NavLinks: React.FC = () => {
           </Link>
 
           {activeMenu === item.name && item.submenu && (
-            <div className="absolute left-0 bg-[#2b73d0f5]  shadow-lg w-60 border border-white z-50 flex flex-col ">
+            <div className="absolute left-0 bg-[#2b73d0f5] shadow-lg w-60 border border-slate-300 z-50 flex flex-col ">
               {item.submenu.map((subItem) => (
                 <div
                   key={subItem.name}
@@ -403,7 +403,7 @@ const NavLinks: React.FC = () => {
                     )}
                   </Link>
                   {activeSubMenu === subItem.name && subItem.submenu && (
-                    <div className="absolute left-full top-0 bg-[#2b73d0f5] shadow-lg py-2 w-56 border border-white z-50 flex flex-col">
+                    <div className="absolute left-full top-0 bg-[#2b73d0f5] shadow-lg  w-56 border border-slate-300 z-50 flex flex-col">
                       {subItem.submenu.map((subSubItem) => (
                         <div
                           key={subSubItem.name}
@@ -425,7 +425,7 @@ const NavLinks: React.FC = () => {
                           </Link>
                           {activeSubSubMenu === subSubItem.name &&
                             subSubItem.submenu && (
-                              <div className="absolute left-full top-0 bg-[#2b73d0f5] shadow-lg py-2 w-56 border border-white z-50 flex flex-col">
+                              <div className="absolute left-full top-0 bg-[#2b73d0f5] shadow-lg w-56 border border-slate-300 z-50 flex flex-col">
                                 {subSubItem.submenu.map((subSubSubItem) => (
                                   <Link
                                     key={subSubSubItem.name}
@@ -631,7 +631,7 @@ const SearchBar = ({ setIsLoading, hideIcon = false }: SearchBarProps) => {
               type="text"
               name="search"
               placeholder="BUSCAR"
-              className="bg-transparent text-white text-[20px] mt-20 text-center px-4 py-2 w-full border-b-2 border-gray-300 rounded-lg placeholder-white focus:outline-none focus:border-white focus:ring-0 focus:shadow-none"
+              className="bg-transparent text-white text-[20px] mt-20 text-center px-4 py-2 w-full border-b-2 border-gray-300 rounded-lg placeholder-white focus:outline-none focus:border-slate-300 focus:ring-0 focus:shadow-none"
               ref={inputRef}
               autoFocus
               onKeyDown={handleKeyPress}
