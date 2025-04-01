@@ -215,16 +215,21 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
 
           {/* Se houver páginas estáticas (rotas), exibe-as abaixo */}
           <div className="bg-white px-4 sm:px-8 md:px-16 lg:px-24 xl:px-36 pt-8 pb-28">
-          <h2 className="text-2xl font-bold mb-4 text-center text-gray-600 pb-6 uppercase">
+            <h2 className="text-2xl font-bold text-center text-gray-600 uppercase">
               Páginas Encontradas:
             </h2>
             {filteredRoutes.length === 0 ? (
-              <div className="py-10 flex text-center items-center justify-center text-gray-600 h-auto text-xl">
-                <p>Nenhuma página correspondente.</p>
+              <div className="py-10 flex text-center items-center justify-center text-gray-600 text-xl">
+                <ul className="list-disc list-inside max-w-md mx-auto">
+                <p className="mb-6">Nenhuma página correspondente.</p>
+                  <li>Verifique a ortografia</li>
+                  <li>Use palavras mais genéricas</li>
+                  <li>Tente termos diferentes</li>
+                </ul>
               </div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                {filteredRoutes.map((r: any) => ( 
+                {filteredRoutes.map((r: any) => (
                   <Link
                     key={r.path}
                     href={r.path}
