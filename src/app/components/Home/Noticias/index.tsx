@@ -108,25 +108,24 @@ export const HoverImageLinks: React.FC = () => {
   }, [page]);
 
   return (
-    <section id="noticias">
+    <section id="noticias" className="pb-20">
       <div className="pt-20">
-  <h1 className="relative flex justify-center text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-slate-200 uppercase">
-    {/* Linha atravessando o texto */}
-    <div
-      className="absolute top-1/2 left-0 w-full"
-      style={{
-        height: "4px",
-        background: "linear-gradient(to right, white, #146c33, white)",
-        transform: "translateY(-50%)",
-      }}
-    ></div>
+        <h1 className="relative flex justify-center text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-slate-200 uppercase">
+          {/* Linha atravessando o texto */}
+          <div
+            className="absolute top-1/2 left-0 w-full"
+            style={{
+              height: "4px",
+              background: "linear-gradient(to right, white, #146c33, white)",
+              transform: "translateY(-50%)",
+            }}
+          ></div>
 
-    <span className="bg-[#146c33] px-4 sm:px-6 py-2 sm:py-4 rounded-full relative z-10">
-      Notícias
-    </span>
-  </h1>
-</div>
-
+          <span className="bg-[#146c33] px-4 sm:px-6 py-2 sm:py-4 rounded-full relative z-10">
+            Notícias
+          </span>
+        </h1>
+      </div>
 
       {loading ? (
         <p className="bg-gradient-to-b flex text-center items-center justify-center h-auto text-xl py-60 text-green-800">
@@ -189,8 +188,11 @@ export const HoverImageLinks: React.FC = () => {
             })}
           </div>
 
-          <div className="flex justify-center pb-20">
-            <div className="flex flex-wrap justify-center items-center space-x-1 sm:space-x-2 bg-slate-200 p-3 sm:p-5 rounded-lg shadow-lg">
+          <div className="relative flex justify-center">
+            {/* Linha de fundo exatamente no meio da paginação */}
+            <div className="absolute top-1/2 left-0 w-full h-0.5 bg-slate-300 -translate-y-1/2"></div>
+
+            <div className="relative flex flex-wrap justify-center items-center space-x-1 sm:space-x-2 bg-slate-200 p-3 sm:p-5 rounded-lg shadow-lg">
               {/* Números das páginas */}
               {[...Array(totalPages)].map((_, i) => {
                 const pageNumber = i + 1;
