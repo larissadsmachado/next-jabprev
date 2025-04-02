@@ -6,61 +6,61 @@ const data: Record<string, { date: string; url: string }[]> = {
   "2025": [
     {
       date: "Informativo nº 04.2025 – Aliquota",
-      url: "/Pdf/institucional/INFORMATIVO-no-004-2025-ALIQUOTA.pdf",
+      url: "/Pdf/institucional/informativos/INFORMATIVO-no-004-2025-ALIQUOTA.pdf",
     },
     {
       date: "Informativo nº 03.2025 – Mercado Financeiro 2024 vs Meta Atuarial",
-      url: "/Pdf/institucional/Boletim-Informativo-no-05.2024-Meta-atuarial-vs-Mercado-Financeiro-2024.pdf",
+      url: "/Pdf/institucional/informativos/Boletim-Informativo-no-05.2024-Meta-atuarial-vs-Mercado-Financeiro-2024.pdf",
     },
     {
       date: "Informativo nº 02.2025 – Prova de Vida",
-      url: "/Pdf/institucional/Informativo-no-002-2025-PROVA-DE-VIDA-1.pdf",
+      url: "/Pdf/institucional/informativos/Informativo-no-002-2025-PROVA-DE-VIDA-1.pdf",
     },
     {
       date: "Informativo nº 01.2025 – Pensão por Morte",
-      url: "/Pdf/institucional/03-ATInformativo-no-01.2025-Pensao-por-morte-1.pdf",
+      url: "/Pdf/institucional/informativos/Informativo-no-01.2025-Pensao-por-morte-1.pdf",
     },
   ],
   "2024": [
     {
       date: "Boletim Informativo nº 04.2024 – Aposentadoria Especial de Magistério",
-      url: "/Pdf/institucional/Boletim-Informativo-no-04.2024-Aposentadoria-Especial-de-Magisterio-1.pdf",
+      url: "/Pdf/institucional/informativos/Boletim-Informativo-no-04.2024-Aposentadoria-Especial-de-Magisterio-1.pdf",
     },
     {
       date: "Boletim Informativo nº 03.2024 – Emissão de CTC",
-      url: "/Pdf/institucional/Boletim-Informativo-no-03.2024-Emissao-de-CTC.pdf",
+      url: "/Pdf/institucional/informativos/Boletim-Informativo-no-03.2024-Emissao-de-CTC.pdf",
     },
     {
       date: "Boletim Informativo nº 02.2024 – Documentos Para pensão",
-      url: "/Pdf/institucional/Boletim-Informativo-no-02.2024-Documentos-Para-pensao.pdf",
+      url: "/Pdf/institucional/informativos/Boletim-Informativo-no-02.2024-Documentos-Para-pensao.pdf",
     },
     {
       date: "Boletim Informativo nº 01.2024 – Documentos Para Aposentadoria",
-      url: "/Pdf/institucional/Boletim-Informativo-no-01.2024-Documentos-Para-Aposentadoria.pdf",
+      url: "/Pdf/institucional/informativos/Boletim-Informativo-no-01.2024-Documentos-Para-Aposentadoria.pdf",
     },
   ],
   "2022": [
     {
       date: "Boletim n° 03 – Apresentação de CTC na instrução do processo de aposentadoria",
-      url: "/Pdf/institucional/Boletim-previdenciario-03-22-CTC.pdf",
+      url: "/Pdf/institucional/informativos/Boletim-previdenciario-03-22-CTC.pdf",
     },
     {
       date: "Boletim n° 02 – Nova norma de investimentos",
-      url: "/Pdf/institucional/Boletim-previdenciario-Investimentos2022.pdf",
+      url: "/Pdf/institucional/informativos/Boletim-previdenciario-Investimentos2022.pdf",
     },
     {
       date: "Boletim n° 01- Censo previdenciário",
-      url: "/Pdf/institucional/Boletim previdenciário - 01-22 - censo.pdf",
+      url: "/Pdf/institucional/informativos/Boletim previdenciário - 01-22 - censo.pdf",
     },
   ],
   "2021": [
     {
       date: "Boletim n° 02 – Taxa de juros parâmetro (Avaliações atuariais)",
-      url: "/Pdf/institucional/Boletim-previdenciario-01-2021-responsabilidades-1.pdf",
+      url: "/Pdf/institucional/informativos/Boletim-previdenciario-01-2021-responsabilidades-1.pdf",
     },
     {
       date: "Boletim n° 01 – Requisitos mínimos exigidos para gestores do RPPS-JG",
-      url: "/Pdf/institucional/Boletim-previdenciario-01-2021-responsabilidades-1 (1).pdf",
+      url: "/Pdf/institucional/informativos/Boletim-previdenciario-01-2021-responsabilidades-1 (1).pdf",
     },
   ],
 };
