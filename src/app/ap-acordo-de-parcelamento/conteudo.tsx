@@ -13,11 +13,11 @@ const reportsData: ReportsByYear = {
   "2017": [
     {
       title: "ACORDO CADPREV 01757/2017",
-      url: "Pdf/ap/ACORDO-CADPREV-01757-2017.pdf",
+      url: "Pdf/cad-prev/ap/ACORDO-CADPREV-01757-2017.pdf",
     },
     {
       title: "RELATÓRIO DE PAGAMENTO – ACORDO DE PARCELAMENTO",
-      url: "Pdf/ap/Relatorio-de-Pagamento-Acordo-de-Parcelamento.pdf",
+      url: "Pdf/cad-prev/ap/Relatorio-de-Pagamento-Acordo-de-Parcelamento.pdf",
     },
   ],
 };
