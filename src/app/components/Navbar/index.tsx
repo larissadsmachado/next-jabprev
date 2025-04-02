@@ -11,6 +11,7 @@ import { KeyboardEvent } from "react";
 import { useRouter } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 import React from "react";
+import { usePathname } from "next/navigation";
 
 interface NavItem {
   name: string;
@@ -349,6 +350,8 @@ const Logo = () => (
 );
 
 const NavLinks: React.FC = () => {
+  const pathname = usePathname();
+
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [activeSubMenu, setActiveSubMenu] = useState<string | null>(null);
   const [activeSubSubMenu, setActiveSubSubMenu] = useState<string | null>(null);
@@ -356,98 +359,124 @@ const NavLinks: React.FC = () => {
 
   const handleClick = () => {
     setIsLoading(true);
-    // Simulação de carregamento – substitua por sua lógica real, se necessário
     setTimeout(() => setIsLoading(false), 1000);
   };
 
   return (
     <div className="hidden lg:flex items-center relative uppercase">
       {isLoading && <LoadingScreen />}
-      {navigation.map((item) => (
-        <div
-          key={item.name}
-          className="relative group"
-          onMouseEnter={() => setActiveMenu(item.name)}
-          onMouseLeave={() => {
-            setActiveMenu(null);
-            setActiveSubMenu(null);
-            setActiveSubSubMenu(null);
-          }}
-        >
-          <Link
-            href={item.href}
-            className="text-[#0037C1] hover:bg-[#224276] hover:text-[#ffffff] text-[15px] hover:underline decoration-[#13AFF0] font-semibold flex p-3"
-            onClick={handleClick}
+      {navigation.map((item) => {
+        const isActive =
+          pathname.startsWith(item.href) ||
+          item.submenu?.some((sub) => pathname.startsWith(sub.href));
+        return (
+          <div
+            key={item.name}
+            className="relative group"
+            onMouseEnter={() => setActiveMenu(item.name)}
+            onMouseLeave={() => {
+              setActiveMenu(null);
+              setActiveSubMenu(null);
+              setActiveSubSubMenu(null);
+            }}
           >
-            {item.name}
-            {item.submenu && <MdKeyboardArrowDown className="ml-2" />}
-          </Link>
+            <Link
+              href={item.href}
+              className={`text-[#0037C1] text-[15px] font-semibold flex p-3 hover:bg-[#224276] hover:text-[#ffffff] hover:underline decoration-[#13AFF0] ${
+                isActive
+                  ? "bg-[#224276] underline decoration-[#13AFF0] text-[#ffffff]"
+                  : ""
+              }`}
+              onClick={handleClick}
+            >
+              {item.name}
+              {item.submenu && <MdKeyboardArrowDown className="ml-2" />}
+            </Link>
 
-          {activeMenu === item.name && item.submenu && (
-            <div className="absolute left-0 bg-[#2b73d0f5] shadow-lg w-60 border border-slate-300 z-50 flex flex-col ">
-              {item.submenu.map((subItem) => (
-                <div
-                  key={subItem.name}
-                  className="relative group"
-                  onMouseEnter={() => setActiveSubMenu(subItem.name)}
-                  onMouseLeave={() => setActiveSubMenu(null)}
-                >
-                  <Link
-                    href={subItem.href}
-                    className="px-4 py-3 text-white hover:bg-[#fdfdfd] hover:text-[#2b63ab] text-[15px] flex items-center"
-                    onClick={handleClick}
-                  >
-                    {subItem.name}
-                    {subItem.submenu && (
-                      <MdKeyboardArrowRight className="ml-2 text-white" />
-                    )}
-                  </Link>
-                  {activeSubMenu === subItem.name && subItem.submenu && (
-                    <div className="absolute left-full top-0 bg-[#2b73d0f5] shadow-lg  w-56 border border-slate-300 z-50 flex flex-col">
-                      {subItem.submenu.map((subSubItem) => (
-                        <div
-                          key={subSubItem.name}
-                          className="relative group"
-                          onMouseEnter={() =>
-                            setActiveSubSubMenu(subSubItem.name)
-                          }
-                          onMouseLeave={() => setActiveSubSubMenu(null)}
-                        >
-                          <Link
-                            href={subSubItem.href}
-                            className="px-4 py-2 text-white hover:bg-[#fdfdfd] hover:text-[#2b63ab] text-base flex items-center"
-                            onClick={handleClick}
-                          >
-                            {subSubItem.name}
-                            {subSubItem.submenu && (
-                              <MdKeyboardArrowRight className="ml-2 text-white" />
-                            )}
-                          </Link>
-                          {activeSubSubMenu === subSubItem.name &&
-                            subSubItem.submenu && (
-                              <div className="absolute left-full top-0 bg-[#2b73d0f5] shadow-lg w-56 border border-slate-300 z-50 flex flex-col">
-                                {subSubItem.submenu.map((subSubSubItem) => (
-                                  <Link
-                                    key={subSubSubItem.name}
-                                    href={subSubSubItem.href}
-                                    className="block px-4 py-2 text-white hover:bg-[#fdfdfd] hover:text-[#2b63ab] text-base"
-                                    onClick={handleClick}
-                                  >
-                                    {subSubSubItem.name}
-                                  </Link>
-                                ))}
+            {activeMenu === item.name && item.submenu && (
+              <div className="absolute left-0 bg-[#2b73d0f5] shadow-lg w-60 border border-slate-300 z-50 flex flex-col">
+                {item.submenu.map((subItem) => {
+                  const isSubActive = pathname.startsWith(subItem.href);
+                  return (
+                    <div
+                      key={subItem.name}
+                      className="relative group"
+                      onMouseEnter={() => setActiveSubMenu(subItem.name)}
+                      onMouseLeave={() => setActiveSubMenu(null)}
+                    >
+                      <Link
+                        href={subItem.href}
+                        className={`px-4 py-3 text-white text-[15px] flex items-center hover:bg-[#fdfdfd] hover:text-[#2b63ab] ${
+                          isSubActive ? "bg-[#224276] text-[#ffffff]" : ""
+                        }`}
+                        onClick={handleClick}
+                      >
+                        {subItem.name}
+                        {subItem.submenu && (
+                          <MdKeyboardArrowRight className="ml-2 text-white" />
+                        )}
+                      </Link>
+
+                      {activeSubMenu === subItem.name && subItem.submenu && (
+                        <div className="absolute left-full top-0 bg-[#2b73d0f5] shadow-lg w-56 border border-slate-300 z-50 flex flex-col">
+                          {subItem.submenu.map((subSubItem) => {
+                            const isSubSubActive = pathname.startsWith(
+                              subSubItem.href
+                            );
+                            return (
+                              <div
+                                key={subSubItem.name}
+                                className="relative group"
+                                onMouseEnter={() =>
+                                  setActiveSubSubMenu(subSubItem.name)
+                                }
+                                onMouseLeave={() => setActiveSubSubMenu(null)}
+                              >
+                                <Link
+                                  href={subSubItem.href}
+                                  className={`px-4 py-2 text-white text-base flex items-center hover:bg-[#fdfdfd] hover:text-[#2b63ab] ${
+                                    isSubSubActive
+                                      ? "bg-[#224276] text-[#ffffff]"
+                                      : ""
+                                  }`}
+                                  onClick={handleClick}
+                                >
+                                  {subSubItem.name}
+                                  {subSubItem.submenu && (
+                                    <MdKeyboardArrowRight className="ml-2 text-white" />
+                                  )}
+                                </Link>
+
+                                {activeSubSubMenu === subSubItem.name &&
+                                  subSubItem.submenu && (
+                                    <div className="absolute left-full top-0 bg-[#2b73d0f5] shadow-lg w-56 border border-slate-300 z-50 flex flex-col">
+                                      {subSubItem.submenu.map(
+                                        (subSubSubItem) => (
+                                          <Link
+                                            key={subSubSubItem.name}
+                                            href={subSubSubItem.href}
+                                            className="block px-4 py-2 text-white hover:bg-[#fdfdfd] hover:text-[#2b63ab] text-base"
+                                            onClick={handleClick}
+                                          >
+                                            {subSubSubItem.name}
+                                          </Link>
+                                        )
+                                      )}
+                                    </div>
+                                  )}
                               </div>
-                            )}
+                            );
+                          })}
                         </div>
-                      ))}
+                      )}
                     </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      ))}
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 };
