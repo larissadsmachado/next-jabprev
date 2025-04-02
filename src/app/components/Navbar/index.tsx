@@ -349,6 +349,7 @@ const Logo = () => (
   </div>
 );
 
+
 const NavLinks: React.FC = () => {
   const pathname = usePathname();
 
@@ -366,9 +367,7 @@ const NavLinks: React.FC = () => {
     <div className="hidden lg:flex items-center relative uppercase">
       {isLoading && <LoadingScreen />}
       {navigation.map((item) => {
-        const isActive =
-          pathname.startsWith(item.href) ||
-          item.submenu?.some((sub) => pathname.startsWith(sub.href));
+        const isActive = pathname.startsWith(item.href) || item.submenu?.some(sub => pathname.startsWith(sub.href) || sub.submenu?.some(subSub => pathname.startsWith(subSub.href)));
         return (
           <div
             key={item.name}
@@ -382,11 +381,7 @@ const NavLinks: React.FC = () => {
           >
             <Link
               href={item.href}
-              className={`text-[#0037C1] text-[15px] font-semibold flex p-3 hover:bg-[#224276] hover:text-[#ffffff] hover:underline decoration-[#13AFF0] ${
-                isActive
-                  ? "bg-[#224276] underline decoration-[#13AFF0] text-[#ffffff]"
-                  : ""
-              }`}
+              className={`text-[#0037C1] text-[15px] font-semibold flex p-3 hover:bg-[#224276] hover:text-[#ffffff] hover:underline decoration-[#13AFF0] ${isActive ? 'bg-[#224276] underline decoration-[#13AFF0] text-[#ffffff]' : ''}`}
               onClick={handleClick}
             >
               {item.name}
@@ -396,7 +391,7 @@ const NavLinks: React.FC = () => {
             {activeMenu === item.name && item.submenu && (
               <div className="absolute left-0 bg-[#2b73d0f5] shadow-lg w-60 border border-slate-300 z-50 flex flex-col">
                 {item.submenu.map((subItem) => {
-                  const isSubActive = pathname.startsWith(subItem.href);
+                  const isSubActive = pathname.startsWith(subItem.href) || subItem.submenu?.some(subSub => pathname.startsWith(subSub.href));
                   return (
                     <div
                       key={subItem.name}
@@ -406,9 +401,7 @@ const NavLinks: React.FC = () => {
                     >
                       <Link
                         href={subItem.href}
-                        className={`px-4 py-3 text-white text-[15px] flex items-center hover:bg-[#fdfdfd] hover:text-[#2b63ab] ${
-                          isSubActive ? "bg-[#224276] text-[#ffffff]" : ""
-                        }`}
+                        className={`px-4 py-3 text-white text-[15px] flex items-center hover:bg-[#fdfdfd] hover:text-[#2b63ab] ${isSubActive ? 'bg-[#224276] text-[#ffffff]' : ''}`}
                         onClick={handleClick}
                       >
                         {subItem.name}
@@ -420,25 +413,17 @@ const NavLinks: React.FC = () => {
                       {activeSubMenu === subItem.name && subItem.submenu && (
                         <div className="absolute left-full top-0 bg-[#2b73d0f5] shadow-lg w-56 border border-slate-300 z-50 flex flex-col">
                           {subItem.submenu.map((subSubItem) => {
-                            const isSubSubActive = pathname.startsWith(
-                              subSubItem.href
-                            );
+                            const isSubSubActive = pathname.startsWith(subSubItem.href);
                             return (
                               <div
                                 key={subSubItem.name}
                                 className="relative group"
-                                onMouseEnter={() =>
-                                  setActiveSubSubMenu(subSubItem.name)
-                                }
+                                onMouseEnter={() => setActiveSubSubMenu(subSubItem.name)}
                                 onMouseLeave={() => setActiveSubSubMenu(null)}
                               >
                                 <Link
                                   href={subSubItem.href}
-                                  className={`px-4 py-2 text-white text-base flex items-center hover:bg-[#fdfdfd] hover:text-[#2b63ab] ${
-                                    isSubSubActive
-                                      ? "bg-[#224276] text-[#ffffff]"
-                                      : ""
-                                  }`}
+                                  className={`px-4 py-2 text-white text-base flex items-center hover:bg-[#fdfdfd] hover:text-[#2b63ab] ${isSubSubActive ? 'bg-[#224276] text-[#ffffff]' : ''}`}
                                   onClick={handleClick}
                                 >
                                   {subSubItem.name}
@@ -447,23 +432,23 @@ const NavLinks: React.FC = () => {
                                   )}
                                 </Link>
 
-                                {activeSubSubMenu === subSubItem.name &&
-                                  subSubItem.submenu && (
-                                    <div className="absolute left-full top-0 bg-[#2b73d0f5] shadow-lg w-56 border border-slate-300 z-50 flex flex-col">
-                                      {subSubItem.submenu.map(
-                                        (subSubSubItem) => (
-                                          <Link
-                                            key={subSubSubItem.name}
-                                            href={subSubSubItem.href}
-                                            className="block px-4 py-2 text-white hover:bg-[#fdfdfd] hover:text-[#2b63ab] text-base"
-                                            onClick={handleClick}
-                                          >
-                                            {subSubSubItem.name}
-                                          </Link>
-                                        )
-                                      )}
-                                    </div>
-                                  )}
+                                {activeSubSubMenu === subSubItem.name && subSubItem.submenu && (
+                                  <div className="absolute left-full top-0 bg-[#2b73d0f5] shadow-lg w-56 border border-slate-300 z-50 flex flex-col">
+                                    {subSubItem.submenu.map((subSubSubItem) => {
+                                      const isSubSubSubActive = pathname.startsWith(subSubSubItem.href);
+                                      return (
+                                        <Link
+                                          key={subSubSubItem.name}
+                                          href={subSubSubItem.href}
+                                          className={`block px-4 py-2 text-white hover:bg-[#fdfdfd] hover:text-[#2b63ab] text-base ${isSubSubSubActive ? 'bg-[#224276] text-[#ffffff]' : ''}`}
+                                          onClick={handleClick}
+                                        >
+                                          {subSubSubItem.name}
+                                        </Link>
+                                      );
+                                    })}
+                                  </div>
+                                )}
                               </div>
                             );
                           })}
@@ -480,6 +465,7 @@ const NavLinks: React.FC = () => {
     </div>
   );
 };
+
 
 interface MobileMenuProps {
   closeMenu: () => void;
