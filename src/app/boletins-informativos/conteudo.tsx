@@ -1,0 +1,104 @@
+"use client";
+
+import React from "react";
+
+const data: Record<string, { date: string; url: string }[]> = {
+  "2025": [
+    {
+      date: "Informativo nº 04.2025 – Aliquota",
+      url: "/Pdf/institucional/INFORMATIVO-no-004-2025-ALIQUOTA.pdf",
+    },
+    {
+      date: "Informativo nº 03.2025 – Mercado Financeiro 2024 vs Meta Atuarial",
+      url: "/Pdf/institucional/Boletim-Informativo-no-05.2024-Meta-atuarial-vs-Mercado-Financeiro-2024.pdf",
+    },
+    {
+      date: "Informativo nº 02.2025 – Prova de Vida",
+      url: "/Pdf/institucional/Informativo-no-002-2025-PROVA-DE-VIDA-1.pdf",
+    },
+    {
+      date: "Informativo nº 01.2025 – Pensão por Morte",
+      url: "/Pdf/institucional/03-ATInformativo-no-01.2025-Pensao-por-morte-1.pdf",
+    },
+  ],
+  "2024": [
+    {
+      date: "Boletim Informativo nº 04.2024 – Aposentadoria Especial de Magistério",
+      url: "/Pdf/institucional/Boletim-Informativo-no-04.2024-Aposentadoria-Especial-de-Magisterio-1.pdf",
+    },
+    {
+      date: "Boletim Informativo nº 03.2024 – Emissão de CTC",
+      url: "/Pdf/institucional/Boletim-Informativo-no-03.2024-Emissao-de-CTC.pdf",
+    },
+    {
+      date: "Boletim Informativo nº 02.2024 – Documentos Para pensão",
+      url: "/Pdf/institucional/Boletim-Informativo-no-02.2024-Documentos-Para-pensao.pdf",
+    },
+    {
+      date: "Boletim Informativo nº 01.2024 – Documentos Para Aposentadoria",
+      url: "/Pdf/institucional/Boletim-Informativo-no-01.2024-Documentos-Para-Aposentadoria.pdf",
+    },
+  ],
+  "2022": [
+    {
+      date: "Boletim n° 03 – Apresentação de CTC na instrução do processo de aposentadoria",
+      url: "/Pdf/institucional/Boletim-previdenciario-03-22-CTC.pdf",
+    },
+    {
+      date: "Boletim n° 02 – Nova norma de investimentos",
+      url: "/Pdf/institucional/Boletim-previdenciario-Investimentos2022.pdf",
+    },
+    {
+      date: "Boletim n° 01- Censo previdenciário",
+      url: "/Pdf/institucional/Boletim previdenciário - 01-22 - censo.pdf",
+    },
+  ],
+  "2021": [
+    {
+      date: "Boletim n° 02 – Taxa de juros parâmetro (Avaliações atuariais)",
+      url: "/Pdf/institucional/Boletim-previdenciario-01-2021-responsabilidades-1.pdf",
+    },
+    {
+      date: "Boletim n° 01 – Requisitos mínimos exigidos para gestores do RPPS-JG",
+      url: "/Pdf/institucional/Boletim-previdenciario-01-2021-responsabilidades-1 (1).pdf",
+    },
+  ],
+};
+
+const Links = () => (
+  <div className="h-auto bg-gradient-to-b from-[#ffffff] via-[#dcecff] to-[#cbe1fc]">
+    <div className="mx-auto max-w-full sm:max-w-4xl md:max-w-6xl p-6 py-12 sm:py-16 md:py-20">
+      {Object.entries(data)
+        .sort(([yearA], [yearB]) => yearB.localeCompare(yearA, "pt-BR", { numeric: true }))
+        .map(([year, entries]) => (
+          <div key={year}>
+            <h1 className="lg:text-5xl text-4xl font-bold mb-4 uppercase text-blue-900 leading-tight">
+              {year}
+            </h1>
+            <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20 grid lg:grid-cols-2 gap-5">
+              {entries.map((entry, index) => (
+                <li key={index} className="py-2">
+                  <a
+                    href={entry.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-800 hover:underline"
+                  >
+                    {entry.date}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+    </div>
+  </div>
+);
+
+const Legislacao = () => (
+  <div className="flex flex-col">
+    <Links />
+  </div>
+);
+
+export default Legislacao;

@@ -15,7 +15,7 @@ const Links = () => (
         2024
       </h1>
 
-      <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20 grid lg:grid-cols-2">
+      <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20 grid lg:grid-cols-2 gap-5">
         <li className="py-2">
           <a
             href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/04/01.-Reuniao-do-Comite-de-Investimentos-19.01.2024.pdf"
@@ -117,7 +117,7 @@ const Links = () => (
         2023
       </h1>
 
-      <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20 grid lg:grid-cols-2">
+      <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20 grid lg:grid-cols-2 gap-5">
         <li className="py-2">
           <a
             href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/05/01.-Ata-do-Comite-de-Investimentos.pdf"
@@ -237,7 +237,7 @@ const Links = () => (
         2022
       </h1>
 
-      <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20 grid lg:grid-cols-2">
+      <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20 grid lg:grid-cols-2 gap-5">
         <li className="py-2">
           <a
             href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2022/03/Ata-00-10-de-Janeiro-2022.pdf"
@@ -379,7 +379,7 @@ const Links = () => (
         2021
       </h1>
 
-      <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20 grid lg:grid-cols-2">
+      <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20 grid lg:grid-cols-2 gap-5">
         <li className="py-2">
           <a
             href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/09/31-de-Marco-de-2021.pdf"
@@ -473,7 +473,7 @@ const Links = () => (
         2020
       </h1>
 
-      <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20 grid lg:grid-cols-2">
+      <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20 grid lg:grid-cols-2 gap-5">
         <li className="py-2">
           <a
             href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2020/12/ata-comite-janeiro-2020.pdf"
@@ -645,7 +645,7 @@ const Links = () => (
         2018
       </h1>
 
-      <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20 grid lg:grid-cols-2">
+      <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20 grid lg:grid-cols-2 gap-5">
         <li className="py-2">
           <a
             href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2018/10/ATA-DE-REUNIAO-04-09-10.pdf"
@@ -743,7 +743,7 @@ const Links = () => (
       2016
       </h1>
 
-      <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20 grid lg:grid-cols-2">
+      <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20 grid lg:grid-cols-2 gap-5">
         <li className="py-2">
           <a
             href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2019/06/ATA-19-02-16-COMITE.pdf"

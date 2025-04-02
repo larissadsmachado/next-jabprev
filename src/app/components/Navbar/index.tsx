@@ -29,16 +29,16 @@ const navigation: NavItem[] = [
       { name: "A equipe JaboatãoPREV", href: "/institucional/#organograma" },
       {
         name: "Certificações Profissional",
-        href: "/Pdf/CERTIFICACOES-GERAIS.pdf",
+        href: "/Pdf/menu/CERTIFICACOES-GERAIS.pdf",
       },
       { name: "Perguntas Frequentes", href: "/perguntas-frequentes" },
       { name: "Legislação", href: "/legislacao" },
       {
         name: "Cartilha Previdenciária",
-        href: "/Pdf/CARTILHA.pdf",
+        href: "/Pdf/menu/CARTILHA.pdf",
       },
-      { name: "Boletins Informativos", href: "/boletins-informativos" },
-      { name: "Controle Interno", href: "/controle-Interno" },
+      { name: "Informativos Previdenciários", href: "/boletins-informativos" },
+      { name: "Controle Interno", href: "/controle-interno" },
     ],
   },
 
@@ -67,7 +67,7 @@ const navigation: NavItem[] = [
         submenu: [
           {
             name: "Calendário de Pagamento",
-            href: "/Pdf/CALENDARIO-DE-PAGAMENTO-2024.pdf",
+            href: "/Pdf/menu/CALENDARIO-DE-PAGAMENTO-2024.pdf",
           },
 
           {
@@ -76,44 +76,44 @@ const navigation: NavItem[] = [
             submenu: [
               {
                 name: "Reuniões do Conselho Fiscal",
-                href: "/Pdf/Calendario-de-Reunioes-do-Conselho-Fiscal-2025.pdf",
+                href: "/Pdf/menu/Calendario-de-Reunioes-do-Conselho-Fiscal-2025.pdf",
               },
 
               {
                 name: "Reuniões do Conselho Deliberativo",
-                href: "/Pdf/Calendario-de-Reunioes-do-Conselho-Deliberativo-2025.pdf",
+                href: "/Pdf/menu/Calendario-de-Reunioes-do-Conselho-Deliberativo-2025.pdf",
               },
 
               {
                 name: "Reuniões do Comitê de Investimentos",
-                href: "/Pdf/Calendario-de-Reunioes-gerenciais-2025.pdf",
+                href: "/Pdf/menu/Calendario-de-Reunioes-gerenciais-2025.pdf",
               },
 
               {
                 name: "Reuniões da diretoria Executiva",
-                href: "/Pdf/Calendario-de-Reunioes-gerenciais-2025-1.pdf",
+                href: "/Pdf/menu/Calendario-de-Reunioes-gerenciais-2025-1.pdf",
               },
 
               {
                 name: "Reuniões setoriais",
-                href: "/Pdf/Calendario-de-Reunioes-Setoriais-2025.pdf",
+                href: "/Pdf/menu/Calendario-de-Reunioes-Setoriais-2025.pdf",
               },
 
               {
                 name: "Reuniões do Monitoramento",
-                href: "/Pdf/Calendario-de-Reunioes-de-Monitoramento-2025.pdf",
+                href: "/Pdf/menu/Calendario-de-Reunioes-de-Monitoramento-2025.pdf",
               },
 
               {
                 name: "Reuniões da comissão de revisão de benefícios",
-                href: "/Pdf/CALENDARIO-DE-REUNIOES-Comissao-2025.pdf",
+                href: "/Pdf/menu/CALENDARIO-DE-REUNIOES-Comissao-2025.pdf",
               },
             ],
           },
 
           {
             name: "Calendário de obrigações",
-            href: "/Pdf/Calendario-de-Envio-de-Informacoes-2025.pdf",
+            href: "/Pdf/menu/Calendario-de-Envio-de-Informacoes-2025.pdf",
           },
 
           {
@@ -122,7 +122,7 @@ const navigation: NavItem[] = [
             submenu: [
               {
                 name: " Dia de acolhimento e boas vindas",
-                href: "/Pdf/Calendario-cafe-da-manha-2025-1.pdf",
+                href: "/Pdf/menu/Calendario-cafe-da-manha-2025-1.pdf",
               },
             ],
           },
@@ -133,7 +133,7 @@ const navigation: NavItem[] = [
 
       {
         name: "Educação previdenciária e financeira",
-        href: "/Pdf/Cronograma-de-Educacao-Previdenciaria-2024.pdf",
+        href: "/Pdf/menu/Cronograma-de-Educacao-Previdenciaria-2024.pdf",
       },
 
       { name: "folha de pagamento", href: "/folha-de-pagamento" },
@@ -167,7 +167,7 @@ const navigation: NavItem[] = [
       { name: "prestações de contas", href: "/prestacoes-de-contas" },
       {
         name: "mapeamento",
-        href: "/Pdf/FINANCEIRO-2.pdf",
+        href: "/Pdf/menu/FINANCEIRO-2.pdf",
       },
     ],
   },
@@ -183,11 +183,11 @@ const navigation: NavItem[] = [
       { name: "política de investimentos", href: "/politica-de-investimentos" },
       {
         name: "Relatório anual de investimentos",
-        href: "/Pdf/13.-RELATORIO-ANUAL-2023.pdf",
+        href: "/Pdf/menu/13.-RELATORIO-ANUAL-2023.pdf",
       },
       {
         name: "regime interno",
-        href: "/Pdf/REGIMENTO-INTERNO-COMITE-DE-INVESTIMENTOS.pdf",
+        href: "/Pdf/menu/REGIMENTO-INTERNO-COMITE-DE-INVESTIMENTOS.pdf",
       },
       { name: "relatório mensais", href: "/relatorio-mensais" },
       {
@@ -197,7 +197,7 @@ const navigation: NavItem[] = [
       { name: "Estudo de alm", href: "/estudo-de-alm" },
       {
         name: "mapeamento",
-        href: "/Pdf/MAPEAMENTO-SETOR-DE-INVESTIMENTOS.pdf",
+        href: "/Pdf/menu/MAPEAMENTO-SETOR-DE-INVESTIMENTOS.pdf",
       },
     ],
   },
@@ -209,7 +209,7 @@ const navigation: NavItem[] = [
       { name: "provisões matemáticas", href: "/provisoes-matematicas" },
       {
         name: "relatório gestão atual",
-        href: "/Pdf/Jaboatao-dos-Guararapes-PE-Relatorio-Pro-Gestao-2023-Nivel-II.pdf",
+        href: "/Pdf/menu/Jaboatao-dos-Guararapes-PE-Relatorio-Pro-Gestao-2023-Nivel-II.pdf",
       },
       {
         name: "relatórios atuariais ",
@@ -217,19 +217,19 @@ const navigation: NavItem[] = [
         submenu: [
           {
             name: "Avaliação Atuarial 2025",
-            href: "/Pdf/Jaboatao_dos_GuararapesPE-Relatorio-Avaliacao-Atuarial-Segregacao-2025-N009_V1.pdf",
+            href: "/Pdf/menu/Jaboatao_dos_GuararapesPE-Relatorio-Avaliacao-Atuarial-Segregacao-2025-N009_V1.pdf",
           },
           {
             name: "Avaliação Atuarial 2024",
-            href: "/Pdf/Jaboatao-dos-Guararapes-PE-Relatorio-Avaliacao-Atuarial-2024-N021_V1-1.pdf",
+            href: "/Pdf/menu/Jaboatao-dos-Guararapes-PE-Relatorio-Avaliacao-Atuarial-2024-N021_V1-1.pdf",
           },
           {
             name: "Avaliação Atuarial 2023",
-            href: "/Pdf/Avalicao-atuarial-2023.pdf",
+            href: "/Pdf/menu/Avalicao-atuarial-2023.pdf",
           },
           {
             name: "Avaliação Atuarial 2022",
-            href: "/Pdf/Jaboatao-dos-Guararapes-PE-Relatorio-Avaliacao-Atuarial-2022-N043V1-Com-Segregacao-1.pdf",
+            href: "/Pdf/menu/Jaboatao-dos-Guararapes-PE-Relatorio-Avaliacao-Atuarial-2022-N043V1-Com-Segregacao-1.pdf",
           },
           {
             name: "Avaliação Atuarial 2021",
@@ -237,11 +237,11 @@ const navigation: NavItem[] = [
             submenu: [
               {
                 name: "Captalizado",
-                href: "/Pdf/RelatorioAA-Prev-2021-JABOATAO.pdf",
+                href: "/Pdf/menu/RelatorioAA-Prev-2021-JABOATAO.pdf",
               },
               {
                 name: "Financeiro",
-                href: "/Pdf/RelatorioAA-FINANC-2021-JABOATAO.pdf",
+                href: "/Pdf/menu/RelatorioAA-FINANC-2021-JABOATAO.pdf",
               },
             ],
           },
@@ -251,35 +251,35 @@ const navigation: NavItem[] = [
             submenu: [
               {
                 name: "Captalizado",
-                href: "/Pdf/RelatorioAA-Prev-MAR-2020-JABOATÃO-mesclado.pdf",
+                href: "/Pdf/menu/RelatorioAA-Prev-MAR-2020-JABOATÃO-mesclado.pdf",
               },
               {
                 name: "Financeiro",
-                href: "/Pdf/RelatorioAA-FINANC-MAR-2020-JABOATÃO-mesclado.pdf",
+                href: "/Pdf/menu/RelatorioAA-FINANC-MAR-2020-JABOATÃO-mesclado.pdf",
               },
             ],
           },
           {
             name: "Avaliação Atuarial 2019",
-            href: "/Pdf/Avaliação-Atuarial-2019.pdf",
+            href: "/Pdf/menu/Avaliação-Atuarial-2019.pdf",
           },
           {
             name: "Avaliação Atuarial 2018",
-            href: "/Pdf/Avaliação-Atuarial-2018.pdf",
+            href: "/Pdf/menu/Avaliação-Atuarial-2018.pdf",
           },
           {
             name: "Avaliação Atuarial 2017",
-            href: "/Pdf/Avaliação-Atuarial-2017.pdf",
+            href: "/Pdf/menu/Avaliação-Atuarial-2017.pdf",
           },
         ],
       },
       {
         name: "contribuições previdenciária",
-        href: "/Pdf/Lei-complementar-40-reorganiza-o-RPPS.pdf",
+        href: "/Pdf/menu/Lei-complementar-40-reorganiza-o-RPPS.pdf",
       },
       {
         name: "mapeamento",
-        href: "/Pdf/PREVIDENCIA.pdf",
+        href: "/Pdf/menu/PREVIDENCIA.pdf",
       },
     ],
   },
@@ -311,7 +311,7 @@ const navigation: NavItem[] = [
   },
   {
     name: "Carta de Serviço",
-    href: "/Pdf/carta.pdf",
+    href: "/Pdf/menu/carta.pdf",
   },
   {
     name: "Sites Relacionados",
