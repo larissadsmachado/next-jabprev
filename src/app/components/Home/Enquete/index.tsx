@@ -62,7 +62,7 @@ const FeedbackForm = () => {
       className="justify-center items-center rounded-b-[50px] px-4 sm:px-8 md:px-20 my-10"
     >
       <div className="pt-10 pb-10">
-        <h1 className="relative flex flex-col items-center text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl leading-loose font-semibold text-slate-200 uppercase text-center">
+        <h1 className="relative flex flex-col items-center text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl xl:leading-tight font-semibold text-slate-200 uppercase text-center">
           {/* Linha atravessando o texto */}
           <div
             className="absolute top-1/2 left-0 w-full"
@@ -73,7 +73,7 @@ const FeedbackForm = () => {
             }}
           ></div>
 
-          <span className="bg-[#1E3A8A] px-4 sm:px-9 py-1 sm:py-5 rounded-full relative z-10">
+          <span className="bg-[#1E3A8A] px-8 sm:px-12 py-2 sm:py-5 rounded-full relative z-10">
             Avalie Nosso <br /> Serviço
           </span>
         </h1>
