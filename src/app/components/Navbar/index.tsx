@@ -129,7 +129,7 @@ const navigation: NavItem[] = [
         ],
       },
 
-      { name: "Contratos", href: "Contratos" },
+      { name: "Contratos", href: "contratos" },
 
       {
         name: "Educação previdenciária e financeira",
@@ -179,7 +179,7 @@ const navigation: NavItem[] = [
         name: "Apr-autorização de aplicação e resgate",
         href: "/apr-autorizacao-de-aplicacao-e-resgate",
       },
-      { name: "credenciamentos", href: "/Credenciamentos" },
+      { name: "credenciamentos", href: "/credenciamentos" },
       { name: "política de investimentos", href: "/politica-de-investimentos" },
       {
         name: "Relatório anual de investimentos",

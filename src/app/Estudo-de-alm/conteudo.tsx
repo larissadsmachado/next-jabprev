@@ -4,7 +4,7 @@ const FinancialReports: React.FC = () => {
   return (
     <div className="h-auto py-44 flex items-center justify-center bg-gradient-to-b from-[#ffffff] to-green-900">
       <a
-        href="http://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2022/05/RELATORIO-DE-ALM.pdf"
+        href="Pdf\alm\RELATORIO-DE-ALM.pdf"
         target="_blank"
         rel="noopener noreferrer"
         title="Abrir Relatório de ALM 2022"

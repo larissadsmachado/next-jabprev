@@ -9,9 +9,8 @@ interface ReportsByYear {
 }
 
 const reportsData: ReportsByYear = {
-  "2025": { title: "2025", url: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/CRP-2025_30.07.25.pdf" },
+  "2025": { title: "2025", url: "Pdf/crp/CRP-2025_30.07.25.pdf" },
 };
-
 const FinancialReports: React.FC = () => {
   return (
     <div className="bg-gradient-to-b from-[#ffffff] via-[#dcecff] to-[#cbe1fc] pb-20 flex flex-wrap justify-center gap-10 py-20">
