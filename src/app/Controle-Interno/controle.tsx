@@ -40,6 +40,15 @@ const Links = () => (
             Relatório Mensal Controle – 3º Trimestre
           </a>
         </li>
+        <li className="py-2">
+          <a
+            href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/03/Relatorio-de-Controle-Interno-4o-Trimestre-2024.pdf"
+            target="_blank"
+            className="text-blue-800 hover:underline"
+          >
+            Relatório Mensal Controle – 4º Trimestre
+          </a>
+        </li>
       </ul>
 
       <h1 className="text-5xl font-bold mb-4 uppercase text-blue-900 leading-tight">

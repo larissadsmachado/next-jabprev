@@ -60,7 +60,7 @@ const data: Record<string, { date: string; url: string }[]> = {
     },
     {
       date: "Boletim n° 01 – Requisitos mínimos exigidos para gestores do RPPS-JG",
-      url: "/Pdf/institucional/informativos/Boletim-previdenciario-01-2021-responsabilidades-1 (1).pdf",
+      url: "/Pdf/institucional/informativos/Boletim-previdenciario-01-2021-responsabilidades-1.pdf",
     },
   ],
 };
