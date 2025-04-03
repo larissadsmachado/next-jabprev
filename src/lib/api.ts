@@ -1,8 +1,8 @@
 export async function fetchPostById(id: string) {
   try {
-    const res = await fetch(
-      `https://jaboataoprev.jaboatao.pe.gov.br/wp-json/wp/v2/posts/${id}`
-    );
+    const wordpressUrl = typeof process !== "undefined" ? process.env.NEXT_PUBLIC_WORDPRESS ?? "" : "";
+
+    const res = await fetch(`${wordpressUrl}/wp-json/wp/v2/posts/${id}`);
 
     if (!res.ok) throw new Error("Erro ao buscar post");
 
@@ -13,9 +13,7 @@ export async function fetchPostById(id: string) {
 
     if (post.featured_media) {
       try {
-        const mediaRes = await fetch(
-          `https://jaboataoprev.jaboatao.pe.gov.br/wp-json/wp/v2/media/${post.featured_media}`
-        );
+        const mediaRes = await fetch(`${wordpressUrl}/wp-json/wp/v2/media/${post.featured_media}`);
 
         if (mediaRes.ok) {
           const media = await mediaRes.json();

@@ -34,9 +34,12 @@ export const HoverImageLinks: React.FC = () => {
       try {
         setLoading(true);
 
+        const wordpressUrl = process.env.NEXT_PUBLIC_WORDPRESS ?? "";
+
         const res = await fetch(
-          `https://jaboataoprev.jaboatao.pe.gov.br/wp-json/wp/v2/posts?per_page=${POSTS_PER_PAGE}&page=${page}`
+          `${wordpressUrl}/wp-json/wp/v2/posts?per_page=${POSTS_PER_PAGE}&page=${page}`
         );
+
         const data: Post[] = await res.json();
 
         if (!Array.isArray(data)) {
@@ -56,8 +59,9 @@ export const HoverImageLinks: React.FC = () => {
             if (post.featured_media) {
               try {
                 const mediaRes = await fetch(
-                  `https://jaboataoprev.jaboatao.pe.gov.br/wp-json/wp/v2/media/${post.featured_media}`
+                  `${wordpressUrl}/wp-json/wp/v2/media/${post.featured_media}`
                 );
+
                 if (!mediaRes.ok) throw new Error("Erro ao buscar imagem");
 
                 const mediaData = await mediaRes.json();
@@ -84,17 +88,21 @@ export const HoverImageLinks: React.FC = () => {
         const categoryIds = [
           ...new Set(data.flatMap((post) => post.categories)),
         ];
+
         if (categoryIds.length > 0) {
           const categoryRes = await fetch(
-            `https://jaboataoprev.jaboatao.pe.gov.br/wp-json/wp/v2/categories?include=${categoryIds.join(
+            `${wordpressUrl}/wp-json/wp/v2/categories?include=${categoryIds.join(
               ","
             )}`
           );
+
           const categoryData: Category[] = await categoryRes.json();
+
           const categoryMap = categoryData.reduce(
             (acc, cat) => ({ ...acc, [cat.id]: cat.name }),
             {} as { [key: number]: string }
           );
+
           setCategories(categoryMap);
         }
       } catch (error) {
@@ -111,7 +119,6 @@ export const HoverImageLinks: React.FC = () => {
     <section id="noticias" className="pb-20">
       <div className="pt-20">
         <h1 className="relative flex justify-center text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-slate-200 uppercase">
-          {/* Linha atravessando o texto */}
           <div
             className="absolute top-1/2 left-0 w-full"
             style={{
@@ -120,7 +127,6 @@ export const HoverImageLinks: React.FC = () => {
               transform: "translateY(-50%)",
             }}
           ></div>
-
           <span className="bg-[#146c33] px-4 sm:px-6 py-2 sm:py-4 rounded-full relative z-10">
             Notícias
           </span>
@@ -133,61 +139,40 @@ export const HoverImageLinks: React.FC = () => {
         </p>
       ) : (
         <>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-10 p-4 lg:px-16 px-16 py-20 ">
-            {posts.map((post) => {
-              const imageUrl = media[post.featured_media];
-              const finalUrl = imageUrl?.startsWith("/")
-                ? `https://jaboataoprev.jaboatao.pe.gov.br${imageUrl}`
-                : imageUrl;
-
-              const postCategories = post.categories.map(
-                (catId) => categories[catId] || "Sem categoria"
-              );
-
-              return (
-                <motion.div
-                  key={post.id}
-                  className="bg-slate-100 shadow-md rounded-xl relative border-8 border-[#dee1f2] hover:border-slate-500 hover:shadow-2xl p-2 transition-shadow duration-300"
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
-                >
-                  <Link href={`/noticia/${post.id}`} className="block group">
-                    {/* Categoria em destaque */}
-                    {postCategories.length > 0 && (
-                      <div className="absolute top-2 left-2 bg-[#008C32] text-white text-xs font-bold px-3 py-1 rounded-tl-md rounded-br-lg z-10">
-                        {postCategories[0]}
-                      </div>
-                    )}
-
-                    <div className="relative w-full h-48 overflow-hidden rounded-t-lg">
-                      <Image
-                        key={finalUrl}
-                        src={`/api/image-proxy?url=${encodeURIComponent(
-                          finalUrl || ""
-                        )}`}
-                        alt={post.title.rendered}
-                        width={500}
-                        height={300}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                        unoptimized
-                      />
-                      <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-300 pointer-events-none" />
-                    </div>
-                    <div className="p-4">
-                      <h2 className="text-lg font-bold leading-tight text-blue-900">
-                        {post.title.rendered}
-                      </h2>
-                      <p className="mt-2 text-sm text-gray-500 flex items-center gap-1">
-                        <span className="grayscale opacity-80">📅</span>
-                        {new Date(post.date).toLocaleDateString("pt-BR")}
-                      </p>
-                    </div>
-                  </Link>
-                </motion.div>
-              );
-            })}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-10 p-4 lg:px-16 px-16 py-20">
+            {posts.map((post) => (
+              <motion.div
+                key={post.id}
+                className="bg-slate-100 shadow-md rounded-xl relative border-8 border-[#dee1f2] hover:border-slate-500 hover:shadow-2xl p-2 transition-shadow duration-300"
+                whileHover={{ scale: 1.05, y: -5 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+              >
+                <Link href={`/noticia/${post.id}`} className="block group">
+                  <div className="relative w-full h-48 overflow-hidden rounded-t-lg">
+                    <Image
+                      key={media[post.featured_media]}
+                      src={`/api/image-proxy?url=${encodeURIComponent(
+                        media[post.featured_media] || ""
+                      )}`}
+                      alt={post.title.rendered}
+                      width={500}
+                      height={300}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      unoptimized
+                    />
+                  </div>
+                  <div className="p-4">
+                    <h2 className="text-lg font-bold leading-tight text-blue-900">
+                      {post.title.rendered}
+                    </h2>
+                    <p className="mt-2 text-sm text-gray-500 flex items-center gap-1">
+                      📅 {new Date(post.date).toLocaleDateString("pt-BR")}
+                    </p>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
           </div>
-
           <div className="relative flex justify-center">
             {/* Linha de fundo exatamente no meio da paginação */}
             <div className="absolute top-1/2 left-0 w-full h-0.5 bg-slate-300 -translate-y-1/2"></div>

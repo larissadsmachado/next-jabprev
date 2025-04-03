@@ -33,8 +33,9 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
   const [filteredRoutes, setFilteredRoutes] = useState<any[]>([]);
 
   useEffect(() => {
+    const WORDPRESS_API = process.env.NEXT_PUBLIC_WORDPRESS;
+
     async function fetchData() {
-      // Se não houver termo de pesquisa, zera os estados
       if (!searchTerm) {
         setPosts([]);
         setFilteredRoutes([]);
@@ -45,9 +46,8 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
       setLoading(true);
 
       try {
-        // Buscar posts (Notícias)
         const res = await fetch(
-          `https://jaboataoprev.jaboatao.pe.gov.br/wp-json/wp/v2/posts?search=${encodeURIComponent(
+          `${WORDPRESS_API}/wp-json/wp/v2/posts?search=${encodeURIComponent(
             searchTerm
           )}&page=${page}&per_page=${POSTS_PER_PAGE}`
         );
@@ -65,13 +65,12 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
           setTotalPages(parseInt(totalPagesHeader, 10));
         }
 
-        // Buscar imagens para cada post
         const mediaResults = await Promise.all(
           data.map(async (post) => {
             if (!post.featured_media) return null;
             try {
               const mediaRes = await fetch(
-                `https://jaboataoprev.jaboatao.pe.gov.br/wp-json/wp/v2/media/${post.featured_media}`
+                `${WORDPRESS_API}/wp-json/wp/v2/media/${post.featured_media}`
               );
               if (!mediaRes.ok) throw new Error("Erro ao buscar imagem");
               const mediaData = await mediaRes.json();
@@ -88,13 +87,12 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
         }, {} as { [key: number]: string });
         setMedia(mediaMap);
 
-        // Buscar categorias
         const categoryIds = [
           ...new Set(data.flatMap((post) => post.categories)),
         ];
         if (categoryIds.length > 0) {
           const categoryRes = await fetch(
-            `https://jaboataoprev.jaboatao.pe.gov.br/wp-json/wp/v2/categories?include=${categoryIds.join(
+            `${WORDPRESS_API}/wp-json/wp/v2/categories?include=${categoryIds.join(
               ","
             )}`
           );
@@ -106,17 +104,15 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
           setCategories(categoryMap);
         }
 
-        // Buscar rotas (Páginas Estáticas)
         const routesRes = await fetch("/data/routes.json");
         if (!routesRes.ok) throw new Error("Erro ao buscar routes.json");
         const allRoutes = await routesRes.json();
 
-        // Normaliza o termo de pesquisa para comparação
         const normalizedSearchTerm = searchTerm
-          .normalize("NFD") // Remove acentos
-          .replace(/[\u0300-\u036f]/g, "") // Remove diacríticos
+          .normalize("NFD")
+          .replace(/[̀-ͯ]/g, "")
           .toLowerCase()
-          .replace(/\s+/g, "-"); // Substitui espaços por hífen
+          .replace(/\s+/g, "-");
 
         const fuseOptions = {
           keys: ["title", "path", "description"],
@@ -221,7 +217,7 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
             {filteredRoutes.length === 0 ? (
               <div className="py-10 flex text-center items-center justify-center text-gray-600 text-xl">
                 <ul className="list-disc list-inside max-w-md mx-auto">
-                <p className="mb-6">Nenhuma página correspondente.</p>
+                  <p className="mb-6">Nenhuma página correspondente.</p>
                   <li>Verifique a ortografia</li>
                   <li>Use palavras mais genéricas</li>
                   <li>Tente termos diferentes</li>
