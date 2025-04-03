@@ -1,5 +1,6 @@
-@import "tailwindcss/preflight";
-@import "tailwindcss/utilities"; /* Substitui components e utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 
 @font-face {
