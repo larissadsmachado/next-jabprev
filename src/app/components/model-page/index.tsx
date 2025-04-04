@@ -4,11 +4,12 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 interface ModelProps {
-  children: React.ReactNode;
-  caminhoImagem?: string;
+  caminhoImagem: string;
   titulo: string;
   subtitulo: React.ReactNode;
+  children?: React.ReactNode;
 }
+
 
 const Model = ({ children, titulo, subtitulo }: ModelProps) => {
   return (

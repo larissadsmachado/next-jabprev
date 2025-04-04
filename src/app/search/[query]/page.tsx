@@ -20,16 +20,19 @@ export default function SearchResults({
     <div>
       <Model
         caminhoImagem={"/images/"}
-        titulo={`Resultados para: ${searchTerm || ""}`} // Garante que searchTerm apareça corretamente
-        subtitulo={<span>
-          <Link
-            href="../"
-            className="text-white hover:underline hover:text-yellow-500 hover:brightness-125 transition-all"
-          >
-            INÍCIO
-          </Link>
-          &nbsp;» <span className="brightness-125">SEARCH</span>
-        </span>} children={undefined}></Model>
+        titulo={`Resultados para: ${searchTerm || ""}`}
+        subtitulo={
+          <span>
+            <Link
+              href="../"
+              className="text-white hover:underline hover:text-yellow-500 hover:brightness-125 transition-all"
+            >
+              INÍCIO
+            </Link>
+            &nbsp;» <span className="brightness-125">SEARCH</span>
+          </span>
+        }
+      />
 
       <SearchPage searchTerm={searchTerm} />
     </div>

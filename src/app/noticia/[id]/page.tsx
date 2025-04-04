@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { notFound } from "next/navigation";
 import { fetchPostById } from "@/lib/api";
-import { FaCalendarAlt, FaClock, FaTag } from "react-icons/fa";
+import { FaCalendarAlt, FaClock } from "react-icons/fa";
 import Image from "next/image";
 import { JSX } from "react/jsx-runtime";
 import React from "react";

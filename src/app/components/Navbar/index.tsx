@@ -7,7 +7,6 @@ import Image from "next/image";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/20/solid";
 import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 import { motion } from "framer-motion";
-import { KeyboardEvent } from "react";
 import { useRouter } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 import React from "react";
@@ -506,7 +505,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ closeMenu }) => {
     }
   };
 
-  const renderSubMenu = (items: any[], level = 1) => (
+  const renderSubMenu = (items: NavItem[], level = 1) => (
     <div className={`pl-${level * 4} mt-2 text-center`}>
       {items.map((item) => (
         <div key={item.name} className="mb-2">

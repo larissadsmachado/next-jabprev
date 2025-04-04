@@ -17,6 +17,12 @@ type Post = {
 
 type Category = { id: number; name: string };
 
+type Route = {
+  title: string;
+  path: string;
+  description?: string;
+};
+
 interface SearchPageProps {
   searchTerm?: string;
 }
@@ -27,10 +33,15 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [totalPages, setTotalPages] = useState(1);
   const [media, setMedia] = useState<{ [key: number]: string }>({});
   const [categories, setCategories] = useState<{ [key: number]: string }>({});
-  const [filteredRoutes, setFilteredRoutes] = useState<any[]>([]);
+  const [filteredRoutes, setFilteredRoutes] = useState<Route[]>([]);
+
+  useEffect(() => {
+    setPage(1);
+  }, [searchTerm]);
 
   useEffect(() => {
     const WORDPRESS_API = process.env.NEXT_PUBLIC_WORDPRESS;
@@ -81,38 +92,34 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
             }
           })
         );
-        const mediaMap = mediaResults.reduce((acc, item) => {
-          if (item) acc[item.id] = item.url;
-          return acc;
-        }, {} as { [key: number]: string });
+
+        const mediaMap = Object.fromEntries(
+          mediaResults
+            .filter((item): item is { id: number; url: string } => !!item)
+            .map((item) => [item.id, item.url])
+        );
         setMedia(mediaMap);
 
-        const categoryIds = [
-          ...new Set(data.flatMap((post) => post.categories)),
-        ];
+        const categoryIds = [...new Set(data.flatMap((post) => post.categories))];
         if (categoryIds.length > 0) {
           const categoryRes = await fetch(
-            `${WORDPRESS_API}/wp-json/wp/v2/categories?include=${categoryIds.join(
-              ","
-            )}`
+            `${WORDPRESS_API}/wp-json/wp/v2/categories?include=${categoryIds.join(",")}`
           );
           const categoryData: Category[] = await categoryRes.json();
-          const categoryMap = categoryData.reduce(
-            (acc, cat) => ({ ...acc, [cat.id]: cat.name }),
-            {} as { [key: number]: string }
+          const categoryMap = Object.fromEntries(
+            categoryData.map((cat) => [cat.id, cat.name])
           );
           setCategories(categoryMap);
         }
 
         const routesRes = await fetch("/data/routes.json");
         if (!routesRes.ok) throw new Error("Erro ao buscar routes.json");
-        const allRoutes = await routesRes.json();
+        const allRoutes: Route[] = await routesRes.json();
 
         const normalizedSearchTerm = searchTerm
           .normalize("NFD")
-          .replace(/[̀-ͯ]/g, "")
-          .toLowerCase()
-          .replace(/\s+/g, "-");
+          .replace(/[\u0300-\u036f]/g, "")
+          .toLowerCase();
 
         const fuseOptions = {
           keys: ["title", "path", "description"],
@@ -142,7 +149,6 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
         </p>
       ) : (
         <>
-          {/* Se houver notícias, exibe os cards de posts */}
           <h2 className="text-2xl font-bold mb-4 text-center text-gray-600 pt-20 uppercase">
             Notícias Encontradas:
           </h2>
@@ -176,17 +182,19 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
                       )}
 
                       <div className="relative w-full h-48 overflow-hidden rounded-t-lg">
-                        <Image
-                          key={finalUrl}
-                          src={`/api/image-proxy?url=${encodeURIComponent(
-                            finalUrl || ""
-                          )}`}
-                          alt={post.title.rendered}
-                          width={500}
-                          height={300}
-                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                          unoptimized
-                        />
+                        {finalUrl ? (
+                          <Image
+                            key={finalUrl}
+                            src={`/api/image-proxy?url=${encodeURIComponent(finalUrl)}`}
+                            alt={post.title.rendered}
+                            width={500}
+                            height={300}
+                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                            unoptimized
+                          />
+                        ) : (
+                          <div className="w-full h-full bg-gray-300" />
+                        )}
                         <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-300 pointer-events-none" />
                       </div>
 
@@ -209,7 +217,6 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
             </div>
           )}
 
-          {/* Se houver páginas estáticas (rotas), exibe-as abaixo */}
           <div className="bg-white px-4 sm:px-8 md:px-16 lg:px-24 xl:px-36 pt-8 pb-28">
             <h2 className="text-2xl font-bold text-center text-gray-600 uppercase">
               Páginas Encontradas:
@@ -225,18 +232,14 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
               </div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                {filteredRoutes.map((r: any) => (
+                {filteredRoutes.map((r) => (
                   <Link
                     key={r.path}
                     href={r.path}
                     className="text-green-700 hover:text-green-900 border-2 border-bg-slate-300 shadow-lg rounded-lg hover:shadow-2xl transition-shadow duration-300"
                   >
-                    <div
-                      key={r.path}
-                      className="bg-slate-100 hover:bg-slate-200 shadow-lg rounded-lg p-6 hover:shadow-2xl transition-shadow duration-300"
-                    >
+                    <div className="bg-slate-100 hover:bg-slate-200 shadow-lg rounded-lg p-6 hover:shadow-2xl transition-shadow duration-300">
                       <h3 className="text-lg font-bold">{r.title}</h3>
-
                       <p className="text-sm text-gray-600">{r.description}</p>
                     </div>
                   </Link>
