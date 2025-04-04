@@ -161,6 +161,16 @@ export const HoverImageLinks: React.FC = () => {
                       unoptimized
                     />
                   </div>
+
+                  {post.categories.map((catId) => (
+                    <span
+                      key={catId}
+                      className="absolute top-2 left-2 bg-green-700 text-white text-xs font-semibold px-2 py-1 rounded shadow-sm z-10"
+                    >
+                      {categories[catId]}
+                    </span>
+                  ))}
+
                   <div className="p-4">
                     <h2 className="text-lg font-bold leading-tight text-blue-900">
                       {post.title.rendered}

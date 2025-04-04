@@ -44,7 +44,7 @@ export default async function handler(
       const recipientEmail = "beneficios@jaboataoprev.jaboatao.pe.gov.br";
 
       // Processa os arquivos para criar anexos, tratando a possibilidade de arrays
-      const attachments: any[] = Object.keys(files).map((key) => {
+        const attachments: { filename: string; path: string }[] = Object.keys(files).map((key) => {
         const fileField = files[key];
         let file: formidable.File;
         if (Array.isArray(fileField)) {
