@@ -1,16 +1,9 @@
 "use client";
-import { Viewer } from "@react-pdf-viewer/core";
-import "@react-pdf-viewer/core/lib/styles/index.css";
-import "@react-pdf-viewer/default-layout/lib/styles/index.css";
-import { GlobalWorkerOptions } from "pdfjs-dist";
-
-GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/3.0.279/pdf.worker.min.js`;
-
 
 const pdfFiles = [
   { local: "/Pdf/Cronograma-de-Capacitacao/capacitacao1.pdf" },
   { local: "/Pdf/Cronograma-de-Capacitacao/capacitacao2.pdf" },
-  { local: "/Pdf/Cronograma-de-Capacitacao/capacitacao3.pdf"},
+  { local: "/Pdf/Cronograma-de-Capacitacao/capacitacao3.pdf" },
   { local: "/Pdf/Cronograma-de-Capacitacao/capacitacao4.pdf" },
   { local: "/Pdf/Cronograma-de-Capacitacao/capacitacao5.pdf" },
   { local: "/Pdf/Cronograma-de-Capacitacao/capacitacao6.pdf" },
@@ -23,7 +16,7 @@ const Certificacoes = () => {
         <div key={index} className="mx-auto max-w-6xl bg-white rounded-lg p-5">
           <h2 className="text-2xl text-slate-500 text-center pb-5">
             O documento publicado está em formato PDF. Caso não consiga abrir o
-            arquivo, {" "}
+            arquivo,{" "}
             <a
               href={pdf.local}
               target="_blank"
@@ -35,7 +28,13 @@ const Certificacoes = () => {
           </h2>
 
           <div className="flex items-center justify-center w-full max-w-6xl mx-auto h-[600px] border rounded-lg shadow-lg bg-gray-100">
-            <Viewer fileUrl={pdf.local} />
+            <iframe
+              src={pdf.local}
+              width="100%"
+              height="100%"
+              className="rounded-md"
+              title={`PDF ${index + 1}`}
+            ></iframe>
           </div>
         </div>
       ))}
