@@ -5,23 +5,23 @@ import React from "react";
 const planos = [
   {
     ano: 2025,
-    link: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Plano-de-acao-2025-edit_site.pdf",
+    link: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Plano-de-acao-2025-edit_site.pdf",
   },
   {
     ano: 2024,
-    link: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/06/Plano-de-Acao-JaboataoPrev-2024_Editado.pdf",
+    link: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/06/Plano-de-Acao-JaboataoPrev-2024_Editado.pdf",
   },
   {
     ano: 2023,
-    link: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/09/Plano-de-Acao-JaboataoPrev-2023.pdf",
+    link: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/09/Plano-de-Acao-JaboataoPrev-2023.pdf",
   },
   {
     ano: 2022,
-    link: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2022/10/Plano-de-Acao-2022.pdf",
+    link: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2022/10/Plano-de-Acao-2022.pdf",
   },
   {
     ano: 2021,
-    link: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/10/Plano-de-acao-2021.pdf ",
+    link: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/10/Plano-de-acao-2021.pdf ",
   },
 ];
 

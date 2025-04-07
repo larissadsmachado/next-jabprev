@@ -2,16 +2,16 @@ import React from "react";
 
 const investmentPolicies = [
   
-  { year: 2024, link: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/02/POLITICA_DE_INVESTIMENTOS_2024_ASSINADA.pdf" },
-  { year: 2023, link: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/03/Politica-de-Investimentos-2023-Versao-Final.pdf" },
-  { year: 2022, link: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2022/03/Politica-Investimento-2022.pdf" },
-  { year: 2021, link: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/02/Politica-de-investimento-2021.pdf" },
-  { year: 2020, link: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2020/06/DPIN-2020-alta-resolu%C3%A7%C3%A3o.pdf" },
-  { year: 2019, link: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2018/11/sejda-EVM.pdf" },
-  { year: 2018, link: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2017/12/Politica-de-Investimento-2018.pdf" },
-  { year: 2017, link: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2016/06/Pol%C3%ADtica-de-Investimentos-2017.pdf" },
-  { year: 2016, link: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2016/06/Politica-de-Investimentos-2016.pdf" },
-  { year: 2015, link: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2016/06/Politica-de-Investimentos-2015-1.pdf" },
+  { year: 2024, link: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/02/POLITICA_DE_INVESTIMENTOS_2024_ASSINADA.pdf" },
+  { year: 2023, link: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/03/Politica-de-Investimentos-2023-Versao-Final.pdf" },
+  { year: 2022, link: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2022/03/Politica-Investimento-2022.pdf" },
+  { year: 2021, link: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/02/Politica-de-investimento-2021.pdf" },
+  { year: 2020, link: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2020/06/DPIN-2020-alta-resolu%C3%A7%C3%A3o.pdf" },
+  { year: 2019, link: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2018/11/sejda-EVM.pdf" },
+  { year: 2018, link: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2017/12/Politica-de-Investimento-2018.pdf" },
+  { year: 2017, link: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2016/06/Pol%C3%ADtica-de-Investimentos-2017.pdf" },
+  { year: 2016, link: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2016/06/Politica-de-Investimentos-2016.pdf" },
+  { year: 2015, link: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2016/06/Politica-de-Investimentos-2015-1.pdf" },
 ];
 
 const InvestmentPolicies: React.FC = () => {

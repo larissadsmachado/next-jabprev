@@ -100,10 +100,14 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
         );
         setMedia(mediaMap);
 
-        const categoryIds = [...new Set(data.flatMap((post) => post.categories))];
+        const categoryIds = [
+          ...new Set(data.flatMap((post) => post.categories)),
+        ];
         if (categoryIds.length > 0) {
           const categoryRes = await fetch(
-            `${WORDPRESS_API}/wp-json/wp/v2/categories?include=${categoryIds.join(",")}`
+            `${WORDPRESS_API}/wp-json/wp/v2/categories?include=${categoryIds.join(
+              ","
+            )}`
           );
           const categoryData: Category[] = await categoryRes.json();
           const categoryMap = Object.fromEntries(
@@ -157,7 +161,7 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
               {posts.map((post) => {
                 const imageUrl = media[post.featured_media];
                 const finalUrl = imageUrl?.startsWith("/")
-                  ? `https://jaboataoprev.jaboatao.pe.gov.br${imageUrl}`
+                ? `${process.env.NEXT_PUBLIC_WORDPRESS_SITE}${imageUrl}`
                   : imageUrl;
 
                 const postCategories = post.categories.map(
@@ -185,7 +189,9 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
                         {finalUrl ? (
                           <Image
                             key={finalUrl}
-                            src={`/api/image-proxy?url=${encodeURIComponent(finalUrl)}`}
+                            src={`/api/image-proxy?url=${encodeURIComponent(
+                              finalUrl
+                            )}`}
                             alt={post.title.rendered}
                             width={500}
                             height={300}
@@ -199,9 +205,13 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
                       </div>
 
                       <div className="p-4">
-                        <h2 className="text-lg font-bold">
-                          {post.title.rendered}
-                        </h2>
+                        <h2
+                          className="text-lg font-bold"
+                          dangerouslySetInnerHTML={{
+                            __html: post.title.rendered,
+                          }}
+                        />
+
                         <p className="text-sm text-gray-500">
                           📅 {new Date(post.date).toLocaleDateString("pt-BR")}
                         </p>

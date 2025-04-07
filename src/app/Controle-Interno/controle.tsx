@@ -13,7 +13,7 @@ const Links = () => (
       <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20">
         <li className="py-2">
           <a
-            href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/09/Relatorio-de-Controle-Interno-1o-Trimestre-2024.pdf"
+            href="https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/09/Relatorio-de-Controle-Interno-1o-Trimestre-2024.pdf"
             target="_blank"
             className="text-blue-800 hover:underline"
           >
@@ -23,7 +23,7 @@ const Links = () => (
 
         <li className="py-2">
           <a
-            href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/09/Relatorio-de-Controle-Interno-2o-Trimestre-2024-2.pdf"
+            href="https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/09/Relatorio-de-Controle-Interno-2o-Trimestre-2024-2.pdf"
             target="_blank"
             className="text-blue-800 hover:underline"
           >
@@ -33,7 +33,7 @@ const Links = () => (
 
         <li className="py-2">
           <a
-            href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/12/Relatorio-de-Controle-Interno-3o-Trimestre-2024.pdf"
+            href="https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/12/Relatorio-de-Controle-Interno-3o-Trimestre-2024.pdf"
             target="_blank"
             className="text-blue-800 hover:underline"
           >
@@ -42,7 +42,7 @@ const Links = () => (
         </li>
         <li className="py-2">
           <a
-            href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/03/Relatorio-de-Controle-Interno-4o-Trimestre-2024.pdf"
+            href="https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/03/Relatorio-de-Controle-Interno-4o-Trimestre-2024.pdf"
             target="_blank"
             className="text-blue-800 hover:underline"
           >
@@ -58,7 +58,7 @@ const Links = () => (
       <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20">
         <li className="py-2">
           <a
-            href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/09/Relatorio-Mensal-Controle-Marco-2023-1.pdf"
+            href="https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/09/Relatorio-Mensal-Controle-Marco-2023-1.pdf"
             target="_blank"
             className="text-blue-800 hover:underline"
           >
@@ -68,7 +68,7 @@ const Links = () => (
 
         <li className="py-2">
           <a
-            href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/09/Relatorio-Mensal-Controle-Junho-2023.pdf"
+            href="https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/09/Relatorio-Mensal-Controle-Junho-2023.pdf"
             target="_blank"
             className="text-blue-800 hover:underline"
           >
@@ -78,7 +78,7 @@ const Links = () => (
 
         <li className="py-2">
           <a
-            href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/12/Relatorio-Mensal-Controle-Setembro-2023.pdf"
+            href="https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/12/Relatorio-Mensal-Controle-Setembro-2023.pdf"
             target="_blank"
             className="text-blue-800 hover:underline"
           >
@@ -88,7 +88,7 @@ const Links = () => (
 
         <li className="py-2">
           <a
-            href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/01/Relatorio-Trimestral-Controle-Dezembro-2023.pdf"
+            href="https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/01/Relatorio-Trimestral-Controle-Dezembro-2023.pdf"
             target="_blank"
             className="text-blue-800 hover:underline"
           >
@@ -104,7 +104,7 @@ const Links = () => (
       <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20">
         <li className="py-2">
           <a
-            href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2022/09/Relatorio-Mensal-Controle-Marco-de-2022-2.pdf"
+            href="https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2022/09/Relatorio-Mensal-Controle-Marco-de-2022-2.pdf"
             target="_blank"
             className="text-blue-800 hover:underline"
           >
@@ -114,7 +114,7 @@ const Links = () => (
 
         <li className="py-2">
           <a
-            href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2022/11/Relatorio-Trimestral-Controle-Junho-de-2022.pdf"
+            href="https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2022/11/Relatorio-Trimestral-Controle-Junho-de-2022.pdf"
             target="_blank"
             className="text-blue-800 hover:underline"
           >
@@ -124,7 +124,7 @@ const Links = () => (
 
         <li className="py-2">
           <a
-            href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/03/Relatorio-Mensal-Controle-Setembro-de-2022-Word.pdf"
+            href="https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/03/Relatorio-Mensal-Controle-Setembro-de-2022-Word.pdf"
             target="_blank"
             className="text-blue-800 hover:underline"
           >
@@ -134,7 +134,7 @@ const Links = () => (
 
         <li className="py-2">
           <a
-            href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/03/Relatorio-Mensal-Controle-Dezembro-de-2022-Word.pdf"
+            href="https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/03/Relatorio-Mensal-Controle-Dezembro-de-2022-Word.pdf"
             target="_blank"
             className="text-blue-800 hover:underline"
           >
@@ -151,7 +151,7 @@ const Links = () => (
       <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20">
         <li className="py-2">
           <a
-            href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2022/09/Relatorio-Mensal-Controle-Dezembro-de-2021.pdf"
+            href="https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2022/09/Relatorio-Mensal-Controle-Dezembro-de-2021.pdf"
             target="_blank"
             className="text-blue-800 hover:underline"
           >
