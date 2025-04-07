@@ -287,7 +287,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="https://jaboataoprev.jaboatao.pe.gov.br/"
+                      href="https://backendjaboataoprev.jaboatao.pe.gov.br/"
                       className="hover:underline"
                       target="_blank"
                     >

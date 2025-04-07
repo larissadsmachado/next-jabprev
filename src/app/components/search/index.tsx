@@ -157,7 +157,7 @@ export const SearchPage: React.FC<SearchPageProps> = ({ searchTerm }) => {
               {posts.map((post) => {
                 const imageUrl = media[post.featured_media];
                 const finalUrl = imageUrl?.startsWith("/")
-                  ? `https://jaboataoprev.jaboatao.pe.gov.br${imageUrl}`
+                  ? `https://backendjaboataoprev.jaboatao.pe.gov.br${imageUrl}`
                   : imageUrl;
 
                 const postCategories = post.categories.map(

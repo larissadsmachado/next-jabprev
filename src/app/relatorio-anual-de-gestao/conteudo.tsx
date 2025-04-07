@@ -11,7 +11,7 @@ const Links = () => (
       <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20">
         <li className="py-2">
           <a
-            href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Relatorio-de-Governanca-Corporativa-2024_Dezembro.2024.pdf"
+            href="https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Relatorio-de-Governanca-Corporativa-2024_Dezembro.2024.pdf"
             target="_blank"
             className="text-blue-800 hover:underline"
           >
@@ -27,7 +27,7 @@ const Links = () => (
       <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20 grid grid-cols-2">
         <li className="py-2">
           <a
-            href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/02/Relatorio-de-Governanca-Corporativa-2023_atualizada.pdf"
+            href="https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/02/Relatorio-de-Governanca-Corporativa-2023_atualizada.pdf"
             target="_blank"
             className="text-blue-800 hover:underline"
           >
@@ -45,7 +45,7 @@ const Links = () => (
       <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20 grid grid-cols-2">
         <li className="py-2">
           <a
-            href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/05/Relatorio-de-Governanca-Corporativa-2022-18.04.pdf"
+            href="https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/05/Relatorio-de-Governanca-Corporativa-2022-18.04.pdf"
             target="_blank"
             className="text-blue-800 hover:underline"
           >
@@ -63,7 +63,7 @@ const Links = () => (
       <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20 grid grid-cols-2">
         <li className="py-2">
           <a
-            href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2022/02/Relatorio-Anual-Gestao-2021.pdf"
+            href="https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2022/02/Relatorio-Anual-Gestao-2021.pdf"
             target="_blank"
             className="text-blue-800 hover:underline"
           >
@@ -81,7 +81,7 @@ const Links = () => (
       <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20 grid grid-cols-2">
         <li className="py-2">
           <a
-            href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/06/Relatorio-Anual-Gestao-2020.pdf"
+            href="https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/06/Relatorio-Anual-Gestao-2020.pdf"
             target="_blank"
             className="text-blue-800 hover:underline"
           >
@@ -100,7 +100,7 @@ const Links = () => (
       <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20 grid grid-cols-2">
         <li className="py-2">
           <a
-            href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/06/Relatorio-Anual-Gestao-2019.pdf"
+            href="https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/06/Relatorio-Anual-Gestao-2019.pdf"
             target="_blank"
             className="text-blue-800 hover:underline"
           >

@@ -13,7 +13,7 @@ const Links = () => (
       <ul className="pl-5 text-[#051f60] text-xl pb-20">
         <li className="py-2">
           <a
-            href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Relatorio-de-Governanca-Corporativa-2024_Dezembro.2024.pdf"
+            href="https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Relatorio-de-Governanca-Corporativa-2024_Dezembro.2024.pdf"
             target="_blank"
             className="text-blue-800 hover:underline"
           >
@@ -23,7 +23,7 @@ const Links = () => (
 
         <li className="py-2">
           <a
-            href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/certidao-fgts.pdf"
+            href="https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/certidao-fgts.pdf"
             target="_blank"
             className="text-blue-800 hover:underline"
           >
@@ -33,7 +33,7 @@ const Links = () => (
 
         <li className="py-2">
           <a
-            href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/01/3.-Certidao-de-Regularidade-da-Divida-Ativa-da-Uniao-e-do-INSS-venc-14.04.25.pdf"
+            href="https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/01/3.-Certidao-de-Regularidade-da-Divida-Ativa-da-Uniao-e-do-INSS-venc-14.04.25.pdf"
             target="_blank"
             className="text-blue-800 hover:underline"
           >
@@ -43,7 +43,7 @@ const Links = () => (
 
         <li className="py-2">
           <a
-            href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/07/COMPROVANTE-DO-CNPJ.pdf"
+            href="https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/07/COMPROVANTE-DO-CNPJ.pdf"
             target="_blank"
             className="text-blue-800 hover:underline"
           >
@@ -53,7 +53,7 @@ const Links = () => (
 
         <li className="py-2">
           <a
-            href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/12/5.-Certidao-Negativa-Estadual_Marco.2025.pdf"
+            href="https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/12/5.-Certidao-Negativa-Estadual_Marco.2025.pdf"
             target="_blank"
             className="text-blue-800 hover:underline"
           >
@@ -63,7 +63,7 @@ const Links = () => (
 
         <li className="py-2">
           <a
-            href="https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/10/6.-Certidao-Negativa-Municipal.OUT_.pdf"
+            href="https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/10/6.-Certidao-Negativa-Municipal.OUT_.pdf"
             target="_blank"
             className="text-blue-800 hover:underline"
           >

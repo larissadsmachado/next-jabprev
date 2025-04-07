@@ -36,15 +36,15 @@ const FinancialReports: React.FC = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-2xl">
             {[
-              { title: "RESULTADO DAS PROPOSTAS", url: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/11/Propostas-EFPC.pdf" },
-              { title: "PRORROGAÇÃO DO PRAZO PARA PROPOSTAS", url: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/10/Prorrogacao-do-prazo-para-propostas.pdf" },
-              { title: "PO CONJUNTA SAD / JABOATÃOPREV / PGM N° 01/2021", url: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/10/31-DE-AGOSTO-DE-2021-%E2%80%93-XXXI-%E2%80%93-No-164-%E2%80%93-JABOATAO-DOS-GUARARAPES.pdf" },
-              { title: "EDITAL / EFPC - N° 01/2021", url: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/10/001-SELECAO-PUBLICA-chamamento-geral-Jaboatao-REVISADA-13.10.pdf" },
-              { title: "LEI COMPLEMENTAR N° 039/2021", url: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/10/001-SELECAO-PUBLICA-chamamento-geral-Jaboatao-REVISADA-13.10.pdf" },
-              { title: "ANEXO I - CARGOS", url: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/10/ANEXO-I-CARGOS.pdf" },
-              { title: "ANEXO II - CRITÉRIOS", url: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/10/Anexo-II-criterios.pdf" },
-              { title: "ANEXO III - MODELO DE PROPOSTA TÉCNICA", url: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/10/Anexo-III-Modelo-de-Proposta-Tecnica.pdf" },
-              { title: "RELATÓRIO FINAL DE SELEÇÃO DA EFPC", url: "https://jaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/11/Relatorio-Final.pdf" }
+              { title: "RESULTADO DAS PROPOSTAS", url: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/11/Propostas-EFPC.pdf" },
+              { title: "PRORROGAÇÃO DO PRAZO PARA PROPOSTAS", url: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/10/Prorrogacao-do-prazo-para-propostas.pdf" },
+              { title: "PO CONJUNTA SAD / JABOATÃOPREV / PGM N° 01/2021", url: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/10/31-DE-AGOSTO-DE-2021-%E2%80%93-XXXI-%E2%80%93-No-164-%E2%80%93-JABOATAO-DOS-GUARARAPES.pdf" },
+              { title: "EDITAL / EFPC - N° 01/2021", url: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/10/001-SELECAO-PUBLICA-chamamento-geral-Jaboatao-REVISADA-13.10.pdf" },
+              { title: "LEI COMPLEMENTAR N° 039/2021", url: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/10/001-SELECAO-PUBLICA-chamamento-geral-Jaboatao-REVISADA-13.10.pdf" },
+              { title: "ANEXO I - CARGOS", url: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/10/ANEXO-I-CARGOS.pdf" },
+              { title: "ANEXO II - CRITÉRIOS", url: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/10/Anexo-II-criterios.pdf" },
+              { title: "ANEXO III - MODELO DE PROPOSTA TÉCNICA", url: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/10/Anexo-III-Modelo-de-Proposta-Tecnica.pdf" },
+              { title: "RELATÓRIO FINAL DE SELEÇÃO DA EFPC", url: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2021/11/Relatorio-Final.pdf" }
             ].map((item, index) => (
               <a
                 key={index}
