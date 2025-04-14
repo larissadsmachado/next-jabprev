@@ -5,13 +5,13 @@ const data = {
     "Janeiro - Servidores": "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/COMISSIONADOS.pdf",
     "Janeiro - Câmara": "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/APOSENTADOS-E-PENSIONISTAS-F-FINANCEIRO-CAMARA.pdf",
 
-    Fevereiro: "pdf/administrativo/folha-de-pagamento/2.7_Fevereiro.pdf",
-    "Fevereiro - Servidores": "pdf/administrativo/folha-de-pagamento/2.7_Fevereiro___Servidores.pdf",
-    "Fevereiro - Câmara": "pdf/administrativo/folha-de-pagamento/2.7_Fevereiro___Camara.pdf",
+    Fevereiro: "Pdf/administrativo/folha-de-pagamento/2.7_Fevereiro.pdf",
+    "Fevereiro - Servidores": "Pdf/administrativo/folha-de-pagamento/2.7_Fevereiro___Servidores.pdf",
+    "Fevereiro - Câmara": "Pdf/administrativo/folha-de-pagamento/2.7_Fevereiro___Camara.pdf",
 
-    Março: "pdf/administrativo/folha-de-pagamento/2.7_Marco.pdf",
-    "Março - Servidores":"pdf/folha-de-pagamento/administrativo/folha-de-pagamento/2.7_Marco___Servidores.pdf",
-    "Março - Câmara":"pdf/folha-de-pagamento/administrativo/folha-de-pagamento/2.7_Marco___Camara.pdf",
+    Março: "Pdf/administrativo/folha-de-pagamento/2.7_Marco.pdf",
+    "Março - Servidores":"Pdf/folha-de-pagamento/administrativo/folha-de-pagamento/2.7_Marco___Servidores.pdf",
+    "Março - Câmara":"Pdf/folha-de-pagamento/administrativo/folha-de-pagamento/2.7_Marco___Camara.pdf",
 
     Abril:"#",
     "Abril – Câmara":"#",

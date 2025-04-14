@@ -13,7 +13,7 @@ const Links = () => (
 
         <li className="py-2">
           <a
-            href="pdf/administrativo/atas/investimento/2.1_ATA_DO_COMITE_DE_INVESTIMENTOS___31_de_janeiro_de_2025.pdf"
+            href="Pdf/administrativo/atas/investimento/2.1_ATA_DO_COMITE_DE_INVESTIMENTOS___31_de_janeiro_de_2025.pdf"
             target="_blank"
             className="text-blue-800 hover:underline"
           >
@@ -23,7 +23,7 @@ const Links = () => (
         
         <li className="py-2">
           <a
-            href="pdf/administrativo/atas/investimento/2.1_ATA_DO_COMITE_DE_INVESTIMENTOS___26_de_fevereiro_de_2025.pdf"
+            href="Pdf/administrativo/atas/investimento/2.1_ATA_DO_COMITE_DE_INVESTIMENTOS___26_de_fevereiro_de_2025.pdf"
             target="_blank"
             className="text-blue-800 hover:underline"
           >

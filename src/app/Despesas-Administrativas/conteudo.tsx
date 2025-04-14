@@ -10,7 +10,7 @@ const data = {
     "Maio": { valor: "R$", link: "#" },
     "Abril": { valor: "R$", link: "#" },
     "Março": { valor: "R$", link: "#" },
-    "Fevereiro": { valor: "R$", link: "/pdf/financeiro/despesas-administrativas/FEVEREIRO_DESPESAS_ADM_2025.pdf" },
+    "Fevereiro": { valor: "R$", link: "/Pdf/financeiro/despesas-administrativas/FEVEREIRO_DESPESAS_ADM_2025.pdf" },
     "Janeiro": { 
       valor: "R$ 293.702,83", 
       link: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/GERAL.pdf" 

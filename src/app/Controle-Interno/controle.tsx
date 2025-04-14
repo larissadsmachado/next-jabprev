@@ -45,7 +45,7 @@ const Links = () => (
             text: "Relatório Mensal Controle – 3º Trimestre",
           },
           {
-            href: "/pdf/controle-interno/1.5_Relatorio_de_Controle_Interno___4__Trimestre_2024.pdf",
+            href: "/Pdf/controle-interno/1.5_Relatorio_de_Controle_Interno___4__Trimestre_2024.pdf",
             text: "Relatório Mensal Controle – 4º Trimestre",
           },
         ]}

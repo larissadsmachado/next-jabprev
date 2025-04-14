@@ -3,7 +3,7 @@
 const files = [
   {
     type: "pdf",
-    local: "/pdf/administrativo/programa-5s/Programa-5S.pdf",
+    local: "/Pdf/administrativo/programa-5s/Programa-5S.pdf",
     title: "Programa 5S - PDF",
     pptxUrl: "/pptx/Programa-5S.pptx", // URL do arquivo PPTX
   },

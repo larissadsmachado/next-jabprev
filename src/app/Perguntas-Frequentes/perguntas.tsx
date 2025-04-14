@@ -188,7 +188,7 @@ const Servicos = () => {
             RG, CPF, PASEP, último contracheque, comprovante de residência;
           </li>
           <li>
-            Certidão de nascimento/casamento, declarações de "nada consta",
+            Certidão de nascimento/casamento, declarações de &quot;nada consta&quot;,
             CNIS, CTC (se houver tempo anterior);
           </li>
           <li>Documentação do filho menor de 24 anos (se for o caso);</li>

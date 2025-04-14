@@ -20,7 +20,7 @@ const reportsData: ReportsByYear = {
     reports: [
       {
         name: "Janeiro - Fevereiro",
-        url: "pdf/cad-prev/dipr/2.1_JANEIRO___FEVEREIRO_2025.pdf",
+        url: "Pdf/cad-prev/dipr/2.1_JANEIRO___FEVEREIRO_2025.pdf",
       },
 
       {

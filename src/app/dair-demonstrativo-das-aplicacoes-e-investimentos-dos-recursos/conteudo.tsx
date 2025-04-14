@@ -19,12 +19,12 @@ const reportsData: ReportsByYear = {
     reports: [
       {
         name: "Janeiro",
-        url: "pdf/cad-prev/dair/2.2_JANEIRO.pdf",
+        url: "Pdf/cad-prev/dair/2.2_JANEIRO.pdf",
       },
 
       {
         name: "Fevereiro",
-        url: "pdf/cad-prev/dair/2.2_FEVEREIRO.pdf",
+        url: "Pdf/cad-prev/dair/2.2_FEVEREIRO.pdf",
       },
 
     ],
