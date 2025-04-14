@@ -7,6 +7,12 @@ interface Exercise {
 
 const exercises: Exercise[] = [
   {
+    year: "2024",
+    content: [
+      { text: "PRESTAÇÃO DE CONTAS", url: "/pdf/financeiro/prestacoes-de-contas/Prestacao_de_Contas_2024___Comprovante_de_Envio.pdf" },
+    ],
+  },
+  {
     year: "2023",
     content: [
       { text: "PRESTAÇÃO DE CONTAS", url: "https://etce.tce.pe.gov.br/epp/ConsultaPublica/listView.seam" },

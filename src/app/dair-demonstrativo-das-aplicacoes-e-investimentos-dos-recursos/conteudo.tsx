@@ -14,6 +14,22 @@ interface ReportsByYear {
 }
 
 const reportsData: ReportsByYear = {
+  "2025": {
+    title: "2025",
+    reports: [
+      {
+        name: "Janeiro",
+        url: "pdf/cad-prev/dair/2.2_JANEIRO.pdf",
+      },
+
+      {
+        name: "Fevereiro",
+        url: "pdf/cad-prev/dair/2.2_FEVEREIRO.pdf",
+      },
+
+    ],
+  },
+
   "2024": {
     title: "2024",
     reports: [
