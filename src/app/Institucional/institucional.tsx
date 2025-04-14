@@ -94,12 +94,12 @@ const Equipe = () => (
           Mayara Lima
         </p>
         <p className="pt-4">
-          <strong>Coordenador da Contabilidade</strong>
+          <strong>Contador</strong>
           <br />
           Edson Silva
         </p>
         <p className="pt-4">
-          <strong>Coordenadora Administrativo Financeiro</strong>
+          <strong>Servidora Cedida da Prefeitura de Jaboatão dos Guararapes</strong>
           <br />
           Katia Cyntia
         </p>

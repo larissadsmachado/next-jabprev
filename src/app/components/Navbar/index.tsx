@@ -36,7 +36,7 @@ const navigation: NavItem[] = [
         name: "Cartilha Previdenciária",
         href: "/Pdf/menu/CARTILHA.pdf",
       },
-      { name: "Informativos Previdenciários", href: "/boletins-informativos" },
+      { name: "Informativos Previdenciários", href: "/informativos-previdenciarios" },
       { name: "Controle Interno", href: "/controle-interno" },
     ],
   },
