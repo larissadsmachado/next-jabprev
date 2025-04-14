@@ -16,6 +16,10 @@ const data: Record<string, { date: string; url: string }[]> = {
       date: "25 de Fevereiro de 2025 (Reunião Extraordinária)",
       url: "/Pdf/administrativo/atas/fiscal/03-ATA-25.02.2025-CONJUNTA-CONSELHO-FISCAL-E-DELIBERATIVO-ATUARIO.pdf",
     },
+    {
+      date: "20 de Março de 2025",
+      url: "/Pdf/administrativo/atas/fiscal/ATA_CONSELHO_FISCAL___20_de_marco_de_2025.pdf",
+    },
   ],
   "2024": [
     {

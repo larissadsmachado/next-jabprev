@@ -51,7 +51,7 @@ const navigation: NavItem[] = [
         submenu: [
           {
             name: "Atas do Conselho Deliberativo",
-            href: "/atas-do-conselho-administrativo",
+            href: "/atas-do-conselho-deliberativo",
           },
           { name: "Atas do Conselho Fiscal", href: "/atas-do-conselho-fiscal" },
           {
@@ -66,9 +66,8 @@ const navigation: NavItem[] = [
         submenu: [
           {
             name: "Calendário de Pagamento",
-            href: "/Pdf/menu/CALENDARIO-DE-PAGAMENTO-2024.pdf",
-          },
-
+            href: "/Pdf/menu/2.2_CALENDARIO_DE_PAGAMENTO_2025.pdf",
+          }, 
           {
             name: "Calendários de Reuniões",
             href: "#",
@@ -85,7 +84,7 @@ const navigation: NavItem[] = [
 
               {
                 name: "Reuniões do Comitê de Investimentos",
-                href: "/Pdf/menu/Calendario-de-Reunioes-gerenciais-2025.pdf",
+                href: "/Pdf/menu/Calendario-de-Reunioes-investimentos-2025.pdf",
               },
 
               {
@@ -96,11 +95,6 @@ const navigation: NavItem[] = [
               {
                 name: "Reuniões setoriais",
                 href: "/Pdf/menu/Calendario-de-Reunioes-Setoriais-2025.pdf",
-              },
-
-              {
-                name: "Reuniões do Monitoramento",
-                href: "/Pdf/menu/Calendario-de-Reunioes-de-Monitoramento-2025.pdf",
               },
 
               {
@@ -125,8 +119,20 @@ const navigation: NavItem[] = [
               },
             ],
           },
+          
+          {
+            name: "Calendário de Reuniões Ordinárias Conselho Deliberativo",
+            href: "/Pdf/menu/2.3_Calendario_de_Reunioes_do_Conselho_Deliberativo___2025.pdf",
+          },
+          {
+            name: "Calendário de Reuniões Ordinárias Comitê de Investimento",
+            href: "/Pdf/menu/2.3_Calendario_de_Reunioes_do_Comite_de_Investimentos___2025.pdf",
+          },
         ],
       },
+
+      { name: "Concessões de benefícios", href: "/Pdf/menu/2.6_CONCESSOES_DE_BENEFICIOS___MARCO.2025.pdf" },
+
 
       { name: "Contratos", href: "contratos" },
 

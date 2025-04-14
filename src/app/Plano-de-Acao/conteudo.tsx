@@ -5,7 +5,7 @@ import React from "react";
 const planos = [
   {
     ano: 2025,
-    link: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Plano-de-acao-2025-edit_site.pdf",
+    link: "/Pdf/administrativo/plano-de-acao/2.8_Plano_de_Acao___JaboataoPrev_2025.pdf",
   },
   {
     ano: 2024,

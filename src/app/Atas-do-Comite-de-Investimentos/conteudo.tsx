@@ -6,9 +6,31 @@ const Links = () => (
   <div className="h-auto bg-gradient-to-b from-[#ffffff] via-[#dcecff] to-[#cbe1fc]">
 
     <div className="mx-auto max-w-6xl p-6 py-20">
-      <h1 className="text-5xl font-bold mb-4 uppercase text-blue-900 leading-tight pb-20">
+      <h1 className="text-5xl font-bold mb-4 uppercase text-blue-900 leading-tight">
         2025 
       </h1>
+      <ul className="list-disc pl-5 text-[#051f60] text-xl pb-20 grid lg:grid-cols-2 gap-5">
+
+        <li className="py-2">
+          <a
+            href="pdf/administrativo/atas/investimento/2.1_ATA_DO_COMITE_DE_INVESTIMENTOS___31_de_janeiro_de_2025.pdf"
+            target="_blank"
+            className="text-blue-800 hover:underline"
+          >
+            31 de janeiro de 2025
+          </a>
+        </li>
+        
+        <li className="py-2">
+          <a
+            href="pdf/administrativo/atas/investimento/2.1_ATA_DO_COMITE_DE_INVESTIMENTOS___26_de_fevereiro_de_2025.pdf"
+            target="_blank"
+            className="text-blue-800 hover:underline"
+          >
+            26 de Fevereiro de 2025
+          </a>
+        </li>
+      </ul>
 
 
       <h1 className="text-5xl font-bold mb-4 uppercase text-blue-900 leading-tight">
