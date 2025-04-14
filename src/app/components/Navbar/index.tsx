@@ -148,7 +148,7 @@ const navigation: NavItem[] = [
       { name: "plano de ação", href: "/plano-de-acao" },
       {
         name: "programa 5S",
-        href: "/pptx/Programa-5S.pptx",
+        href: "/programa-5s", 
       },
       { name: "relatório anual de gestão", href: "/relatorio-anual-de-gestao" },
       { name: "obrigações fiscais", href: "/obrigacoes-fiscais" },
