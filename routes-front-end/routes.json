@@ -15,9 +15,9 @@
     "description": "Descrição da página ATAS DO COMITE DE INVESTIMENTOS"
   },
   {
-    "path": "/atas-do-conselho-administrativo",
-    "title": "ATAS DO CONSELHO ADMINISTRATIVO",
-    "description": "Descrição da página ATAS DO CONSELHO ADMINISTRATIVO"
+    "path": "/atas-do-conselho-deliberativo",
+    "title": "ATAS DO CONSELHO DELIBERATIVO",
+    "description": "Descrição da página ATAS DO CONSELHO DELIBERATIVO"
   },
   {
     "path": "/atas-do-conselho-fiscal",
@@ -155,6 +155,11 @@
     "description": "Descrição da página FOLHA DE PAGAMENTO"
   },
   {
+    "path": "/informativos-previdenciarios",
+    "title": "INFORMATIVOS PREVIDENCIARIOS",
+    "description": "Descrição da página INFORMATIVOS PREVIDENCIARIOS"
+  },
+  {
     "path": "/institucional",
     "title": "INSTITUCIONAL",
     "description": "Descrição da página INSTITUCIONAL"
@@ -203,6 +208,11 @@
     "path": "/previdencia-complementar",
     "title": "PREVIDENCIA COMPLEMENTAR",
     "description": "Descrição da página PREVIDENCIA COMPLEMENTAR"
+  },
+  {
+    "path": "/programa-5s",
+    "title": "PROGRAMA 5S",
+    "description": "Descrição da página PROGRAMA 5S"
   },
   {
     "path": "/provisoes-matematicas",
