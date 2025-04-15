@@ -30,11 +30,6 @@
     "description": "Descrição da página ACCESSIBILITYBUTTON"
   },
   {
-    "path": "/BotaoFlutuante",
-    "title": "BOTAOFLUTUANTE",
-    "description": "Descrição da página BOTAOFLUTUANTE"
-  },
-  {
     "path": "/DivisorDeForma",
     "title": "DIVISORDEFORMA",
     "description": "Descrição da página DIVISORDEFORMA"
