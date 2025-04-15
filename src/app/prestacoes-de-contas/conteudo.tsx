@@ -69,7 +69,7 @@ const FinancialExercises: React.FC = () => {
       {exercises.map(({ year, content }) => (
         <div key={year} className="space-y-4 mb-10 max-w-5xl mx-auto">
           {/* Título do exercício */}
-          <h2 className="text-2xl Montserrat-Bold  text-blue-900">
+          <h2 className="text-3xl Montserrat-Bold  text-blue-900">
             EXERCÍCIO {year}
           </h2>
           <hr className="border-t-2 border-blue-900 w-16" />
@@ -77,7 +77,7 @@ const FinancialExercises: React.FC = () => {
           {/* Conteúdo com links apenas no hover */}
           {content.map((item, index) =>
             item.url ? (
-              <p key={index} className="text-blue-900 montserrat-regular">
+              <p key={index} className="text-blue-900 montserrat-medium text-lg">
                 <a href={item.url} className="hover:underline">
                   {item.text}
                 </a>
