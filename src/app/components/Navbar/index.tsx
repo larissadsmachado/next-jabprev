@@ -214,7 +214,7 @@ const navigation: NavItem[] = [
       { name: "previdência complementar", href: "/previdencia-complementar" },
       { name: "provisões matemáticas", href: "/provisoes-matematicas" },
       {
-        name: "relatório gestão atual",
+        name: "relatório gestão atuarial",
         href: "/Pdf/menu/Jaboatao-dos-Guararapes-PE-Relatorio-Pro-Gestao-2023-Nivel-II.pdf",
       },
       {
@@ -354,7 +354,6 @@ const Logo = () => (
     </Link>
   </div>
 );
-
 
 const NavLinks: React.FC = () => {
   const pathname = usePathname() ?? ""; // garante que não será null
@@ -588,8 +587,6 @@ const NavLinks: React.FC = () => {
     </div>
   );
 };
-
-
 
 interface MobileMenuProps {
   closeMenu: () => void;
