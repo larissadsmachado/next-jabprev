@@ -16,6 +16,7 @@ const FeedbackForm = () => {
   const [nota, setNota] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [porcentagens, setPorcentagens] = useState<Record<string, number> | null>(null);
 
   const notas = [
     { label: "Péssimo", icon: <XCircle className="w-7 h-7 text-red-600" /> },
@@ -46,6 +47,7 @@ const FeedbackForm = () => {
       if (data.status === "success") {
         setMessage("Avaliação enviada com sucesso!");
         setNota("");
+        setPorcentagens(data.porcentagens); // 👈 Atualiza as porcentagens
       } else {
         setMessage("Erro ao enviar avaliação.");
       }
@@ -62,8 +64,7 @@ const FeedbackForm = () => {
       className="justify-center items-center rounded-b-[50px] px-4 sm:px-8 md:px-20 my-10"
     >
       <div className="pt-10 pb-10">
-        <h1 className="relative flex flex-col items-center text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl xl:leading-tight font-semibold text-slate-200 uppercase text-center">
-          {/* Linha atravessando o texto */}
+        <h1 className="relative flex flex-col items-center text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:leading-tight font-semibold text-slate-200 uppercase text-center">
           <div
             className="absolute top-1/2 left-0 w-full"
             style={{
@@ -72,7 +73,6 @@ const FeedbackForm = () => {
               transform: "translateY(-50%)",
             }}
           ></div>
-
           <span className="bg-[#1E3A8A] px-8 sm:px-12 py-2 sm:py-5 rounded-full relative z-10">
             Avalie Nosso <br /> Serviço
           </span>
@@ -112,6 +112,7 @@ const FeedbackForm = () => {
               )}
             </button>
           </form>
+
           {message && (
             <p className="mt-4 text-center text-lg font-semibold flex items-center justify-center gap-2">
               {message.includes("sucesso") ? (
@@ -121,6 +122,19 @@ const FeedbackForm = () => {
               )}{" "}
               {message}
             </p>
+          )}
+
+          {porcentagens && (
+            <div className="mt-8 text-center">
+              <h3 className="font-bold mb-4">Resultado parcial:</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-sm sm:text-base">
+                {Object.entries(porcentagens).map(([label, perc]) => (
+                  <div key={label}>
+                    <span className="font-medium">{label}:</span> {perc}%
+                  </div>
+                ))}
+              </div>
+            </div>
           )}
         </div>
       </div>
