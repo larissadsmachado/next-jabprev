@@ -8,8 +8,6 @@ export default function Popup() {
   const [isVisible, setIsVisible] = useState(false);
 
   // Valores padrão
-  const whatsappNumber = "5581991782389";
-  const defaultMessage = "Olá, gostaria de mais informações!";
   const imageSrc = "/images/Popup/poupup.png";
   const imageAlt = "Fale conosco pelo WhatsApp";
   const showAfterSeconds = 1;
@@ -29,7 +27,6 @@ export default function Popup() {
 
   if (!isVisible) return null;
 
-  const formattedNumber = whatsappNumber.replace(/\D/g, '');
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm transition-opacity duration-300">
