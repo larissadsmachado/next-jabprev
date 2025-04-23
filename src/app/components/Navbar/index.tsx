@@ -24,17 +24,17 @@ const navigation: NavItem[] = [
     href: "#",
     submenu: [
       { name: "O que é o JaboatãoPrev", href: "/institucional" },
-      { name: "Missão, visão e valores", href: "/institucional/#missao" },
-      { name: "A equipe JaboatãoPREV", href: "/institucional/#organograma" },
+      { name: "Missão, Visão e Valores", href: "/institucional/#missao" },
+      { name: "A Equipe JaboatãoPREV", href: "/institucional/#organograma" },
       {
         name: "Certificações Profissional",
-        href: "/Pdf/menu/CERTIFICACOES_PROFISSIONAL___NOVO.pdf",
+        href: "/Pdf/menu/CERTIFICACOES-GERAIS.pdf",
       },
       { name: "Perguntas Frequentes", href: "/perguntas-frequentes" },
       { name: "Legislação", href: "/legislacao" },
       {
         name: "Cartilha Previdenciária",
-        href: "/Pdf/menu/CARTILHA_PREVIDENCIARIA_2025.pdf",
+        href: "/Pdf/menu/CARTILHA.pdf",
       },
       { name: "Informativos Previdenciários", href: "/informativos-previdenciarios" },
       { name: "Controle Interno", href: "/controle-interno" },
@@ -46,7 +46,7 @@ const navigation: NavItem[] = [
     href: "#",
     submenu: [
       {
-        name: "ATAS",
+        name: "Atas",
         href: "#",
         submenu: [
           {
@@ -75,38 +75,38 @@ const navigation: NavItem[] = [
             submenu: [
               {
                 name: "Reuniões do Conselho Fiscal",
-                href: "/Pdf/menu/Conselho_Fiscal___Calendario___Membros.pdf",
+                href: "/Pdf/menu/Calendario-de-Reunioes-do-Conselho-Fiscal-2025.pdf",
               },
 
               {
                 name: "Reuniões do Conselho Deliberativo",
-                href: "/Pdf/menu/Conselho_Deliberativo___Calendario___Membros.pdf",
+                href: "/Pdf/menu/Calendario-de-Reunioes-do-Conselho-Deliberativo-2025.pdf",
               },
 
               {
                 name: "Reuniões do Comitê de Investimentos",
-                href: "/Pdf/menu/Comite_de_Investimentos___Calendario___Membros.pdf",
+                href: "/Pdf/menu/Calendario-de-Reunioes-investimentos-2025.pdf",
               },
 
               {
-                name: "Reuniões da diretoria Executiva",
+                name: "Reuniões da Diretoria Executiva",
                 href: "/Pdf/menu/Calendario-de-Reunioes-gerenciais-2025-1.pdf",
               },
 
               {
-                name: "Reuniões setoriais",
+                name: "Reuniões Setoriais",
                 href: "/Pdf/menu/Calendario-de-Reunioes-Setoriais-2025.pdf",
               },
 
               {
-                name: "Reuniões da comissão de revisão de benefícios",
+                name: "Reuniões da Comissão de Revisão de Benefícios",
                 href: "/Pdf/menu/CALENDARIO-DE-REUNIOES-Comissao-2025.pdf",
               },
             ],
           },
 
           {
-            name: "Calendário de obrigações",
+            name: "Calendário de Obrigações",
             href: "/Pdf/menu/Calendario-de-Envio-de-Informacoes-2025.pdf",
           },
 
@@ -115,7 +115,7 @@ const navigation: NavItem[] = [
             href: "#",
             submenu: [
               {
-                name: " Dia de acolhimento e boas vindas",
+                name: "Dia de Acolhimento e Boas Vindas",
                 href: "/Pdf/menu/Calendario-cafe-da-manha-2025-1.pdf",
               },
             ],
@@ -132,27 +132,27 @@ const navigation: NavItem[] = [
         ],
       },
 
-      { name: "Concessões de benefícios", href: "/Pdf/menu/CONCESSAO_DE_BENEFICIOS.pdf" },
+      { name: "Concessões de Benefícios", href: "/Pdf/menu/2.6_CONCESSOES_DE_BENEFICIOS___MARCO.2025.pdf" },
 
 
       { name: "Contratos", href: "contratos" },
 
       {
-        name: "Educação previdenciária e financeira",
+        name: "Educação Previdenciária e Financeira",
         href: "/Pdf/menu/Cronograma-de-Educacao-Previdenciaria-2024.pdf",
       },
 
-      { name: "folha de pagamento", href: "/folha-de-pagamento" },
+      { name: "Folha de Pagamento", href: "/folha-de-pagamento" },
 
-      { name: "cronograma de capacitação", href: "/cronograma-de-capacitacao" },
+      { name: "Cronograma de Capacitação", href: "/cronograma-de-capacitacao" },
 
-      { name: "plano de ação", href: "/plano-de-acao" },
+      { name: "Plano de Ação", href: "/plano-de-acao" },
       {
-        name: "programa 5S",
+        name: "Programa 5S",
         href: "/programa-5s", 
       },
-      { name: "relatório anual de gestão", href: "/relatorio-anual-de-gestao" },
-      { name: "obrigações fiscais", href: "/obrigacoes-fiscais" },
+      { name: "Relatório Anual de Gestão", href: "/relatorio-anual-de-gestao" },
+      { name: "Obrigações Fiscais", href: "/obrigacoes-fiscais" },
     ],
   },
 
@@ -161,18 +161,18 @@ const navigation: NavItem[] = [
     href: "#",
     submenu: [
       {
-        name: "receitas",
+        name: "Receitas",
         href: "https://portaldatransparencia.jaboatao.pe.gov.br/receitas/",
       },
       {
-        name: "despesas",
+        name: "Despesas",
         href: "https://portaldatransparencia.jaboatao.pe.gov.br/despesas/",
       },
-      { name: "despesas adminstrativas", href: "/despesas-administrativas" },
-      { name: "demonstrativos contábeis", href: "/demonstrativos-contabeis" },
-      { name: "prestações de contas", href: "/prestacoes-de-contas" },
+      { name: "Despesas Administrativas", href: "/despesas-administrativas" },
+      { name: "Demonstrativos Contábeis", href: "/demonstrativos-contabeis" },
+      { name: "Prestações de Contas", href: "/prestacoes-de-contas" },
       {
-        name: "mapeamento",
+        name: "Mapeamento",
         href: "/Pdf/menu/FINANCEIRO-2.pdf",
       },
     ],
@@ -182,43 +182,43 @@ const navigation: NavItem[] = [
     href: "#",
     submenu: [
       {
-        name: "Apr-autorização de aplicação e resgate",
+        name: "Apr-Autorização de Aplicação e Resgate",
         href: "/apr-autorizacao-de-aplicacao-e-resgate",
       },
-      { name: "credenciamentos", href: "/credenciamentos" },
-      { name: "política de investimentos", href: "/politica-de-investimentos" },
+      { name: "Credenciamentos", href: "/credenciamentos" },
+      { name: "Política de Investimentos", href: "/politica-de-investimentos" },
       {
-        name: "Relatório anual de investimentos",
+        name: "Relatório Anual de Investimentos",
         href: "/Pdf/menu/13.-RELATORIO-ANUAL-2023.pdf",
       },
       {
-        name: "regime interno",
+        name: "Regime Interno",
         href: "/Pdf/menu/REGIMENTO-INTERNO-COMITE-DE-INVESTIMENTOS.pdf",
       },
-      { name: "relatório mensais", href: "/relatorio-mensais" },
+      { name: "Relatório Mensais", href: "/relatorio-mensais" },
       {
-        name: "relatório de inteligência de dados(bi)",
+        name: "Relatório de Inteligência de Dados(BI)",
         href: "/relatorio-de-inteligencia-de-dados-bi",
       },
-      { name: "Estudo de alm", href: "/estudo-de-alm" },
+      { name: "Estudo de ALM", href: "/estudo-de-alm" },
       {
-        name: "mapeamento",
+        name: "Mapeamento",
         href: "/Pdf/menu/MAPEAMENTO-SETOR-DE-INVESTIMENTOS.pdf",
       },
     ],
   },
   {
-    name: "previdência",
+    name: "Previdência",
     href: "#",
     submenu: [
-      { name: "previdência complementar", href: "/previdencia-complementar" },
-      { name: "provisões matemáticas", href: "/provisoes-matematicas" },
+      { name: "Previdência Complementar", href: "/previdencia-complementar" },
+      { name: "Provisões Matemáticas", href: "/provisoes-matematicas" },
       {
-        name: "relatório gestão atuarial",
+        name: "Relatório Gestão Atuarial",
         href: "/Pdf/menu/Jaboatao-dos-Guararapes-PE-Relatorio-Pro-Gestao-2023-Nivel-II.pdf",
       },
       {
-        name: "relatórios atuariais ",
+        name: "Relatórios Atuariais",
         href: "#",
         submenu: [
           {
@@ -280,37 +280,37 @@ const navigation: NavItem[] = [
         ],
       },
       {
-        name: "contribuições previdenciária",
+        name: "Contribuições Previdenciária",
         href: "/Pdf/menu/Lei-complementar-40-reorganiza-o-RPPS.pdf",
       },
       {
-        name: "mapeamento",
+        name: "Mapeamento",
         href: "/Pdf/menu/PREVIDENCIA.pdf",
       },
     ],
   },
   {
-    name: "Cad prev",
+    name: "Cad Prev",
     href: "#",
     submenu: [
       {
-        name: "DIPR - Demonstrativo De Informações Previdenciárias E Repasses",
+        name: "DIPR - Demonstrativo de Informações Previdenciárias e Repasses",
         href: "/dipr-demonstrativo-de-informacoes-previdenciarias-e-repasses",
       },
       {
-        name: "DAIR - Demonstrativo das aplicações e investimentos dos recursos",
+        name: "DAIR - Demonstrativo das Aplicações e Investimentos dos Recursos",
         href: "/dair-demonstrativo-das-aplicacoes-e-investimentos-dos-recursos",
       },
       {
-        name: "DPIN - demonstrativo de políticas de investimento",
+        name: "DPIN - Demonstrativo de Políticas de Investimento",
         href: "/dpin-demonstrativo-de-politicas-de-investimento",
       },
       {
-        name: "AP - Acordo de parcelamento",
+        name: "AP - Acordo de Parcelamento",
         href: "/ap-acordo-de-parcelamento",
       },
       {
-        name: "CRP - Certidão de regularidade previdenciária",
+        name: "CRP - Certidão de Regularidade Previdenciária",
         href: "/crp-certidao-de-regularidade-previdenciaria",
       },
     ],
@@ -323,23 +323,24 @@ const navigation: NavItem[] = [
     name: "Sites Relacionados",
     href: "#",
     submenu: [
-      { name: "site Oficial", href: "https://jaboatao.pe.gov.br/" },
+      { name: "Site Oficial", href: "https://jaboatao.pe.gov.br/" },
       {
-        name: "diário oficial",
+        name: "Diário Oficial",
         href: "https://diariooficial.jaboatao.pe.gov.br/",
       },
       {
-        name: "portal da transparência",
+        name: "Portal da Transparência",
         href: "https://portaldatransparencia.jaboatao.pe.gov.br/",
       },
-      { name: "ouvidoria", href: "https://ouvidoria.jaboatao.pe.gov.br/" },
+      { name: "Ouvidoria", href: "https://ouvidoria.jaboatao.pe.gov.br/" },
       {
-        name: "portal do contribuinte",
+        name: "Portal do Contribuinte",
         href: "https://www.tinus.com.br/csp/JABOATAO/portal/index.csp",
       },
     ],
   },
 ];
+
 
 const Logo = () => (
   <div className="relative flex items-center justify-center">
