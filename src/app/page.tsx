@@ -4,6 +4,8 @@ import Enquete from "./components/Home/Enquete/index"
 import FaleConosco from "./components/Home/FaleConosco/index";
 import Noticia from "./components/Home/Noticias/index";
 import React from "react";
+import Popup from "./components/Popup/index";
+
 
 export const metadata = {
   title: 'JABOATÃO PREV',
@@ -14,6 +16,7 @@ export const metadata = {
 export default function Home() {
   return (
     <main>
+      <Popup />
       <Banner/>
       <Noticia/>
       <Servicos/>
