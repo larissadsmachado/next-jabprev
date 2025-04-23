@@ -9,7 +9,7 @@ const emailDestinations: Record<string, string> = {
   investimento: "investimentos@jaboataoprev.jaboatao.pe.gov.br",
   presidencia: "presidencia@jaboataoprev.jaboatao.pe.gov.br",
 };
- 
+
 const FaleConosco = () => {
   const [loading, setLoading] = useState(false);
   const [selectedSubject, setSelectedSubject] = useState<string>("financeiro");
@@ -55,7 +55,7 @@ const FaleConosco = () => {
 
     setLoading(false);
   };
- 
+
   return (
     <div id="fale-conosco">
       {loading && (
@@ -67,7 +67,12 @@ const FaleConosco = () => {
       )}
       <div className="min-h-screen relative">
         <div className="absolute inset-0 w-full h-full">
-          <video className="w-full h-full object-cover rounded-t-[50px]" autoPlay loop muted>
+          <video
+            className="w-full h-full object-cover rounded-t-[50px]"
+            autoPlay
+            loop
+            muted
+          >
             <source
               src="https://estacaobemestar.jaboatao.pe.gov.br/wp-content/uploads/2018/05/Blue_Sky_and_Clouds_Timelapse_0892__Videvo.mov"
               type="video/mp4"
@@ -77,13 +82,11 @@ const FaleConosco = () => {
           <div className="absolute inset-0 bg-black opacity-30 rounded-t-[50px]"></div>
         </div>
 
-       
-
         <div className="relative z-10 min-h-screen text-white p-8 flex items-center justify-center bg-opacity-30">
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 max-w-7xl w-full py-12">
             <div className="w-full  md:w-1/2 2xl:h-[670px] lg:h-[680px] md:h-[740px] h-[400px]">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.5114253262363!2d-34.925620124244986!3d-8.151115381647537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7aae1dc7561cffd%3A0xe6fbfb0ef7cd1451!2sCentro%20Administrativo%20de%20Jaboat%C3%A3o%20dos%20Guararapes!5e0!3m2!1spt-BR!2sbr!4v1726165314278!5m2!1spt-BR!2sbr"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.399975861041!2d-34.92163922422003!3d-8.162395681786494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7aae1c7b83da1ad%3A0x800b1fb28118c9ed!2sRua%20Coronel%20Waldemar%20Basgal%2C%20576%20-%20Piedade%2C%20Jaboat%C3%A3o%20dos%20Guararapes%20-%20PE%2C%2054310-285!5e0!3m2!1spt-BR!2sbr!4v1745416049239!5m2!1spt-BR!2sbr"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -102,6 +105,10 @@ const FaleConosco = () => {
                   <br />
                   <br />
                   Celular: (81) 9 9756-0292
+                  <br />
+                  Celular: (81) 9 9975-4173
+                  <br />
+                  Celular: (81) 9 9113-3308
                   <br />
                   <br />
                   E-mails Institucionais:
