@@ -357,7 +357,7 @@ const Logo = () => (
 
 
 const NavLinks: React.FC = () => {
-  const pathname = usePathname();
+  const pathname = usePathname() ?? ""; // garante que não será null
 
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [activeSubMenu, setActiveSubMenu] = useState<string | null>(null);
@@ -370,10 +370,16 @@ const NavLinks: React.FC = () => {
   };
 
   return (
-    <div className="hidden lg:flex items-center relative uppercase">
+    <div className="hidden lg:flex  relative uppercase">
       {isLoading && <LoadingScreen />}
       {navigation.map((item) => {
-        const isActive = pathname.startsWith(item.href) || item.submenu?.some(sub => pathname.startsWith(sub.href) || sub.submenu?.some(subSub => pathname.startsWith(subSub.href)));
+        const isActive =
+          pathname.startsWith(item.href) ||
+          item.submenu?.some(
+            (sub) =>
+              pathname.startsWith(sub.href) ||
+              sub.submenu?.some((subSub) => pathname.startsWith(subSub.href))
+          );
         return (
           <div
             key={item.name}
@@ -387,8 +393,29 @@ const NavLinks: React.FC = () => {
           >
             <Link
               href={item.href}
-              className={`text-[#0037C1] text-[15px] font-semibold flex p-3 hover:bg-[#224276] hover:text-[#ffffff] hover:underline decoration-[#13AFF0] ${isActive ? 'bg-[#224276] underline decoration-[#13AFF0] text-[#ffffff]' : ''}`}
-              onClick={handleClick}
+              className={`text-[#0037C1] text-[15px] font-semibold flex p-3 hover:bg-[#224276] hover:text-[#ffffff] hover:underline decoration-[#13AFF0] ${
+                isActive
+                  ? "bg-[#224276] underline decoration-[#13AFF0] text-[#ffffff]"
+                  : ""
+              }`}
+              onClick={(e) => {
+                setActiveMenu(null);
+                setActiveSubMenu(null);
+                setActiveSubSubMenu(null);
+                const isHashLink = item.href.startsWith("/#");
+                if (isHashLink) {
+                  const id = item.href.split("#")[1];
+                  if (pathname === "/") {
+                    e.preventDefault();
+                    const element = document.getElementById(id);
+                    if (element) {
+                      element.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }
+                } else {
+                  handleClick();
+                }
+              }}
             >
               {item.name}
               {item.submenu && <MdKeyboardArrowDown className="ml-2" />}
@@ -397,7 +424,11 @@ const NavLinks: React.FC = () => {
             {activeMenu === item.name && item.submenu && (
               <div className="absolute left-0 bg-[#2b73d0f5] shadow-lg w-60 border border-slate-300 z-50 flex flex-col">
                 {item.submenu.map((subItem) => {
-                  const isSubActive = pathname.startsWith(subItem.href) || subItem.submenu?.some(subSub => pathname.startsWith(subSub.href));
+                  const isSubActive =
+                    pathname.startsWith(subItem.href) ||
+                    subItem.submenu?.some((subSub) =>
+                      pathname.startsWith(subSub.href)
+                    );
                   return (
                     <div
                       key={subItem.name}
@@ -407,8 +438,27 @@ const NavLinks: React.FC = () => {
                     >
                       <Link
                         href={subItem.href}
-                        className={`px-4 py-3 text-white text-[15px] flex items-center hover:bg-[#fdfdfd] hover:text-[#2b63ab] ${isSubActive ? 'bg-[#224276] text-[#ffffff]' : ''}`}
-                        onClick={handleClick}
+                        className={`px-4 py-3 text-white text-[15px] flex items-center hover:bg-[#fdfdfd] hover:text-[#2b63ab] ${
+                          isSubActive ? "bg-[#224276] text-[#ffffff]" : ""
+                        }`}
+                        onClick={(e) => {
+                          setActiveMenu(null);
+                          setActiveSubMenu(null);
+                          setActiveSubSubMenu(null);
+                          const isHashLink = subItem.href.startsWith("/#");
+                          if (isHashLink) {
+                            const id = subItem.href.split("#")[1];
+                            if (pathname === "/") {
+                              e.preventDefault();
+                              const element = document.getElementById(id);
+                              if (element) {
+                                element.scrollIntoView({ behavior: "smooth" });
+                              }
+                            }
+                          } else {
+                            handleClick();
+                          }
+                        }}
                       >
                         {subItem.name}
                         {subItem.submenu && (
@@ -419,18 +469,47 @@ const NavLinks: React.FC = () => {
                       {activeSubMenu === subItem.name && subItem.submenu && (
                         <div className="absolute left-full top-0 bg-[#2b73d0f5] shadow-lg w-56 border border-slate-300 z-50 flex flex-col">
                           {subItem.submenu.map((subSubItem) => {
-                            const isSubSubActive = pathname.startsWith(subSubItem.href);
+                            const isSubSubActive = pathname.startsWith(
+                              subSubItem.href
+                            );
                             return (
                               <div
                                 key={subSubItem.name}
                                 className="relative group"
-                                onMouseEnter={() => setActiveSubSubMenu(subSubItem.name)}
+                                onMouseEnter={() =>
+                                  setActiveSubSubMenu(subSubItem.name)
+                                }
                                 onMouseLeave={() => setActiveSubSubMenu(null)}
                               >
                                 <Link
                                   href={subSubItem.href}
-                                  className={`px-4 py-2 text-white text-base flex items-center hover:bg-[#fdfdfd] hover:text-[#2b63ab] ${isSubSubActive ? 'bg-[#224276] text-[#ffffff]' : ''}`}
-                                  onClick={handleClick}
+                                  className={`px-4 py-2 text-white text-base flex items-center hover:bg-[#fdfdfd] hover:text-[#2b63ab] ${
+                                    isSubSubActive
+                                      ? "bg-[#224276] text-[#ffffff]"
+                                      : ""
+                                  }`}
+                                  onClick={(e) => {
+                                    setActiveMenu(null);
+                                    setActiveSubMenu(null);
+                                    setActiveSubSubMenu(null);
+                                    const isHashLink =
+                                      subSubItem.href.startsWith("/#");
+                                    if (isHashLink) {
+                                      const id = subSubItem.href.split("#")[1];
+                                      if (pathname === "/") {
+                                        e.preventDefault();
+                                        const element =
+                                          document.getElementById(id);
+                                        if (element) {
+                                          element.scrollIntoView({
+                                            behavior: "smooth",
+                                          });
+                                        }
+                                      }
+                                    } else {
+                                      handleClick();
+                                    }
+                                  }}
                                 >
                                   {subSubItem.name}
                                   {subSubItem.submenu && (
@@ -438,23 +517,61 @@ const NavLinks: React.FC = () => {
                                   )}
                                 </Link>
 
-                                {activeSubSubMenu === subSubItem.name && subSubItem.submenu && (
-                                  <div className="absolute left-full top-0 bg-[#2b73d0f5] shadow-lg w-56 border border-slate-300 z-50 flex flex-col">
-                                    {subSubItem.submenu.map((subSubSubItem) => {
-                                      const isSubSubSubActive = pathname.startsWith(subSubSubItem.href);
-                                      return (
-                                        <Link
-                                          key={subSubSubItem.name}
-                                          href={subSubSubItem.href}
-                                          className={`block px-4 py-2 text-white hover:bg-[#fdfdfd] hover:text-[#2b63ab] text-base ${isSubSubSubActive ? 'bg-[#224276] text-[#ffffff]' : ''}`}
-                                          onClick={handleClick}
-                                        >
-                                          {subSubSubItem.name}
-                                        </Link>
-                                      );
-                                    })}
-                                  </div>
-                                )}
+                                {activeSubSubMenu === subSubItem.name &&
+                                  subSubItem.submenu && (
+                                    <div className="absolute left-full top-0 bg-[#2b73d0f5] shadow-lg w-56 border border-slate-300 z-50 flex flex-col">
+                                      {subSubItem.submenu.map(
+                                        (subSubSubItem) => {
+                                          const isSubSubSubActive =
+                                            pathname.startsWith(
+                                              subSubSubItem.href
+                                            );
+                                          return (
+                                            <Link
+                                              key={subSubSubItem.name}
+                                              href={subSubSubItem.href}
+                                              className={`block px-4 py-2 text-white hover:bg-[#fdfdfd] hover:text-[#2b63ab] text-base ${
+                                                isSubSubSubActive
+                                                  ? "bg-[#224276] text-[#ffffff]"
+                                                  : ""
+                                              }`}
+                                              onClick={(e) => {
+                                                setActiveMenu(null);
+                                                setActiveSubMenu(null);
+                                                setActiveSubSubMenu(null);
+                                                const isHashLink =
+                                                  subSubSubItem.href.startsWith(
+                                                    "/#"
+                                                  );
+                                                if (isHashLink) {
+                                                  const id =
+                                                    subSubSubItem.href.split(
+                                                      "#"
+                                                    )[1];
+                                                  if (pathname === "/") {
+                                                    e.preventDefault();
+                                                    const element =
+                                                      document.getElementById(
+                                                        id
+                                                      );
+                                                    if (element) {
+                                                      element.scrollIntoView({
+                                                        behavior: "smooth",
+                                                      });
+                                                    }
+                                                  }
+                                                } else {
+                                                  handleClick();
+                                                }
+                                              }}
+                                            >
+                                              {subSubSubItem.name}
+                                            </Link>
+                                          );
+                                        }
+                                      )}
+                                    </div>
+                                  )}
                               </div>
                             );
                           })}
@@ -471,6 +588,7 @@ const NavLinks: React.FC = () => {
     </div>
   );
 };
+
 
 
 interface MobileMenuProps {
