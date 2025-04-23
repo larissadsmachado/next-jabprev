@@ -16,6 +16,25 @@ interface ReportsByYear {
 }
 
 const reportsData: ReportsByYear = {
+  "2025": {
+    title: "DEMONSTRATIVOS 2025",
+    quarterly: [
+      {
+        name: "1° Trimestre",
+        links: [
+          {
+            text: "CAPITALIZADO",
+            url: "/Pdf/financeiro/demonstrativos-contabeis/2025/4.2_Demonstrativo_Contabil___1__Trimestre___Capitalizado.pdf",
+          },
+          {
+            text: "FINANCEIRO",
+            url: "/Pdf/financeiro/demonstrativos-contabeis/2025/4.2_Demonstrativo_Contabil___1__Trimestre___Financeiro.pdf",
+          },
+        ],
+      },
+
+    ],
+  },
   "2024": {
     title: "DEMONSTRATIVOS 2024",
     quarterly: [

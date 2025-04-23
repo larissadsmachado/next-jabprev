@@ -28,13 +28,13 @@ const navigation: NavItem[] = [
       { name: "A equipe JaboatãoPREV", href: "/institucional/#organograma" },
       {
         name: "Certificações Profissional",
-        href: "/Pdf/menu/CERTIFICACOES-GERAIS.pdf",
+        href: "/Pdf/menu/CERTIFICACOES_PROFISSIONAL___NOVO.pdf",
       },
       { name: "Perguntas Frequentes", href: "/perguntas-frequentes" },
       { name: "Legislação", href: "/legislacao" },
       {
         name: "Cartilha Previdenciária",
-        href: "/Pdf/menu/CARTILHA.pdf",
+        href: "/Pdf/menu/CARTILHA_PREVIDENCIARIA_2025.pdf",
       },
       { name: "Informativos Previdenciários", href: "/informativos-previdenciarios" },
       { name: "Controle Interno", href: "/controle-interno" },
@@ -75,17 +75,17 @@ const navigation: NavItem[] = [
             submenu: [
               {
                 name: "Reuniões do Conselho Fiscal",
-                href: "/Pdf/menu/Calendario-de-Reunioes-do-Conselho-Fiscal-2025.pdf",
+                href: "/Pdf/menu/Conselho_Fiscal___Calendario___Membros.pdf",
               },
 
               {
                 name: "Reuniões do Conselho Deliberativo",
-                href: "/Pdf/menu/Calendario-de-Reunioes-do-Conselho-Deliberativo-2025.pdf",
+                href: "/Pdf/menu/Conselho_Deliberativo___Calendario___Membros.pdf",
               },
 
               {
                 name: "Reuniões do Comitê de Investimentos",
-                href: "/Pdf/menu/Calendario-de-Reunioes-investimentos-2025.pdf",
+                href: "/Pdf/menu/Comite_de_Investimentos___Calendario___Membros.pdf",
               },
 
               {
@@ -132,7 +132,7 @@ const navigation: NavItem[] = [
         ],
       },
 
-      { name: "Concessões de benefícios", href: "/Pdf/menu/2.6_CONCESSOES_DE_BENEFICIOS___MARCO.2025.pdf" },
+      { name: "Concessões de benefícios", href: "/Pdf/menu/CONCESSAO_DE_BENEFICIOS.pdf" },
 
 
       { name: "Contratos", href: "contratos" },

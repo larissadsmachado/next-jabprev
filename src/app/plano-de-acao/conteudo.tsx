@@ -9,7 +9,7 @@ const planos = [
   },
   {
     ano: 2024,
-    link: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/06/Plano-de-Acao-JaboataoPrev-2024_Editado.pdf",
+    link: "/Pdf/administrativo/plano-de-acao/Plano_de_Acao___JaboataoPrev_2024.pdf",
   },
   {
     ano: 2023,
