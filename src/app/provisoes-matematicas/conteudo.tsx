@@ -24,17 +24,17 @@ const reportsData: ReportsByYear = {
 
       {
         name: "Fevereiro",
-        url: "#",
+        url: "/Pdf/previdencia/provisoes-matematicas/2025/PROVISOES_MATEMATICAS___FEVEREIRO.2025.pdf",
       },
 
       {
         name: "Março",
-        url: "#",
+        url: "/Pdf/previdencia/provisoes-matematicas/2025/PROVISOES_MATEMATICAS___MARCO.2025.pdf",
       },
 
       {
         name: "Abril",
-        url: "#",
+        url: "/Pdf/previdencia/provisoes-matematicas/2025/PROVISOES_MATEMATICAS___ABRIL.2025.pdf",
       },
 
       {
