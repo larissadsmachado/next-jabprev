@@ -8,7 +8,7 @@ type CustomButtonProps = {
 };
 
 const CustomButton: React.FC<CustomButtonProps> = ({ children, onClick }) => (
-  <button onClick={onClick} className="px-4 py-2 text-white bg-transparent hover:bg-gray-100 rounded-lg">
+  <button onClick={onClick} className="px-4 py-2 text-white bg-transparent hover:bg-[#007bff] rounded-lg">
     {children}
   </button>
 );
@@ -79,12 +79,13 @@ const AccessibilityButton = () => {
 
       <style jsx>{`
         .accessibility-container {
-          position: fixed;
-          top: 50%;
-          left: 0;
-          transform: translateY(-50%);
-          z-index: 10;
-        }
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 10;
+  pointer-events: ${isOpen ? "auto" : "none"};
+  transform: translateY(-50%);
+}
 
         .accessibility-panel {
           display: flex;
@@ -92,7 +93,7 @@ const AccessibilityButton = () => {
           position: relative;
           width: auto;
           transition: transform 0.3s ease-in-out;
-          transform: translateX(${isOpen ? "0" : "-100%"}); /* Fecha e abre deslizando sem sair da esquerda */
+          transform: translateX(${isOpen ? "0" : "-100%"});
         }
 
         .accessibility-toggle {
@@ -104,6 +105,7 @@ const AccessibilityButton = () => {
           position: absolute;
           left: 100%; /* Mantém o botão fixo ao lado do painel */
           transition: left 0.3s ease-in-out;
+          pointer-events: auto; /* Permite clicar no botão mesmo quando o painel está fechado */
         }
 
         .accessibility-buttons {
