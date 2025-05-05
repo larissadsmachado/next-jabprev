@@ -102,6 +102,7 @@ const navigation: NavItem[] = [
                 name: "Reuniões da Comissão de Revisão de Benefícios",
                 href: "/Pdf/menu/CALENDARIO-DE-REUNIOES-Comissao-2025.pdf",
               },
+              
             ],
           },
 
@@ -121,14 +122,6 @@ const navigation: NavItem[] = [
             ],
           },
           
-          {
-            name: "Calendário de Reuniões Ordinárias Conselho Deliberativo",
-            href: "/Pdf/menu/2.3_Calendario_de_Reunioes_do_Conselho_Deliberativo___2025.pdf",
-          },
-          {
-            name: "Calendário de Reuniões Ordinárias Comitê de Investimento",
-            href: "/Pdf/menu/2.3_Calendario_de_Reunioes_do_Comite_de_Investimentos___2025.pdf",
-          },
         ],
       },
 
