@@ -99,7 +99,7 @@ export default function CardGrid() {
             {
               title: "Carta de Serviço",
               icon: <FaPiggyBank />,
-              link: "/pdf/carta-de-servico/1.1_Carta_de_Servicos.pdf",
+              link: "/Pdf/carta-de-servico/1.1_Carta_de_Servicos.pdf",
               subtext:
                 "Página com todas as cartas de serviços do JaboatãoPrev.",
               target: "_blank",
