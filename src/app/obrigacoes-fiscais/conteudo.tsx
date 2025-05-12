@@ -13,7 +13,7 @@ const Links = () => (
       <ul className="pl-5 text-[#051f60] text-xl pb-20">
         <li className="py-2">
           <a
-            href="https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Relatorio-de-Governanca-Corporativa-2024_Dezembro.2024.pdf"
+            href="Pdf/administrativo/obrigacoes-fiscais/3.5_Certidao_Negativa_de_Debitos_Trabalhistas___De_abril_a_outubro.2025.pdf"
             target="_blank"
             className="text-blue-800 hover:underline"
           >
@@ -23,7 +23,7 @@ const Links = () => (
 
         <li className="py-2">
           <a
-            href="https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/certidao-fgts.pdf"
+            href="Pdf/administrativo/obrigacoes-fiscais/3.5_Certidao_de_Regularidade_do_FGTS___De_abril_a_Maio.2025.pdf"
             target="_blank"
             className="text-blue-800 hover:underline"
           >
@@ -33,7 +33,7 @@ const Links = () => (
 
         <li className="py-2">
           <a
-            href="https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/01/3.-Certidao-de-Regularidade-da-Divida-Ativa-da-Uniao-e-do-INSS-venc-14.04.25.pdf"
+            href="Pdf/administrativo/obrigacoes-fiscais/3.5_Certidao_de_Regularidade_da_Divida_Ativa_da_Uniao_e_do_INSS___De_abril_a_outubro.2025.pdf"
             target="_blank"
             className="text-blue-800 hover:underline"
           >
@@ -53,7 +53,7 @@ const Links = () => (
 
         <li className="py-2">
           <a
-            href="https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/12/5.-Certidao-Negativa-Estadual_Marco.2025.pdf"
+            href="Pdf/administrativo/obrigacoes-fiscais/3.5_Certidao_Negativa_Estadual___De_Maio_a_junho.2025.pdf"
             target="_blank"
             className="text-blue-800 hover:underline"
           >
@@ -63,7 +63,7 @@ const Links = () => (
 
         <li className="py-2">
           <a
-            href="https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/10/6.-Certidao-Negativa-Municipal.OUT_.pdf"
+            href="Pdf/administrativo/obrigacoes-fiscais/"
             target="_blank"
             className="text-blue-800 hover:underline"
           >
