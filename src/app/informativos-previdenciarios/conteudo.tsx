@@ -4,6 +4,10 @@ import React from "react";
 
 const data: Record<string, { date: string; url: string }[]> = {
   "2025": [
+     {
+      date: "Informativo Previdenciário nº 05.2025 - ABONO DE PERMANENCIA",
+      url: "/Pdf/institucional/informativos/2.3_Informativo_Previdenciario_n__05.2025___ABONO_DE_PERMANENCIA.pdf",
+    },
     {
       date: "Informativo nº 04.2025 – Aliquota",
       url: "/Pdf/institucional/informativos/INFORMATIVO-no-004-2025-ALIQUOTA.pdf",
