@@ -30,6 +30,16 @@ const Links = () => (
             26 de Fevereiro de 2025
           </a>
         </li>
+
+         <li className="py-2">
+          <a
+            href="Pdf/administrativo/atas/investimento/3.1_ATA_DO_COMITE_DE_INVESTIMENTOS___20_de_marco_de_2025.pdf"
+            target="_blank"
+            className="text-blue-800 hover:underline"
+          >
+            20 de março de 2025
+          </a>
+        </li>
       </ul>
 
 
@@ -889,3 +899,4 @@ const Legislacao = () => {
 };
 
 export default Legislacao;
+
