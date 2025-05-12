@@ -99,7 +99,7 @@ export default function CardGrid() {
             {
               title: "Carta de Serviço",
               icon: <FaPiggyBank />,
-              link: "https://jaboatao.pe.gov.br/servicos-de-previdencia/",
+              link: "/pdf/carta-de-servico/1.1_Carta_de_Servicos.pdf",
               subtext:
                 "Página com todas as cartas de serviços do JaboatãoPrev.",
               target: "_blank",
@@ -116,7 +116,7 @@ export default function CardGrid() {
               title: "Nossos Telefones",
               icon: <FaPhoneAlt />,
               subtext:
-                "Nossos telefones:\n Telefones fixos \n (81) 3462-4855 \n (81) 3462-4619\n \n telefone celular \n (81) 98743-2326",
+                "Nossos telefones:\n (81) 99756-0292 \n (81) 99975-4173 \n (81) 99113-3308",
               target: "_blank",
             },
             {
