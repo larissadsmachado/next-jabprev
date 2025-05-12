@@ -8,12 +8,12 @@ const data = {
     "Julho": { valor: "R$", link: "#" },
     "Junho": { valor: "R$", link: "#" },
     "Maio": { valor: "R$", link: "#" },
-    "Abril": { valor: "R$", link: "#" },
+    "Abril": { valor: "R$ 213.603,01", link: "/Pdf/financeiro/despesas-administrativas/4.1___ABRIL___DESPESAS_ADM_2025.pdf" },
     "Março": { valor: "R$ 218.439,47", link: "/Pdf/financeiro/despesas-administrativas/4.1___MARCO___DESPESAS_ADM_2025.pdf" },
-    "Fevereiro": { valor: "R$ 260.283,65", link: "/Pdf/financeiro/despesas-administrativas/FEVEREIRO_DESPESAS_ADM_2025.pdf" },
+    "Fevereiro": { valor: "R$ 260.283,65", link: "/Pdf/financeiro/despesas-administrativas/4.1___FEVEREIRO___DESPESAS_ADM_2025.pdf" },
     "Janeiro": { 
       valor: "R$ 293.702,83", 
-      link: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/GERAL.pdf" 
+      link: "/Pdf/financeiro/despesas-administrativas/4.1___JANEIRO___DESPESAS_ADM_2025.pdf" 
     },
   },
 
