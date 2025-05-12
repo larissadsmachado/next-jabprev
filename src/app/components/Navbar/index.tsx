@@ -208,7 +208,7 @@ const navigation: NavItem[] = [
       { name: "Provisões Matemáticas", href: "/provisoes-matematicas" },
       {
         name: "Relatório Gestão Atuarial",
-        href: "/Pdf/menu/Jaboatao-dos-Guararapes-PE-Relatorio-Pro-Gestao-2023-Nivel-II.pdf",
+        href: "/Pdf/menu/6.1_Jaboatao_dos_Guararapes__PE__Relatorio_Pro_Gestao_2024_Nivel_II.pdf",
       },
       {
         name: "Relatórios Atuariais",
