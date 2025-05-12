@@ -182,7 +182,7 @@ const navigation: NavItem[] = [
       { name: "Política de Investimentos", href: "/politica-de-investimentos" },
       {
         name: "Relatório Anual de Investimentos",
-        href: "/Pdf/menu/13.-RELATORIO-ANUAL-2023.pdf",
+        href: "/Pdf/menu/5.3_RELATORIO_ANUAL_2024.pdf",
       },
       {
         name: "Regime Interno",
