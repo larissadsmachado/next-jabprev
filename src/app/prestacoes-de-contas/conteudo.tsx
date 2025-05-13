@@ -9,7 +9,7 @@ const exercises: Exercise[] = [
   {
     year: "2024",
     content: [
-      { text: "PRESTAÇÃO DE CONTAS", url: "/Pdf/financeiro/prestacoes-de-contas/4.3_Prestacao_de_Contas_2024___Comprovante_de_Envio.pd" },
+      { text: "PRESTAÇÃO DE CONTAS", url: "/Pdf/financeiro/prestacoes-de-contas/prestacao-de-contas.pdf" },
     ],
   },
   {
