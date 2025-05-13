@@ -30,7 +30,7 @@ const Links = () => (
       links={[
         {
           href: "Pdf/institucional/controle-interno/Plano_Anual_de_Controle_Interno_2025_-_JABOATAOPREV_assinado.pdf",
-          text: "Incluir PACI - Plano Anual de Controle Interno 2025.",
+          text: "PACI - Plano Anual de Controle Interno 2025.",
         }
       ]} />
 
