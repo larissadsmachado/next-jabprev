@@ -19,7 +19,7 @@ const Links = () => (
           >
             31 de janeiro de 2025
           </a>
-        </li>
+        </li> 
         
         <li className="py-2">
           <a
@@ -77,6 +77,15 @@ const Links = () => (
             23 de Fevereiro de 2024
           </a>
         </li>
+        <li className="py-2">
+          <a
+            href="https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/08/06.-Reuniao-do-Comite-de-Investimentos-20.06.2024.pdf"
+            target="_blank"
+            className="text-blue-800 hover:underline"
+          >
+            20 de Junho de 2024
+          </a>
+        </li> 
 
         <li className="py-2">
           <a
@@ -132,17 +141,27 @@ const Links = () => (
           >
             10 de Maio de 2024
           </a>
-        </li>
-        <li className="py-2">
+        </li>  
+
+         <li className="py-2">
           <a
-            href="https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2024/08/06.-Reuniao-do-Comite-de-Investimentos-20.06.2024.pdf"
+            href="Pdf/administrativo/atas/investimento/11. Reunião do Comitê de Investimentos 11.2024.pdf"
             target="_blank"
             className="text-blue-800 hover:underline"
           >
-            20 de Junho de 2024
+            12 de novembro de 2024
           </a>
-        </li> 
-        
+        </li>
+
+         <li className="py-2">
+          <a
+            href="Pdf/administrativo/atas/investimento/12. Reunião do Comitê de Investimentos 12.2024.pdf"
+            target="_blank"
+            className="text-blue-800 hover:underline"
+          >
+            04 de dezembro de 2024
+          </a>
+        </li>
       </ul>
 
       <h1 className="text-5xl font-bold mb-4 uppercase text-blue-900 leading-tight">
