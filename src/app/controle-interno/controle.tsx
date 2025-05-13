@@ -26,7 +26,13 @@ const Links = () => (
   <div className="h-auto bg-gradient-to-b from-[#ffffff] via-[#dcecff] to-[#cbe1fc]">
     <div className="mx-auto max-w-6xl p-6 py-20">
       {/* Links do ano de 2025 (vazio) */}
-      <YearLinks year="2025" links={[]} />
+      <YearLinks year="2025"
+      links={[
+        {
+          href: "Pdf/institucional/controle-interno/Plano_Anual_de_Controle_Interno_2025_-_JABOATAOPREV_assinado.pdf",
+          text: "Incluir PACI - Plano Anual de Controle Interno 2025.",
+        }
+      ]} />
 
       {/* Links do ano de 2024 */}
       <YearLinks
