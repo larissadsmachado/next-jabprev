@@ -265,9 +265,9 @@ const dados: Credenciamento[] = [
     ano: "2021.2",
     tipo: "-",
     instituicao: " XP GESTÃO DE RECURSOS LTDA",
-    tipoInstituicao: "CUSTODIANO",
-    dataCredenciamento: "12/04/2023",
-    dataValidade: "12/12/2023",
+    tipoInstituicao: "CUSTODIANTE",
+    dataCredenciamento: "11/04/2025",
+    dataValidade: "11/04/2025",
     downloadLink: "#",
   },
 
