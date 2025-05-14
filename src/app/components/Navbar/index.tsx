@@ -85,7 +85,7 @@ const navigation: NavItem[] = [
 
               {
                 name: "Reuniões do Comitê de Investimentos",
-                href: "/Pdf/menu/Calendario-de-Reunioes-investimentos-2025.pdf",
+                href: "/Pdf/menu/Calendario-de-Reunioes-investimentos.pdf",
               },
 
               {
