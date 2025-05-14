@@ -10,12 +10,12 @@ interface Credenciamento {
   downloadLink: string;
 }
 
-
 const dados: Credenciamento[] = [
   {
     ano: "2023.2",
     tipo: "Inciso I, do § 2º, do art. 21 da Res CMN nº 4.963/2021",
-    instituicao: "BB GESTÃO DE RECURSOS - DISTRIBUIDORA DE TÍTULOS E VALORES MOBILIÁRIOS",
+    instituicao:
+      "BB GESTÃO DE RECURSOS - DISTRIBUIDORA DE TÍTULOS E VALORES MOBILIÁRIOS",
     tipoInstituicao: "ADMINISTRADOR",
     dataCredenciamento: "01/08/2023",
     dataValidade: "01/08/2025",
@@ -71,7 +71,7 @@ const dados: Credenciamento[] = [
     tipo: "-",
     instituicao: "BRPP GESTÃO DE PRODUTOS ESTRUTURADOS LTDA",
     tipoInstituicao: "GESTOR",
-    dataCredenciamento: "30/09/2021",
+    dataCredenciamento: "30/09/2024",
     dataValidade: "30/09/2026",
     downloadLink: "#",
   },
@@ -120,8 +120,268 @@ const dados: Credenciamento[] = [
     dataValidade: "07/08/2025",
     downloadLink: "#",
   },
-];
 
+  {
+    ano: "2021.2",
+    tipo: "Inciso I, do § 2º, do art. 21 da Res CMN nº 4.963/2021",
+    instituicao: "BANCO BRADESCO S/A",
+    tipoInstituicao: "ADMINISTRADOR",
+    dataCredenciamento: "26/04/2024",
+    dataValidade: "30/09/2026",
+    downloadLink: "#",
+  },
+
+  {
+    ano: "2021.2",
+    tipo: "Inciso I, do § 2º, do art. 21 da Res CMN nº 4.963/2021",
+    instituicao: "BEM DTVM LTDA",
+    tipoInstituicao: "ADMINISTRADOR",
+    dataCredenciamento: "04/04/2024",
+    dataValidade: "30/09/2026",
+    downloadLink: "#",
+  },
+
+  {
+    ano: "2021.2",
+    tipo: "Inciso I, do § 2º, do art. 21 da Res CMN nº 4.963/2021",
+    instituicao: "BANCO BNP PARIBAS BRASIL S.A. ",
+    tipoInstituicao: "ADMINISTRADOR",
+    dataCredenciamento: "05/04/2024",
+    dataValidade: "09/30/2026",
+    downloadLink: "#",
+  },
+
+  {
+    ano: "2021.2",
+    tipo: "Inciso I, do § 2º, do art. 21 da Res CMN nº 4.963/2021",
+    instituicao: "ITAÚ UNIBANCO S.A.",
+    tipoInstituicao: "ADMINISTRADOR",
+    dataCredenciamento: "05/04/2024",
+    dataValidade: "09/30/2026",
+    downloadLink: "#",
+  },
+
+  {
+    ano: "2021.2",
+    tipo: "Inciso I, do § 2º, do art. 21 da Res CMN nº 4.963/2021",
+    instituicao: "BTG PACTUAL SERVIÇOS FINANCEIROS S.A DTVM",
+    tipoInstituicao: "ADMINISTRADOR",
+    dataCredenciamento: "05/04/2024",
+    dataValidade: "09/30/2026",
+    downloadLink: "#",
+  },
+
+  {
+    ano: "2021.2",
+    tipo: "Inciso I, do § 2º, do art. 21 da Res CMN nº 4.963/2021",
+    instituicao: "BNP PARIBAS ASSET MANAGEMENT BRASIL LTDA.",
+    tipoInstituicao: "GESTOR",
+    dataCredenciamento: "05/04/2024",
+    dataValidade: "30/09/2026",
+    downloadLink: "#",
+  },
+
+  {
+    ano: "2021.2",
+    tipo: "Inciso I, do § 2º, do art. 21 da Res CMN nº 4.963/2021",
+    instituicao: "BRAM - BRADESCO ASSET MANAGEMENT S.A. - DTVM",
+    tipoInstituicao: "GESTOR",
+    dataCredenciamento: "26/04/2024",
+    dataValidade: "30/09/2026",
+    downloadLink: "#",
+  },
+
+  {
+    ano: "2021.2",
+    tipo: "Inciso I, do § 2º, do art. 21 da Res CMN nº 4.963/2021",
+    instituicao: "BTG PACTUAL ASSET MANAGEMENT S.A. DTVM",
+    tipoInstituicao: "GESTOR",
+    dataCredenciamento: "05/04/2024",
+    dataValidade: "30/09/2026",
+    downloadLink: "#",
+  },
+
+  {
+    ano: "2021.2",
+    tipo: "Inciso I, do § 2º, do art. 21 da Res CMN nº 4.963/2021",
+    instituicao: "BTG PACTUAL WM GESTAO DE RECURSOS LTDA.",
+    tipoInstituicao: "GESTOR",
+    dataCredenciamento: "05/04/2024",
+    dataValidade: "03/04/2026",
+    downloadLink: "#",
+  },
+
+  {
+    ano: "2021.2",
+    tipo: "-",
+    instituicao: "ICATU VANGUARDA GESTÃO DE RECURSOS LTDA.",
+    tipoInstituicao: "GESTOR",
+    dataCredenciamento: "12/04/2024",
+    dataValidade: "12/04/2026",
+    downloadLink: "#",
+  },
+
+  {
+    ano: "2021.2",
+    tipo: "-",
+    instituicao: "AZ QUEST INVESTIMENTOS LTDA",
+    tipoInstituicao: "GESTOR",
+    dataCredenciamento: "04/04/2024",
+    dataValidade: "04/04/2026",
+    downloadLink: "#",
+  },
+
+  {
+    ano: "2021.2",
+    tipo: "-",
+    instituicao: "SOMMA INVESTIMENTOS S.A",
+    tipoInstituicao: "GESTOR",
+    dataCredenciamento: "10/05/2024",
+    dataValidade: "30/09/2026",
+    downloadLink: "#",
+  },
+
+  {
+    ano: "2021.2",
+    tipo: "Inciso I, do § 2º, do art. 21 da Res CMN nº 4.963/2021",
+    instituicao: "XP ALLOCATION ASSET MANAGEMENT LTDA",
+    tipoInstituicao: "GESTOR",
+    dataCredenciamento: "12/04/2023",
+    dataValidade: "11/04/2025",
+    downloadLink: "#",
+  },
+
+  {
+    ano: "2021.2",
+    tipo: "Inciso I, do § 2º, do art. 21 da Res CMN nº 4.963/2021",
+    instituicao: "XP GESTÃO DE RECURSOS LTDA",
+    tipoInstituicao: "GESTOR",
+    dataCredenciamento: "12/04/2023",
+    dataValidade: "11/04/2025",
+    downloadLink: "#",
+  },
+
+  {
+    ano: "2021.2",
+    tipo: "-",
+    instituicao: " XP GESTÃO DE RECURSOS LTDA",
+    tipoInstituicao: "CUSTODIANO",
+    dataCredenciamento: "12/04/2023",
+    dataValidade: "12/12/2023",
+    downloadLink: "#",
+  },
+
+  {
+    ano: "2021.2",
+    tipo: "-",
+    instituicao: "GRID AGENTE AUTONOMO DE INVESTIMENTO LTDA",
+    tipoInstituicao: "DISTRIBUIDOR",
+    dataCredenciamento: "12/04/2024",
+    dataValidade: "13/04/2026",
+    downloadLink: "#",
+  },
+
+  {
+    ano: "2021.2",
+    tipo: "-",
+    instituicao: " PRIVATIZA AGENTES AUTÔNOMOS DE INVESTIMENTOS",
+    tipoInstituicao: "DISTRIBUIDOR",
+    dataCredenciamento: "04/04/2024",
+    dataValidade: "30/09/2026",
+    downloadLink: "#",
+  },
+
+  {
+    ano: "2021.2",
+    tipo: "Inciso I, do § 2º, do art. 21 da Res CMN nº 4.963/2021",
+    instituicao:
+      "XP INVESTIMENTOS CORRETORA DE CAMBIO, TITULOS E VALORES MOBILIARIOS S/A",
+    tipoInstituicao: "DISTRIBUIDOR",
+    dataCredenciamento: "12/04/2023",
+    dataValidade: "11/04/2025",
+    downloadLink: "#",
+  },
+
+  {
+    ano: "2021.2",
+    tipo: "-",
+    instituicao: "PERFORME AGENTES AUTÔNOMOS DE INVESTIMENTOS LTDA",
+    tipoInstituicao: "DISTRIBUIDOR",
+    dataCredenciamento: "28/07/2024",
+    dataValidade: "30/09/2026",
+    downloadLink: "#",
+  },
+
+  {
+    ano: "2021.2",
+    tipo: "-",
+    instituicao: "MULTINVEST CAPITAL ADM DE RECURSOS LTDA",
+    tipoInstituicao: "GESTOR",
+    dataCredenciamento: "30/09/2024",
+    dataValidade: "30/09/2026",
+    downloadLink: "#",
+  },
+
+  {
+    ano: "2021.2",
+    tipo: "-",
+    instituicao: "RIO BRAVO INVESTIMENTOS",
+    tipoInstituicao: "GESTOR",
+    dataCredenciamento: "01/07/2024",
+    dataValidade: "01/07/2024",
+    downloadLink: "#",
+  },
+
+  {
+    ano: "2021.2",
+    tipo: "-",
+    instituicao: "BANCO SANTANDER",
+    tipoInstituicao: "EMISSOR",
+    dataCredenciamento: "01/10/'",
+    dataValidade: "01/10/2024",
+    downloadLink: "#",
+  },
+
+  {
+    ano: "2021.2",
+    tipo: "-",
+    instituicao: "BANCO DO NORDESTE DO BRASIL S/A",
+    tipoInstituicao: "GESTOR",
+    dataCredenciamento: "01/11/2024",
+    dataValidade: "01/11/2024",
+    downloadLink: "#",
+  },
+
+  {
+    ano: "2021.2",
+    tipo: "-",
+    instituicao: "4UM GESTAO DE RECURSOS LTDA",
+    tipoInstituicao: "GESTOR",
+    dataCredenciamento: "03/02/2025",
+    dataValidade: "03/02/2025",
+    downloadLink: "#",
+  },
+
+  {
+    ano: "2021.2",
+    tipo: "-",
+    instituicao: "Sul América Investimentos Gestora de Recursos S.A.",
+    tipoInstituicao: "GESTOR",
+    dataCredenciamento: "03/02/2025",
+    dataValidade: "03/02/2025",
+    downloadLink: "#",
+  },
+
+  {
+    ano: "2021.2",
+    tipo: "-",
+    instituicao: "RENASCENÇA DISTRIBUIDORA DE TÍTULOS E VALORES",
+    tipoInstituicao: "CORRETORA",
+    dataCredenciamento: "10/05/2024",
+    dataValidade: "10/05/2024",
+    downloadLink: "#",
+  },
+];
 
 const TabelaCredenciamento: React.FC = () => {
   return (
@@ -131,9 +391,13 @@ const TabelaCredenciamento: React.FC = () => {
           <tr>
             <th className="border border-gray-300 p-2">ANO</th>
             <th className="border border-gray-300 p-2">TIPO</th>
-            <th className="border border-gray-300 p-2">INSTITUIÇÕES CREDENCIADAS</th>
+            <th className="border border-gray-300 p-2">
+              INSTITUIÇÕES CREDENCIADAS
+            </th>
             <th className="border border-gray-300 p-2">TIPO DE INSTITUIÇÃO</th>
-            <th className="border border-gray-300 p-2">DATA DO CREDENCIAMENTO</th>
+            <th className="border border-gray-300 p-2">
+              DATA DO CREDENCIAMENTO
+            </th>
             <th className="border border-gray-300 p-2">DATA DE VALIDADE</th>
             <th className="border border-gray-300 p-2">DOWNLOAD</th>
           </tr>
@@ -144,11 +408,20 @@ const TabelaCredenciamento: React.FC = () => {
               <td className="border border-gray-300 p-2">{item.ano}</td>
               <td className="border border-gray-300 p-2">{item.tipo}</td>
               <td className="border border-gray-300 p-2">{item.instituicao}</td>
-              <td className="border border-gray-300 p-2">{item.tipoInstituicao}</td>
-              <td className="border border-gray-300 p-2">{item.dataCredenciamento}</td>
-              <td className="border border-gray-300 p-2">{item.dataValidade}</td>
               <td className="border border-gray-300 p-2">
-                <a href={item.downloadLink} className="text-blue-500 hover:underline">
+                {item.tipoInstituicao}
+              </td>
+              <td className="border border-gray-300 p-2">
+                {item.dataCredenciamento}
+              </td>
+              <td className="border border-gray-300 p-2">
+                {item.dataValidade}
+              </td>
+              <td className="border border-gray-300 p-2">
+                <a
+                  href={item.downloadLink}
+                  className="text-blue-500 hover:underline"
+                >
                   TERMO DE CREDENCIAMENTO
                 </a>
               </td>
