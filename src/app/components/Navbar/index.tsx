@@ -273,6 +273,10 @@ const navigation: NavItem[] = [
         ],
       },
       {
+        name: "Relatório de Aderência das Hipóteses Atuariais",
+        href: "/Pdf/menu/Jaboatão-dos-GuararapesPE-Relatorio-de-Aderencia-das-Hipoteses-Atuariais-2024-2021-a-2023.pdf",
+      },
+      {
         name: "Contribuições Previdenciária",
         href: "/Pdf/menu/Lei-complementar-40-reorganiza-o-RPPS.pdf",
       },
