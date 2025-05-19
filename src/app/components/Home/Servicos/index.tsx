@@ -116,7 +116,7 @@ export default function CardGrid() {
               title: "Nossos Telefones",
               icon: <FaPhoneAlt />,
               subtext:
-                "Nossos telefones:\n (81) 99756-0292 \n (81) 99975-4173 \n (81) 99113-3308",
+                "Nossos telefones:\n (81) 99756-0292 \n (81) 99975-4173 \n (81) 99113-3308\n (81) 99113-3308\n (81) 99975-4173",
               target: "_blank",
             },
             {

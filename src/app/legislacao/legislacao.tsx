@@ -358,7 +358,7 @@ const Links = () => (
 
         <ul className="pl-8 list-disc">
           <li>
-            <a href="https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2023/09/Politica-de-Seguranca-da-Informacao.pdf" target="_blank" className="text-blue-600 hover:underline">
+            <a href="Pdf/institucional/legislacao/2.1_POLITICA_DE_SEGURANCA_DA_INFORMACAO_E_COMUNICACOES.pdf" target="_blank" className="text-blue-600 hover:underline">
             Política de Segurança da Informação 
             </a>
           </li>
