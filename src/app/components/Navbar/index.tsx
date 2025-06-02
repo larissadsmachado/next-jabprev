@@ -27,7 +27,7 @@ const navigation: NavItem[] = [
       { name: "Missão, Visão e Valores", href: "/institucional/#missao" },
       { name: "A Equipe JaboatãoPREV", href: "/institucional/#organograma" },
       {
-        name: "Certificações Profissional",
+        name: "Certificações Profissionais",
         href: "/Pdf/menu/CERTIFICACOES-GERAIS.pdf",
       },
       { name: "Perguntas Frequentes", href: "/perguntas-frequentes" },
@@ -188,7 +188,7 @@ const navigation: NavItem[] = [
         name: "Regime Interno",
         href: "/Pdf/menu/REGIMENTO-INTERNO-COMITE-DE-INVESTIMENTOS.pdf",
       },
-      { name: "Relatório Mensais", href: "/relatorio-mensais" },
+      { name: "Relatórios Mensais", href: "/relatorio-mensais" },
       {
         name: "Relatório de Inteligência de Dados(BI)",
         href: "/relatorio-de-inteligencia-de-dados-bi",

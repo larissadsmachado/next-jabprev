@@ -63,7 +63,7 @@ const Links = () => (
 
         <li className="py-2">
           <a
-            href="Pdf/administrativo/obrigacoes-fiscais/"
+            href="Pdf/administrativo/obrigacoes-fiscais/3.5_Certidao_Negativa_Municipal___De_Abril_a_junho.2025.pdf"
             target="_blank"
             className="text-blue-800 hover:underline"
           >

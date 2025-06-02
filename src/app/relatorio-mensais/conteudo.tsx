@@ -29,6 +29,10 @@ const reportsData: ReportsByYear = {
         name: "Março – 2025",
         url: "/Pdf/investimentos/relatorio-mensais/5.4_MARCO_2025_compressed.pdf",
       },
+      {
+        name: "Abril – 2025",
+        url: "/Pdf/investimentos/relatorio-mensais/3.2_ABRIL_2025_compressed.pdf",
+      },
     ],
   },
 

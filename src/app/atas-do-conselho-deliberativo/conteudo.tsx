@@ -20,6 +20,14 @@ const data: Record<string, { date: string; url: string }[]> = {
       date: "21 de Março de 2025",
       url: "/Pdf/administrativo/atas/deliberativo/2.1_ATA_CONSELHO_DELIBERATIVO___21_de_marco_de_2025.pdf",
     },
+    {
+      date: "24 de abril de2025",
+      url: "/Pdf/administrativo/atas/deliberativo/2.1___24_DE_ABRIL_DE_2025___CONSELHO_DELIBERATIVO.pdf",
+    },
+    {
+      date: "15 de maio de 2025",
+      url: "/Pdf/administrativo/atas/deliberativo/2.1___15_DE_MAIO_DE_2025___CONSELHO_DELIBERATIVO.pdf",
+    },
   ],
   "2024": [
     {
