@@ -27,6 +27,15 @@ const reportsData: ReportsByYear = {
         url: "Pdf/cad-prev/dair/2.2_FEVEREIRO.pdf",
       },
 
+      {
+        name: "Março",
+        url: "Pdf/cad-prev/dair/5.1_DAIR_MARCO.pdf",
+      },
+
+      {
+        name: "Abril",
+        url: "Pdf/cad-prev/dair/5.1_DAIR_ABRIL.pdf",
+      },
     ],
   },
 

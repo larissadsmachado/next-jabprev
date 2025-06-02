@@ -185,7 +185,7 @@ const navigation: NavItem[] = [
         href: "/Pdf/menu/5.3_RELATORIO_ANUAL_2024.pdf",
       },
       {
-        name: "Regime Interno",
+        name: "Regimento Interno",
         href: "/Pdf/menu/REGIMENTO-INTERNO-COMITE-DE-INVESTIMENTOS.pdf",
       },
       { name: "Relatórios Mensais", href: "/relatorio-mensais" },
@@ -277,7 +277,7 @@ const navigation: NavItem[] = [
         href: "/Pdf/menu/Jaboatão-dos-GuararapesPE-Relatorio-de-Aderencia-das-Hipoteses-Atuariais-2024-2021-a-2023.pdf",
       },
       {
-        name: "Contribuições Previdenciária",
+        name: "Contribuições Previdenciárias",
         href: "/Pdf/menu/Lei-complementar-40-reorganiza-o-RPPS.pdf",
       },
       {
