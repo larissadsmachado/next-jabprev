@@ -419,21 +419,35 @@ const TopMenu: React.FC = () => (
   </div>
 );
 
+
 const NavLinks: React.FC = () => {
-  const pathname = usePathname() ?? ""; // garante que não será null
+  const pathname = usePathname() ?? "";
 
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [activeSubMenu, setActiveSubMenu] = useState<string | null>(null);
   const [activeSubSubMenu, setActiveSubSubMenu] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
+  const router = useRouter();
+
+  useEffect(() => {
+    setActiveMenu(null);
+    setActiveSubMenu(null);
+    setActiveSubSubMenu(null);
+    setIsLoading(false);
+  }, [pathname]);
+
   const handleClick = () => {
     setIsLoading(true);
     setTimeout(() => setIsLoading(false), 1000);
+    // Fecha todos menus na hora do clique
+    setActiveMenu(null);
+    setActiveSubMenu(null);
+    setActiveSubSubMenu(null);
   };
 
   return (
-    <div className="hidden lg:flex  relative uppercase">
+    <div className="hidden lg:flex relative uppercase">
       {isLoading && <LoadingScreen />}
       {navigation.map((item) => {
         const isActive =
@@ -443,6 +457,7 @@ const NavLinks: React.FC = () => {
               pathname.startsWith(sub.href) ||
               sub.submenu?.some((subSub) => pathname.startsWith(subSub.href))
           );
+
         return (
           <div
             key={item.name}
@@ -457,25 +472,23 @@ const NavLinks: React.FC = () => {
             <Link
               href={item.href}
               className={`relative text-[#0037C1] text-[15px] font-semibold flex p-3 transition-colors duration-300 
-              hover:bg-[#0037C1] hover:text-[#ffffff]
-              ${isActive ? "bg-[#0037C1] text-[#ffffff] after:scale-x-100" : ""}
-              after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:translate-x-[-50%]
-              after:h-[2px] after:w-full after:bg-[#13AFF0]
-              after:origin-center after:scale-x-0 after:transition-transform after:duration-500 hover:after:scale-x-100
-            `}
+                hover:bg-[#0037C1] hover:text-[#ffffff]
+                ${isActive ? "bg-[#0037C1] text-[#ffffff] after:scale-x-100" : ""}
+                after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:translate-x-[-50%]
+                after:h-[2px] after:w-full after:bg-[#13AFF0]
+                after:origin-center after:scale-x-0 after:transition-transform after:duration-500 hover:after:scale-x-100
+              `}
               onClick={(e) => {
                 const isHashLink = item.href.startsWith("/#");
                 if (isHashLink) {
                   const id = item.href.split("#")[1];
                   if (pathname === "/") {
-                    e.preventDefault(); // só evita se já estiver na home
+                    e.preventDefault();
                     const element = document.getElementById(id);
                     if (element) {
                       element.scrollIntoView({ behavior: "smooth" });
                     }
                   }
-                  // se não estiver na home, deixa seguir normalmente
-                  // o scroll automático vai funcionar se você usar o `scroll-behavior: smooth` no CSS
                 } else {
                   handleClick();
                 }
@@ -493,6 +506,7 @@ const NavLinks: React.FC = () => {
                     subItem.submenu?.some((subSub) =>
                       pathname.startsWith(subSub.href)
                     );
+
                   return (
                     <div
                       key={subItem.name}
@@ -503,14 +517,14 @@ const NavLinks: React.FC = () => {
                       <Link
                         href={subItem.href}
                         className={`px-4 py-3 text-white text-[15px] flex items-center hover:bg-[#fdfdfd] hover:text-[#2b63ab] ${
-                          isSubActive ? "bg-[#224276] text-[#ffffff]" : ""
+                          isSubActive ? "bg-[#0037C1] text-[#ffffff]" : ""
                         }`}
                         onClick={(e) => {
-                          const isHashLink = item.href.startsWith("/#");
+                          const isHashLink = subItem.href.startsWith("/#");
                           if (isHashLink) {
-                            const id = item.href.split("#")[1];
+                            const id = subItem.href.split("#")[1];
                             if (pathname === "/") {
-                              e.preventDefault(); // só evita se já estiver na home
+                              e.preventDefault();
                               const element = document.getElementById(id);
                               if (element) {
                                 element.scrollIntoView({ behavior: "smooth" });
@@ -533,6 +547,7 @@ const NavLinks: React.FC = () => {
                             const isSubSubActive = pathname.startsWith(
                               subSubItem.href
                             );
+
                             return (
                               <div
                                 key={subSubItem.name}
@@ -546,16 +561,16 @@ const NavLinks: React.FC = () => {
                                   href={subSubItem.href}
                                   className={`px-4 py-2 text-white text-base flex items-center hover:bg-[#fdfdfd] hover:text-[#2b63ab] ${
                                     isSubSubActive
-                                      ? "bg-[#224276] text-[#ffffff]"
+                                      ? "bg-[#0037C1] text-[#ffffff]"
                                       : ""
                                   }`}
                                   onClick={(e) => {
                                     const isHashLink =
-                                      item.href.startsWith("/#");
+                                      subSubItem.href.startsWith("/#");
                                     if (isHashLink) {
-                                      const id = item.href.split("#")[1];
+                                      const id = subSubItem.href.split("#")[1];
                                       if (pathname === "/") {
-                                        e.preventDefault(); // só evita se já estiver na home
+                                        e.preventDefault();
                                         const element =
                                           document.getElementById(id);
                                         if (element) {
@@ -584,39 +599,17 @@ const NavLinks: React.FC = () => {
                                             pathname.startsWith(
                                               subSubSubItem.href
                                             );
+
                                           return (
                                             <Link
                                               key={subSubSubItem.name}
                                               href={subSubSubItem.href}
                                               className={`block px-4 py-2 text-white hover:bg-[#fdfdfd] hover:text-[#2b63ab] text-base ${
                                                 isSubSubSubActive
-                                                  ? "bg-[#224276] text-[#ffffff]"
+                                                  ? "bg-[#0037C1] text-[#ffffff]"
                                                   : ""
                                               }`}
-                                              onClick={(e) => {
-                                                const isHashLink =
-                                                  item.href.startsWith("/#");
-                                                if (isHashLink) {
-                                                  const id =
-                                                    item.href.split("#")[1];
-                                                  if (pathname === "/") {
-                                                    e.preventDefault(); // só evita se já estiver na home
-                                                    const element =
-                                                      document.getElementById(
-                                                        id
-                                                      );
-                                                    if (element) {
-                                                      element.scrollIntoView({
-                                                        behavior: "smooth",
-                                                      });
-                                                    }
-                                                  }
-                                                  // se não estiver na home, deixa seguir normalmente
-                                                  // o scroll automático vai funcionar se você usar o `scroll-behavior: smooth` no CSS
-                                                } else {
-                                                  handleClick();
-                                                }
-                                              }}
+                                              onClick={handleClick}
                                             >
                                               {subSubSubItem.name}
                                             </Link>
@@ -641,6 +634,7 @@ const NavLinks: React.FC = () => {
     </div>
   );
 };
+
 
 interface MobileMenuProps {
   closeMenu: () => void;
