@@ -11,6 +11,12 @@ import { useRouter } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 import React from "react";
 import { usePathname } from "next/navigation";
+import {
+  FaInstagram,
+  FaXTwitter,
+  FaFacebook,
+  FaYoutube,
+} from "react-icons/fa6";
 
 interface NavItem {
   name: string;
@@ -170,36 +176,7 @@ const navigation: NavItem[] = [
       },
     ],
   },
-  {
-    name: "Investimentos",
-    href: "#",
-    submenu: [
-      {
-        name: "Apr-Autorização de Aplicação e Resgate",
-        href: "/apr-autorizacao-de-aplicacao-e-resgate",
-      },
-      { name: "Credenciamentos", href: "/credenciamentos" },
-      { name: "Política de Investimentos", href: "/politica-de-investimentos" },
-      {
-        name: "Relatório Anual de Investimentos",
-        href: "/Pdf/menu/5.3_RELATORIO_ANUAL_2024.pdf",
-      },
-      {
-        name: "Regimento Interno",
-        href: "/Pdf/menu/REGIMENTO-INTERNO-COMITE-DE-INVESTIMENTOS.pdf",
-      },
-      { name: "Relatórios Mensais", href: "/relatorio-mensais" },
-      {
-        name: "Relatório de Inteligência de Dados(BI)",
-        href: "/relatorio-de-inteligencia-de-dados-bi",
-      },
-      { name: "Estudo de ALM", href: "/estudo-de-alm" },
-      {
-        name: "Mapeamento",
-        href: "/Pdf/menu/MAPEAMENTO-SETOR-DE-INVESTIMENTOS.pdf",
-      },
-    ],
-  },
+  
   {
     name: "Previdência",
     href: "#",
@@ -287,6 +264,36 @@ const navigation: NavItem[] = [
     ],
   },
   {
+    name: "Investimentos",
+    href: "#",
+    submenu: [
+      {
+        name: "Apr-Autorização de Aplicação e Resgate",
+        href: "/apr-autorizacao-de-aplicacao-e-resgate",
+      },
+      { name: "Credenciamentos", href: "/credenciamentos" },
+      { name: "Política de Investimentos", href: "/politica-de-investimentos" },
+      {
+        name: "Relatório Anual de Investimentos",
+        href: "/Pdf/menu/5.3_RELATORIO_ANUAL_2024.pdf",
+      },
+      {
+        name: "Regimento Interno",
+        href: "/Pdf/menu/REGIMENTO-INTERNO-COMITE-DE-INVESTIMENTOS.pdf",
+      },
+      { name: "Relatórios Mensais", href: "/relatorio-mensais" },
+      {
+        name: "Relatório de Inteligência de Dados(BI)",
+        href: "/relatorio-de-inteligencia-de-dados-bi",
+      },
+      { name: "Estudo de ALM", href: "/estudo-de-alm" },
+      {
+        name: "Mapeamento",
+        href: "/Pdf/menu/MAPEAMENTO-SETOR-DE-INVESTIMENTOS.pdf",
+      },
+    ],
+  },
+  {
     name: "Cad Prev",
     href: "#",
     submenu: [
@@ -316,40 +323,97 @@ const navigation: NavItem[] = [
     name: "Carta de Serviço",
     href: "/Pdf/menu/carta.pdf",
   },
+];
+
+const institutionalLinks = [
   {
-    name: "Sites Relacionados",
-    href: "#",
-    submenu: [
-      { name: "Site Oficial", href: "https://jaboatao.pe.gov.br/" },
-      {
-        name: "Diário Oficial",
-        href: "https://diariooficial.jaboatao.pe.gov.br/",
-      },
-      {
-        name: "Portal da Transparência",
-        href: "https://portaldatransparencia.jaboatao.pe.gov.br/",
-      },
-      { name: "Ouvidoria", href: "https://ouvidoria.jaboatao.pe.gov.br/" },
-      {
-        name: "Portal do Contribuinte",
-        href: "https://www.tinus.com.br/csp/JABOATAO/portal/index.csp",
-      },
-    ],
+    href: "http://diariooficial.jaboatao.pe.gov.br/",
+    label: "Diário Oficial",
+  },
+  { href: "http://jaboatao.pe.gov.br/", label: "Site Oficial" },
+  {
+    href: "https://portaldatransparencia.jaboatao.pe.gov.br/",
+    label: "Portal da Transparência",
+  },
+  { href: "http://ouvidoria.jaboatao.pe.gov.br/", label: "Ouvidoria" },
+  {
+    href: "https://www.tinus.com.br/csp/JABOBAOBAO/portal/index.js",
+    label: "Portal do Contribuinte",
+  },
+  {
+    href: "https://servidor.jaboatao.pe.gov.br/",
+    label: "Portal do Servidor",
+  },
+  {
+    href: "https://jaboataoemacao.jaboatao.pe.gov.br/",
+    label: "COVID-19",
+  },
+  {
+    href: "https://radardatransparencia.atricon.org.br/radar-da-transparencia-publica.html",
+    label: "Radar da Transparência",
   },
 ];
 
+const socialLinks = [
+  {
+    name: "Instagram",
+    href: "https://instagram.com/suaempresa",
+    icon: <FaInstagram />,
+  },
+  {
+    name: "Twitter",
+    href: "https://twitter.com/suaempresa",
+    icon: <FaXTwitter />,
+  },
+  {
+    name: "Facebook",
+    href: "https://facebook.com/suaempresa",
+    icon: <FaFacebook />,
+  },
+  {
+    name: "YouTube",
+    href: "https://youtube.com/suaempresa",
+    icon: <FaYoutube />,
+  },
+];
+const TopMenu: React.FC = () => (
+  <div className="fixed top-0 left-0 w-full h-9 bg-[#0037C1] text-white text-sm py-2 px-[20px] xl:px-[50px] flex flex-col xl:flex-row xl:justify-between items-center gap-2 z-50">
+    {/* Redes sociais */}
+    <div className="flex gap-2 justify-center">
+      {socialLinks.map((link) => (
+        <Link key={link.name} href={link.href} target="_blank">
+          <span className="hover:text-yellow-300 text-lg">{link.icon}</span>
+        </Link>
+      ))}
+    </div>
 
-const Logo = () => (
-  <div className="relative flex items-center justify-center">
-    <Link href="/">
-      <Image
-        src="/images/Logo/logo.png"
-        alt="Logo"
-        height={20}
-        width={220}
-        className="w-[180px] h-auto sm:w-[200px] sm:h-auto md:w-[200px] md:h-auto lg:w-[210px] lg:h-auto xl:w-[230px] xl:h-auto"
-      />
-    </Link>
+    {/* Links institucionais */}
+    <div className="hidden xl:flex gap-3 text-xs md:text-sm">
+      {institutionalLinks.map((link) => (
+        <Link
+          key={link.href}
+          href={link.href}
+          target="_blank"
+          className="hover:underline"
+        >
+          {link.label}
+        </Link>
+      ))}
+
+      {/* Ícone especial */}
+      <a
+        href="https://eouve.com.br/#/ouvidoria"
+        target="_blank"
+        className="icone-icon"
+      >
+        <Image
+          src="/images/iconamarelo.png"
+          alt="ícone amarelo"
+          width={20}
+          height={20}
+        />
+      </a>
+    </div>
   </div>
 );
 
@@ -390,25 +454,26 @@ const NavLinks: React.FC = () => {
           >
             <Link
               href={item.href}
-              className={`text-[#0037C1] text-[15px] font-semibold flex p-3 hover:bg-[#224276] hover:text-[#ffffff] hover:underline decoration-[#13AFF0] ${
-                isActive
-                  ? "bg-[#224276] underline decoration-[#13AFF0] text-[#ffffff]"
-                  : ""
-              }`}
+              className={`relative text-[#0037C1] text-[15px] font-semibold flex p-3 transition-colors duration-300 
+              hover:bg-[#0037C1] hover:text-[#ffffff]
+              ${isActive ? "bg-[#0037C1] text-[#ffffff] after:scale-x-100" : ""}
+              after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:translate-x-[-50%]
+              after:h-[2px] after:w-full after:bg-[#13AFF0]
+              after:origin-center after:scale-x-0 after:transition-transform after:duration-500 hover:after:scale-x-100
+            `}
               onClick={(e) => {
-                setActiveMenu(null);
-                setActiveSubMenu(null);
-                setActiveSubSubMenu(null);
                 const isHashLink = item.href.startsWith("/#");
                 if (isHashLink) {
                   const id = item.href.split("#")[1];
                   if (pathname === "/") {
-                    e.preventDefault();
+                    e.preventDefault(); // só evita se já estiver na home
                     const element = document.getElementById(id);
                     if (element) {
                       element.scrollIntoView({ behavior: "smooth" });
                     }
                   }
+                  // se não estiver na home, deixa seguir normalmente
+                  // o scroll automático vai funcionar se você usar o `scroll-behavior: smooth` no CSS
                 } else {
                   handleClick();
                 }
@@ -439,14 +504,11 @@ const NavLinks: React.FC = () => {
                           isSubActive ? "bg-[#224276] text-[#ffffff]" : ""
                         }`}
                         onClick={(e) => {
-                          setActiveMenu(null);
-                          setActiveSubMenu(null);
-                          setActiveSubSubMenu(null);
-                          const isHashLink = subItem.href.startsWith("/#");
+                          const isHashLink = item.href.startsWith("/#");
                           if (isHashLink) {
-                            const id = subItem.href.split("#")[1];
+                            const id = item.href.split("#")[1];
                             if (pathname === "/") {
-                              e.preventDefault();
+                              e.preventDefault(); // só evita se já estiver na home
                               const element = document.getElementById(id);
                               if (element) {
                                 element.scrollIntoView({ behavior: "smooth" });
@@ -486,15 +548,12 @@ const NavLinks: React.FC = () => {
                                       : ""
                                   }`}
                                   onClick={(e) => {
-                                    setActiveMenu(null);
-                                    setActiveSubMenu(null);
-                                    setActiveSubSubMenu(null);
                                     const isHashLink =
-                                      subSubItem.href.startsWith("/#");
+                                      item.href.startsWith("/#");
                                     if (isHashLink) {
-                                      const id = subSubItem.href.split("#")[1];
+                                      const id = item.href.split("#")[1];
                                       if (pathname === "/") {
-                                        e.preventDefault();
+                                        e.preventDefault(); // só evita se já estiver na home
                                         const element =
                                           document.getElementById(id);
                                         if (element) {
@@ -533,20 +592,13 @@ const NavLinks: React.FC = () => {
                                                   : ""
                                               }`}
                                               onClick={(e) => {
-                                                setActiveMenu(null);
-                                                setActiveSubMenu(null);
-                                                setActiveSubSubMenu(null);
                                                 const isHashLink =
-                                                  subSubSubItem.href.startsWith(
-                                                    "/#"
-                                                  );
+                                                  item.href.startsWith("/#");
                                                 if (isHashLink) {
                                                   const id =
-                                                    subSubSubItem.href.split(
-                                                      "#"
-                                                    )[1];
+                                                    item.href.split("#")[1];
                                                   if (pathname === "/") {
-                                                    e.preventDefault();
+                                                    e.preventDefault(); // só evita se já estiver na home
                                                     const element =
                                                       document.getElementById(
                                                         id
@@ -557,6 +609,8 @@ const NavLinks: React.FC = () => {
                                                       });
                                                     }
                                                   }
+                                                  // se não estiver na home, deixa seguir normalmente
+                                                  // o scroll automático vai funcionar se você usar o `scroll-behavior: smooth` no CSS
                                                 } else {
                                                   handleClick();
                                                 }
@@ -681,24 +735,36 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ closeMenu }) => {
         />
       )}
       <motion.div
-        className="fixed top-0 left-0 w-full h-full bg-yellow-400 shadow-lg flex flex-col"
+        className="fixed top-9 left-0 w-full h-[calc(100%-2.25rem)] bg-yellow-400 shadow-lg flex flex-col overflow-hidden"
         initial={{ y: "-100%" }}
         animate={{ y: isClosing ? "-100%" : 0 }}
         transition={{ type: "spring", stiffness: 300, damping: 50 }}
       >
-        <div className="py-5 px-5 flex flex-col border-b border-gray-200">
-          <div className="flex justify-between items-center">
-            <Logo />
-            <button onClick={handleClose} className="p-2 text-black text-2xl">
-              ✕
-            </button>
-          </div>
+        {/* Topo com logo e botão ✕ */}
+        <div className="py-5 px-5 flex justify-between items-center border-b border-gray-200">
+          <Logo />
+          <button onClick={handleClose} className="p-2 text-black text-2xl">
+            ✕
+          </button>
         </div>
-        <div className="p-4 flex-1 overflow-auto text-center">
-          {renderSubMenu(navigation, 1)}
+
+        {/* Conteúdo com scroll se necessário */}
+        <div className="flex-1 overflow-auto p-4 text-center">
+          {renderSubMenu(
+            [
+              ...navigation,
+              ...institutionalLinks.map((item) => ({
+                name: item.label,
+                href: item.href,
+              })),
+            ],
+            1
+          )}
         </div>
-        <div className="p-4 flex justify-center border-t border-gray-200">
-          <div className="relative w-full max-w-md flex items-center bg-white px-4 py-2 rounded-full shadow-md">
+
+        {/* Campo de busca fixado no final */}
+        <div className="p-4 border-t border-gray-100">
+          <div className="relative w-full max-w-md mx-auto flex items-center bg-white px-4 py-2 rounded-full shadow-md">
             <FaSearch className="text-gray-500" />
             <input
               type="text"
@@ -744,7 +810,7 @@ const SearchBar = ({ setIsLoading, hideIcon = false }: SearchBarProps) => {
       {!hideIcon && (
         <button
           onClick={() => setIsSearching(true)}
-          className="text-[#0037C1] text-xl focus:outline-none"
+          className="text-[#0037C1] hover:rounded-full hover:bg-[#0037C1] hover:text-white p-3 text-xl focus:outline-none cursor-pointer"
           aria-label="Abrir busca"
         >
           <FaSearch />
@@ -776,6 +842,20 @@ const SearchBar = ({ setIsLoading, hideIcon = false }: SearchBarProps) => {
     </>
   );
 };
+
+const Logo = () => (
+  <div className="relative flex items-center h-full">
+    <Link href="/">
+      <Image
+        src="/images/Logo/logo.png"
+        alt="Logo"
+        width={220}
+        height={80} // Define uma altura específica
+        className="h-full w-auto object-contain" // Garante que ocupa toda a altura sem distorcer
+      />
+    </Link>
+  </div>
+);
 
 const LoadingScreen = () => {
   return (
@@ -809,28 +889,30 @@ const Navbar = () => {
   return (
     <Disclosure
       as="nav"
-      className={`fixed top-0 w-full transition-all duration-300 z-50 px-[50px] ${
+      className={`fixed top-9 w-full h-20 transition-all duration-300 z-50 px-[50px] ${
         scrolled ? "bg-[#fdc200d1] shadow-md" : "bg-[#FDC300]"
       }`}
     >
       <div className="relative mx-auto py-3">
-        <div className="relative flex h-14 items-center justify-between">
+        <div className="relative flex h-14 items-center">
+          {/* Logo à esquerda e o topmenu alinhado ao centro*/}
           <Logo />
-          <div className="hidden 2xl:flex">
+          <TopMenu />
+          {/* Container para NavLinks + SearchBar alinhados à direita */}
+          <div className="hidden 2xl:flex ml-auto items-center space-x-4">
             <NavLinks />
+            <SearchBar setIsLoading={setIsLoading} />
           </div>
-          <div className="hidden 2xl:flex">
-            <SearchBar setIsLoading={setIsLoading} />{" "}
-            {/* Passando setIsLoading */}
-          </div>
-          <div className="2xl:hidden">
-            <Bars3Icon
-              className="h-6 w-6 text-[#0037C1] cursor-pointer"
-              aria-hidden="true"
-              onClick={() => setIsOpen(!isOpen)}
-            />
+
+          {/* Ícone do menu mobile visível apenas em telas menores */}
+          <div className="2xl:hidden ml-auto">
+            <button onClick={() => setIsOpen(!isOpen)} aria-label="Abrir menu">
+              <Bars3Icon className="h-6 w-6 text-[#0037C1] cursor-pointer" />
+            </button>
           </div>
         </div>
+
+        {/* Menu Mobile */}
         {isOpen && <MobileMenu closeMenu={closeMenu} />}
       </div>
 
