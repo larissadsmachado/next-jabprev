@@ -427,7 +427,6 @@ const NavLinks: React.FC = () => {
   const [activeSubSubMenu, setActiveSubSubMenu] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  const router = useRouter();
 
   useEffect(() => {
     setActiveMenu(null);
