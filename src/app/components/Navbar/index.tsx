@@ -419,7 +419,6 @@ const TopMenu: React.FC = () => (
   </div>
 );
 
-
 const NavLinks: React.FC = () => {
   const pathname = usePathname() ?? "";
 
@@ -634,7 +633,6 @@ const NavLinks: React.FC = () => {
     </div>
   );
 };
-
 
 interface MobileMenuProps {
   closeMenu: () => void;

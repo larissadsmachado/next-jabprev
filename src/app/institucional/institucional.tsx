@@ -4,7 +4,7 @@ import FaleConosco from "../components/Home/FaleConosco";
 import React from "react";
 import Image from "next/image";
 
-const pdfUrl = "/Pdf/Organograma-2025-Site.pdf";
+const pdfUrl = "/Pdf/institucional/Organograma-2025-Site.pdf";
 
 const Sobre = () => (
   <div

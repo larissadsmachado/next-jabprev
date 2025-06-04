@@ -74,7 +74,7 @@ const FaleConosco = () => {
             muted
           >
             <source
-              src="https://estacaobemestar.jaboatao.pe.gov.br/wp-content/uploads/2018/05/Blue_Sky_and_Clouds_Timelapse_0892__Videvo.mov"
+              src="/videos/sky-bg.mp4"
               type="video/mp4"
             />
             Seu navegador não suporta a tag de vídeo.
