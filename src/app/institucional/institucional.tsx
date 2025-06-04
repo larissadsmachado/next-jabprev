@@ -37,7 +37,7 @@ const Sobre = () => (
 const MissaoVisaoValores = () => (
   <div id="missao" className="bg-gradient-to-b from-[#ffffff] to-[#b4c9e2]">
     <div className="flex items-center justify-center h-auto py-20 bg-[#083516] rounded-[50px] min-h-[750px]">
-      <div className="mx-auto max-w-[1700px] px-8 flex items-center justify-center">
+      <div className="mx-auto max-w-[1600px] px-8 flex items-center justify-center">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-20 w-full">
           <div className="bg-white/10 backdrop-blur-md p-8 md:p-12 rounded-2xl shadow-xl text-center min-h-[300px] flex flex-col items-center gap-6">
             <h2 className="text-2xl md:text-4xl font-bold text-yellow-400">
