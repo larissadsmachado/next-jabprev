@@ -184,10 +184,6 @@ const navigation: NavItem[] = [
       { name: "Previdência Complementar", href: "/previdencia-complementar" },
       { name: "Provisões Matemáticas", href: "/provisoes-matematicas" },
       {
-        name: "Relatório Gestão Atuarial",
-        href: "/Pdf/menu/6.1_Jaboatao_dos_Guararapes__PE__Relatorio_Pro_Gestao_2024_Nivel_II.pdf",
-      },
-      {
         name: "Relatórios Atuariais",
         href: "#",
         submenu: [
@@ -249,6 +245,11 @@ const navigation: NavItem[] = [
           },
         ],
       },
+      {
+        name: "Relatório Gestão Atuarial",
+        href: "/Pdf/menu/6.1_Jaboatao_dos_Guararapes__PE__Relatorio_Pro_Gestao_2024_Nivel_II.pdf",
+      },
+      
       {
         name: "Relatório de Aderência das Hipóteses Atuariais",
         href: "/Pdf/menu/Jaboatão-dos-GuararapesPE-Relatorio-de-Aderencia-das-Hipoteses-Atuariais-2024-2021-a-2023.pdf",
@@ -376,6 +377,7 @@ const socialLinks = [
     icon: <FaYoutube />,
   },
 ];
+
 const TopMenu: React.FC = () => (
   <div className="fixed top-0 left-0 w-full h-9 bg-[#0037C1] text-white text-sm py-2 px-[20px] xl:px-[50px] flex flex-col xl:flex-row xl:justify-between items-center gap-2 z-50">
     {/* Redes sociais */}
