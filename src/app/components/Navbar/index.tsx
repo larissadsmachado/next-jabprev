@@ -514,7 +514,7 @@ const NavLinks: React.FC = () => {
                     >
                       <Link
                         href={subItem.href}
-                        className={`px-4 py-3 text-white text-[15px] flex items-center hover:bg-[#fdfdfd] hover:text-[#2b63ab] ${
+                        className={`px-4 py-3 text-white text-[15px] flex items-center hover:bg-[#fdfdfd] hover:text-[#0037C1] ${
                           isSubActive ? "bg-[#0037C1] text-[#ffffff]" : ""
                         }`}
                         onClick={(e) => {
@@ -557,7 +557,7 @@ const NavLinks: React.FC = () => {
                               >
                                 <Link
                                   href={subSubItem.href}
-                                  className={`px-4 py-2 text-white text-base flex items-center hover:bg-[#fdfdfd] hover:text-[#2b63ab] ${
+                                  className={`px-4 py-2 text-white text-base flex items-center hover:bg-[#fdfdfd] hover:text-[#0037C1] ${
                                     isSubSubActive
                                       ? "bg-[#0037C1] text-[#ffffff]"
                                       : ""
@@ -602,7 +602,7 @@ const NavLinks: React.FC = () => {
                                             <Link
                                               key={subSubSubItem.name}
                                               href={subSubSubItem.href}
-                                              className={`block px-4 py-2 text-white hover:bg-[#fdfdfd] hover:text-[#2b63ab] text-base ${
+                                              className={`block px-4 py-2 text-white hover:bg-[#fdfdfd] hover:text-[#0037C1] text-base ${
                                                 isSubSubSubActive
                                                   ? "bg-[#0037C1] text-[#ffffff]"
                                                   : ""
