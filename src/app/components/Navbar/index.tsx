@@ -42,7 +42,10 @@ const navigation: NavItem[] = [
         name: "Cartilha Previdenciária",
         href: "/Pdf/menu/CARTILHA.pdf",
       },
-      { name: "Informativos Previdenciários", href: "/informativos-previdenciarios" },
+      {
+        name: "Informativos Previdenciários",
+        href: "/informativos-previdenciarios",
+      },
       { name: "Controle Interno", href: "/controle-interno" },
     ],
   },
@@ -66,7 +69,7 @@ const navigation: NavItem[] = [
           },
         ],
       },
-      
+
       {
         name: "Calendários",
         href: "#",
@@ -74,7 +77,7 @@ const navigation: NavItem[] = [
           {
             name: "Calendário de Pagamento",
             href: "/Pdf/menu/2.2_CALENDARIO_DE_PAGAMENTO_2025.pdf",
-          }, 
+          },
           {
             name: "Calendários de Reuniões",
             href: "#",
@@ -108,7 +111,6 @@ const navigation: NavItem[] = [
                 name: "Reuniões da Comissão de Revisão de Benefícios",
                 href: "/Pdf/menu/CALENDARIO-DE-REUNIOES-Comissao-2025.pdf",
               },
-              
             ],
           },
 
@@ -127,12 +129,13 @@ const navigation: NavItem[] = [
               },
             ],
           },
-          
         ],
       },
 
-      { name: "Concessões de Benefícios", href: "/Pdf/menu/2.6_CONCESSOES_DE_BENEFICIOS___MARCO.2025.pdf" },
-
+      {
+        name: "Concessões de Benefícios",
+        href: "/Pdf/menu/2.6_CONCESSOES_DE_BENEFICIOS___MARCO.2025.pdf",
+      },
 
       { name: "Contratos", href: "contratos" },
 
@@ -148,7 +151,7 @@ const navigation: NavItem[] = [
       { name: "Plano de Ação", href: "/plano-de-acao" },
       {
         name: "Programa 5S",
-        href: "/programa-5s", 
+        href: "/programa-5s",
       },
       { name: "Relatório Anual de Gestão", href: "/relatorio-anual-de-gestao" },
       { name: "Obrigações Fiscais", href: "/obrigacoes-fiscais" },
@@ -176,7 +179,7 @@ const navigation: NavItem[] = [
       },
     ],
   },
-  
+
   {
     name: "Previdência",
     href: "#",
@@ -249,7 +252,7 @@ const navigation: NavItem[] = [
         name: "Relatório Gestão Atuarial",
         href: "/Pdf/menu/6.1_Jaboatao_dos_Guararapes__PE__Relatorio_Pro_Gestao_2024_Nivel_II.pdf",
       },
-      
+
       {
         name: "Relatório de Aderência das Hipóteses Atuariais",
         href: "/Pdf/menu/Jaboatão-dos-GuararapesPE-Relatorio-de-Aderencia-das-Hipoteses-Atuariais-2024-2021-a-2023.pdf",
@@ -427,7 +430,6 @@ const NavLinks: React.FC = () => {
   const [activeSubSubMenu, setActiveSubSubMenu] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
-
   useEffect(() => {
     setActiveMenu(null);
     setActiveSubMenu(null);
@@ -471,7 +473,11 @@ const NavLinks: React.FC = () => {
               href={item.href}
               className={`relative text-[#0037C1] text-[15px] font-semibold flex p-3 transition-colors duration-300 
                 hover:bg-[#0037C1] hover:text-[#ffffff]
-                ${isActive ? "bg-[#0037C1] text-[#ffffff] after:scale-x-100" : ""}
+                ${
+                  isActive
+                    ? "bg-[#0037C1] text-[#ffffff] after:scale-x-100"
+                    : ""
+                }
                 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:translate-x-[-50%]
                 after:h-[2px] after:w-full after:bg-[#13AFF0]
                 after:origin-center after:scale-x-0 after:transition-transform after:duration-500 hover:after:scale-x-100
@@ -514,8 +520,10 @@ const NavLinks: React.FC = () => {
                     >
                       <Link
                         href={subItem.href}
-                        className={`px-4 py-3 text-white text-[15px] flex items-center hover:bg-[#fdfdfd] hover:text-[#0037C1] ${
-                          isSubActive ? "bg-[#ffffff] text-[#0037c1]" : ""
+                        className={`px-4 py-3 text-[15px] flex items-center hover:bg-[#fdfdfd] hover:text-[#0037C1] ${
+                          isSubActive
+                            ? "bg-[#ffffff] text-[#0037C1]"
+                            : "text-white"
                         }`}
                         onClick={(e) => {
                           const isHashLink = subItem.href.startsWith("/#");
