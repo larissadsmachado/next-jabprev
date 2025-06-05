@@ -440,23 +440,24 @@ const NavLinks: React.FC = () => {
   const handleClick = () => {
     setIsLoading(true);
     setTimeout(() => setIsLoading(false), 1000);
-    // Fecha todos menus na hora do clique
     setActiveMenu(null);
     setActiveSubMenu(null);
     setActiveSubSubMenu(null);
+  };
+
+  const isLinkActive = (item: any): boolean => {
+    if (pathname.startsWith(item.href)) return true;
+    if (item.submenu) {
+      return item.submenu.some((sub: any) => isLinkActive(sub));
+    }
+    return false;
   };
 
   return (
     <div className="hidden lg:flex relative uppercase">
       {isLoading && <LoadingScreen />}
       {navigation.map((item) => {
-        const isActive =
-          pathname.startsWith(item.href) ||
-          item.submenu?.some(
-            (sub) =>
-              pathname.startsWith(sub.href) ||
-              sub.submenu?.some((subSub) => pathname.startsWith(subSub.href))
-          );
+        const isActive = isLinkActive(item);
 
         return (
           <div
@@ -471,13 +472,9 @@ const NavLinks: React.FC = () => {
           >
             <Link
               href={item.href}
-              className={`relative text-[#0037C1] text-[15px] font-semibold flex p-3 transition-colors duration-300 
-                hover:bg-[#0037C1] hover:text-[#ffffff]
-                ${
-                  isActive
-                    ? "bg-[#0037C1] text-[#ffffff] after:scale-x-100"
-                    : ""
-                }
+              className={`relative text-[15px] font-semibold flex p-3 transition-colors duration-300 
+                ${isActive ? "bg-[#0037C1] text-white after:scale-x-100" : "text-[#0037C1]"}
+                hover:bg-[#0037C1] hover:text-white
                 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:translate-x-[-50%]
                 after:h-[2px] after:w-full after:bg-[#13AFF0]
                 after:origin-center after:scale-x-0 after:transition-transform after:duration-500 hover:after:scale-x-100
@@ -505,11 +502,7 @@ const NavLinks: React.FC = () => {
             {activeMenu === item.name && item.submenu && (
               <div className="absolute left-0 bg-[#0037C1] shadow-lg w-60 border border-slate-300 z-50 flex flex-col">
                 {item.submenu.map((subItem) => {
-                  const isSubActive =
-                    pathname.startsWith(subItem.href) ||
-                    subItem.submenu?.some((subSub) =>
-                      pathname.startsWith(subSub.href)
-                    );
+                  const isSubActive = isLinkActive(subItem);
 
                   return (
                     <div
@@ -522,7 +515,7 @@ const NavLinks: React.FC = () => {
                         href={subItem.href}
                         className={`px-4 py-3 text-[15px] flex items-center hover:bg-[#fdfdfd] hover:text-[#0037C1] ${
                           isSubActive
-                            ? "bg-[#ffffff] text-[#0037C1]"
+                            ? "bg-white text-[#0037C1]"
                             : "text-white"
                         }`}
                         onClick={(e) => {
@@ -550,9 +543,7 @@ const NavLinks: React.FC = () => {
                       {activeSubMenu === subItem.name && subItem.submenu && (
                         <div className="absolute left-full top-0 bg-[#0037C1] shadow-lg w-56 border border-slate-300 z-50 flex flex-col">
                           {subItem.submenu.map((subSubItem) => {
-                            const isSubSubActive = pathname.startsWith(
-                              subSubItem.href
-                            );
+                            const isSubSubActive = isLinkActive(subSubItem);
 
                             return (
                               <div
@@ -565,16 +556,17 @@ const NavLinks: React.FC = () => {
                               >
                                 <Link
                                   href={subSubItem.href}
-                                  className={`px-4 py-2 text-white text-base flex items-center hover:bg-[#fdfdfd] hover:text-[#0037C1] ${
+                                  className={`px-4 py-2 text-base flex items-center hover:bg-[#fdfdfd] hover:text-[#0037C1] ${
                                     isSubSubActive
-                                      ? "bg-[#ffffff] text-[#0023c1]"
+                                      ? "bg-white text-[#0037C1]"
                                       : "text-white"
                                   }`}
                                   onClick={(e) => {
                                     const isHashLink =
                                       subSubItem.href.startsWith("/#");
                                     if (isHashLink) {
-                                      const id = subSubItem.href.split("#")[1];
+                                      const id =
+                                        subSubItem.href.split("#")[1];
                                       if (pathname === "/") {
                                         e.preventDefault();
                                         const element =
@@ -602,17 +594,15 @@ const NavLinks: React.FC = () => {
                                       {subSubItem.submenu.map(
                                         (subSubSubItem) => {
                                           const isSubSubSubActive =
-                                            pathname.startsWith(
-                                              subSubSubItem.href
-                                            );
+                                            isLinkActive(subSubSubItem);
 
                                           return (
                                             <Link
                                               key={subSubSubItem.name}
                                               href={subSubSubItem.href}
-                                              className={`block px-4 py-2 text-white hover:bg-[#fdfdfd] hover:text-[#0037C1] text-base ${
+                                              className={`block px-4 py-2 hover:bg-[#fdfdfd] hover:text-[#0037C1] text-base ${
                                                 isSubSubSubActive
-                                                  ? "bg-[#ffffff] text-[#0023c1]"
+                                                  ? "bg-white text-[#0037C1]"
                                                   : "text-white"
                                               }`}
                                               onClick={handleClick}
@@ -640,6 +630,7 @@ const NavLinks: React.FC = () => {
     </div>
   );
 };
+
 
 interface MobileMenuProps {
   closeMenu: () => void;
