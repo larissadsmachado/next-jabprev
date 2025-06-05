@@ -497,7 +497,7 @@ const NavLinks: React.FC = () => {
             </Link>
 
             {activeMenu === item.name && item.submenu && (
-              <div className="absolute left-0 bg-[#2b73d0f5] shadow-lg w-60 border border-slate-300 z-50 flex flex-col">
+              <div className="absolute left-0 bg-[#0037C1] shadow-lg w-60 border border-slate-300 z-50 flex flex-col">
                 {item.submenu.map((subItem) => {
                   const isSubActive =
                     pathname.startsWith(subItem.href) ||
@@ -540,7 +540,7 @@ const NavLinks: React.FC = () => {
                       </Link>
 
                       {activeSubMenu === subItem.name && subItem.submenu && (
-                        <div className="absolute left-full top-0 bg-[#2b73d0f5] shadow-lg w-56 border border-slate-300 z-50 flex flex-col">
+                        <div className="absolute left-full top-0 bg-[#0037C1] shadow-lg w-56 border border-slate-300 z-50 flex flex-col">
                           {subItem.submenu.map((subSubItem) => {
                             const isSubSubActive = pathname.startsWith(
                               subSubItem.href
@@ -590,7 +590,7 @@ const NavLinks: React.FC = () => {
 
                                 {activeSubSubMenu === subSubItem.name &&
                                   subSubItem.submenu && (
-                                    <div className="absolute left-full top-0 bg-[#2b73d0f5] shadow-lg w-56 border border-slate-300 z-50 flex flex-col">
+                                    <div className="absolute left-full top-0 bg-[#0037C1] shadow-lg w-56 border border-slate-300 z-50 flex flex-col">
                                       {subSubItem.submenu.map(
                                         (subSubSubItem) => {
                                           const isSubSubSubActive =
