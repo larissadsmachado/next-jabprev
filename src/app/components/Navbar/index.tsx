@@ -559,10 +559,10 @@ const NavLinks: React.FC = () => {
                               >
                                 <Link
                                   href={subSubItem.href}
-                                  className={`px-4 py-2 text-white text-base flex items-center hover:bg-[#fdfdfd] hover:text-[#0037C1] ${
+                                  className={`px-4 py-2 text-base flex items-center hover:bg-[#fdfdfd] hover:text-[#0037C1] ${
                                     isSubSubActive
                                       ? "bg-[#ffffff] text-[#0023c1]"
-                                      : "text-white"
+                                      : "text-[#ffffff]"
                                   }`}
                                   onClick={(e) => {
                                     const isHashLink =
