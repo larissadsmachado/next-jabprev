@@ -445,18 +445,21 @@ const NavLinks: React.FC = () => {
     setActiveSubSubMenu(null);
   };
 
-  const isLinkActive = (item: any): boolean => {
-    if (pathname.startsWith(item.href)) return true;
-    if (item.submenu) {
-      return item.submenu.some((sub: any) => isLinkActive(sub));
-    }
-    return false;
+  const isLinkActive = (item: NavItem): boolean => {
+    return (
+      pathname.startsWith(item.href) ||
+      item.submenu?.some((sub) =>
+        pathname.startsWith(sub.href) ||
+        sub.submenu?.some((subSub) => pathname.startsWith(subSub.href))
+      ) ||
+      false
+    );
   };
 
   return (
     <div className="hidden lg:flex relative uppercase">
       {isLoading && <LoadingScreen />}
-      {navigation.map((item) => {
+      {navigation.map((item: NavItem) => {
         const isActive = isLinkActive(item);
 
         return (
@@ -472,9 +475,9 @@ const NavLinks: React.FC = () => {
           >
             <Link
               href={item.href}
-              className={`relative text-[15px] font-semibold flex p-3 transition-colors duration-300 
-                ${isActive ? "bg-[#0037C1] text-white after:scale-x-100" : "text-[#0037C1]"}
-                hover:bg-[#0037C1] hover:text-white
+              className={`relative text-[#0037C1] text-[15px] font-semibold flex p-3 transition-colors duration-300 
+                hover:bg-[#0037C1] hover:text-[#ffffff]
+                ${isActive ? "bg-[#0037C1] text-[#ffffff] after:scale-x-100" : ""}
                 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:translate-x-[-50%]
                 after:h-[2px] after:w-full after:bg-[#13AFF0]
                 after:origin-center after:scale-x-0 after:transition-transform after:duration-500 hover:after:scale-x-100
@@ -501,7 +504,7 @@ const NavLinks: React.FC = () => {
 
             {activeMenu === item.name && item.submenu && (
               <div className="absolute left-0 bg-[#0037C1] shadow-lg w-60 border border-slate-300 z-50 flex flex-col">
-                {item.submenu.map((subItem) => {
+                {item.submenu.map((subItem: NavItem) => {
                   const isSubActive = isLinkActive(subItem);
 
                   return (
@@ -515,7 +518,7 @@ const NavLinks: React.FC = () => {
                         href={subItem.href}
                         className={`px-4 py-3 text-[15px] flex items-center hover:bg-[#fdfdfd] hover:text-[#0037C1] ${
                           isSubActive
-                            ? "bg-white text-[#0037C1]"
+                            ? "bg-[#ffffff] text-[#0037C1]"
                             : "text-white"
                         }`}
                         onClick={(e) => {
@@ -542,7 +545,7 @@ const NavLinks: React.FC = () => {
 
                       {activeSubMenu === subItem.name && subItem.submenu && (
                         <div className="absolute left-full top-0 bg-[#0037C1] shadow-lg w-56 border border-slate-300 z-50 flex flex-col">
-                          {subItem.submenu.map((subSubItem) => {
+                          {subItem.submenu.map((subSubItem: NavItem) => {
                             const isSubSubActive = isLinkActive(subSubItem);
 
                             return (
@@ -556,17 +559,16 @@ const NavLinks: React.FC = () => {
                               >
                                 <Link
                                   href={subSubItem.href}
-                                  className={`px-4 py-2 text-base flex items-center hover:bg-[#fdfdfd] hover:text-[#0037C1] ${
+                                  className={`px-4 py-2 text-white text-base flex items-center hover:bg-[#fdfdfd] hover:text-[#0037C1] ${
                                     isSubSubActive
-                                      ? "bg-white text-[#0037C1]"
+                                      ? "bg-[#ffffff] text-[#0023c1]"
                                       : "text-white"
                                   }`}
                                   onClick={(e) => {
                                     const isHashLink =
                                       subSubItem.href.startsWith("/#");
                                     if (isHashLink) {
-                                      const id =
-                                        subSubItem.href.split("#")[1];
+                                      const id = subSubItem.href.split("#")[1];
                                       if (pathname === "/") {
                                         e.preventDefault();
                                         const element =
@@ -592,7 +594,7 @@ const NavLinks: React.FC = () => {
                                   subSubItem.submenu && (
                                     <div className="absolute left-full top-0 bg-[#0037C1] shadow-lg w-56 border border-slate-300 z-50 flex flex-col">
                                       {subSubItem.submenu.map(
-                                        (subSubSubItem) => {
+                                        (subSubSubItem: NavItem) => {
                                           const isSubSubSubActive =
                                             isLinkActive(subSubSubItem);
 
@@ -600,9 +602,9 @@ const NavLinks: React.FC = () => {
                                             <Link
                                               key={subSubSubItem.name}
                                               href={subSubSubItem.href}
-                                              className={`block px-4 py-2 hover:bg-[#fdfdfd] hover:text-[#0037C1] text-base ${
+                                              className={`block px-4 py-2 text-white hover:bg-[#fdfdfd] hover:text-[#0037C1] text-base ${
                                                 isSubSubSubActive
-                                                  ? "bg-white text-[#0037C1]"
+                                                  ? "bg-[#ffffff] text-[#0023c1]"
                                                   : "text-white"
                                               }`}
                                               onClick={handleClick}
