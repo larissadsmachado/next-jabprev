@@ -260,7 +260,7 @@ const navigation: NavItem[] = [
 
       {
         name: "Relatório de Passivo Judicial",
-        href: "/Pdf/menu/",
+        href: "/xls/menu/3.1 Relatório do Passivo Judicial - Site.xlsx", 
       },
 
 
