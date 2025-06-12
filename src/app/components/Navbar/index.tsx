@@ -127,11 +127,14 @@ const navigation: NavItem[] = [
                 name: "Dia de Acolhimento e Boas Vindas",
                 href: "/Pdf/menu/Calendario-cafe-da-manha-2025-1.pdf",
               },
+              {
+                name: "Seminário De Educação Previdenciária E Financeira",
+                href: "/Pdf/menu/2.1_Calendario_do_Seminario_de_Educacao_Previdenciaria.pdf",
+              },
             ],
           },
         ],
       },
-
       {
         name: "Concessões de Benefícios",
         href: "/Pdf/menu/2.6_CONCESSOES_DE_BENEFICIOS___MARCO.2025.pdf",
@@ -149,6 +152,9 @@ const navigation: NavItem[] = [
       { name: "Cronograma de Capacitação", href: "/cronograma-de-capacitacao" },
 
       { name: "Plano de Ação", href: "/plano-de-acao" },
+
+      { name: "Planejamento Estratégico", href: "/Pdf/menu/2.3_Planejamento_Estrategico_2025___2029.pdf" },
+
       {
         name: "Programa 5S",
         href: "/programa-5s",
