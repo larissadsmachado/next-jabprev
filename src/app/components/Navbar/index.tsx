@@ -266,7 +266,8 @@ const navigation: NavItem[] = [
 
       {
         name: "Relatório de Passivo Judicial",
-        href: "/xls/menu/3.1 Relatório do Passivo Judicial - Site.xlsx", 
+        href: "/relatorio-de-passivo-judicial", 
+        // href: "/xls/menu/3.1 Relatório do Passivo Judicial - Site.xlsx",
       },
 
 
