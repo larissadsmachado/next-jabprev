@@ -107,7 +107,7 @@ export default function CardGrid() {
             {
               title: "Certidão de Tempo de Contribuição",
               icon: <FaBookOpen />,
-              link: "./Requerimento-ctc",
+              link: "./requerimento-ctc",
               subtext:
                 "Solicite sua Certidão por Tempo de Contribuição, clicando aqui!",
               target: "_blank",
@@ -124,6 +124,13 @@ export default function CardGrid() {
               icon: <FaInfoCircle />,
               link: "https://jaboatao2024.provadevida.app.br/#/",
               subtext: "Faça aqui sua prova de vida.",
+              target: "_blank",
+            },
+            {
+              title: "Prev +",
+              icon: <FaInfoCircle />,
+              link: "https://prevmais.app.br/#/login",
+              subtext: "Aplicativo PREV+",
               target: "_blank",
             },
           ].map((card, index) => (
