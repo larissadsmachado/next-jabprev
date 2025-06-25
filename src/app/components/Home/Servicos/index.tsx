@@ -2,6 +2,7 @@ import React from "react";
 import { FaInfoCircle } from "react-icons/fa";
 import { MdOutlineAttachMoney } from "react-icons/md";
 import { FaPiggyBank, FaBookOpen, FaPhoneAlt } from "react-icons/fa";
+import { BsPlusCircleFill } from "react-icons/bs";
 
 const Card = ({
   title,
@@ -128,7 +129,7 @@ export default function CardGrid() {
             },
             {
               title: "Prev +",
-              icon: <FaInfoCircle />,
+              icon: <BsPlusCircleFill />,
               link: "https://prevmais.app.br/#/login",
               subtext: "Aplicativo PREV+",
               target: "_blank",
