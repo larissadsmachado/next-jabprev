@@ -24,6 +24,10 @@ const data: Record<string, { date: string; url: string }[]> = {
       date: "Informativo nº 01.2025 – Pensão por Morte",
       url: "/Pdf/institucional/informativos/Informativo-no-01.2025-Pensao-por-morte-1.pdf",
     },
+    {
+      date: "Informativo previdenciários",
+      url: "/Pdf/institucional/informativos/Informativo_Previdenciario_n__06.2025___SEGREGACAO_DE_MASSA.pdf",
+    },
   ],
   "2024": [
     {
