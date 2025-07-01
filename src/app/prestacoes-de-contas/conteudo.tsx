@@ -9,8 +9,7 @@ const exercises: Exercise[] = [
   {
     year: "2024",
     content: [
-      { text: "PRESTAÇÃO DE CONTAS", url: "/Pdf/financeiro/prestacoes-de-contas/prestacao-de-contas.pdf" },
-      { text: "TCE-PE", url: "https://etce.tce.pe.gov.br/epp/ConsultaPublica/listView.seam" },
+      { text: "PRESTAÇÃO DE CONTAS", url: "https://etce.tce.pe.gov.br/epp/ConsultaPublica/listView.seam" },
       { text: "Prestação de Contas aguardando verificação de conformidade pelo Tribunal de Contas-PE", url: "/Pdf/financeiro/prestacoes-de-contas/3.2_Resolucao_270_2024_do_TCEPE_PE.pdf" },
 
     ],
