@@ -355,7 +355,7 @@ const institutionalLinks = [
   },
   { href: "http://ouvidoria.jaboatao.pe.gov.br/", label: "Ouvidoria" },
   {
-    href: "https://www.tinus.com.br/csp/JABOBAOBAO/portal/index.js",
+    href: "https://www.tinus.com.br/csp/JABOATAO/portal/index.csp",
     label: "Portal do Contribuinte",
   },
   {
