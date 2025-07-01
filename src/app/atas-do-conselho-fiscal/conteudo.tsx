@@ -24,6 +24,10 @@ const data: Record<string, { date: string; url: string }[]> = {
       date: "24 de abril de2025",
       url: "/Pdf/administrativo/atas/fiscal/2.1___24_DE_ABRIL_DE_2025___CONSELHO_FISCAL.pdf",
     },
+    {
+      date: "15 de maio de 2025",
+      url: "/Pdf/administrativo/atas/fiscal/2.1___ATA_CONSELHO_FISCAL_15.05.2025.pdf",
+    },
   ],
   "2024": [
     {

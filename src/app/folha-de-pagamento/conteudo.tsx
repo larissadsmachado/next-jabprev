@@ -21,8 +21,9 @@ const data = {
     "Maio – Câmara":"Pdf/administrativo/folha-de-pagamento/2.2_Maio___Camara.pdf",
     "Maio – Servidores":"Pdf/administrativo/folha-de-pagamento/2.2_Maio___Servidores.pdf",
 
-    Junho:"#",
-    "Junho – Câmara ":"#",
+    Junho:"Pdf/administrativo/folha-de-pagamento/2.3_Junho.pdf",
+    "Junho – Câmara ":"Pdf/administrativo/folha-de-pagamento/2.3_Junho___Camara.pdf",
+    "Junho – Comissionados ":"Pdf/administrativo/folha-de-pagamento/2.3_Junho___Comissionados.pdf",
 
     Julho:"#",
     "Julho – Câmara ":"#",

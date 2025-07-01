@@ -2,7 +2,6 @@
 
 import React from "react";
 
-// Componente para links de cada ano
 const YearLinks = ({ year, links }: { year: string; links: Array<{ href: string; text: string }> }) => (
   <div>
     <h1 className="text-5xl font-bold mb-4 uppercase text-blue-900 leading-tight">{year}</h1>
@@ -55,7 +54,7 @@ const Links = () => (
             text: "Relatório Mensal Controle – 3º Trimestre",
           },
           {
-            href: "/Pdf/controle-interno/1.5_Relatorio_de_Controle_Interno___4__Trimestre_2024.pdf",
+            href: "/Pdf/institucional/controle-interno/1.5_Relatorio_de_Controle_Interno___4__Trimestre_2024.pdf",
             text: "Relatório Mensal Controle – 4º Trimestre",
           },
         ]}

@@ -50,6 +50,16 @@ const Links = () => (
             30 de abril de 2025
           </a>
         </li>
+
+        <li className="py-2">
+          <a
+            href="Pdf/administrativo/atas/investimento/2.1_Ata_de_Reuniao_do_Comite_de_Investimentos_28.05.2025.pdf"
+            target="_blank"
+            className="text-blue-800 hover:underline"
+          >
+            28 de maio de 2025
+          </a>
+        </li>
       </ul>
 
 
