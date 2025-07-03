@@ -25,7 +25,7 @@ const data: Record<string, { date: string; url: string }[]> = {
       url: "/Pdf/institucional/informativos/Informativo-no-01.2025-Pensao-por-morte-1.pdf",
     },
     {
-      date: "Informativo previdenciários",
+      date: "Informativo nº 006/2025 – Segregação de Massa",
       url: "/Pdf/institucional/informativos/Informativo_Previdenciario_n__06.2025___SEGREGACAO_DE_MASSA.pdf",
     },
   ],
