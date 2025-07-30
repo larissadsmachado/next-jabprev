@@ -28,6 +28,10 @@ const data: Record<string, { date: string; url: string }[]> = {
       date: "15 de maio de 2025",
       url: "/Pdf/administrativo/atas/deliberativo/2.1___15_DE_MAIO_DE_2025___CONSELHO_DELIBERATIVO.pdf",
     },
+    {
+      date: "19 de Junho de 2025",
+      url: "/Pdf/administrativo/atas/deliberativo/2.1___ATA_19.06.2025___CONSELHO_DELIBERATIVO.pdf",
+    },
   ],
   "2024": [
     {

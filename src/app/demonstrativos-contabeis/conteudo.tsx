@@ -33,6 +33,20 @@ const reportsData: ReportsByYear = {
         ],
       },
 
+      {
+        name: "2° Trimestre",
+        links: [
+          {
+            text: "CAPITALIZADO",
+            url: "/Pdf/financeiro/demonstrativos-contabeis/2025/3.2_Demonstrativo_Contabil___2__Trimestre___2025___Capitalizado.pdf",
+          },
+          {
+            text: "FINANCEIRO",
+            url: "/Pdf/financeiro/demonstrativos-contabeis/2025/3.2_Demonstrativo_Contabil___2__Trimestre___2025___Financeiro.pdf",
+          },
+        ],
+      },
+
     ],
   },
   "2024": {
