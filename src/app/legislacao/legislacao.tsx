@@ -408,7 +408,7 @@ const Links = () => (
         <ul className="pl-8 list-disc">
           <li>
             <a
-              href="https://portaldatransparencia.jaboatao.pe.gov.br/wp-content/uploads/2019/05/LEI-N%C2%BA-407-2010.pdf"
+              href="Pdf/legislacao/1.1_Lei_407_A_2010_CONTROLE_INTERNO.pdf"
               target="_blank"
               className="text-blue-600 hover:underline"
             >
