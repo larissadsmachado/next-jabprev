@@ -16,7 +16,7 @@ const reportsData: ReportsByYear = {
     certificates: [
       {
         name: "CRP – Certificado de Regularidade Previdenciária",
-        url: "Pdf/cad-prev/crp/CRP-2025_30.07.25.pdf",
+        url: "Pdf/cad-prev/crp/5.1_CRP___VENCIMENTO_26.01.26.pdf",
       },
     ],
   },
