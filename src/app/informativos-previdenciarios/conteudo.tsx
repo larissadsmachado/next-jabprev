@@ -4,7 +4,7 @@ import React from "react";
 
 const data: Record<string, { date: string; url: string }[]> = {
   "2025": [
-     {
+    {
       date: "Informativo Previdenciário nº 05.2025 - ABONO DE PERMANENCIA",
       url: "/Pdf/institucional/informativos/2.3_Informativo_Previdenciario_n__05.2025___ABONO_DE_PERMANENCIA.pdf",
     },
@@ -27,6 +27,10 @@ const data: Record<string, { date: string; url: string }[]> = {
     {
       date: "Informativo nº 006/2025 – Segregação de Massa",
       url: "/Pdf/institucional/informativos/Informativo_Previdenciario_n__06.2025___SEGREGACAO_DE_MASSA.pdf",
+    },
+    {
+      date: "Informativo Previdenciário nº 007/2025 - Base de Cálculo Beneficio Previdenciário",
+      url: "/Pdf/institucional/informativos/1.1_Informativo_Previdenciario_n__07.2025___Base_de_Calculo.pdf",
     },
   ],
   "2024": [
