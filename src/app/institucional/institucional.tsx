@@ -94,9 +94,9 @@ const Equipe = () => (
           Mayara Lima
         </p>
         <p className="pt-4">
-          <strong>Contador</strong>
+          <strong>Contadora</strong>
           <br />
-          Edson Silva
+          Caroline Costa
         </p>
         <p className="pt-4">
           <strong>Servidora Cedida da Prefeitura de Jaboatão dos Guararapes</strong>
@@ -156,7 +156,7 @@ const Equipe = () => (
         </p>
         <p className="pt-4">
           <strong>
-            Coordenadora de Planejamento, Monitoramento e Controle
+            Coordenadora de Planejamento, Monitoramento e Controle Interno
           </strong>
           <br />
           Mayara Mendes
