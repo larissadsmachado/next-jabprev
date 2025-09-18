@@ -8,7 +8,7 @@ export default function Popup() {
   const [isVisible, setIsVisible] = useState(false);
 
   // Valores padrão
-  const imageSrc = "/images/Popup/poupup.png";
+  const imageSrc = "/images/Popup/poupup.jpeg"; 
   const imageAlt = "Fale conosco pelo WhatsApp";
   const showAfterSeconds = 1;
 
@@ -44,7 +44,7 @@ export default function Popup() {
         {/* Popup com borda decorativa */}
         <div className="relative p-1 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl shadow-2xl overflow-hidden border-4 border-white">
           <Link
-            href={`https://jaboatao2024.provadevida.app.br/#/`}
+            href={`https://prevmais.app.br/#/login`}
             target="_blank"
             rel="noopener noreferrer"
             className="block"
