@@ -41,6 +41,14 @@ const reportsData: ReportsByYear = {
         name: "Junho – 2025",
         url: "/Pdf/investimentos/relatorio-mensais/3.1_ARP___JUNHO_2025.pdf",
       },
+      {
+        name: "Julho – 2025",
+        url: "/Pdf/investimentos/relatorio-mensais/7.JULHO 2025.pdf",
+      },
+      {
+        name: "Agosto – 2025",
+        url: "/Pdf/investimentos/relatorio-mensais/7. JULHO 2025.pdf",
+      },
       
     ],
   },
