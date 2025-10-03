@@ -23,14 +23,14 @@ const data = {
 
     Junho:"Pdf/administrativo/folha-de-pagamento/2.3_Junho.pdf",
     "Junho – Câmara ":"Pdf/administrativo/folha-de-pagamento/2.3_Junho___Camara.pdf",
-    "Junho – Comissionados ":"Pdf/administrativo/folha-de-pagamento/2.3_Junho___Comissionados.pdf",
+    "Junho – Servidores ":"Pdf/administrativo/folha-de-pagamento/2.3_Junho___Comissionados.pdf",
 
     Julho:"Pdf/administrativo/folha-de-pagamento/2.3_JULHO.pdf",
     "Julho – Câmara ":"Pdf/administrativo/folha-de-pagamento/2.3_JULHO___CAMARA.pdf",
     "Julho – Servidores ":"Pdf/administrativo/folha-de-pagamento/2.3_JULHO___SERVIDORES.pdf",
 
     Agosto:"Pdf/administrativo/folha-de-pagamento/1.2_Agosto.pdf",
-    "Agosto – Comissionados":"Pdf/administrativo/folha-de-pagamento/1.2_Agosto___Comissionados.pdf",
+    "Agosto – Servidores":"Pdf/administrativo/folha-de-pagamento/1.2_Agosto___Comissionados.pdf",
     "Agosto – Câmara":"Pdf/administrativo/folha-de-pagamento/1.2_Agosto___Camara.pdf",
 
     Setembro:"#",
