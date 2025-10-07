@@ -154,7 +154,7 @@ const Links = () => (
         <ul className="pl-8 list-disc">
           <li>
             <a
-              href="https://portaldatransparencia.jaboatao.pe.gov.br/wp-content/uploads/2019/05/2017loa.pdf"
+              href="https://portaldatransparencia.jaboatao.pe.gov.br/uploads/2019/05/2017loa.pdf"
               target="_blank"
               className="text-blue-600 hover:underline"
             >
@@ -163,7 +163,7 @@ const Links = () => (
           </li>
           <li>
             <a
-              href="https://portaldatransparencia.jaboatao.pe.gov.br/wp-content/uploads/2019/05/2018loa.pdf"
+              href="https://portaldatransparencia.jaboatao.pe.gov.br/uploads/2019/05/2018loa.pdf"
               target="_blank"
               className="text-blue-600 hover:underline"
             >
@@ -172,7 +172,7 @@ const Links = () => (
           </li>
           <li>
             <a
-              href="https://portaldatransparencia.jaboatao.pe.gov.br/wp-content/uploads/2019/05/3.-LOA-2019-Lei-n%C2%BA-1.382-2018-Compatibilizada-LC-34.pdf"
+              href="https://portaldatransparencia.jaboatao.pe.gov.br/uploads/2019/05/3.-LOA-2019-Lei-n%C2%BA-1.382-2018-Compatibilizada-LC-34.pdf"
               target="_blank"
               className="text-blue-600 hover:underline"
             >
@@ -181,7 +181,7 @@ const Links = () => (
           </li>
           <li>
             <a
-              href="https://portaldatransparencia.jaboatao.pe.gov.br/wp-content/uploads/2020/01/LOA-2020-LEI-N%C2%BA-1435-2019.pdf"
+              href="https://portaldatransparencia.jaboatao.pe.gov.br/uploads/2020/01/LOA-2020-LEI-N%C2%BA-1435-2019.pdf"
               target="_blank"
               className="text-blue-600 hover:underline"
             >
@@ -190,7 +190,7 @@ const Links = () => (
           </li>
           <li>
             <a
-              href="https://portaldatransparencia.jaboatao.pe.gov.br/wp-content/uploads/2021/01/LEI%20N%C2%BA%201456-2020%20-%20LOA%202021.pdf"
+              href="https://portaldatransparencia.jaboatao.pe.gov.br/uploads/2021/01/LEI%20N%C2%BA%201456-2020%20-%20LOA%202021.pdf"
               target="_blank"
               className="text-blue-600 hover:underline"
             >
@@ -199,7 +199,7 @@ const Links = () => (
           </li>
           <li>
             <a
-              href="https://portaldatransparencia.jaboatao.pe.gov.br/wp-content/uploads/2021/05/LOA%202021%20-%20LEI%20N%C2%BA%201.456-27_11_2021%20-%20COMPATIBILIZADA%20LC%20N%C2%BA%2038%20-%2005_02_2021.pdf"
+              href="https://portaldatransparencia.jaboatao.pe.gov.br/uploads/2021/05/LOA%202021%20-%20LEI%20N%C2%BA%201.456-27_11_2021%20-%20COMPATIBILIZADA%20LC%20N%C2%BA%2038%20-%2005_02_2021.pdf"
               target="_blank"
               className="text-blue-600 hover:underline"
             >
@@ -216,7 +216,7 @@ const Links = () => (
         <ul className="pl-8 list-disc">
           <li>
             <a
-              href="https://portaldatransparencia.jaboatao.pe.gov.br/wp-content/uploads/2019/05/2017ppa.pdf"
+              href="https://portaldatransparencia.jaboatao.pe.gov.br/uploads/2019/05/2017ppa.pdf"
               target="_blank"
               className="text-blue-600 hover:underline"
             >
@@ -225,7 +225,7 @@ const Links = () => (
           </li>
           <li>
             <a
-              href="https://portaldatransparencia.jaboatao.pe.gov.br/wp-content/uploads/2019/05/2018ppa.pdf#"
+              href="https://portaldatransparencia.jaboatao.pe.gov.br/uploads/2019/05/2018ppa.pdf#"
               target="_blank"
               className="text-blue-600 hover:underline"
             >
@@ -234,7 +234,7 @@ const Links = () => (
           </li>
           <li>
             <a
-              href="https://portaldatransparencia.jaboatao.pe.gov.br/wp-content/uploads/2019/05/2.-PPA-2018-2021-REVIS%C3%83O-2019-Lei-n%C2%BA-1.381-2018-Compatibilizada-LC-34.pdf"
+              href="https://portaldatransparencia.jaboatao.pe.gov.br/uploads/2019/05/2.-PPA-2018-2021-REVIS%C3%83O-2019-Lei-n%C2%BA-1.381-2018-Compatibilizada-LC-34.pdf"
               target="_blank"
               className="text-blue-600 hover:underline"
             >
@@ -243,7 +243,7 @@ const Links = () => (
           </li>
           <li>
             <a
-              href="https://portaldatransparencia.jaboatao.pe.gov.br/wp-content/uploads/2020/01/PPA-REVIS%C3%83O-2020-LEI-N%C2%BA-1.434-2019.pdf"
+              href="https://portaldatransparencia.jaboatao.pe.gov.br/uploads/2020/01/PPA-REVIS%C3%83O-2020-LEI-N%C2%BA-1.434-2019.pdf"
               target="_blank"
               className="text-blue-600 hover:underline"
             >
@@ -268,7 +268,7 @@ const Links = () => (
         <ul className="pl-8 list-disc">
           <li>
             <a
-              href="https://portaldatransparencia.jaboatao.pe.gov.br/wp-content/uploads/2019/05/2017ldo.pdf"
+              href="https://portaldatransparencia.jaboatao.pe.gov.br/uploads/2019/05/2017ldo.pdf"
               target="_blank"
               className="text-blue-600 hover:underline"
             >
@@ -277,7 +277,7 @@ const Links = () => (
           </li>
           <li>
             <a
-              href="https://portaldatransparencia.jaboatao.pe.gov.br/wp-content/uploads/2019/05/2018ldo.pdf"
+              href="https://portaldatransparencia.jaboatao.pe.gov.br/uploads/2019/05/2018ldo.pdf"
               target="_blank"
               className="text-blue-600 hover:underline"
             >
@@ -286,7 +286,7 @@ const Links = () => (
           </li>
           <li>
             <a
-              href="https://portaldatransparencia.jaboatao.pe.gov.br/wp-content/uploads/2019/05/1.-LDO-2019-Lei-n%C2%BA-1.374-2018.pdf "
+              href="https://portaldatransparencia.jaboatao.pe.gov.br/uploads/2019/05/1.-LDO-2019-Lei-n%C2%BA-1.374-2018.pdf "
               target="_blank"
               className="text-blue-600 hover:underline"
             >
@@ -295,7 +295,7 @@ const Links = () => (
           </li>
           <li>
             <a
-              href="https://portaldatransparencia.jaboatao.pe.gov.br/wp-content/uploads/2020/01/LDO-2020-LEI-N%C2%BA-1420-06-09-2019.pdf"
+              href="https://portaldatransparencia.jaboatao.pe.gov.br/uploads/2020/01/LDO-2020-LEI-N%C2%BA-1420-06-09-2019.pdf"
               target="_blank"
               className="text-blue-600 hover:underline"
             >
@@ -313,7 +313,7 @@ const Links = () => (
           </li>
           <li>
             <a
-              href="https://portaldatransparencia.jaboatao.pe.gov.br/wp-content/uploads/2020/01/LDO-2020-LEI-N%C2%BA-1420-06-09-2019.pdf"
+              href="https://portaldatransparencia.jaboatao.pe.gov.br/uploads/2020/01/LDO-2020-LEI-N%C2%BA-1420-06-09-2019.pdf"
               target="_blank"
               className="text-blue-600 hover:underline"
             >
@@ -392,7 +392,7 @@ const Links = () => (
         <ul className="pl-8 list-disc">
           <li>
             <a
-              href="https://portaldatransparencia.jaboatao.pe.gov.br/wp-content/uploads/2019/05/LEI-N%C2%BA-853-LAI.pdf"
+              href="https://portaldatransparencia.jaboatao.pe.gov.br/uploads/2019/05/LEI-N%C2%BA-853-LAI.pdf"
               target="_blank"
               className="text-blue-600 hover:underline"
             >
