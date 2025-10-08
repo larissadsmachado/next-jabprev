@@ -102,12 +102,22 @@ const Links = () => (
             </a>
           </li>
           <li>
-            <span className="text-blue-600">Lei Complementar nº 43/2023</span>
-            <span> (Arquivo não fornecido. Incluir arquivo.)</span>
+            <a
+              href="Pdf/institucional/legislacao/1.1 Lei Complementar nº 46.2023.pdf"
+              target="_blank"
+              className="text-blue-600 hover:underline"
+            >
+              Lei Complementar nº 43/2023
+            </a>
           </li>
           <li>
-            <span className="text-blue-600">Lei Complementar nº 53/2025</span>
-            <span> (Arquivo não fornecido. Incluir arquivo.)</span>
+            <a
+              href="Pdf/institucional/legislacao/1.1 Lei Complementar nº 53.2025 e Anexos.pdf"
+              target="_blank"
+              className="text-blue-600 hover:underline"
+            >
+              Lei Complementar nº 53/2025
+            </a>
           </li>
         </ul>
 
