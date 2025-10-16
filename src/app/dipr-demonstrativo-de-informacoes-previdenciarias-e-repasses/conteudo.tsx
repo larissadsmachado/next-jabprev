@@ -35,7 +35,7 @@ const reportsData: ReportsByYear = {
 
       {
         name: "Julho -Agosto",
-        url: "#",
+        url: "Pdf/cad-prev/dipr/6.1_DIPR___JULHO___AGOSTO_2025.pdf",
       },
 
       {
