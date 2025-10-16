@@ -37,9 +37,13 @@ const data: Record<string, { date: string; url: string }[]> = {
       url: "/Pdf/administrativo/atas/deliberativo/2.1_Conselho_Deliberativo___Ata_de_15_de_julho_de_2025.pdf",
     },
     {
-      date: "01 de agosto de 2025",
+      date: "01 de agosto de 2025 – (Reunião Extraordinária)",
       url: "/Pdf/administrativo/atas/deliberativo/2.1_Conselho_Deliberativo___Ata_de_01_de_agosto_de_2025____Reuniao_Extraordinaria_.pdf",
     },
+    {
+      date: "21 de agosto de 2025",
+      url: "/Pdf/administrativo/atas/deliberativo/2.1_Conselho_Deliberativo___Ata_de_21_de_agosto_de_2025.pdf",
+    }
   ],
   "2024": [
     {
