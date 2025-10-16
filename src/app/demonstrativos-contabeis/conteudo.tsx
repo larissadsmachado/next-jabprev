@@ -47,6 +47,20 @@ const reportsData: ReportsByYear = {
         ],
       },
 
+      {
+        name: "3° Trimestre",
+        links: [
+          {
+            text: "CAPITALIZADO",
+            url: "/Pdf/financeiro/demonstrativos-contabeis/2025/3.2_Demonstrativo_Contavil___3__Trimestre___2025___Capitalizado.PDF",
+          },
+          {
+            text: "FINANCEIRO",
+            url: "/Pdf/financeiro/demonstrativos-contabeis/2025/3.2_Demonstrativo_Contavil___3__Trimestre___2025___Financeiro.PDF",
+          },
+        ],
+      },
+
     ],
   },
   "2024": {

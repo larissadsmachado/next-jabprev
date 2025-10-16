@@ -33,7 +33,10 @@ const data = {
     "Agosto – Servidores":"Pdf/administrativo/folha-de-pagamento/1.2_Agosto___Comissionados.pdf",
     "Agosto – Câmara":"Pdf/administrativo/folha-de-pagamento/1.2_Agosto___Camara.pdf",
 
-    Setembro:"#",
+    Setembro:"Pdf/administrativo/folha-de-pagamento/2.3_Setembro.pdf",
+    "Setembro – Servidores":"Pdf/administrativo/folha-de-pagamento/2.3_Setembro___Servidores.pdf",
+    "Setembro – Câmara":"Pdf/administrativo/folha-de-pagamento/2.3_Setembro___Camara.pdf",
+
     Outubro:"#",
     "Outubro – Câmara ":"#",
 
