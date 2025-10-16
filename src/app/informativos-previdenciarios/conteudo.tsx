@@ -32,6 +32,10 @@ const data: Record<string, { date: string; url: string }[]> = {
       date: "Informativo Previdenciário nº 007/2025 - Base de Cálculo Beneficio Previdenciário",
       url: "/Pdf/institucional/informativos/1.1_Informativo_Previdenciario_n__07.2025___Base_de_Calculo.pdf",
     },
+    {
+      date: "Informativo Previdenciário nº 08.2025 - Renda Fixa",
+      url: "/Pdf/institucional/informativos/1.2_Informativo_Previdenciario_n__08.2025___Renda_Fixa.pdf",
+    },
   ],
   "2024": [
     {

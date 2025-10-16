@@ -32,7 +32,7 @@ const Links = () => (
           text: "PACI - Plano Anual de Controle Interno 2025",
         },
         {
-          href: "Pdf/institucional/controle-interno/2.2_RELATORIO_DE_CONTROLE_INTERNO___1__TRIMESTRE.pdf",
+          href: "Pdf/institucional/controle-interno/1.3_Relatorio_Trimestral_de_Controle_Interno___1__TRIMESTRE___2025___JABOATAOPREV.pdf",
           text: "Relatório de Controle Interno – 1º Trimestre",
         },
         {
