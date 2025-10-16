@@ -62,7 +62,10 @@ const links = {
       { texto: "PPA- Plano Plurianual 2018/2021", href: "https://portaldatransparencia.jaboatao.pe.gov.br/uploads/2019/05/2018ppa.pdf#" },
       { texto: "PPA- Plano Plurianual 2018/2021 – Revisão 2019", href: "https://portaldatransparencia.jaboatao.pe.gov.br/uploads/2019/05/2.-PPA-2018-2021-REVIS%C3%83O-2019-Lei-n%C2%BA-1.381-2018-Compatibilizada-LC-34.pdf" },
       { texto: "PPA – Plano Plurianual 2018/2021 – Revisão 2020", href: "https://portaldatransparencia.jaboatao.pe.gov.br/uploads/2020/01/PPA-REVIS%C3%83O-2020-LEI-N%C2%BA-1.434-2019.pdf" },
-      { texto: "PPA – Plano Plurianual 2022/2025", href: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2022/07/2022ppaanexo.pdf" }
+      { texto: "PPA – Plano Plurianual 2022/2025", href: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2022/07/2022ppaanexo.pdf" },
+      { texto: "PPA – Plano Plurianual 2022-2025 – Revisão 2025", href: "Pdf/legislacao/1.1_PPA___Plano_Plurianual_2002_2025___Revisao_2025.pdf" },
+      { texto: "PPA – Plano Plurianual 2022-2025 – Revisão 2025 – Compatibilizada LC nº 50/2024", href: "Pdf/legislacao/1.1._PPA___Plano_Plurianual_2022._2025___Revisao_2025___Compatibilizada_LC_n__50.2024.pdf" },
+
     ]
   },
   ldoDiretrizes: {
@@ -74,7 +77,9 @@ const links = {
       { texto: "LDO 2020 – Lei nº 1.420/2019", href: "https://portaldatransparencia.jaboatao.pe.gov.br/uploads/2020/01/LDO-2020-LEI-N%C2%BA-1420-06-09-2019.pdf" },
       { texto: "LDO 2021 – Lei nº 1.448/2020", href: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2022/07/2021ldo.pdf" },
       { texto: "LDO 2022 – Lei nº 1.482/2021", href: "https://portaldatransparencia.jaboatao.pe.gov.br/uploads/2020/01/LDO-2020-LEI-N%C2%BA-1420-06-09-2019.pdf" },
-      { texto: "LDO 2025 – Lei nº 1.610/2024", href: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Lei-de-Diretrizes-Orcamentarias-LDO-2025.pdf" }
+      { texto: "LDO 2025 – Lei nº 1.610/2024", href: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Lei-de-Diretrizes-Orcamentarias-LDO-2025.pdf" },
+      { texto: "LDO 2023 - Lei nº 1.532.2022", href: "Pdf/legislacao/1.1_LDO_2023___Lei_n__1.532.2022.pdf" },
+      { texto: "LDO 2024 - Lei nº 1.570.2023", href: "Pdf/legislacao/1.1_LDO_2024___Lei_n__1.570.2023.pdf" }
     ]
   },
   estruturaAdmin: {
