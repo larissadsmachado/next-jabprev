@@ -10,7 +10,7 @@ const emailDestinations: Record<string, string> = {
   presidencia: "presidencia@jaboataoprev.jaboatao.pe.gov.br",
 };
 
-const FaleConosco = () => {
+ const FaleConosco = () => {
   const [loading, setLoading] = useState(false);
   const [selectedSubject, setSelectedSubject] = useState<string>("financeiro");
 

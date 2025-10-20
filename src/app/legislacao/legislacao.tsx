@@ -41,7 +41,7 @@ const links = {
     ]
   },
   ldo: {
-    titulo: "D. LDO – Lei de Diretrizes Orçamentária",
+    titulo: "D. LDO – Lei Orçamentária Anual",
     links: [
       { texto: "LOA 2017 – Lei Orçamentária Anual Lei nº 1291/2016 e 1297/2016", href: "https://portaldatransparencia.jaboatao.pe.gov.br/uploads/2019/05/2017loa.pdf" },
       { texto: "LOA 2018 – Lei Orçamentária Anual Lei nº 1.337/2017", href: "https://portaldatransparencia.jaboatao.pe.gov.br/uploads/2019/05/2018loa.pdf" },
@@ -77,9 +77,9 @@ const links = {
       { texto: "LDO 2020 – Lei nº 1.420/2019", href: "https://portaldatransparencia.jaboatao.pe.gov.br/uploads/2020/01/LDO-2020-LEI-N%C2%BA-1420-06-09-2019.pdf" },
       { texto: "LDO 2021 – Lei nº 1.448/2020", href: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2022/07/2021ldo.pdf" },
       { texto: "LDO 2022 – Lei nº 1.482/2021", href: "https://portaldatransparencia.jaboatao.pe.gov.br/uploads/2020/01/LDO-2020-LEI-N%C2%BA-1420-06-09-2019.pdf" },
-      { texto: "LDO 2025 – Lei nº 1.610/2024", href: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Lei-de-Diretrizes-Orcamentarias-LDO-2025.pdf" },
       { texto: "LDO 2023 - Lei nº 1.532.2022", href: "Pdf/legislacao/1.1_LDO_2023___Lei_n__1.532.2022.pdf" },
-      { texto: "LDO 2024 - Lei nº 1.570.2023", href: "Pdf/legislacao/1.1_LDO_2024___Lei_n__1.570.2023.pdf" }
+      { texto: "LDO 2024 - Lei nº 1.570.2023", href: "Pdf/legislacao/1.1_LDO_2024___Lei_n__1.570.2023.pdf" },
+      { texto: "LDO 2025 – Lei nº 1.610/2024", href: "https://backendjaboataoprev.jaboatao.pe.gov.br/wp-content/uploads/2025/02/Lei-de-Diretrizes-Orcamentarias-LDO-2025.pdf" }
     ]
   },
   estruturaAdmin: {
