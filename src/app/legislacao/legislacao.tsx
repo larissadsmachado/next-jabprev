@@ -41,7 +41,7 @@ const links = {
     ]
   },
   ldo: {
-    titulo: "LOA – Lei Orçamentária Anual",
+    titulo: "D. LOA – Lei Orçamentária Anual",
     links: [
       { texto: "LOA 2017 – Lei Orçamentária Anual Lei nº 1291/2016 e 1297/2016", href: "https://portaldatransparencia.jaboatao.pe.gov.br/uploads/2019/05/2017loa.pdf" },
       { texto: "LOA 2018 – Lei Orçamentária Anual Lei nº 1.337/2017", href: "https://portaldatransparencia.jaboatao.pe.gov.br/uploads/2019/05/2018loa.pdf" },
