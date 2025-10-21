@@ -7,7 +7,6 @@ const emailDestinations: Record<string, string> = {
   juridico: "jurídico@jaboataoprev.jaboatao.pe.gov.br",
   beneficios: "beneficios@jaboataoprev.jaboatao.pe.gov.br",
   investimento: "investimentos@jaboataoprev.jaboatao.pe.gov.br",
-  presidencia: "presidencia@jaboataoprev.jaboatao.pe.gov.br",
 };
 
  const FaleConosco = () => {
@@ -114,7 +113,6 @@ const emailDestinations: Record<string, string> = {
                   E-mails Institucionais:
                 </p>
                 <ul className="list-disc pl-4">
-                  <li>presidencia@jaboataoprev.jaboatao.pe.gov.br</li>
                   <li>investimentos@jaboataoprev.jaboatao.pe.gov.br</li>
                   <li>jurídico@jaboataoprev.jaboatao.pe.gov.br</li>
                   <li>admfinanceiro@jaboataoprev.jaboatao.pe.gov.br</li>
