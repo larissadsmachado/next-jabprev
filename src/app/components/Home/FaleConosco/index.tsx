@@ -9,7 +9,7 @@ const emailDestinations: Record<string, string> = {
   investimento: "investimentos@jaboataoprev.jaboatao.pe.gov.br",
 };
 
- const FaleConosco = () => {
+  const FaleConosco = () => {
   const [loading, setLoading] = useState(false);
   const [selectedSubject, setSelectedSubject] = useState<string>("financeiro");
 
