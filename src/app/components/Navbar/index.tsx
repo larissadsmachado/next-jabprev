@@ -137,10 +137,10 @@ const navigation: NavItem[] = [
       },
       {
         name: "Concessões de Benefícios",
-        href: "/Pdf/menu/2.6_CONCESSOES_DE_BENEFICIOS___MARCO.2025.pdf",
+        href: "/Pdf/menu/CONCESSOES.pdf",
       },
 
-      { name: "Contratos", href: "contratos" },
+      { name: "Contratos", href: "/contratos" },
 
       {
         name: "Educação Previdenciária e Financeira",
