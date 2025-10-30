@@ -103,7 +103,7 @@ const Formulario = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
           <div>
-            <label className="block font-semibold">Data de Emissão *</label>
+            <label className="block font-semibold">Data de Admissão *</label>
             <input type="date" name="dataEmissao" value={formData.dataEmissao} onChange={handleChange} required className="w-full p-2 border rounded" />
           </div>
           <div>
