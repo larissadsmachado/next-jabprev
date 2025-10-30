@@ -39,11 +39,7 @@ const Links = () => (
           href: "Pdf/institucional/controle-interno/1.1_Relatorio_Trimestral_de_Controle_Interno___2__TRIMESTRE___2025___JABOATAOPREV.pdf",
           text: "Relatório de Controle Interno – 2º Trimestre",
         },
-        
-        {
-          href: "Pdf/institucional/controle-interno/Relatório Trimestral de Controle Interno - 3º TRIMESTRE - 2025 - JABOATÃOPREV.pdf",
-          text: "Relatório de Controle Interno – 3º Trimestre",
-        }, 
+      
       ]} />
 
       {/* Links do ano de 2024 */}
