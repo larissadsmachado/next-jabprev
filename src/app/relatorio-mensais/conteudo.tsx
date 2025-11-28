@@ -53,6 +53,10 @@ const reportsData: ReportsByYear = {
         name: "Setembro – 2025",
         url: "/Pdf/investimentos/relatorio-mensais/2.1_SETEMBRO_2025.pdf",
       },
+      {
+        name: "Outubro – 2025",
+        url: "/Pdf/investimentos/relatorio-mensais/2.1_OUTUBRO_2025.pptx.pdf",
+      },
       
     ],
   },

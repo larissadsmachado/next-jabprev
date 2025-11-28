@@ -41,8 +41,9 @@ const data = {
     "Outubro – Câmara ":"Pdf/administrativo/folha-de-pagamento/2.2_Outubro___Camara.pdf",
     "Outubro – Servidores ":"Pdf/administrativo/folha-de-pagamento/2.2_Outubro___Servidores.pdf",
 
-    Novembro:"#",
-    "Novembro – Câmara":"#",
+    Novembro:"Pdf/administrativo/folha-de-pagamento/1.2_Novembro.pdf",
+    "Novembro – Servidores":"Pdf/administrativo/folha-de-pagamento/1.2_Novembro___Servidores.pdf",
+    "Novembro – Câmara":"Pdf/administrativo/folha-de-pagamento/1.2_Novembro___Camara.pdf",
 
     Dezembro:"#",
     "Dezembro - Câmara":"#",
