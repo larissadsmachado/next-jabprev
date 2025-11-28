@@ -70,6 +70,27 @@ const Links = () => (
             Certidão Negativa Municipal
           </a>
         </li>
+
+        <li className="py-2">
+          <a
+            href="Pdf/administrativo/obrigacoes-fiscais/2.3_CERTIDAO_NEGATIVA_DE_DEBITOS_TRABALHISTAS___Maio.2026.pdf"
+            target="_blank"
+            className="text-blue-800 hover:underline"
+          >
+            Certidão Negativa de Débitos Trabalhistas
+          </a>
+        </li>
+
+        <li className="py-2">
+          <a
+            href="Pdf/administrativo/obrigacoes-fiscais/2.3_Consulta_Regularidade_do_Empregador___Novembro.2025.pdf"
+            target="_blank"
+            className="text-blue-800 hover:underline"
+          >
+            Certificado de Regularidade do Fgts - Crf
+          </a>
+        </li>
+
       </ul>
     </div>
   </div>
